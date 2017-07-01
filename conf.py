@@ -139,6 +139,7 @@ NAVIGATION_LINKS = {
         ("/categories/", "Tags"),
         ("/rss.xml", "RSS feed"),
         ("/pages/about", "About"),
+        ("https://github.com/StanczakDominik/stanczakdominik.github.io", "This site on GitHub"),
     ),
 
     "pl": (
@@ -146,6 +147,7 @@ NAVIGATION_LINKS = {
         ("/pl/categories/", "Tagi"),
         ("/pl/rss.xml", "Kanał RSS"),
         ("/pl/pages/about", "O mnie"),
+        ("https://github.com/StanczakDominik/stanczakdominik.github.io", "Ta strona na GitHubie"),
     ),
 }
 
