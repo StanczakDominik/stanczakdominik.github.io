@@ -35,6 +35,7 @@ Wyświadczcie sobie przysługę oglądając ją w pełnym HD.
 <center>{{% media url="https://www.youtube.com/watch?v=cTRQP6DSaqA" %}}</center>
 
 Jeśli nie uważacie, że to wygląda pięknie, skonsultujcie się z lekarzem w sprawie podejrzewanego braku emocji. Dla mnie niesamowitość tego ma kilka źródeł:
+
 * Wzorce tego typu występują w naturze. Chcecie przykładu? Tu jest zdjęcie z [Biblioteca Pleyades](https://www.bibliotecapleyades.net/ciencia/ciencia_sol47.htm):
 <center> <img src="/images/solar-kelvin-helmholtz.jpg" width="700"/> </center>
 
