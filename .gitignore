@@ -4,3 +4,4 @@ cache
 output
 .doit.db
 __pycache__
+posts/.ipynb_checkpoints
