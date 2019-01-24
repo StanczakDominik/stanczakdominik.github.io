@@ -5,3 +5,5 @@ output
 .doit.db
 __pycache__
 posts/.ipynb_checkpoints
+id_rsa
+id_rsa.pub
