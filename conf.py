@@ -18,8 +18,7 @@ import time
 
 # Data about this site
 BLOG_AUTHOR = "Dominik Stańczak"  # (translatable)
-BLOG_TITLE = {"en":"Plasma Non Stop",
-              "pl":"Plazma bez przerw"}
+BLOG_TITLE = "Plasma Non Stop"
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
 SITE_URL = "https://stanczakdominik.github.io/"
@@ -27,8 +26,7 @@ SITE_URL = "https://stanczakdominik.github.io/"
 # If not set, defaults to SITE_URL
 # BASE_URL = "https://stanczakdominik.github.io/"
 BLOG_EMAIL = "stanczakdominik@gmail.com"
-BLOG_DESCRIPTION = {"en": "Increasing utility on my learning by sharing it",
-                    "pl": "Niech to, czego się uczę, przyda się innym"}
+BLOG_DESCRIPTION = "Increasing utility on my learning by sharing it"
 
 # Nikola is multilingual!
 #
@@ -95,7 +93,6 @@ DEFAULT_LANG = "en"
 # the path will be used as a prefix for the generated pages location
 TRANSLATIONS = {
     DEFAULT_LANG: "",
-    "pl": "./pl",
 }
 
 # What will translated input files be named like?
@@ -140,14 +137,6 @@ NAVIGATION_LINKS = {
         ("/rss.xml", "RSS feed"),
         ("/pages/about", "About"),
         ("https://github.com/StanczakDominik/stanczakdominik.github.io", "This site on GitHub"),
-    ),
-
-    "pl": (
-        ("/pl/archive.html", "Archiwum"),
-        ("/pl/categories/", "Tagi"),
-        ("/pl/rss.xml", "Kanał RSS"),
-        ("/pl/pages/about", "O mnie"),
-        ("https://github.com/StanczakDominik/stanczakdominik.github.io", "Ta strona na GitHubie"),
     ),
 }
 
@@ -572,7 +561,7 @@ FRONT_INDEX_HEADER = {
 # Create per-month archives instead of per-year
 # CREATE_MONTHLY_ARCHIVE = False
 # Create one large archive instead of per-year
-# CREATE_SINGLE_ARCHIVE = False
+CREATE_SINGLE_ARCHIVE = True
 # Create year, month, and day archives each with a (long) list of posts
 # (overrides both CREATE_MONTHLY_ARCHIVE and CREATE_SINGLE_ARCHIVE)
 # CREATE_FULL_ARCHIVES = False
@@ -910,7 +899,7 @@ IMAGE_FOLDERS = {'images': 'images'}
 # )
 
 # Show teasers (instead of full posts) in indexes? Defaults to False.
-# INDEX_TEASERS = False
+INDEX_TEASERS = True
 
 # HTML fragments with the Read more... links.
 # The following tags exist and are replaced for you:
@@ -942,18 +931,17 @@ FEED_LINKS_APPEND_QUERY = False
 
 # A HTML fragment describing the license, for the sidebar.
 # (translatable)
-LICENSE = ""
 # I recommend using the Creative Commons' wizard:
 # https://creativecommons.org/choose/
-# LICENSE = """
-# <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
-# <img alt="Creative Commons License BY-NC-SA"
-# style="border-width:0; margin-bottom:12px;"
-# src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a>"""
+LICENSE = """
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA"
+style="border-width:0; margin-bottom:12px;"
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a>"""
 
 # A small copyright notice for the page footer (in HTML).
 # (translatable)
-CONTENT_FOOTER = 'Contents &copy; {date}         <a href="mailto:{email}">{author}</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         {license}'
+CONTENT_FOOTER = 'Contents &copy; {date}         <a href="mailto:{email}">{author}</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a> - {license}'
 
 # Things that will be passed to CONTENT_FOOTER.format().  This is done
 # for translatability, as dicts are not formattable.  Nikola will
@@ -1063,7 +1051,7 @@ PRETTY_URLS = True
 # SCHEDULE_RULE = ''
 # If True, use the scheduling rule to all posts by default
 # SCHEDULE_ALL = False
-
+SCHEDULE_RULE = 'RRULE:FREQ=WEEKLY;BYDAY=TU;BYHOUR=18;BYMINUTE=0;BYSECOND=0'
 # Do you want a add a Mathjax config file?
 # MATHJAX_CONFIG = ""
 

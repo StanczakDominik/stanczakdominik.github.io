@@ -10,6 +10,7 @@
 -->
 
 Why start this blog?
+<!-- TEASER_END -->
 
 
 # To share knowledge
