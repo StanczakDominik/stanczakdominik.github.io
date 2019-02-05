@@ -9,10 +9,10 @@
 .. type: text
 -->
 
-My name's Dominik Stańczak and I'm currently a student at the Warsaw University of Technology in Poland.
+Hi there! My name's Dominik Stańczak and I'm currently a student at the University of Warsaw, in Poland.
 My main passion is physics. Computational physics and plasma physics, two passions,
 computational, plasma physics and the open source movement. My three passions are computational and plasma physics,
-the open source moving, GPU computing, puns and an almost fanatical devotion to sharing knowledge.
+the open source movement, GPU computing, puns and an almost fanatical devotion to sharing knowledge.
 
 Amongst my passions... let me try this again.
 
