@@ -132,10 +132,16 @@ TRANSLATIONS_PATTERN = "{path}.{lang}.{ext}"
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
+        (
+            (
+                ("/pages/about", "About"),
+                ("/pages/credits", "Credits"),
+            ),
+            "Pages",
+        ),
         ("/archive.html", "Archive"),
         ("/categories/", "Tags"),
         ("/rss.xml", "RSS feed"),
-        ("/pages/about", "About"),
         ("https://github.com/StanczakDominik/stanczakdominik.github.io", "This site on GitHub"),
     ),
 }
