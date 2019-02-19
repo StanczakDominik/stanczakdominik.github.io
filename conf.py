@@ -136,6 +136,7 @@ NAVIGATION_LINKS = {
             (
                 ("/pages/about", "About"),
                 ("/pages/credits", "Credits"),
+                ("/pages/goal-progress", "Goal progress"),
             ),
             "Pages",
         ),
