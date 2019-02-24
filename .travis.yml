@@ -18,6 +18,7 @@ before_install:
 - git config --global user.email 'stanczakdominik@gmail.com'
 - git config --global push.default 'simple'
 - pip install --upgrade pip wheel
+- pip install jupyter
 - echo -e 'Host github.com\n    StrictHostKeyChecking no' >> ~/.ssh/config
 - eval "$(ssh-agent -s)"
 - chmod 600 id_rsa
