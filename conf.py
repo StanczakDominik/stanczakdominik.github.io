@@ -137,6 +137,7 @@ NAVIGATION_LINKS = {
                 ("/pages/about", "About"),
                 ("/pages/credits", "Credits"),
                 ("/pages/goal-progress", "Goal progress"),
+                ("https://stanczakdominik.gitlab.io/vimwiki/", "Vimwiki"),
             ),
             "Pages",
         ),
