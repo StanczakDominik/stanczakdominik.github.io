@@ -1,8 +1,8 @@
 <!--
 .. title: Particle in Cell methods
 .. slug: particle-in-cell-methods
-.. date: 2019-03-19 18:00:00 UTC+01:00
-.. tags: 
+.. date: 2019-03-16 18:00:00 UTC+01:00
+.. tags: plasma, particle-in-cell, pic
 .. category: 
 .. link: 
 .. description: 
