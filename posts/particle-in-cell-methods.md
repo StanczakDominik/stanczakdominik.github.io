@@ -1,13 +1,12 @@
 <!--
 .. title: Particle in Cell methods
 .. slug: particle-in-cell-methods
-.. date: 2019-03-19 18:00:00 UTC+01:00
+.. date: 2019-03-19 10:00:00 UTC+01:00
 .. tags: plasma, particle-in-cell, pic, mathjax
 .. category: 
 .. link: 
 .. description: 
 .. type: text
-.. status: draft
 -->
 
 I think it might finally be about time to do some plasma physics discussion on
