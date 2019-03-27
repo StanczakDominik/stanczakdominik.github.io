@@ -1,17 +1,5 @@
-This folder contains the source used to generate a static site using Nikola.
+# Personal site and blog
 
-Installation and documentation at https://getnikola.com/
+[![Build Status](https://travis-ci.org/StanczakDominik/stanczakdominik.github.io.svg?branch=master)](https://travis-ci.org/StanczakDominik/stanczakdominik.github.io)
 
-Configuration file for the site is ``conf.py``.
-
-To build the site::
-
-    nikola build
-
-To see it::
-
-    nikola serve -b
-
-To check all available commands::
-
-    nikola help
+Runs using the [Nikola static site generator](https://getnikola.com/)
