@@ -24,4 +24,6 @@ I'm on [Github](https://github.com/StanczakDominik).
 
 I'm on [LinkedIn](https://www.linkedin.com/in/dominik-sta%C5%84czak-747910141/).
 
-If you want to contact me, send me dog pics or share a cool plot, my email below is probably the best way to reach me.
+On [Matrix](https://riot.im/), I'm `@StanczakDominik:matrix.org`.
+
+If you want to contact me, send me dog pics or share a cool plot, my email below or the Matrix address above is probably the best way to reach me.
