@@ -113,3 +113,8 @@ and add this fragment of ``sphinx_gallery.binder`` code with a modification into
 The current gallery is located `here <http://docs.plasmapy.org/en/latest/auto_examples/index.html>`_, and an example link is https://mybinder.org/v2/gh/PlasmaPy/PlasmaPy/master?filepath=plasmapy/examples/particle_stepper.py - and you should instantly see it points to the right spot!
 
 Obviously, it would be better to implement such link customization in sphinx-gallery itself somehow, but it's up to their maintainers to decide whether this kind of combo usage with Jupytext is in scope for their project. For now, the monkeypatch solution works decently. I'll try to update this post if that comes about.
+
+Update - requirements
+=====================
+
+`@jdkent on GitHub <https://github.com/PlasmaPy/PlasmaPy/pull/689>`_ suggests that if the above doesn't work for you, you should make sure the Sphinx version you're using is 2 or newer.

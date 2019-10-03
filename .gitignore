@@ -2,7 +2,7 @@ cache
 .ropeproject
 *.swp
 output
-.doit.db
+.doit.db*
 __pycache__
 .ipynb_checkpoints
 id_rsa
