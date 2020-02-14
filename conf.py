@@ -148,7 +148,7 @@ NAVIGATION_LINKS = {
         ("/archive.html", "Archive"),
         ("/categories/", "Tags"),
         ("/rss.xml", "RSS feed"),
-        ("https://github.com/StanczakDominik/stanczakdominik.github.io", "This site on GitHub"),
+        ("https://github.com/StanczakDominik/stanczakdominik.github.io/tree/src", "This site on GitHub"),
     ),
 }
 
