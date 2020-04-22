@@ -1026,8 +1026,8 @@ FUTURE_IS_NOW = False
 # Specify an iCal Recurrence Rule: http://www.kanzaki.com/docs/ical/rrule.html
 # SCHEDULE_RULE = ''
 # If True, use the scheduling rule to all posts by default
-SCHEDULE_ALL = True
-SCHEDULE_RULE = 'RRULE:FREQ=WEEKLY;BYDAY=TU;BYHOUR=18;BYMINUTE=0;BYSECOND=0'
+SCHEDULE_ALL = False
+SCHEDULE_RULE = 'RRULE:FREQ=WEEKLY;INTERVAL=2;BYDAY=MO;BYHOUR=18;BYMINUTE=0;BYSECOND=0'
 # Do you want a add a Mathjax config file?
 # MATHJAX_CONFIG = ""
 
