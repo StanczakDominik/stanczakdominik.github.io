@@ -37,3 +37,18 @@ In fact, this can happen live, when you think about it: let's say I'm scouting t
 I see this: TODO
 
 And I know that this is likely
+
+
+## other
+
+Przykład diagnostyki
+
+Diagnostyka jako graf
+
+Explain explain explain
+
+Examples of different priors affecting output
+
+It is pretty enlightening to see how different choices for this prior change the output:
+
+Discrete input for proxy problem!
