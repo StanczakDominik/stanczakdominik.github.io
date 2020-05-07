@@ -1,7 +1,7 @@
 <!--
 .. title: Bayesian Inference part 1: What I Talk About When I Talk About Bayes
 .. slug: bayesian1
-.. date: 2020-02-25 18:00:00 UTC+01:00
+.. date: 2020-05-30 18:00:00 UTC+01:00
 .. tags: Bayes
 .. type: text
 -->
