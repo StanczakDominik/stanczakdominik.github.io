@@ -62,16 +62,24 @@ rush me?* Once that's known, you can either relax a little, breathe out and tran
 into whatever flavor of insane clown fiesta you like best... or start looking
 around for cannons.
 
+# Bayes rules
+
+
+
 # Discrete case
 
-see gateways at wall = no cannon rush
-see forge at wall = cannon rush
-see nothing = ? well, not actually
-see 1 gate = ?
+* see gateways at wall = no cannon rush
+* see forge at wall = cannon rush
+* see nothing = ? well, not actually
+* see 1 gate = ?
 
 Thus, taking the bayesian approach... what's my belief that I'm getting cannon rushed?
 
-For example, we may be in a cannon heavy meta TODO
+For example, we may be in a cannon-rush-heavy time, or we may be playing a
+known fan of cannons, or we've met someone who tried to play standard last game
+and lost! All of these possibilities influence our estimate of the **prior
+probability** of cannon rushing.
+
 
 just apply - simply
 
