@@ -17,7 +17,7 @@ import time
 
 # Data about this site
 BLOG_AUTHOR = "Dominik Stańczak"  # (translatable)
-BLOG_TITLE = "Mostly Plasma Physics"
+BLOG_TITLE = "Prematurely optimizing"
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
 SITE_URL = "https://stanczakdominik.github.io/"
@@ -25,7 +25,7 @@ SITE_URL = "https://stanczakdominik.github.io/"
 # If not set, defaults to SITE_URL
 # BASE_URL = "https://stanczakdominik.github.io/"
 BLOG_EMAIL = "stanczakdominik@gmail.com"
-BLOG_DESCRIPTION = "Puns, plasmas, Python, PDEs and potentiallybifurcations"
+BLOG_DESCRIPTION = "Puns, plasmas, Python, PDEs and probabilities!"
 
 # Nikola is multilingual!
 #
