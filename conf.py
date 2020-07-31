@@ -140,13 +140,13 @@ NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         (
             (
-                ("/pages/about", "About"),
-                ("/pages/credits", "Credits"),
+                ("/about", "About"),
+                ("/credits", "Credits"),
             ),
             "Pages",
         ),
         ("/archive.html", "Archive"),
-        ("/categories/", "Tags"),
+        ("/categories/", "Posts by tag"),
         ("/rss.xml", "RSS feed"),
         ("https://github.com/StanczakDominik/stanczakdominik.github.io/tree/src", "This site on GitHub"),
     ),
