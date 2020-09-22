@@ -96,7 +96,8 @@ DEFAULT_LANG = "en"
 # The format is {"translationcode" : "path/to/translation" }
 # the path will be used as a prefix for the generated pages location
 TRANSLATIONS = {
-    DEFAULT_LANG: "",
+    DEFAULT_LANG: "en",
+    "pl": "./pl",
     # Example for another language:
     # "es": "./es",
 }
@@ -141,14 +142,29 @@ NAVIGATION_LINKS = {
         (
             (
                 ("/about", "About"),
-                ("/credits", "Credits"),
+                ("/credits", "Acknoledgments"),
             ),
             "Pages",
         ),
         ("/archive.html", "Archive"),
         ("/categories/", "Posts by tag"),
         ("/rss.xml", "RSS feed"),
+        ("/pl/", "Polski"),
         ("https://github.com/StanczakDominik/stanczakdominik.github.io/tree/src", "This site on GitHub"),
+    ),
+    "pl": (
+        (
+            (
+                ("/pl/about/", "O mnie"),
+                ("/credits", "Podziękowania"),
+            ),
+            "Podstrony",
+        ),
+        ("/archive.html", "Archiwum"),
+        ("/categories/", "Kategorie"),
+        ("/rss.xml", "RSS"),
+        ("/en/", "English"),
+        ("https://github.com/StanczakDominik/stanczakdominik.github.io/tree/src", "Ta strona na GitHubie"),
     ),
 }
 
