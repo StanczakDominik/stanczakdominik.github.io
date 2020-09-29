@@ -17,7 +17,7 @@ the world](https://en.wikipedia.org/wiki/Wendelstein_7-X).
 
 In my spare time, among other activities, I fight procrastination, play StarCraft, study the art of
 muffin-making, help out with open source projects such as
-PlasmaPy](http://plasmapy.org/), read books or write short technical notes on
+[PlasmaPy](http://plasmapy.org/), read books or write short technical notes on
 interesting solutions to problems in simulations or data analysis.
 
 # Where to find me
