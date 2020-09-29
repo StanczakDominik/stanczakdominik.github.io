@@ -9,12 +9,16 @@
 .. type: text
 -->
 
-Hi there! My name's Dominik Stańczak and I'm currently a student at the University of Warsaw, in Poland.
-My main passion is physics. Computational physics and plasma physics, two passions,
-computational, plasma physics and the open source movement. My three passions are computational and plasma physics,
-the open source movement, GPU computing, puns and an almost fanatical devotion to sharing knowledge.
+Hi there! My name's Dominik Stańczak and I'm currently a research software
+engineer at the [Institute of Plasma Physics and Laser
+Microfusion](https://www.ifpilm.pl/en) in Warsaw, Poland, where I help write
+code for diagnostics of [Wendelstein 7-X, the currently (2020) largest stellarator in
+the world](https://en.wikipedia.org/wiki/Wendelstein_7-X).
 
-Amongst my passions... let me try this again.
+In my spare time, among other activities, I fight procrastination, play StarCraft, study the art of
+muffin-making, help out with open source projects such as
+PlasmaPy](http://plasmapy.org/), read books or write short technical notes on
+interesting solutions to problems in simulations or data analysis.
 
 # Where to find me
 
@@ -22,8 +26,6 @@ I'm on [Twitter](https://twitter.com/StanczakDominik).
 
 I'm on [Github](https://github.com/StanczakDominik).
 
-I'm on [LinkedIn](https://www.linkedin.com/in/dominik-sta%C5%84czak-747910141/).
-
-On [Matrix](https://riot.im/), I'm `@StanczakDominik:matrix.org`.
+On [Matrix](https://element.io/), I'm `@StanczakDominik:matrix.org`.
 
 If you want to contact me, send me dog pics or share a cool plot, my email below or the Matrix address above is probably the best way to reach me.

@@ -96,8 +96,7 @@ DEFAULT_LANG = "en"
 # The format is {"translationcode" : "path/to/translation" }
 # the path will be used as a prefix for the generated pages location
 TRANSLATIONS = {
-    DEFAULT_LANG: "en",
-    "pl": "./pl",
+    DEFAULT_LANG: "",
     # Example for another language:
     # "es": "./es",
 }
@@ -148,24 +147,22 @@ NAVIGATION_LINKS = {
         ),
         ("/archive.html", "Archive"),
         ("/categories/", "Posts by tag"),
-        ("/rss.xml", "RSS feed"),
-        ("/pl/", "Polski"),
-        ("https://github.com/StanczakDominik/stanczakdominik.github.io/tree/src", "This site on GitHub"),
+        ("/rss.xml", '<img alt="RSS feed" height="24" width="24" style="border-width:0; margin-bottom:12px;" src="/images/rss.png">'),
+        ("https://github.com/StanczakDominik/stanczakdominik.github.io/tree/src", '<img alt="GitHub" height="24" width="24" style="border-width:0; margin-bottom:12px;" src="/images/GitHub-Mark-64px.png">'),
     ),
-    "pl": (
-        (
-            (
-                ("/pl/about/", "O mnie"),
-                ("/credits", "Podziękowania"),
-            ),
-            "Podstrony",
-        ),
-        ("/archive.html", "Archiwum"),
-        ("/categories/", "Kategorie"),
-        ("/rss.xml", "RSS"),
-        ("/en/", "English"),
-        ("https://github.com/StanczakDominik/stanczakdominik.github.io/tree/src", "Ta strona na GitHubie"),
-    ),
+    # "pl": (
+    #     (
+    #         (
+    #             ("/pl/about/", "O mnie"),
+    #             ("/credits", "Podziękowania"),
+    #         ),
+    #         "Podstrony",
+    #     ),
+    #     ("/archive.html", "Archiwum"),
+    #     ("/categories/", "Kategorie"),
+    #     ("/rss.xml", "RSS"),
+    #     ("https://github.com/StanczakDominik/stanczakdominik.github.io/tree/src", '<img alt="GitHub" style="border-width:0; margin-bottom:12px;" src="./images/GitHub-Mark-64px.png">'),
+    # ),
 }
 
 # Alternative navigation links. Works the same way NAVIGATION_LINKS does,
@@ -945,7 +942,7 @@ LICENSE = """
 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
 <img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a>"""
+src="/images/creativecommons.png"></a>"""
 
 # A small copyright notice for the page footer (in HTML).
 # (translatable)
