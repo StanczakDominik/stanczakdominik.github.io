@@ -42,7 +42,7 @@ And there were plenty of bright moments in all this gloom and darkness; I gave m
 
 A while ago, this blog was named "Plasma non-stop". [Hey, I was going through a Hamilton phase, don't judge.](https://www.youtube.com/watch?v=vYbdQAeO0vo) I later changed that name, deciding that *hey, I write here mostly about programming; there's little plasma/fusion content and I feel kind of bad about overpromising with the name*.
 
-Well, that's changing. I've been explaining nuclear/fusion/plasma to enough people recently that I feel like it's going to be worth it to write all that down. Have an up-to-date reference I can link to in discussions, so to speak. 
+Well, that's changing. I've been explaining nuclear/fusion/plasma to enough people recently that I feel like it's going to be worth it to write all that down. Have an up-to-date reference I can link to in discussions, so to speak. And besides that... I do love popularising science, and have [Thoughts](/posts/anger-disinformation-populism-truth/) on why that's an important thing to be doing.
 
 I would also like to make my notes public, once again; I used to use vimwiki, which made that easy, but now, with [Joplin](https://joplinapp.org/), I don't yet know how to do it nicely. Once I do figure it out, they'll be accessible from here.
 
