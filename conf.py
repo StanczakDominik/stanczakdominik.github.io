@@ -97,6 +97,7 @@ DEFAULT_LANG = "en"
 # the path will be used as a prefix for the generated pages location
 TRANSLATIONS = {
     DEFAULT_LANG: "",
+    "pl": "./pl",
     # Example for another language:
     # "es": "./es",
 }
@@ -141,7 +142,7 @@ NAVIGATION_LINKS = {
         (
             (
                 ("/about", "About"),
-                ("/credits", "Acknoledgments"),
+                ("/credits", "Acknowledgments"),
             ),
             "Pages",
         ),
@@ -150,19 +151,19 @@ NAVIGATION_LINKS = {
         ("/rss.xml", '<img alt="RSS feed" height="24" width="24" style="border-width:0; margin-bottom:12px;" src="/images/rss.png">'),
         ("https://github.com/StanczakDominik/stanczakdominik.github.io/tree/src", '<img alt="GitHub" height="24" width="24" style="border-width:0; margin-bottom:12px;" src="/images/GitHub-Mark-64px.png">'),
     ),
-    # "pl": (
-    #     (
-    #         (
-    #             ("/pl/about/", "O mnie"),
-    #             ("/credits", "Podziękowania"),
-    #         ),
-    #         "Podstrony",
-    #     ),
-    #     ("/archive.html", "Archiwum"),
-    #     ("/categories/", "Kategorie"),
-    #     ("/rss.xml", "RSS"),
-    #     ("https://github.com/StanczakDominik/stanczakdominik.github.io/tree/src", '<img alt="GitHub" style="border-width:0; margin-bottom:12px;" src="./images/GitHub-Mark-64px.png">'),
-    # ),
+    "pl": (
+        (
+            (
+                ("/pl/about/", "O mnie"),
+                ("/credits", "Podziękowania"),
+            ),
+            "Podstrony",
+        ),
+        ("/archive.html", "Archiwum"),
+        ("/categories/", "Kategorie"),
+        ("/rss.xml", "RSS"),
+        ("https://github.com/StanczakDominik/stanczakdominik.github.io/tree/src", '<img alt="GitHub" style="border-width:0; margin-bottom:12px;" src="./images/GitHub-Mark-64px.png">'),
+    ),
 }
 
 # Alternative navigation links. Works the same way NAVIGATION_LINKS does,
@@ -248,6 +249,7 @@ PAGES = (
     ("pages/*.rst", "", "page.tmpl"),
     ("pages/*.txt", "", "page.tmpl"),
     ("pages/*.html", "", "page.tmpl"),
+    ("pages/*.ipynb", "", "page.tmpl"),
 )
 
 
