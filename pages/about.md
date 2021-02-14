@@ -15,7 +15,7 @@ Microfusion](https://www.ifpilm.pl/en) in Warsaw, Poland, where I help write
 code for diagnostics of [Wendelstein 7-X, the currently (2020) largest stellarator in
 the world](https://en.wikipedia.org/wiki/Wendelstein_7-X).
 
-In my spare time, among other activities, I fight procrastination, play StarCraft, study the art of
+In my spare time, among other activities, I fight procrastination, study the art of
 muffin-making, help out with open source projects such as
 [PlasmaPy](http://plasmapy.org/), read books or write short technical notes on
 interesting solutions to problems in simulations or data analysis.
