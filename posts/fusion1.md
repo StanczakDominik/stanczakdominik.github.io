@@ -9,7 +9,7 @@
 .. type: text
 -->
 
-*Hi! In the new year, [as promised](./2021.), you'll see more actual science discussions on this page. I have - I think, for the first time since I started writing here - a plan for the next four posts. The first will discuss nuclear power and its place in the world. The second will tell you a little about its most interesting future alternative - fusion power. Next up, we'll discuss its history a little and where I predict it'll head in the near future; and in the fourth, I'll try to discuss a little about what we're actually doing with it in terms of research work. I can't wait to get to the fourth part, so that should be at least motivating. Let's get to it!*
+*Hi! In the new year, [as promised](./2021), you'll see more actual science discussions on this page. I have - I think, for the first time since I started writing here - a plan for the next four posts. The first will discuss nuclear power and its place in the world. The second will tell you a little about its most interesting future alternative - fusion power. Next up, we'll discuss its history a little and where I predict it'll head in the near future; and in the fourth, I'll try to discuss a little about what we're actually doing with it in terms of research work. I can't wait to get to the fourth part, so that should be at least motivating. Let's get to it!*
 
 <!-- TEASER_END -->
 

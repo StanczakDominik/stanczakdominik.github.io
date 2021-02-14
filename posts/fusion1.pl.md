@@ -9,7 +9,7 @@
 .. type: text
 -->
 
-*Cześć, z nowym rokiem - [jak obiecałem](./2021.) - więcej tu będzie faktycznie o nauce. Mam - chyba po raz pierwszy, odkąd zacząłem tu pisać - plan na cztery kolejne posty. Pierwszy będzie trochę o energetyce jądrowej jako takiej i alternatywach dla niej; drugi opowie o najciekawszej w mojej opinii przyszłej alternatywie, syntezie termojądrowej, i o fizyce plazmy jako narzędziu na ugryzienie jej; trzeci ponudzi trochę rysem historycznym i moimi przewidywaniami na przyszłość dziedziny; a potem w czwartym spróbuję trochę opowiedzieć o tym, co u nas w Instytucie na jej rzecz robimy. Nie mogę się doczekać zwłaszcza tej czwartej części, więc to powinno być przynajmniej motywujące. No to do roboty!* -->
+*Cześć, z nowym rokiem - [jak obiecałem](./2021) - więcej tu będzie faktycznie o nauce. Mam - chyba po raz pierwszy, odkąd zacząłem tu pisać - plan na cztery kolejne posty. Pierwszy będzie trochę o energetyce jądrowej jako takiej i alternatywach dla niej; drugi opowie o najciekawszej w mojej opinii przyszłej alternatywie, syntezie termojądrowej, i o fizyce plazmy jako narzędziu na ugryzienie jej; trzeci ponudzi trochę rysem historycznym i moimi przewidywaniami na przyszłość dziedziny; a potem w czwartym spróbuję trochę opowiedzieć o tym, co u nas w Instytucie na jej rzecz robimy. Nie mogę się doczekać zwłaszcza tej czwartej części, więc to powinno być przynajmniej motywujące. No to do roboty!* -->
 
 <!-- TEASER_END -->
 
