@@ -23,12 +23,14 @@ symulacji lub analizy danych.
 
 # Gdzie mnie znaleźć
 
-Jestem na [Twitterze](https://twitter.com/StanczakDominik).
+Na [Matrixie](https://matrix.to/#/@StanczakDominik:matrix.org), jestem jako
+[`@StanczakDominik:matrix.org`](https://matrix.to/#/@StanczakDominik:matrix.org).
+To prawdopodobnie najszybszy sposób na dotarcie do mnie przez czat tekstowy.
 
-Jestem na [Githubie](https://github.com/StanczakDominik).
+Zawsze możesz do mnie napisać maila; weź domenę tego bloga (moje nazwisko + imię), doklej `@gmail` i powinno dotrzeć :)
+and stick @gmail on it, and it should reach me :)
 
-Na [Matrixie](https://element.io/), jestem jako `@StanczakDominik:matrix.org`.
+Większość tego, co robię, jest na [GitHubie](https://github.com/StanczakDominik).
 
-Jeśli chcesz pogadać, wysłać mi zdjęcia psów lub podzielić się ciekawym
-wykresem, prawodpodobnie najłatwiej mnie złapać mailowo (poniżej) lub na
-Matrixie.
+Ostatnio opuściłem Facebooka; na ten moment, wciąż jestem na 
+[Twitterze](https://twitter.com/StanczakDominik).
