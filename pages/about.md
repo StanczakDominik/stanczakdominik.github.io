@@ -22,10 +22,14 @@ interesting solutions to problems in simulations or data analysis.
 
 # Where to find me
 
-I'm on [Twitter](https://twitter.com/StanczakDominik).
+On [Matrix](https://matrix.to/#/@StanczakDominik:matrix.org), I'm
+[`@StanczakDominik:matrix.org`](https://matrix.to/#/@StanczakDominik:matrix.org).
+This is probably the fastest way to reach me via text chat.
 
-I'm on [Github](https://github.com/StanczakDominik).
+You can always email me; take this blog's domain name (my surname + first name)
+and stick `@gmail` onto it, and it should reach me :)
 
-On [Matrix](https://element.io/), I'm `@StanczakDominik:matrix.org`.
+I do most of my work on [GitHub](https://github.com/StanczakDominik).
 
-If you want to contact me, send me dog pics or share a cool plot, my email below or the Matrix address above is probably the best way to reach me.
+I've recently quit Facebook; for now, I'm still on
+[Twitter](https://twitter.com/StanczakDominik).
