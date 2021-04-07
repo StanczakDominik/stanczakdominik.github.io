@@ -163,6 +163,7 @@ NAVIGATION_LINKS = {
         ("/categories/", "Kategorie"),
         ("/rss.xml", "RSS"),
         ("https://github.com/StanczakDominik/stanczakdominik.github.io/tree/src", '<img alt="GitHub" style="border-width:0; margin-bottom:12px;" src="./images/GitHub-Mark-64px.png">'),
+        ("/test", '<a href="#!" class="ht-tm-element btn btn-primary"><span class="fab fa-github">test</span></a>'),
     ),
 }
 
@@ -174,8 +175,7 @@ NAVIGATION_ALT_LINKS = {
 }
 
 # Name of the theme to use.
-THEME = "bootstrap4"
-
+THEME = "custom"
 # Primary color of your theme. This will be used to customize your theme.
 # Must be a HEX value.
 THEME_COLOR = '#5670d4'
@@ -921,9 +921,10 @@ INDEX_TEASERS = True
 # }}                            A literal } (U+007D RIGHT CURLY BRACKET)
 
 # 'Read more...' for the index page, if INDEX_TEASERS is True (translatable)
-INDEX_READ_MORE_LINK = '<p class="more"><a href="{link}">{read_more}…</a></p>'
+INDEX_READ_MORE_LINK = '<p class="more"><a href="{link}" class="btn btn-outline-secondary">{read_more}…</a></p>'
+
 # 'Read more...' for the feeds, if FEED_TEASERS is True (translatable)
-FEED_READ_MORE_LINK = '<p><a href="{link}">{read_more}…</a> ({min_remaining_read})</p>'
+FEED_READ_MORE_LINK = '<p><a href="{link}" class="btn btn-outline-secondary">{read_more}…</a> ({min_remaining_read})</p>'
 
 # Append a URL query to the FEED_READ_MORE_LINK in Atom and RSS feeds. Advanced
 # option used for traffic source tracking.
