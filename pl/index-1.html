@@ -56,6 +56,9 @@ bg-dark
                 </li>
 <li class="nav-item">
 <a href="https://github.com/StanczakDominik/stanczakdominik.github.io/tree/src" class="nav-link"><img alt="GitHub" style="border-width:0; margin-bottom:12px;" src="images/GitHub-Mark-64px.png"></a>
+                </li>
+<li class="nav-item">
+<a href="../test" class="nav-link"></a><a href="#!" class="ht-tm-element btn btn-primary"><span class="fab fa-github">test</span></a>
 
                 
             </li>
@@ -116,7 +119,7 @@ discussion on this blog, stay true to the name and so on…</p>
 plasmas up until now is writing a PIC simulation, PIC standing for
 Particle-in-Cell. I thought I would take this opportunity to explain in
 my own words what the concept is - I think it’s a clever one.</p>
-<p class="more"><a href="posts/particle-in-cell-methods/">Czytaj więcej…</a></p>
+<p class="more"><a href="posts/particle-in-cell-methods/" class="btn btn-outline-secondary">Czytaj więcej…</a></p>
 </div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/first-dive-julia/" class="u-url">First dive into Julia</a></h1>
@@ -142,7 +145,7 @@ my own words what the concept is - I think it’s a clever one.</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>I'm currently sitting in at a tutorial on the basics of Julia and parallel processing therein by <a href="http://bogumilkaminski.pl/dydaktyka/">Bogumił Kamiński</a>. This is actually my first dive into Julia, so I thought I would write it down on-the-go here!</p>
-<p class="more"><a href="posts/first-dive-julia/">Czytaj więcej…</a></p>
+<p class="more"><a href="posts/first-dive-julia/" class="btn btn-outline-secondary">Czytaj więcej…</a></p>
 </div>
 </div>
 </div>
@@ -218,7 +221,7 @@ $$ \Delta(k) = \frac{\rho_1-\rho_2}{\rho_1 + \rho_2} gk + \frac{\gamma k^3}{\rho
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>But it takes some tinkering.</p>
 <p></p>
-<p class="more"><a href="posts/parsing-and-plotting-latex-expressions-with-sympy/">Czytaj więcej…</a></p>
+<p class="more"><a href="posts/parsing-and-plotting-latex-expressions-with-sympy/" class="btn btn-outline-secondary">Czytaj więcej…</a></p>
 </div>
 </div>
 </div>
@@ -247,7 +250,7 @@ $$ \Delta(k) = \frac{\rho_1-\rho_2}{\rho_1 + \rho_2} gk + \frac{\gamma k^3}{\rho
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>I had intended to write a post about speeding up our <a href="../posts/parallelizable-numpy-implementation-of-2d-ising-model">Numpy Ising implementation</a>, which we <a href="../posts/quantitative-data-analysis-of-the-2d-ising-model">found out gave reasonable numerical values</a>, though the small grids we were able to use limited the accuracy a fair bit. However, a few difficulties came up, so I thought instead (to keep writing these a habit!) I would write a little bit about using CuPy to speed up force calculations in N-body simulations. This might be a point I'll come back to later on this blog, as I have an ongoing project implementing that.</p>
-<p class="more"><a href="posts/cupy-nbody-direct-force-calculation/">Czytaj więcej…</a></p>
+<p class="more"><a href="posts/cupy-nbody-direct-force-calculation/" class="btn btn-outline-secondary">Czytaj więcej…</a></p>
 </div>
 </div>
 </div>
@@ -319,7 +322,7 @@ $$ \Delta(k) = \frac{\rho_1-\rho_2}{\rho_1 + \rho_2} gk + \frac{\gamma k^3}{\rho
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p></p>
-<p class="more"><a href="posts/scipyintegratesolve_ivp-and-makeshift-poincare-sections-of-the-rossler-attractor/">Czytaj więcej…</a></p>
+<p class="more"><a href="posts/scipyintegratesolve_ivp-and-makeshift-poincare-sections-of-the-rossler-attractor/" class="btn btn-outline-secondary">Czytaj więcej…</a></p>
 </div>
 </div>
 </div>
@@ -367,7 +370,7 @@ $$ \Delta(k) = \frac{\rho_1-\rho_2}{\rho_1 + \rho_2} gk + \frac{\gamma k^3}{\rho
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><a href="../posts/parallelizable-numpy-implementation-of-2d-ising-model">Last time, we made a neat little implementation of a 2D Ising model simulation</a>, and we showed that it looks reasonable. Well, that it might, but we can't be certain of that! I know I said that next time we would, er, <code>%timeit</code>, put it on the GPU and make it GO FAST, but perhaps it's a better idea to start with some data analysis first, making sure the result we're getting are quantitatively what we would like them to be - physical.</p>
-<p class="more"><a href="posts/quantitative-data-analysis-of-the-2d-ising-model/">Czytaj więcej…</a></p>
+<p class="more"><a href="posts/quantitative-data-analysis-of-the-2d-ising-model/" class="btn btn-outline-secondary">Czytaj więcej…</a></p>
 </div>
 </div>
 </div>
@@ -397,7 +400,7 @@ $$ \Delta(k) = \frac{\rho_1-\rho_2}{\rho_1 + \rho_2} gk + \frac{\gamma k^3}{\rho
 <p>In the next few posts I'd like to discuss a fun project I've been procrastinating things with recently - a parallelizable (up to the GPU level) Python Numpy implementation of the 2D <a href="https://en.wikipedia.org/wiki/Ising_model">Ising model</a>, which I won't introduce at length here because it's been covered really well in multiple places out there and I'd rather not repeat them.</p>
 <p>The gist of it is that we have a grid of discrete spins represented by integers, +1 for spin up and -1 for spin down. Each spin interacts with its nearest neighbors via a sum of products of that spin's value and the neighbor's value, times minus a positive constant J. The minus is there so that spins pointing the same way decrease the total energy and spins pointing in the opposite direction increase it.
 </p>
-<p class="more"><a href="posts/parallelizable-numpy-implementation-of-2d-ising-model/">Czytaj więcej…</a></p>
+<p class="more"><a href="posts/parallelizable-numpy-implementation-of-2d-ising-model/" class="btn btn-outline-secondary">Czytaj więcej…</a></p>
 </div>
 </div>
 </div>
@@ -427,7 +430,7 @@ $$ \Delta(k) = \frac{\rho_1-\rho_2}{\rho_1 + \rho_2} gk + \frac{\gamma k^3}{\rho
 <p>I've recently come across the amazing <a href="https://github.com/cupy/cupy">CuPy</a> library, and given that I haven't updated this blog in a while, I figured this would be a great opportunity to showcase a few of its capabilities.</p>
 <p>If you haven't heard yet, <strong>CuPy is NumPy, but on the GPU</strong>, and it's amazing how close that simple description is to reality.
 </p>
-<p class="more"><a href="posts/numpy-ish-gpu-computations-with-cupy/">Czytaj więcej…</a></p>
+<p class="more"><a href="posts/numpy-ish-gpu-computations-with-cupy/" class="btn btn-outline-secondary">Czytaj więcej…</a></p>
 </div>
 </div>
 </div>
@@ -451,7 +454,7 @@ $$ \Delta(k) = \frac{\rho_1-\rho_2}{\rho_1 + \rho_2} gk + \frac{\gamma k^3}{\rho
     </header><div class="p-summary entry-summary">
     <div>
 <p>Why start this blog?</p>
-<p class="more"><a href="posts/an-introduction/">Czytaj więcej…</a></p>
+<p class="more"><a href="posts/an-introduction/" class="btn btn-outline-secondary">Czytaj więcej…</a></p>
 </div>
     </div>
     </article>

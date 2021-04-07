@@ -883,3 +883,14 @@ html[dir="rtl"] body {
     min-height: 25px;
 }
 
+
+div.prompt {
+  padding: 0.6em;
+  font-size: 13px;
+  background-color: #FFFFFF !important;
+  margin-right: 1em;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
