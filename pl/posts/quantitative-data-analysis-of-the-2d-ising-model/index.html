@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
-" lang="pl">
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="pl">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,6 +7,7 @@
 <link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" hreflang="pl" href="../../rss.xml">
@@ -33,61 +33,34 @@
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Przejdź do treści</a>
 
-<!-- Menubar -->
-
-<nav class="navbar navbar-expand-md static-top mb-4
-navbar-dark
-bg-dark
-"><div class="container">
-<!-- This keeps the margins nice -->
-        <a class="navbar-brand" href="../../">
-
-            <span id="blog-title">Prematurely optimizing</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="bs-navbar">
-            <ul class="navbar-nav mr-auto">
-<li class="nav-item dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Podstrony</a>
-            <div class="dropdown-menu">
-                    <a href="../../about/" class="dropdown-item">O mnie</a>
-                    <a href="../../../credits" class="dropdown-item">Podziękowania</a>
-            </div>
-                </li>
-<li class="nav-item">
-<a href="../../../archive.html" class="nav-link">Archiwum</a>
-                </li>
-<li class="nav-item">
-<a href="../../../categories/" class="nav-link">Kategorie</a>
-                </li>
-<li class="nav-item">
-<a href="../../../rss.xml" class="nav-link">RSS</a>
-                </li>
-<li class="nav-item">
-<a href="https://github.com/StanczakDominik/stanczakdominik.github.io/tree/src" class="nav-link"><img alt="GitHub" style="border-width:0; margin-bottom:12px;" src="images/GitHub-Mark-64px.png"></a>
-                </li>
-<li class="nav-item">
-<a href="../../../test" class="nav-link"></a><a href="#!" class="ht-tm-element btn btn-primary"><span class="fab fa-github">test</span></a>
-
+<!-- Header and menu bar -->
+<div class="container">
+      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
+          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
+            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
                 
-            </li>
-</ul>
 <form class="navbar-form navbar-left" action="../../../search/" role="search">
     <div class="form-group">
         <input type="text" class="form-control" id="tipue_search_input" name="q" placeholder="Search" autocomplete="off">
 </div>
 </form>
 
+            </div>
+        </div>
+          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
+            <a class="navbar-brand blog-header-logo text-dark" href="../../">
 
-            <ul class="navbar-nav navbar-right">
-<li>
-            </li>
+            <span id="blog-title">Prematurely optimizing</span>
+        </a>
+          </div>
+            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
+            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav">
 <li class="nav-item"><a href="../../../" rel="alternate" hreflang="en" class="nav-link">English</a></li>
 
-                
+                    
                     
     
     <li class="nav-item">
@@ -95,13 +68,39 @@ bg-dark
     </li>
 
 
+                    
+            </ul></nav>
+</div>
+    </div>
+</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
+            <ul class="navbar-nav nav-fill d-flex w-100">
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Podstrony</a>
+            <div class="dropdown-menu">
+                    <a href="../../about/" class="dropdown-item">O mnie</a>
+                    <a href="../../../credits" class="dropdown-item">Podziękowania</a>
+                    <a href="https://github.com/StanczakDominik/stanczakdominik.github.io/tree/src" class="dropdown-item">Repo strony</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Posty</a>
+            <div class="dropdown-menu">
+                    <a href="../../../archive.html" class="dropdown-item">Według czasu</a>
+                    <a href="../../../categories/" class="dropdown-item">Według tagów</a>
+            </div>
+                </li>
+<li class="nav-item">
+<a href="../../../rss.xml" class="nav-link"><img alt="RSS feed" height="24" width="24" style="border-width:0; margin-bottom:12px;" src="../../../images/rss.png"></a>
+
                 
-            </ul>
+            </li>
+</ul>
 </div>
 <!-- /.navbar-collapse -->
-    </div>
-<!-- /.container -->
-</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+</nav>
+</div>
+
+<div class="container" id="content" role="main">
     <div class="body-content">
         <!--Body content-->
         
@@ -460,9 +459,9 @@ $$C_v = \frac{dU}{dT} = \frac{\sigma_U^2}{k_B T^2} $$<p>Let's get to it!</p>
 
  
  
-<div id="e8d242e0-38c8-4c84-be62-5ad00ba61237" class="output_subarea output_widget_view ">
+<div id="c222f8eb-b1bf-4096-8f53-1ecf12f95522" class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#e8d242e0-38c8-4c84-be62-5ad00ba61237');
+var element = $('#c222f8eb-b1bf-4096-8f53-1ecf12f95522');
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "a40e4bd596bc4732a23cd2f8c218b885", "version_major": 2, "version_minor": 0}
 </script>
@@ -648,9 +647,9 @@ var element = $('#e8d242e0-38c8-4c84-be62-5ad00ba61237');
 
  
  
-<div id="6a69dc2b-b82a-4d3a-a62d-b3e8d4be733a" class="output_subarea output_widget_view ">
+<div id="14ceb73a-47d8-42f4-8b36-2eab906595dc" class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#6a69dc2b-b82a-4d3a-a62d-b3e8d4be733a');
+var element = $('#14ceb73a-47d8-42f4-8b36-2eab906595dc');
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "62f734d7f5ea406ab12dd975c6568f37", "version_major": 2, "version_minor": 0}
 </script>
@@ -783,9 +782,9 @@ var element = $('#6a69dc2b-b82a-4d3a-a62d-b3e8d4be733a');
 
  
  
-<div id="a876a354-fe8d-4812-9281-885b30fce6cc" class="output_subarea output_widget_view ">
+<div id="35f30847-b017-42a7-8769-96672dee1142" class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#a876a354-fe8d-4812-9281-885b30fce6cc');
+var element = $('#35f30847-b017-42a7-8769-96672dee1142');
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "8de3c70e6715462891034757c3d41704", "version_major": 2, "version_minor": 0}
 </script>
@@ -896,9 +895,9 @@ var element = $('#a876a354-fe8d-4812-9281-885b30fce6cc');
 
  
  
-<div id="0d0158b2-511d-43bc-8130-988b658d8a6a" class="output_subarea output_widget_view ">
+<div id="fade3a68-2d14-4cf2-84fa-866e18ca28f7" class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#0d0158b2-511d-43bc-8130-988b658d8a6a');
+var element = $('#fade3a68-2d14-4cf2-84fa-866e18ca28f7');
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "00f8dd2b103d491f8435d6fc91e22946", "version_major": 2, "version_minor": 0}
 </script>
@@ -1009,9 +1008,9 @@ var element = $('#0d0158b2-511d-43bc-8130-988b658d8a6a');
 
  
  
-<div id="f02c2ba0-d8b5-4fca-9a22-a57d7ca119cd" class="output_subarea output_widget_view ">
+<div id="9ed20474-5947-4594-bc57-6d3a4188ca7c" class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#f02c2ba0-d8b5-4fca-9a22-a57d7ca119cd');
+var element = $('#9ed20474-5947-4594-bc57-6d3a4188ca7c');
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "2bc0a80235b84a2c9514885157417eae", "version_major": 2, "version_minor": 0}
 </script>
