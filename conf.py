@@ -143,27 +143,35 @@ NAVIGATION_LINKS = {
             (
                 ("/about", "About"),
                 ("/credits", "Acknowledgments"),
+                ("https://github.com/StanczakDominik/stanczakdominik.github.io/tree/src", 'Site repo'),
             ),
             "Pages",
         ),
-        ("/archive.html", "Archive"),
-        ("/categories/", "Posts by tag"),
+        (   (
+                ("/archive.html", "By year"),
+                ("/categories/", "By tag"),
+            ),
+            "Posts"
+         ),
         ("/rss.xml", '<img alt="RSS feed" height="24" width="24" style="border-width:0; margin-bottom:12px;" src="/images/rss.png">'),
-        ("https://github.com/StanczakDominik/stanczakdominik.github.io/tree/src", '<img alt="GitHub" height="24" width="24" style="border-width:0; margin-bottom:12px;" src="/images/GitHub-Mark-64px.png">'),
     ),
     "pl": (
         (
             (
                 ("/pl/about/", "O mnie"),
                 ("/credits", "Podziękowania"),
+                ("https://github.com/StanczakDominik/stanczakdominik.github.io/tree/src", 'Repo strony'),
             ),
             "Podstrony",
         ),
-        ("/archive.html", "Archiwum"),
-        ("/categories/", "Kategorie"),
-        ("/rss.xml", "RSS"),
-        ("https://github.com/StanczakDominik/stanczakdominik.github.io/tree/src", '<img alt="GitHub" style="border-width:0; margin-bottom:12px;" src="./images/GitHub-Mark-64px.png">'),
-        ("/test", '<a href="#!" class="ht-tm-element btn btn-primary"><span class="fab fa-github">test</span></a>'),
+        (
+            (
+                ("/archive.html", "Według czasu"),
+                ("/categories/", "Według tagów"),
+            ),
+            "Posty",
+        ),
+        ("/rss.xml", '<img alt="RSS feed" height="24" width="24" style="border-width:0; margin-bottom:12px;" src="/images/rss.png">'),
     ),
 }
 
@@ -175,7 +183,7 @@ NAVIGATION_ALT_LINKS = {
 }
 
 # Name of the theme to use.
-THEME = "custom"
+THEME = "customblog"
 # Primary color of your theme. This will be used to customize your theme.
 # Must be a HEX value.
 THEME_COLOR = '#5670d4'
@@ -199,7 +207,24 @@ THEME_CONFIG = {
         # Strip HTML from featured post text.
         'featured_strip_html': False,
         # Contents of the sidebar, If empty, the sidebar is not displayed.
-        'sidebar': ''
+        # 'sidebar': """\
+# <div class="sidebar-module sidebar-module-inset col-md3- hidden-xs">
+  # <h4>About</h4>
+  # <p>This is the Bootstrap Blog theme by @mdo, adapted for Nikola by @Kwpolska.
+  # And this sidebar is completely customizable — you can put anything you want
+  # here!</p>
+# </div>
+# <div class="sidebar-module">
+  # <h4>Links</h4>
+  # <ol class="list-unstyled">
+    # <li><a href="http://getbootstrap.com/examples/blog/">Bootstrap Blog Theme</a></li>
+    # <li><a href="https://getnikola.com/">Nikola</a></li>
+    # <li><a href="https://twitter.com/mdo">@mdo</a></li>
+    # <li><a href="https://twitter.com/Kwpolska">@Kwpolska</a></li>
+    # <li><a href="https://twitter.com/GetNikola">@GetNikola</a></li>
+  # </ol>
+# </div>
+# """
     }
 }
 
@@ -1356,6 +1381,7 @@ WARN_ABOUT_TAG_METADATA = False
 
 # Put in global_context things you want available on all your templates.
 # It can be anything, data, functions, modules, etc.
+GLOBAL_CONTEXT = {}
 GLOBAL_CONTEXT = {}
 GLOBAL_CONTEXT['utterances_config'] = {"issue-term": "pathname", "label": "Comments", "theme": "github-light", "crossorigin": "anonymous"}
 
