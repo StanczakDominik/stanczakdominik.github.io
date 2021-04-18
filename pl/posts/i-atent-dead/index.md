@@ -49,7 +49,7 @@ running away. Okay, here goes.
 * Part 2 of the [series on fusion](/posts/fusion1) is coming soon; I'm using
     it as a way to cobble together a first draft of my actual thesis introduction.
 * PlasmaPy's coming along nicely, though I'm mostly knee deep in the neoclassics
-    A. There have been some cool new developments with documentation and
+    PR. There have been some cool new developments with documentation and
     speeding up our formulary functions. We're also trying to figure out how
     to host essentially a hackathon. Tips appreciated!
 * I've been getting back into reading books, recently, and really enjoying it.
@@ -59,7 +59,7 @@ running away. Okay, here goes.
     way of consistently keeping the flat clean... wasn't at all consistent, and
     figured out a system based on a python script and a shared yaml file with
     dates of when we last did X thing (say, vacuuming) vs how often do we
-    want to do that particular X. The ratio of time since last occurence to
+    want to do that particular X. The ratio of time since last occurrence to
     expected period is then a metric than we can actually try to keep down. As
     you have probably guessed by now - write up coming up! But probably not
     soon.
