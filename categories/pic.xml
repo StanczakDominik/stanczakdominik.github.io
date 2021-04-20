@@ -3,10 +3,172 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="/images/creativecommons.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Mon, 19 Apr 2021 10:33:34 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Particle in Cell methods</title><link>https://stanczakdominik.github.io/posts/particle-in-cell-methods/</link><dc:creator>Dominik Stańczak</dc:creator><description>&lt;div&gt;&lt;p&gt;I think it might finally be about time to do some plasma physics
+src="/images/creativecommons.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Tue, 20 Apr 2021 06:08:27 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Particle in Cell methods</title><link>https://stanczakdominik.github.io/posts/particle-in-cell-methods/</link><dc:creator>Dominik Stańczak</dc:creator><description>&lt;div&gt;&lt;p&gt;I think it might finally be about time to do some plasma physics
 discussion on this blog, stay true to the name and so on…&lt;/p&gt;
 &lt;p&gt;Basically the only actual “scientific” work I have actually done with
 plasmas up until now is writing a PIC simulation, PIC standing for
 Particle-in-Cell. I thought I would take this opportunity to explain in
 my own words what the concept is - I think it’s a clever one.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://stanczakdominik.github.io/posts/particle-in-cell-methods/" class="btn btn-outline-secondary"&gt;Read more…&lt;/a&gt; (6 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>particle-in-cell</category><category>pic</category><category>plasma</category><guid>https://stanczakdominik.github.io/posts/particle-in-cell-methods/</guid><pubDate>Tue, 19 Mar 2019 09:00:00 GMT</pubDate></item></channel></rss>
+&lt;!-- TEASER_END --&gt;
+&lt;p&gt;There are many reasons why you might want to simulate a plasma.
+Simulations are often way cheaper than making a tokamak and causing the
+plasma to develop turbulence, or sending out a probe to watch check
+solar flares for traces of magnetic reconnection. There’s also the case
+of needing simulations to understand and explain your experimental
+results. For now, however, let’s just assume you have a burning desire
+to make a few pretty plots and animations &lt;a class="reference external" href="https://www.youtube.com/watch?v=Gj9mwAww3TM"&gt;like
+these&lt;/a&gt; using data that
+you don’t have simple access to via experiment.&lt;/p&gt;
+&lt;center&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/Gj9mwAww3TM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;
+&lt;/iframe&gt;
+&lt;/center&gt;&lt;section id="plasma-simulation-in-general"&gt;
+&lt;h2&gt;Plasma simulation in general&lt;/h2&gt;
+&lt;p&gt;Plasmas are, in general, difficult to simulate. Many of the interesting
+processes in plasmas that you would like to simulate occur far from
+equilibrium, both spatial and thermal. For example, you’d like to
+simulate interactions between a plasma and a laser pulse (this is, in
+fact, &lt;a class="reference external" href="https://github.com/StanczakDominik/PythonPIC"&gt;what I did for my engineering
+thesis&lt;/a&gt;). This is a
+massively non-equilibrium process. This mostly rules out fluid
+simulations such as two-fluid and magnetohydrodynamics, which are based
+on averaging the &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Vlasov_equation"&gt;Vlasov
+equation&lt;/a&gt; over all
+possible velocities. You could, in theory, use the Vlasov equation
+directly - but that’s a pretty darn high dimensional problem to be
+solving a PDE on (though something I most certainly want to try my hand
+at, one of these days!).&lt;/p&gt;
+&lt;p&gt;Suppose you want to take another approach. Maybe you like your
+Newtonian, old fashioned dynamical particle trajectory ODEs, you’ve
+dabbled in some N-body simulations, maybe you’ve done a bit of molecular
+dynamics. You could imagine putting a bunch of charged particles into a
+simulation, calculating forces between those directly and letting them
+evolve over time.&lt;/p&gt;
+&lt;p&gt;Unfortunately, there is a major flaw in that plan. You’ve got long range
+(Coulomb) &lt;span class="math"&gt;\(r^{-2}\)&lt;/span&gt; interactions between huge numbers of particles,
+so you cannot use the neat trick common in molecular dynamics of only
+including a few neighbor particles in your simulation. This means your
+simulation will scale as full &lt;span class="math"&gt;\(O(N^2)\)&lt;/span&gt; in the number of particles
+if you do that &lt;a class="reference external" href="https://journals.aps.org/pre/abstract/10.1103/PhysRevE.98.033307"&gt;(though there have been attempts at doing that
+recently)&lt;/a&gt;.
+I guess you could also try &lt;a class="reference external" href="https://www.sciencedirect.com/science/article/pii/0010465594902275"&gt;a Barnes-Hut treecode of some sort, and that
+also appears to have been
+done&lt;/a&gt;
+- that doesn’t seem like it’s caught on, though, whatever the reason.&lt;/p&gt;
+&lt;p&gt;We’ve now set the stage and can move on to the main attraction…&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="the-particle-in-cell-method"&gt;
+&lt;h2&gt;The particle in cell method&lt;/h2&gt;
+&lt;p&gt;The logic for a PIC is as follows, starting from the simple molecular
+dynamics or N-body framework:&lt;/p&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;&lt;p&gt;If we were to know the force on each particle for every time step, we
+could &lt;strong&gt;push&lt;/strong&gt; them - update their velocities and positions as usual,
+in &lt;span class="math"&gt;\(O(N)\)&lt;/span&gt; steps. Each particle is assumed independent of
+others.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;It’s hard to calculate the forces directly in &lt;span class="math"&gt;\(O(N^2)\)&lt;/span&gt; steps.
+On the other hand, It’s relatively easier to solve a PDE for the
+electromagnetic field given a charge and current distribution. The
+particles we’re moving are charged, so we can do the following
+translation:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;Particle positions &lt;span class="math"&gt;\(\implies\)&lt;/span&gt; charge distribution&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Particle positions and velocities &lt;span class="math"&gt;\(\implies\)&lt;/span&gt; current
+distribution&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This means we could &lt;strong&gt;deposit&lt;/strong&gt; the particles onto a grid or mesh by
+some kind of interpolation. We can also set the grid size so that
+many particles go into a single grid cell: this implies that the
+number of grid cells is much lower than our particle count. That, in
+turn, fits our assumptions for plasmas &lt;a class="footnote-reference brackets" href="https://stanczakdominik.github.io/posts/particle-in-cell-methods/#id2" id="id1"&gt;1&lt;/a&gt;. A picture is worth a
+thousand words, so here’s a very basic example of a particle’s charge
+with a linear (triangular, and thus, centered on the middle)
+distribution being split between three cells.&lt;/p&gt;
+&lt;center&gt;
+&lt;img src="https://stanczakdominik.github.io/images/charge-deposition.svg" height="420" alt="Example of charge deposition"&gt;
+&lt;/center&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Once we have the charge and current distribution on our grid, we can
+use those quantities to &lt;strong&gt;solve&lt;/strong&gt; Maxwell’s equations for the
+electromagnetic field. You could, for example, use a spectral method
+or a relaxation algorithm, like conjugate gradients.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Once we know the fields at the grid cell locations, we can &lt;strong&gt;gather&lt;/strong&gt;
+the field from those to the particle locations. Remember step 1,
+where we wished for forces - readily available given fields - at
+particle locations? Well, here we go, wish granted!&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code class="docutils literal"&gt;goto 1&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;And that’s it, the particle-in-cell method in a nutshell. Of course,
+logically it makes more sense to start from 2. (as you would usually
+start your simulation with a set of initial conditions for the particle
+positions, velocities and maybe external fields), but to me it’s cleaner
+narratively to think of the algorithm in this order.&lt;/p&gt;
+&lt;section id="the-advantages"&gt;
+&lt;h3&gt;The advantages&lt;/h3&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;It’s close to fundamental physics and thus understandable! You get a
+full picture of what each of the particles does, how the fields
+behave, while making very few assumptions.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;It’s lightning fast! The &lt;span class="math"&gt;\(O(N^2)\)&lt;/span&gt; force calculation is reduced
+to the complexity of your three replacement steps. While you can
+expect deposition and gathering to be roughly &lt;span class="math"&gt;\(O(Nm)\)&lt;/span&gt;
+(&lt;span class="math"&gt;\(m\)&lt;/span&gt; being the number of cells), &lt;span class="math"&gt;\(N\)&lt;/span&gt; is much larger than
+&lt;span class="math"&gt;\(m\)&lt;/span&gt;, and the field solver is going to scale independently of
+&lt;span class="math"&gt;\(N\)&lt;/span&gt; - so that’s still a massive gain over direct summation.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;It’s easy to parallelize! Each particle is essentially independent
+for the pushing step (as they only interact with each other via
+fields), so those movements are trivially parallel. Grid operations
+can also be done in parallel (though admittedly I haven’t looked into
+that much, yet - I fully intend to do so).&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;And of course, no description of a simulation method is complete
+without…&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="the-disadvantages"&gt;
+&lt;h3&gt;The disadvantages&lt;/h3&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;The method is mostly explicit, so that limits your time step and grid
+size quite a lot. Otherwise, you get spurious instabilities.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Statistical noise makes life a pain when you’re working on PIC
+simulations, precisely because you’re modeling your large numbers of
+real particles with fewer virtual discrete ones. The trick seems to
+be increasing the particle numbers, but &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Particle-in-cell#Technical_aspects"&gt;Wikipedia
+claims&lt;/a&gt;
+that this source of error is more figured out for traditional grid
+methods. In a way, this also means PICs are a prime target for GPUs,
+as exhibited by
+&lt;a class="reference external" href="https://picongpu.readthedocs.io/en/0.4.3/index.html"&gt;PIConGPU&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Still, PICs are used in many awesome applications, such as plasma
+turbulence research, and their parallelizability means they’re only
+going to get more important in the coming exascale computing era.&lt;/p&gt;
+&lt;p&gt;I’ll be writing a few follow-up posts going over particular aspects of
+PIC codes - tricks I’ve picked up along the way, etc. Stay tuned!&lt;/p&gt;
+&lt;section id="references"&gt;
+&lt;h4&gt;References&lt;/h4&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://www.youtube.com/watch?v=Gj9mwAww3TM"&gt;Relativistic kinetic turbulence
+video&lt;/a&gt; by Joonas
+Nättilä, using the &lt;a class="reference external" href="https://github.com/natj/plasmabox"&gt;plasmabox
+code&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/StanczakDominik/PythonPIC"&gt;PythonPIC&lt;/a&gt;, my
+less-than-amazing engineering thesis code.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.comnatj/plasmabox"&gt;Vlasov Equation - Wikipedia&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://journals.aps.org/pre/abstract/10.1103/PhysRevE.98.033307"&gt;Plasma simulation via molecular dynamics
+example&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://www.sciencedirect.com/science/article/pii/0010465594902275"&gt;Barnes-Hut plasma simulation
+example&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://en.wikipedia.org/wiki/Particle-in-cell"&gt;Particle in Cell applications -
+Wikipedia&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://www.particleincell.com/2016/cuda-pic/"&gt;GPU PIC&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://picongpu.readthedocs.io/en/0.4.3/index.html"&gt;PIConGPU&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;dl class="footnote brackets"&gt;
+&lt;dt class="label" id="id2"&gt;&lt;span class="brackets"&gt;&lt;a class="fn-backref" href="https://stanczakdominik.github.io/posts/particle-in-cell-methods/#id1"&gt;1&lt;/a&gt;&lt;/span&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;p&gt;If you want to learn more about those, I don’t feel like I can give
+this subject justice better than chapter 1-1 of Birdsall and
+Langdon’s seminal &lt;em&gt;Plasma Physics via Computer Simulation&lt;/em&gt; text.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;/section&gt;&lt;/div&gt;</description><category>particle-in-cell</category><category>pic</category><category>plasma</category><guid>https://stanczakdominik.github.io/posts/particle-in-cell-methods/</guid><pubDate>Tue, 19 Mar 2019 09:00:00 GMT</pubDate></item></channel></rss>

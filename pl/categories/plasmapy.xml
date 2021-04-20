@@ -3,15 +3,142 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="/images/creativecommons.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Mon, 19 Apr 2021 10:33:34 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>PlasmaPy v0.6.0 release!</title><link>https://stanczakdominik.github.io/pl/posts/plasmapy-v060-release/</link><dc:creator>Dominik Stańczak</dc:creator><description>&lt;div&gt;&lt;blockquote&gt;
+src="/images/creativecommons.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Tue, 20 Apr 2021 06:08:11 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>PlasmaPy v0.6.0 release!</title><link>https://stanczakdominik.github.io/pl/posts/plasmapy-v060-release/</link><dc:creator>Dominik Stańczak</dc:creator><description>&lt;div&gt;&lt;blockquote&gt;
 &lt;p&gt;&lt;em&gt;I'll take the opportunity to cross-post this one from the PlasmaPy website; I'm pretty happy about how this went.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2&gt;PlasmaPy 0.6.0&lt;/h2&gt;
 &lt;p&gt;We're really happy to announce that we've just released &lt;a href="https://docs.plasmapy.org/en/stable/whatsnew/0.6.0.html"&gt;PlasmaPy version
 0.6.0&lt;/a&gt;! &lt;/p&gt;
-&lt;p&gt;&lt;a href="https://stanczakdominik.github.io/pl/posts/plasmapy-v060-release/" class="btn btn-outline-secondary"&gt;Czytaj więcej…&lt;/a&gt; (zostało 2 minut czytania)&lt;/p&gt;&lt;/div&gt;</description><guid>https://stanczakdominik.github.io/pl/posts/plasmapy-v060-release/</guid><pubDate>Sat, 20 Mar 2021 11:00:00 GMT</pubDate></item><item><title>Simple Binder usage with Sphinx-Gallery through Jupytext</title><link>https://stanczakdominik.github.io/pl/posts/simple-binder-usage-with-sphinx-gallery-through-jupytext/</link><dc:creator>Dominik Stańczak</dc:creator><description>&lt;div&gt;&lt;p&gt;It's been a busy week for &lt;a class="reference external" href="https://github.com/PlasmaPy/PlasmaPy/"&gt;PlasmaPy&lt;/a&gt;. I recently found out about Binder support in &lt;a class="reference external" href="https://sphinx-gallery.github.io/"&gt;sphinx-gallery&lt;/a&gt;. The latter is a package that we use to
+&lt;!-- TEASER_END --&gt;
+
+&lt;p&gt;We'd like to thank the wonderful people who have contributed to this release:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Anthony Vo&lt;/li&gt;
+&lt;li&gt;Dhawal Modi *&lt;/li&gt;
+&lt;li&gt;Dominik Stańczak&lt;/li&gt;
+&lt;li&gt;Drozdov David *&lt;/li&gt;
+&lt;li&gt;Erik Everson&lt;/li&gt;
+&lt;li&gt;Kevin Montes *&lt;/li&gt;
+&lt;li&gt;Nick Murphy&lt;/li&gt;
+&lt;li&gt;Peter Heuer&lt;/li&gt;
+&lt;li&gt;Ramiz Qudsi&lt;/li&gt;
+&lt;li&gt;Tiger Du&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Where a * indicates their first contribution to PlasmaPy.&lt;/p&gt;
+&lt;p&gt;Note also that &lt;strong&gt;this release drops Python 3.6 support&lt;/strong&gt;; we now
+require Python 3.7, following NumPy's &lt;a href="https://numpy.org/neps/nep-0029-deprecation_policy.html"&gt;NEP
+29&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;The cool new features&lt;/h2&gt;
+&lt;p&gt;Note: these are my (Dominik's) personal highlights. There's more, but these make the
+prettiest plots right now.&lt;/p&gt;
+&lt;h3&gt;Two-fluid dispersion relations&lt;/h3&gt;
+&lt;p&gt;&lt;/p&gt;&lt;center&gt;
+&lt;a href="https://docs.plasmapy.org/en/stable/notebooks/dispersion/two_fluid_dispersion.html"&gt;&lt;img alt="Dispersion relations for two fluid systems" src="https://docs.plasmapy.org/en/stable/_images/notebooks_dispersion_two_fluid_dispersion_18_1.png"&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;p&gt;In &lt;a href="https://github.com/plasmapy/plasmapy/pull/932"&gt;PR #932&lt;/a&gt; Ramiz Qudsi
+implemented P. M. Bellan's 2012 full two-fluid dispersion relation for any
+electron-ion system. Take a look at &lt;a href="https://docs.plasmapy.org/en/stable/notebooks/dispersion/two_fluid_dispersion.html"&gt;the notebook introducing
+that&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Proton radiography&lt;/h3&gt;
+&lt;p&gt;&lt;/p&gt;&lt;center&gt;
+&lt;a href="https://docs.plasmapy.org/en/stable/notebooks/diagnostics/proton_radiography_particle_tracing.html"&gt;&lt;img alt="Proton radiograph" src="https://docs.plasmapy.org/en/stable/_images/notebooks_diagnostics_proton_radiography_particle_tracing_14_0.png"&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;p&gt;Peter Heuer designed and implemented a framework for synthetic proton
+radiography. This is a multi-PR tour de force that simulates particles moving
+through EM fields and hitting a detector plane, generating histograms such as
+the above. I'd point you to the notebook on that, but &lt;a href="https://docs.plasmapy.org/en/stable/examples.html#analyses-diagnostics"&gt;there's three right
+now&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Analysis &amp;amp; Diagnostic framework; Langmuir probes&lt;/h3&gt;
+&lt;p&gt;&lt;/p&gt;&lt;center&gt;
+&lt;a href="https://docs.plasmapy.org/en/stable/notebooks/analysis/swept_langmuir/find_floating_potential.html"&gt;&lt;img alt="Langmuir probe sweep" src="https://docs.plasmapy.org/en/stable/_images/notebooks_analysis_swept_langmuir_find_floating_potential_21_0.png"&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;p&gt;Erik Everson is spearheading work on our &lt;a href="https://docs.plasmapy.org/en/stable/ad/index.html"&gt;analysis &amp;amp; diagnostic
+framework&lt;/a&gt;.  As the
+first example, we've got a new and improved set of &lt;a href="https://docs.plasmapy.org/en/stable/ad/index.html"&gt;tools for swept Langmuir
+analysis&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;What's next?&lt;/h2&gt;
+&lt;p&gt;For this year, we're planning to have a roughly 3-month cadence for releases. Thus,
+the next release is anticipated around mid June.&lt;/p&gt;
+&lt;p&gt;It should contain a refactored particle tracker, support for neoclassical
+transport coefficient calculations for axisymmetric devices along with our
+first forays into tools for fusion.&lt;/p&gt;
+&lt;p&gt;One final note: we're discussing transitioning to some form of &lt;a href="https://calver.org/"&gt;Calendar
+Versioning&lt;/a&gt;. If you have thoughts on that, we'd be happy
+to hear them!  Come join the discussion on &lt;a href="https://app.element.io/#/room/#plasmapy:openastronomy.org"&gt;our Matrix
+chatroom&lt;/a&gt;.&lt;/p&gt;&lt;/div&gt;</description><guid>https://stanczakdominik.github.io/pl/posts/plasmapy-v060-release/</guid><pubDate>Sat, 20 Mar 2021 11:00:00 GMT</pubDate></item><item><title>Simple Binder usage with Sphinx-Gallery through Jupytext</title><link>https://stanczakdominik.github.io/pl/posts/simple-binder-usage-with-sphinx-gallery-through-jupytext/</link><dc:creator>Dominik Stańczak</dc:creator><description>&lt;div&gt;&lt;p&gt;It's been a busy week for &lt;a class="reference external" href="https://github.com/PlasmaPy/PlasmaPy/"&gt;PlasmaPy&lt;/a&gt;. I recently found out about Binder support in &lt;a class="reference external" href="https://sphinx-gallery.github.io/"&gt;sphinx-gallery&lt;/a&gt;. The latter is a package that we use to
 turn python scripts with comments into Sphinx pages and Jupyter Notebooks. I figured adding that could be a nice fit for &lt;a class="reference external" href="http://docs.plasmapy.org/en/stable/auto_examples/index.html"&gt;our existing example gallery&lt;/a&gt; .&lt;/p&gt;
 &lt;p&gt;However, I quickly realized that the system in place is a bit unwieldy. Binder takes a link to an existing GitHub repository and executes &lt;code class="docutils literal"&gt;.ipynb&lt;/code&gt; notebooks located there online. However, with sphinx-gallery, we don't have those notebooks in the repository - we have &lt;code class="docutils literal"&gt;.py&lt;/code&gt; files with comments. &lt;a class="reference external" href="https://sphinx-gallery.github.io/configuration.html#binder-links"&gt;The currently recommended way of setting this up with sphinx-gallery&lt;/a&gt; is keeping your built documentation in &lt;a class="reference external" href="https://github.com/sphinx-gallery/sphinx-gallery.github.io"&gt;another repository&lt;/a&gt; and hosting it via something along the lines of GitHub Pages rather than &lt;a class="reference external" href="https://readthedocs.org/"&gt;ReadTheDocs&lt;/a&gt;, which we are currently using.&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://github.com/sphinx-gallery/sphinx-gallery/pull/505/files"&gt;I added the results of this investigation to sphinx-gallery's docs&lt;/a&gt;, but I didn't want to switch away from RTD, so I figured I'd go ahead and find another way. I think I've got something that works well enough now!&lt;/p&gt;
 &lt;p&gt;Trigger warning: later on during this post, there may be monkeypatching of sphinx_gallery internals. Beware.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://stanczakdominik.github.io/pl/posts/simple-binder-usage-with-sphinx-gallery-through-jupytext/" class="btn btn-outline-secondary"&gt;Czytaj więcej…&lt;/a&gt; (zostało 3 minut czytania)&lt;/p&gt;&lt;/div&gt;</description><guid>https://stanczakdominik.github.io/pl/posts/simple-binder-usage-with-sphinx-gallery-through-jupytext/</guid><pubDate>Sat, 06 Jul 2019 14:00:00 GMT</pubDate></item></channel></rss>
+&lt;!-- TEASER_END --&gt;
+&lt;section id="using-jupytext"&gt;
+&lt;h2&gt;Using Jupytext&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/mwouts/jupytext/"&gt;The Jupytext project&lt;/a&gt; is kind of like &lt;a class="reference external" href="https://github.com/jupyter/nbconvert"&gt;nbconvert&lt;/a&gt;, but two-way. It lets you turn notebooks into scripts and vice versa. The interesting thing is that, &lt;a class="reference external" href="https://jupytext.readthedocs.io/en/latest/formats.html#sphinx-gallery-scripts"&gt;as per Jupytext's documentation&lt;/a&gt;, it is possible to let Binder's jupyter instance parse sphinx-gallery style &lt;code class="docutils literal"&gt;.py&lt;/code&gt; files as jupyter notebooks. This was done in &lt;a class="reference external" href="https://github.com/PlasmaPy/PlasmaPy/pull/656/files"&gt;PlasmaPy#656&lt;/a&gt; . First, let's instruct the in-binder Jupyter instance to parse &lt;code class="docutils literal"&gt;.py&lt;/code&gt; files in &lt;code class="docutils literal"&gt;.jupyter/jupyter_notebook_config.py&lt;/code&gt; via blatant copy-paste:&lt;/p&gt;
+&lt;pre class="code python"&gt;&lt;a name="rest_code_384feef2065d4d62bfdf08af86fe4985-1"&gt;&lt;/a&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;NotebookApp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;contents_manager_class&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"jupytext.TextFileContentsManager"&lt;/span&gt;
+&lt;a name="rest_code_384feef2065d4d62bfdf08af86fe4985-2"&gt;&lt;/a&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ContentsManager&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;preferred_jupytext_formats_read&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"py:sphinx"&lt;/span&gt;
+&lt;a name="rest_code_384feef2065d4d62bfdf08af86fe4985-3"&gt;&lt;/a&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ContentsManager&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sphinx_convert_rst2md&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;True&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;And then let's also add a &lt;code class="docutils literal"&gt;binder/requirements.txt&lt;/code&gt; file that lets Binder know what Python packages to download while building the repository's image. The version I had there was pretty shoddy, as CI/&lt;code class="docutils literal"&gt;setup.py&lt;/code&gt;/packaging errors surfaced while I was tinkering with this. Long story short, something like this should do:&lt;/p&gt;
+&lt;pre class="code text"&gt;&lt;a name="rest_code_cccf18d35b2040058dbd446d719586fa-1"&gt;&lt;/a&gt;-r ../requirements/automated-documentation-tests.txt
+&lt;a name="rest_code_cccf18d35b2040058dbd446d719586fa-2"&gt;&lt;/a&gt;jupytext
+&lt;a name="rest_code_cccf18d35b2040058dbd446d719586fa-3"&gt;&lt;/a&gt;.
+&lt;/pre&gt;&lt;p&gt;Where, in didactic order:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;code class="docutils literal"&gt;jupytext&lt;/code&gt; should be pretty self-explanatory,&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code class="docutils literal"&gt;.&lt;/code&gt; is the repository's package itself (here, PlasmaPy), as accessed by &lt;code class="docutils literal"&gt;setup.py&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;-r&lt;/span&gt; &lt;span class="pre"&gt;../requirements/automated-documentation-tests.txt&lt;/span&gt;&lt;/code&gt; reads a pip requirements file specifying our documentation requirements. I think with a proper &lt;code class="docutils literal"&gt;extras_require&lt;/code&gt; specified in &lt;code class="docutils literal"&gt;setup.py&lt;/code&gt;, these two lines could be collapsed simply into &lt;code class="docutils literal"&gt;.[dev]&lt;/code&gt; or some such. Note that &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;-r&lt;/span&gt;&lt;/code&gt; takes a path relative to the file, thus the &lt;code class="docutils literal"&gt;../&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;At this point all this really is is implementing what's mentioned in Jupytext's docs. The result is as follows:&lt;/p&gt;
+&lt;a class="reference external image-reference" href="https://mybinder.org/v2/gh/PlasmaPy/PlasmaPy/master?filepath=plasmapy%2Fexamples"&gt;&lt;img alt="https://mybinder.org/badge_logo.svg" class="align-center" src="https://mybinder.org/badge_logo.svg"&gt;&lt;/a&gt;
+&lt;p&gt;But you might notice an inconsistency in the Sphinx-rendered gallery itself: even if we were to &lt;a class="reference external" href="https://sphinx-gallery.github.io/configuration.html#binder-links"&gt;configure docs to display Binder links&lt;/a&gt; they will point to a path as imagined by the current implementation in Sphinx-Gallery, such as:&lt;/p&gt;
+&lt;pre class="code text"&gt;&lt;a name="rest_code_0c395d9c60114d9793ca460286c19b70-1"&gt;&lt;/a&gt;https://gke.mybinder.org/v2/gh/PlasmaPy/PlasmaPy/master?filepath=plasmapy/examples/auto_examples/plot_physics.ipynb
+&lt;/pre&gt;&lt;p&gt;Note the spurious &lt;code class="docutils literal"&gt;auto_examples&lt;/code&gt; directory supposedly including an &lt;code class="docutils literal"&gt;.ipynb&lt;/code&gt; file. This obviously doesn't work for our use case, so we'd like to be able to change the generated links somehow...&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="monkeypatching"&gt;
+&lt;h2&gt;Monkeypatching&lt;/h2&gt;
+&lt;p&gt;This (or rather, &lt;a class="reference external" href="https://github.com/PlasmaPy/PlasmaPy/pull/658/files"&gt;PlasmaPy#658&lt;/a&gt; ) is where it gets dirty. The solution developed in cooperation with Stuart Mumford (of SunPy fame, who contributed the idea which I implemented) is monkeypatching sphinx-gallery's link generation code. It's simple, yet effective.&lt;/p&gt;
+&lt;p&gt;Let's use this config for &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;sphinx-gallery&lt;/span&gt;&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class="code python"&gt;&lt;a name="rest_code_a82be32fd7c946af92ecc0dc14385cb0-1"&gt;&lt;/a&gt;&lt;span class="n"&gt;sphinx_gallery_conf&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;a name="rest_code_a82be32fd7c946af92ecc0dc14385cb0-2"&gt;&lt;/a&gt;        &lt;span class="c1"&gt;# path to your examples scripts&lt;/span&gt;
+&lt;a name="rest_code_a82be32fd7c946af92ecc0dc14385cb0-3"&gt;&lt;/a&gt;        &lt;span class="s1"&gt;'examples_dirs'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'../plasmapy/examples'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_a82be32fd7c946af92ecc0dc14385cb0-4"&gt;&lt;/a&gt;        &lt;span class="c1"&gt;# path where to save gallery generated examples&lt;/span&gt;
+&lt;a name="rest_code_a82be32fd7c946af92ecc0dc14385cb0-5"&gt;&lt;/a&gt;        &lt;span class="s1"&gt;'backreferences_dir'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'gen_modules/backreferences'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_a82be32fd7c946af92ecc0dc14385cb0-6"&gt;&lt;/a&gt;        &lt;span class="s1"&gt;'gallery_dirs'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'auto_examples'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_a82be32fd7c946af92ecc0dc14385cb0-7"&gt;&lt;/a&gt;        &lt;span class="s1"&gt;'binder'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;a name="rest_code_a82be32fd7c946af92ecc0dc14385cb0-8"&gt;&lt;/a&gt;                &lt;span class="s1"&gt;'org'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'PlasmaPy'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_a82be32fd7c946af92ecc0dc14385cb0-9"&gt;&lt;/a&gt;                &lt;span class="s1"&gt;'repo'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'PlasmaPy'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_a82be32fd7c946af92ecc0dc14385cb0-10"&gt;&lt;/a&gt;                &lt;span class="s1"&gt;'branch'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'master'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_a82be32fd7c946af92ecc0dc14385cb0-11"&gt;&lt;/a&gt;                &lt;span class="s1"&gt;'binderhub_url'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'https://mybinder.org'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_a82be32fd7c946af92ecc0dc14385cb0-12"&gt;&lt;/a&gt;                &lt;span class="s1"&gt;'dependencies'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'../binder/requirements.txt'&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+&lt;a name="rest_code_a82be32fd7c946af92ecc0dc14385cb0-13"&gt;&lt;/a&gt;                &lt;span class="s1"&gt;'notebooks_dir'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'plasmapy/examples'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_a82be32fd7c946af92ecc0dc14385cb0-14"&gt;&lt;/a&gt;        &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;a name="rest_code_a82be32fd7c946af92ecc0dc14385cb0-15"&gt;&lt;/a&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;and add this fragment of &lt;code class="docutils literal"&gt;sphinx_gallery.binder&lt;/code&gt; code with a modification into Sphinx's &lt;code class="docutils literal"&gt;conf.py&lt;/code&gt; file:&lt;/p&gt;
+&lt;pre class="code python"&gt;&lt;a name="rest_code_892f11379eff4a90ac3ce58be571b8ce-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# Patch sphinx_gallery.binder.gen_binder_rst so as to point to .py file in repository&lt;/span&gt;
+&lt;a name="rest_code_892f11379eff4a90ac3ce58be571b8ce-2"&gt;&lt;/a&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sphinx_gallery.binder&lt;/span&gt;
+&lt;a name="rest_code_892f11379eff4a90ac3ce58be571b8ce-3"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;patched_gen_binder_rst&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fpath&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;binder_conf&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;gallery_conf&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_892f11379eff4a90ac3ce58be571b8ce-4"&gt;&lt;/a&gt;    &lt;span class="sd"&gt;"""Generate the RST + link for the Binder badge.&lt;/span&gt;
+&lt;a name="rest_code_892f11379eff4a90ac3ce58be571b8ce-5"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    ...&lt;/span&gt;
+&lt;a name="rest_code_892f11379eff4a90ac3ce58be571b8ce-6"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    """&lt;/span&gt;
+&lt;a name="rest_code_892f11379eff4a90ac3ce58be571b8ce-7"&gt;&lt;/a&gt;    &lt;span class="n"&gt;binder_conf&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sphinx_gallery&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;binder&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;check_binder_conf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;binder_conf&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_892f11379eff4a90ac3ce58be571b8ce-8"&gt;&lt;/a&gt;    &lt;span class="n"&gt;binder_url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sphinx_gallery&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;binder&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gen_binder_url&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fpath&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;binder_conf&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;gallery_conf&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_892f11379eff4a90ac3ce58be571b8ce-9"&gt;&lt;/a&gt;
+&lt;a name="rest_code_892f11379eff4a90ac3ce58be571b8ce-10"&gt;&lt;/a&gt;    &lt;span class="c1"&gt;# I added the line below:&lt;/span&gt;
+&lt;a name="rest_code_892f11379eff4a90ac3ce58be571b8ce-11"&gt;&lt;/a&gt;    &lt;span class="n"&gt;binder_url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;binder_url&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;gallery_conf&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'gallery_dirs'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sep&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;""&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"ipynb"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"py"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_892f11379eff4a90ac3ce58be571b8ce-12"&gt;&lt;/a&gt;
+&lt;a name="rest_code_892f11379eff4a90ac3ce58be571b8ce-13"&gt;&lt;/a&gt;    &lt;span class="n"&gt;rst&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+&lt;a name="rest_code_892f11379eff4a90ac3ce58be571b8ce-14"&gt;&lt;/a&gt;            &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+&lt;a name="rest_code_892f11379eff4a90ac3ce58be571b8ce-15"&gt;&lt;/a&gt;            &lt;span class="s2"&gt;"  .. container:: binder-badge&lt;/span&gt;&lt;span class="se"&gt;\n\n&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+&lt;a name="rest_code_892f11379eff4a90ac3ce58be571b8ce-16"&gt;&lt;/a&gt;            &lt;span class="s2"&gt;"    .. image:: https://mybinder.org/badge_logo.svg&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+&lt;a name="rest_code_892f11379eff4a90ac3ce58be571b8ce-17"&gt;&lt;/a&gt;            &lt;span class="s2"&gt;"      :target: &lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+&lt;a name="rest_code_892f11379eff4a90ac3ce58be571b8ce-18"&gt;&lt;/a&gt;            &lt;span class="s2"&gt;"      :width: 150 px&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;binder_url&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_892f11379eff4a90ac3ce58be571b8ce-19"&gt;&lt;/a&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;rst&lt;/span&gt;
+&lt;a name="rest_code_892f11379eff4a90ac3ce58be571b8ce-20"&gt;&lt;/a&gt;
+&lt;a name="rest_code_892f11379eff4a90ac3ce58be571b8ce-21"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# And then we finish our monkeypatching misdeed by redirecting sphinx-gallery to use our function:&lt;/span&gt;
+&lt;a name="rest_code_892f11379eff4a90ac3ce58be571b8ce-22"&gt;&lt;/a&gt;&lt;span class="n"&gt;sphinx_gallery&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;binder&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gen_binder_rst&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;patched_gen_binder_rst&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;The current gallery is located &lt;a class="reference external" href="http://docs.plasmapy.org/en/latest/auto_examples/index.html"&gt;here&lt;/a&gt;, and an example link is &lt;a class="reference external" href="https://mybinder.org/v2/gh/PlasmaPy/PlasmaPy/master?filepath=plasmapy/examples/particle_stepper.py"&gt;https://mybinder.org/v2/gh/PlasmaPy/PlasmaPy/master?filepath=plasmapy/examples/particle_stepper.py&lt;/a&gt; - and you should instantly see it points to the right spot!&lt;/p&gt;
+&lt;p&gt;Obviously, it would be better to implement such link customization in sphinx-gallery itself somehow, but it's up to their maintainers to decide whether this kind of combo usage with Jupytext is in scope for their project. For now, the monkeypatch solution works decently. I'll try to update this post if that comes about.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="update-requirements"&gt;
+&lt;h2&gt;Update - requirements&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/PlasmaPy/PlasmaPy/pull/689"&gt;@jdkent on GitHub&lt;/a&gt; suggests that if the above doesn't work for you, you should make sure the Sphinx version you're using is 2 or newer.&lt;/p&gt;
+&lt;/section&gt;&lt;/div&gt;</description><guid>https://stanczakdominik.github.io/pl/posts/simple-binder-usage-with-sphinx-gallery-through-jupytext/</guid><pubDate>Sat, 06 Jul 2019 14:00:00 GMT</pubDate></item></channel></rss>
