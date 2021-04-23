@@ -1151,31 +1151,11 @@ MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.c
 # <!-- End of social buttons -->
 # """
 
-# Show link to source for the posts?
-# SHOW_SOURCELINK = True
-# Copy the source files for your pages?
-# Setting it to False implies SHOW_SOURCELINK = False
-# COPY_SOURCES = True
-
 # Modify the number of Post per Index Page
 # Defaults to 10
 # INDEX_DISPLAY_POST_COUNT = 10
 
-# By default, Nikola generates RSS files for the website and for tags, and
-# links to it.  Set this to False to disable everything RSS-related.
-# GENERATE_RSS = True
-
-# By default, Nikola does not generates Atom files for indexes and links to
-# them. Generate Atom for tags by setting TAG_PAGES_ARE_INDEXES to True.
-# Atom feeds are built based on INDEX_DISPLAY_POST_COUNT and not FEED_LENGTH
-# Switch between plain-text summaries and full HTML content using the
-# FEED_TEASER option. FEED_LINKS_APPEND_QUERY is also respected. Atom feeds
-# are generated even for old indexes and have pagination link relations
-# between each other. Old Atom feeds with no changes are marked as archived.
-# GENERATE_ATOM = False
-
-# Only include teasers in Atom and RSS feeds. Disabling include the full
-# content. Defaults to True.
+# Include the full content in RSS feeds.
 FEED_TEASERS = False
 
 # Strip HTML from Atom and RSS feed summaries and content. Defaults to False.
@@ -1184,37 +1164,6 @@ FEED_TEASERS = False
 # Number of posts in Atom and RSS feeds.
 FEED_LENGTH = 50
 
-# RSS_LINK is a HTML fragment to link the RSS or Atom feeds. If set to None,
-# the base.tmpl will use the feed Nikola generates. However, you may want to
-# change it for a FeedBurner feed or something else.
-# RSS_LINK = None
-
-# A search form to search this site, for the sidebar. You can use a Google
-# custom search (https://www.google.com/cse/)
-# Or a DuckDuckGo search: https://duckduckgo.com/search_box.html
-# Default is no search form.
-# (translatable)
-# SEARCH_FORM = ""
-#
-# This search form works for any site and looks good in the "site" theme where
-# it appears on the navigation bar:
-#
-# SEARCH_FORM = """
-# <!-- DuckDuckGo custom search -->
-# <form method="get" id="search" action="https://duckduckgo.com/"
-#  class="navbar-form pull-left">
-# <input type="hidden" name="sites" value="%s">
-# <input type="hidden" name="k8" value="#444444">
-# <input type="hidden" name="k9" value="#D51920">
-# <input type="hidden" name="kt" value="h">
-# <input type="text" name="q" maxlength="255"
-#  placeholder="Search&hellip;" class="span2" style="margin-top: 4px;">
-# <input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
-# </form>
-# <!-- End of custom search -->
-# """ % SITE_URL
-#
-# If you prefer a Google search form, here's an example that should just work:
 SEARCH_FORM = """
 <form class="navbar-form navbar-left" action="/search/" role="search">
     <div class="form-group">
@@ -1249,25 +1198,6 @@ EXTRA_HEAD_DATA = r"""
 # (translatable)
 # BODY_END = ""
 
-# The possibility to extract metadata from the filename by using a
-# regular expression.
-# To make it work you need to name parts of your regular expression.
-# The following names will be used to extract metadata:
-# - title
-# - slug
-# - date
-# - tags
-# - link
-# - description
-#
-# An example re is the following:
-# '.*\/(?P<date>\d{4}-\d{2}-\d{2})-(?P<slug>.*)-(?P<title>.*)\.rst'
-# (Note the '.*\/' in the beginning -- matches source paths relative to conf.py)
-# FILE_METADATA_REGEXP = None
-
-# Should titles fetched from file metadata be unslugified (made prettier?)
-# FILE_METADATA_UNSLUGIFY_TITLES = True
-
 # If enabled, extract metadata from docinfo fields in reST documents.
 # If your text files start with a level 1 heading, it will be treated as the
 # document title and will be removed from the text.
@@ -1275,17 +1205,6 @@ EXTRA_HEAD_DATA = r"""
 
 # If enabled, hide docinfo fields in reST document output
 # HIDE_REST_DOCINFO = False
-
-# Map metadata from other formats to Nikola names.
-# Supported formats: yaml, toml, rest_docinfo, markdown_metadata
-# METADATA_MAPPING = {}
-#
-# Example for Pelican compatibility:
-# METADATA_MAPPING = {
-#     "rest_docinfo": {"summary": "description", "modified": "updated"},
-#     "markdown_metadata": {"summary": "description", "modified": "updated"}
-# }
-# Other examples: https://getnikola.com/handbook.html#mapping-metadata-from-other-formats
 
 # Map metadata between types/values. (Runs after METADATA_MAPPING.)
 # Supported formats: nikola, yaml, toml, rest_docinfo, markdown_metadata
@@ -1318,56 +1237,9 @@ EXTRA_HEAD_DATA = r"""
 #     # 'creator': '@username',     # Username for the content creator / author.
 # }
 
-# Bundle JS and CSS into single files to make site loading faster in a HTTP/1.1
-# environment but is not recommended for HTTP/2.0 when caching is used.
-# Defaults to True.
-# USE_BUNDLES = True
-
-# Plugins you don't want to use. Be careful :-)
-# DISABLED_PLUGINS = ["render_galleries"]
-
-# Special settings to disable only parts of the indexes plugin.
-# Use with care.
-# DISABLE_INDEXES = False
-# DISABLE_MAIN_ATOM_FEED = False
-# DISABLE_MAIN_RSS_FEED = False
-
-# Add the absolute paths to directories containing plugins to use them.
-# For example, the `plugins` directory of your clone of the Nikola plugins
-# repository.
-# EXTRA_PLUGINS_DIRS = []
-
-# Add the absolute paths to directories containing themes to use them.
-# For example, the `v7` directory of your clone of the Nikola themes
-# repository.
-# EXTRA_THEMES_DIRS = []
-
-# List of regular expressions, links matching them will always be considered
-# valid by "nikola check -l"
-# LINK_CHECK_WHITELIST = []
-
-# If set to True, enable optional hyphenation in your posts (requires pyphen)
-# Enabling hyphenation has been shown to break math support in some cases,
-# use with caution.
-# HYPHENATE = False
-
-# The <hN> tags in HTML generated by certain compilers (reST/Markdown)
-# will be demoted by that much (1 → h1 will become h2 and so on)
-# This was a hidden feature of the Markdown and reST compilers in the
-# past.  Useful especially if your post titles are in <h1> tags too, for
-# example.
-# (defaults to 1.)
-# DEMOTE_HEADERS = 1
-
-# If you don’t like slugified file names ([a-z0-9] and a literal dash),
-# and would prefer to use all the characters your file system allows.
-# USE WITH CARE!  This is also not guaranteed to be perfect, and may
-# sometimes crash Nikola, your web server, or eat your cat.
-# USE_SLUGIFY = True
-
 # If set to True, the tags 'draft', 'mathjax' and 'private' have special
 # meaning. If set to False, these tags are handled like regular tags.
-USE_TAG_METADATA = False
+USE_TAG_METADATA = True
 
 # If set to True, a warning is issued if one of the 'draft', 'mathjax'
 # and 'private' tags are found in a post. Useful for checking that
