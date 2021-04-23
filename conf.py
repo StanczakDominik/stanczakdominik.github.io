@@ -153,7 +153,6 @@ NAVIGATION_LINKS = {
             ),
             "Posts"
          ),
-        ("/rss.xml", '<img alt="RSS feed" height="24" width="24" style="border-width:0; margin-bottom:12px;" src="/images/rss.png">'),
     ),
     "pl": (
         (
@@ -171,7 +170,6 @@ NAVIGATION_LINKS = {
             ),
             "Posty",
         ),
-        ("/rss.xml", '<img alt="RSS feed" height="24" width="24" style="border-width:0; margin-bottom:12px;" src="/images/rss.png">'),
     ),
 }
 
@@ -179,7 +177,9 @@ NAVIGATION_LINKS = {
 # although themes may not always support them. (translatable)
 # (Bootstrap 4: right-side of navbar, Bootblog 4: right side of title)
 NAVIGATION_ALT_LINKS = {
-    DEFAULT_LANG: {}
+    DEFAULT_LANG: {
+        ("/rss.xml", '<img alt="RSS feed" height="24" width="24" style="border-width:0; margin-bottom:12px;" src="/images/rss.png">'),
+    }
 }
 
 # Name of the theme to use.
