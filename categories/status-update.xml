@@ -3,7 +3,37 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="/images/creativecommons.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Tue, 20 Apr 2021 06:08:10 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>I aten't dead</title><link>https://stanczakdominik.github.io/posts/i-atent-dead/</link><dc:creator>Dominik Stańczak</dc:creator><description>&lt;div&gt;&lt;p&gt;Here's a quick status update; I have been meaning to post these more often.&lt;/p&gt;
+src="/images/creativecommons.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sat, 01 May 2021 12:38:35 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The importance of good notation</title><link>https://stanczakdominik.github.io/posts/the-importance-of-good-notation/</link><dc:creator>Dominik Stańczak</dc:creator><description>&lt;div&gt;&lt;p&gt;I've just spent the last four weeks hunting for &lt;a href="https://stanczakdominik.github.io/posts/i-atent-dead"&gt;a bug in my thesis code that
+I've mentioned last time&lt;/a&gt;.  Since then, I've given up on
+the paper I'm reimplementing more times than I can count.  Well... Can you
+guess how that went?&lt;/p&gt;
+&lt;!-- TEASER_END --&gt;
+
+&lt;p&gt;It turns out I missed the fact that $S_{pT}^{ai}$ is very much not the same as
+$S_{pT\theta}^{ai}$, where the difference is conceptually a rescaling
+$S_{pT\theta}^{ai} \sim \mu S_{pT}^{ai}$, $\mu$ being a viscosity-like object.&lt;/p&gt;
+&lt;p&gt;So, that happened.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;I suspect I'm sort of writing this as a reminder to future!myself that hey,
+small details are crucial and deserve attention, unless you want to waste
+your own time.&lt;/p&gt;
+&lt;p&gt;At the same time, here's my plea to you - when writing, especially when writing
+scientific literature (which, like your code, is going to be read many more
+times than the one time you're writing it), pay attention to the notation
+you're using for your concepts. Think ahead of how it might contribute to the
+reader's understanding of what you're trying to communicate, or hinder it.&lt;/p&gt;
+&lt;p&gt;And maybe, just maybe, make use of the wide arsenal of typography you've
+got available and don't reuse symbols for concepts that are different even
+just by their dimensionality!&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;At the same time, I'm really happy to be past this. This bug was really
+gnawing at me.&lt;/p&gt;
+&lt;p&gt;Also, I think this is a great testament to the power of physical unit packages
+in scientific computing. I wasted 4 weeks on this, sure - but without
+&lt;a href="https://docs.astropy.org/en/stable/units/"&gt;&lt;code&gt;astropy.units&lt;/code&gt;&lt;/a&gt; notifying me that
+"your units are off, mate" on every test run, I have no idea how many weeks I
+would spend on it later on in the development process, with my results in
+disagreement with previous results!&lt;/p&gt;&lt;/div&gt;</description><category>masters thesis</category><category>status update</category><guid>https://stanczakdominik.github.io/posts/the-importance-of-good-notation/</guid><pubDate>Sat, 01 May 2021 12:35:00 GMT</pubDate></item><item><title>I aten't dead</title><link>https://stanczakdominik.github.io/posts/i-atent-dead/</link><dc:creator>Dominik Stańczak</dc:creator><description>&lt;div&gt;&lt;p&gt;Here's a quick status update; I have been meaning to post these more often.&lt;/p&gt;
 &lt;!-- TEASER_END --&gt;
 
 &lt;h2&gt;Thesis&lt;/h2&gt;

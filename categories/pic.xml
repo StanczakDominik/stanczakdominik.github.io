@@ -3,7 +3,7 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="/images/creativecommons.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Tue, 20 Apr 2021 06:08:27 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Particle in Cell methods</title><link>https://stanczakdominik.github.io/posts/particle-in-cell-methods/</link><dc:creator>Dominik Stańczak</dc:creator><description>&lt;div&gt;&lt;p&gt;I think it might finally be about time to do some plasma physics
+src="/images/creativecommons.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sat, 01 May 2021 12:38:36 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Particle in Cell methods</title><link>https://stanczakdominik.github.io/posts/particle-in-cell-methods/</link><dc:creator>Dominik Stańczak</dc:creator><description>&lt;div&gt;&lt;p&gt;I think it might finally be about time to do some plasma physics
 discussion on this blog, stay true to the name and so on…&lt;/p&gt;
 &lt;p&gt;Basically the only actual “scientific” work I have actually done with
 plasmas up until now is writing a PIC simulation, PIC standing for
