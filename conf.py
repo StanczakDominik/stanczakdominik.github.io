@@ -172,7 +172,7 @@ NAVIGATION_LINKS = {
 # Alternative navigation links. Works the same way NAVIGATION_LINKS does,
 # although themes may not always support them. (translatable)
 # (Bootstrap 4: right-side of navbar, Bootblog 4: right side of title)
-NAVIGATION_ALT_LINKS = (
+NAVIGATION_ALT_LINKS = {
     DEFAULT_LANG: (
         ("/rss.xml", '<img alt="RSS feed" height="24" width="24" style="border-width:0; margin-bottom:12px;" src="/images/rss.png">'),
     ),
