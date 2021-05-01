@@ -2,7 +2,7 @@
 .. title: The importance of good notation
 .. slug: the-importance-of-good-notation
 .. date: 2021-05-01 14:35:00 UTC+02:00
-.. tags: status update, masters thesis
+.. tags: status update, masters thesis, mathjax
 .. category: 
 .. link: 
 .. description: 

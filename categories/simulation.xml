@@ -3,7 +3,7 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="/images/creativecommons.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sat, 01 May 2021 12:38:34 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Better Numba calculation of inter-particle distance matrices</title><link>https://stanczakdominik.github.io/posts/distance-matrix-numba/</link><dc:creator>Dominik Stańczak</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="/images/creativecommons.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sat, 01 May 2021 12:42:33 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Better Numba calculation of inter-particle distance matrices</title><link>https://stanczakdominik.github.io/posts/distance-matrix-numba/</link><dc:creator>Dominik Stańczak</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Recently, I've been looking for efficient ways to compute a &lt;a href="https://en.wikipedia.org/wiki/Distance_matrix"&gt;distance matrix&lt;/a&gt; in Python. I'm deliberately trying to implement a naive n-body simulation so as to find optimized ways of calculating those, as practice. Let's do that using Numba.&lt;/p&gt;
@@ -2965,9 +2965,9 @@ $$C_v = \frac{dU}{dT} = \frac{\sigma_U^2}{k_B T^2} $$&lt;p&gt;Let's get to it!&l
 
  
  
-&lt;div id="ea77f139-f75a-4cdc-b91c-694ca624ea7f" class="output_subarea output_widget_view "&gt;
+&lt;div id="ecbd4b7c-6d73-4d4e-9fcb-00494be55cdf" class="output_subarea output_widget_view "&gt;
 &lt;script type="text/javascript"&gt;
-var element = $('#ea77f139-f75a-4cdc-b91c-694ca624ea7f');
+var element = $('#ecbd4b7c-6d73-4d4e-9fcb-00494be55cdf');
 &lt;/script&gt;
 &lt;script type="application/vnd.jupyter.widget-view+json"&gt;
 {"model_id": "a40e4bd596bc4732a23cd2f8c218b885", "version_major": 2, "version_minor": 0}
@@ -3150,9 +3150,9 @@ var element = $('#ea77f139-f75a-4cdc-b91c-694ca624ea7f');
 
  
  
-&lt;div id="ab2e64b6-5927-4ec6-bd8a-8b825b95e7a0" class="output_subarea output_widget_view "&gt;
+&lt;div id="56d87d7b-106a-4178-b7bf-a60ef3112f00" class="output_subarea output_widget_view "&gt;
 &lt;script type="text/javascript"&gt;
-var element = $('#ab2e64b6-5927-4ec6-bd8a-8b825b95e7a0');
+var element = $('#56d87d7b-106a-4178-b7bf-a60ef3112f00');
 &lt;/script&gt;
 &lt;script type="application/vnd.jupyter.widget-view+json"&gt;
 {"model_id": "62f734d7f5ea406ab12dd975c6568f37", "version_major": 2, "version_minor": 0}
@@ -3284,9 +3284,9 @@ var element = $('#ab2e64b6-5927-4ec6-bd8a-8b825b95e7a0');
 
  
  
-&lt;div id="524e77aa-53b7-434b-802f-5880d48006c5" class="output_subarea output_widget_view "&gt;
+&lt;div id="0545aea3-47fe-4f65-8bac-f554a7cc2931" class="output_subarea output_widget_view "&gt;
 &lt;script type="text/javascript"&gt;
-var element = $('#524e77aa-53b7-434b-802f-5880d48006c5');
+var element = $('#0545aea3-47fe-4f65-8bac-f554a7cc2931');
 &lt;/script&gt;
 &lt;script type="application/vnd.jupyter.widget-view+json"&gt;
 {"model_id": "8de3c70e6715462891034757c3d41704", "version_major": 2, "version_minor": 0}
@@ -3396,9 +3396,9 @@ var element = $('#524e77aa-53b7-434b-802f-5880d48006c5');
 
  
  
-&lt;div id="da8299e4-e0fa-4b24-8c33-f092a3650e4a" class="output_subarea output_widget_view "&gt;
+&lt;div id="5d18f518-640e-40aa-89ac-6ba8d49e9e56" class="output_subarea output_widget_view "&gt;
 &lt;script type="text/javascript"&gt;
-var element = $('#da8299e4-e0fa-4b24-8c33-f092a3650e4a');
+var element = $('#5d18f518-640e-40aa-89ac-6ba8d49e9e56');
 &lt;/script&gt;
 &lt;script type="application/vnd.jupyter.widget-view+json"&gt;
 {"model_id": "00f8dd2b103d491f8435d6fc91e22946", "version_major": 2, "version_minor": 0}
@@ -3508,9 +3508,9 @@ var element = $('#da8299e4-e0fa-4b24-8c33-f092a3650e4a');
 
  
  
-&lt;div id="e1a72099-939e-4a4a-8cb7-ebc0b0aca640" class="output_subarea output_widget_view "&gt;
+&lt;div id="023cd91b-fd22-4bb1-a3fd-2273176b728a" class="output_subarea output_widget_view "&gt;
 &lt;script type="text/javascript"&gt;
-var element = $('#e1a72099-939e-4a4a-8cb7-ebc0b0aca640');
+var element = $('#023cd91b-fd22-4bb1-a3fd-2273176b728a');
 &lt;/script&gt;
 &lt;script type="application/vnd.jupyter.widget-view+json"&gt;
 {"model_id": "2bc0a80235b84a2c9514885157417eae", "version_major": 2, "version_minor": 0}

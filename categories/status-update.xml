@@ -3,7 +3,7 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="/images/creativecommons.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sat, 01 May 2021 12:38:35 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The importance of good notation</title><link>https://stanczakdominik.github.io/posts/the-importance-of-good-notation/</link><dc:creator>Dominik Stańczak</dc:creator><description>&lt;div&gt;&lt;p&gt;I've just spent the last four weeks hunting for &lt;a href="https://stanczakdominik.github.io/posts/i-atent-dead"&gt;a bug in my thesis code that
+src="/images/creativecommons.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sat, 01 May 2021 12:42:38 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The importance of good notation</title><link>https://stanczakdominik.github.io/posts/the-importance-of-good-notation/</link><dc:creator>Dominik Stańczak</dc:creator><description>&lt;div&gt;&lt;p&gt;I've just spent the last four weeks hunting for &lt;a href="https://stanczakdominik.github.io/posts/i-atent-dead"&gt;a bug in my thesis code that
 I've mentioned last time&lt;/a&gt;.  Since then, I've given up on
 the paper I'm reimplementing more times than I can count.  Well... Can you
 guess how that went?&lt;/p&gt;
@@ -33,7 +33,7 @@ in scientific computing. I wasted 4 weeks on this, sure - but without
 &lt;a href="https://docs.astropy.org/en/stable/units/"&gt;&lt;code&gt;astropy.units&lt;/code&gt;&lt;/a&gt; notifying me that
 "your units are off, mate" on every test run, I have no idea how many weeks I
 would spend on it later on in the development process, with my results in
-disagreement with previous results!&lt;/p&gt;&lt;/div&gt;</description><category>masters thesis</category><category>status update</category><guid>https://stanczakdominik.github.io/posts/the-importance-of-good-notation/</guid><pubDate>Sat, 01 May 2021 12:35:00 GMT</pubDate></item><item><title>I aten't dead</title><link>https://stanczakdominik.github.io/posts/i-atent-dead/</link><dc:creator>Dominik Stańczak</dc:creator><description>&lt;div&gt;&lt;p&gt;Here's a quick status update; I have been meaning to post these more often.&lt;/p&gt;
+disagreement with previous results!&lt;/p&gt;&lt;/div&gt;</description><category>masters thesis</category><category>mathjax</category><category>status update</category><guid>https://stanczakdominik.github.io/posts/the-importance-of-good-notation/</guid><pubDate>Sat, 01 May 2021 12:35:00 GMT</pubDate></item><item><title>I aten't dead</title><link>https://stanczakdominik.github.io/posts/i-atent-dead/</link><dc:creator>Dominik Stańczak</dc:creator><description>&lt;div&gt;&lt;p&gt;Here's a quick status update; I have been meaning to post these more often.&lt;/p&gt;
 &lt;!-- TEASER_END --&gt;
 
 &lt;h2&gt;Thesis&lt;/h2&gt;
