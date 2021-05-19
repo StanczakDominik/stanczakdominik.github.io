@@ -22,6 +22,8 @@ SITE_URL = "https://stanczakdominik.github.io/"
 # BASE_URL = "https://stanczakdominik.github.io/"
 BLOG_EMAIL = "stanczakdominik@gmail.com"
 BLOG_DESCRIPTION = "Puns, plasmas, Python, PDEs and probabilities!"
+CHAT = "https://matrix.to/#/@StanczakDominik:matrix.org"
+VIMWIKI = "https://stanczakdominik.gitlab.io/vimwiki/"
 
 # Nikola is multilingual!
 #
@@ -658,7 +660,10 @@ ATOM_FILENAME_BASE = "feed"
 # relative URL.
 #
 # If you don't need any of these, just set to []
-REDIRECTIONS = []
+REDIRECTIONS = [
+    ("chat/index.html", CHAT),
+    ("vimwiki/index.html", VIMWIKI),
+]
 
 # Presets of commands to execute to deploy. Can be anything, for
 # example, you may use rsync:
