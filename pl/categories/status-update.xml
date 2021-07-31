@@ -3,84 +3,9 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="/images/creativecommons.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Wed, 19 May 2021 12:26:38 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The importance of good notation</title><link>https://stanczakdominik.github.io/pl/posts/the-importance-of-good-notation/</link><dc:creator>Dominik Stańczak</dc:creator><description>&lt;div&gt;&lt;p&gt;I've just spent the last four weeks hunting for &lt;a href="https://stanczakdominik.github.io/posts/i-atent-dead"&gt;a bug in my thesis code that
+src="/images/creativecommons.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sat, 31 Jul 2021 09:06:29 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The importance of good notation</title><link>https://stanczakdominik.github.io/pl/posts/the-importance-of-good-notation/</link><dc:creator>Dominik Stańczak</dc:creator><description>&lt;div&gt;&lt;p&gt;I've just spent the last four weeks hunting for &lt;a href="https://stanczakdominik.github.io/posts/i-atent-dead"&gt;a bug in my thesis code that
 I've mentioned last time&lt;/a&gt;.  Since then, I've given up on
 the paper I'm reimplementing more times than I can count.  Well... Can you
 guess how that went?&lt;/p&gt;
-&lt;!-- TEASER_END --&gt;
-
-&lt;p&gt;It turns out I missed the fact that $S_{pT}^{ai}$ is very much not the same as
-$S_{pT\theta}^{ai}$, where the difference is conceptually a rescaling
-$S_{pT\theta}^{ai} \sim \mu S_{pT}^{ai}$, $\mu$ being a viscosity-like object.&lt;/p&gt;
-&lt;p&gt;So, that happened.&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;I suspect I'm sort of writing this as a reminder to future!myself that hey,
-small details are crucial and deserve attention, unless you want to waste
-your own time.&lt;/p&gt;
-&lt;p&gt;At the same time, here's my plea to you - when writing, especially when writing
-scientific literature (which, like your code, is going to be read many more
-times than the one time you're writing it), pay attention to the notation
-you're using for your concepts. Think ahead of how it might contribute to the
-reader's understanding of what you're trying to communicate, or hinder it.&lt;/p&gt;
-&lt;p&gt;And maybe, just maybe, make use of the wide arsenal of typography you've
-got available and don't reuse symbols for concepts that are different even
-just by their dimensionality!&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;At the same time, I'm really happy to be past this. This bug was really
-gnawing at me.&lt;/p&gt;
-&lt;p&gt;Also, I think this is a great testament to the power of physical unit packages
-in scientific computing. I wasted 4 weeks on this, sure - but without
-&lt;a href="https://docs.astropy.org/en/stable/units/"&gt;&lt;code&gt;astropy.units&lt;/code&gt;&lt;/a&gt; notifying me that
-"your units are off, mate" on every test run, I have no idea how many weeks I
-would spend on it later on in the development process, with my results in
-disagreement with previous results!&lt;/p&gt;&lt;/div&gt;</description><guid>https://stanczakdominik.github.io/pl/posts/the-importance-of-good-notation/</guid><pubDate>Sat, 01 May 2021 12:35:00 GMT</pubDate></item><item><title>I aten't dead</title><link>https://stanczakdominik.github.io/pl/posts/i-atent-dead/</link><dc:creator>Dominik Stańczak</dc:creator><description>&lt;div&gt;&lt;p&gt;Here's a quick status update; I have been meaning to post these more often.&lt;/p&gt;
-&lt;!-- TEASER_END --&gt;
-
-&lt;h2&gt;Thesis&lt;/h2&gt;
-&lt;p&gt;I'm tinkering away and playing bug whack-a-mole with
-&lt;a href="https://github.com/PlasmaPy/PlasmaPy/pull/1059"&gt;PlasmaPy #1059&lt;/a&gt;, the pull
-request that's going to become my masters thesis. Basically, it implements
-neoclassical transport calculations - solves for particle and heat flows -
-in axisymmetric plasma configurations. It's rather basic, but it's a start.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Example flux surface" src="https://stanczakdominik.github.io/images/fluxsurface.png"&gt;&lt;/p&gt;
-&lt;p&gt;Here's a sample flux surface - I will soon-ish write a note that explains this concept.
-In a nutshell, though - I'm splitting the domain (a 2D slice through a tokamak)
-into these circular flux surfaces, a radial grid:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Example flux surface grid" src="https://stanczakdominik.github.io/images/fluxsurfacegrid.png"&gt;&lt;/p&gt;
-&lt;p&gt;And then I calculate how much flow there is between them.  I still have a good
-bunch of problems with it:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;I'm using &lt;code&gt;astropy.units&lt;/code&gt;, from which I infer that my formulae have issues, as
-    each flux comes out with a different physical unit attached. And I'm still
-    not quite sure why.&lt;/li&gt;
-&lt;li&gt;I still have to figure out a decently nice way to input the quantities
-    (density and temperature) that, together with the magnetic field, determine
-    this transport.&lt;/li&gt;
-&lt;li&gt;I don't understand differential geometry yet, and it really would have been
-    useful here. But I'm picking it up, slowly.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;The rest&lt;/h2&gt;
-&lt;p&gt;Whoops, I'm writing this on a timer as an exercise and that one's rapidly
-running away. Okay, here goes.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Part 2 of the &lt;a href="https://stanczakdominik.github.io/posts/fusion1"&gt;series on fusion&lt;/a&gt; is coming soon; I'm using
-    it as a way to cobble together a first draft of my actual thesis introduction.&lt;/li&gt;
-&lt;li&gt;PlasmaPy's coming along nicely, though I'm mostly knee deep in the neoclassics
-    PR. There have been some cool new developments with documentation and
-    speeding up our formulary functions. We're also trying to figure out how
-    to host essentially a hackathon. Tips appreciated!&lt;/li&gt;
-&lt;li&gt;I've been getting back into reading books, recently, and really enjoying it.
-    I'll do a write up of my current system (because &lt;em&gt;of course&lt;/em&gt; I have a
-    system, for it, what did you expect?) in a few weeks.&lt;/li&gt;
-&lt;li&gt;Speaking of systems, we recently sat down together with Paulina, realized our
-    way of consistently keeping the flat clean... wasn't at all consistent, and
-    figured out a system based on a python script and a shared yaml file with
-    dates of when we last did X thing (say, vacuuming) vs how often do we
-    want to do that particular X. The ratio of time since last occurrence to
-    expected period is then a metric than we can actually try to keep down. As
-    you have probably guessed by now - write up coming up! But probably not
-    soon.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;All right, that's in for this week! I will try to be back here next week with
-another status update, if I don't actually manage to get fusion2 out. Time will
-tell! In the meantime, stay safe!&lt;/p&gt;&lt;/div&gt;</description><guid>https://stanczakdominik.github.io/pl/posts/i-atent-dead/</guid><pubDate>Sun, 18 Apr 2021 17:25:41 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;a href="https://stanczakdominik.github.io/pl/posts/the-importance-of-good-notation/" class="btn btn-outline-secondary"&gt;Czytaj więcej…&lt;/a&gt; (zostało 1 minut czytania)&lt;/p&gt;&lt;/div&gt;</description><guid>https://stanczakdominik.github.io/pl/posts/the-importance-of-good-notation/</guid><pubDate>Sat, 01 May 2021 12:35:00 GMT</pubDate></item><item><title>I aten't dead</title><link>https://stanczakdominik.github.io/pl/posts/i-atent-dead/</link><dc:creator>Dominik Stańczak</dc:creator><description>&lt;div&gt;&lt;p&gt;Here's a quick status update; I have been meaning to post these more often.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://stanczakdominik.github.io/pl/posts/i-atent-dead/" class="btn btn-outline-secondary"&gt;Czytaj więcej…&lt;/a&gt; (zostało 2 minut czytania)&lt;/p&gt;&lt;/div&gt;</description><guid>https://stanczakdominik.github.io/pl/posts/i-atent-dead/</guid><pubDate>Sun, 18 Apr 2021 17:25:41 GMT</pubDate></item></channel></rss>
