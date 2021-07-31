@@ -1160,7 +1160,7 @@ MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.c
 # INDEX_DISPLAY_POST_COUNT = 10
 
 # Include the full content in RSS feeds.
-FEED_TEASERS = False
+FEED_TEASERS = True
 
 # Strip HTML from Atom and RSS feed summaries and content. Defaults to False.
 # FEED_PLAIN = False
