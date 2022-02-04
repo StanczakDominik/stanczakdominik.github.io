@@ -135,56 +135,35 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 #          with a ``/``, otherwise end them with ``/index.html`` — or
 #          else they won’t be highlighted when active.
 
+# # Alternative navigation links. Works the same way NAVIGATION_LINKS does,
+# # although themes may not always support them. (translatable)
+# # (Bootstrap 4: right-side of navbar, Bootblog 4: right side of title)
+# NAVIGATION_ALT_LINKS = {
+#     DEFAULT_LANG: (
+#         ("/rss.xml", '<img alt="RSS feed" height="24" width="24" style="border-width:0; margin-bottom:12px;" src="/images/rss.png">'),
+#     ),
+#     "pl": (
+#         ("/rss.xml", '<img alt="RSS feed" height="24" width="24" style="border-width:0; margin-bottom:12px;" src="/images/rss.png">'),
+#     )
+# }
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        (
-            (
-                ("/about", "About"),
-                ("/credits", "Acknowledgments"),
-                ("https://github.com/StanczakDominik/stanczakdominik.github.io/tree/src", 'Site repo'),
-            ),
-            "Pages",
-        ),
-        (   (
-                ("/archive.html", "By year"),
-                ("/categories/", "By tag"),
-            ),
-            "Posts"
-         ),
-    ),
-    "pl": (
-        (
-            (
-                ("/pl/about/", "O mnie"),
-                ("/credits", "Podziękowania"),
-                ("https://github.com/StanczakDominik/stanczakdominik.github.io/tree/src", 'Repo strony'),
-            ),
-            "Podstrony",
-        ),
-        (
-            (
-                ("/archive.html", "Według czasu"),
-                ("/categories/", "Według tagów"),
-            ),
-            "Posty",
-        ),
-    ),
-}
-
-# Alternative navigation links. Works the same way NAVIGATION_LINKS does,
-# although themes may not always support them. (translatable)
-# (Bootstrap 4: right-side of navbar, Bootblog 4: right side of title)
-NAVIGATION_ALT_LINKS = {
-    DEFAULT_LANG: (
-        ("/rss.xml", '<img alt="RSS feed" height="24" width="24" style="border-width:0; margin-bottom:12px;" src="/images/rss.png">'),
-    ),
-    "pl": (
-        ("/rss.xml", '<img alt="RSS feed" height="24" width="24" style="border-width:0; margin-bottom:12px;" src="/images/rss.png">'),
+        ('/index.html', 'Home', 'fa fa-home'),
+        ('/archive.html', 'Archives', 'fa fa-folder-open'),
+        ('/categories/', 'Tags', 'fa fa-tags'),
+        ('/rss.xml', 'RSS', 'fa fa-rss'),
+        ("/about/", "About", "fa fa-user"),
+        ("/credits/", "Credits", "fa fa-child"),
+        ('https://github.com/stanczakdominik', 'My Github', 'fab fa-github'),
+        ("https://github.com/StanczakDominik/stanczakdominik.github.io/tree/src", 'Site repo', 'fas fa-file-code'),
+        ("https://stanczakdominik.gitlab.io/vimwiki/", 'Vimwiki', 'fas fa-chalkboard'),
     )
 }
 
+DATE_FANCINESS = 2
+
 # Name of the theme to use.
-THEME = "customblog"
+THEME = "zen"
 # Primary color of your theme. This will be used to customize your theme.
 # Must be a HEX value.
 THEME_COLOR = '#5670d4'
@@ -1168,13 +1147,7 @@ FEED_TEASERS = True
 # Number of posts in Atom and RSS feeds.
 FEED_LENGTH = 50
 
-SEARCH_FORM = """
-<form class="navbar-form navbar-left" action="/search/" role="search">
-    <div class="form-group">
-        <input type="text" class="form-control" id="tipue_search_input" name="q" placeholder="Search" autocomplete="off">
-    </div>
-</form>
-"""
+SEARCH_FORM = """"""
 
 # Use content distribution networks for jQuery, twitter-bootstrap css and js,
 # and html5shiv (for older versions of Internet Explorer)
