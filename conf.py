@@ -20,7 +20,7 @@ SITE_URL = "https://stanczakdominik.github.io/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 # BASE_URL = "https://stanczakdominik.github.io/"
-BLOG_EMAIL = "stanczakdominik@gmail.com"
+BLOG_EMAIL = "stanczakdominik+blog@gmail.com"
 BLOG_DESCRIPTION = "Puns, plasmas, Python, PDEs and probabilities!"
 CHAT = "https://matrix.to/#/@StanczakDominik:matrix.org"
 VIMWIKI = "https://stanczakdominik.gitlab.io/vimwiki/"
