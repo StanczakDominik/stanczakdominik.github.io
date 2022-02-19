@@ -32,5 +32,4 @@ and stick @gmail on it, and it should reach me :)
 
 Większość tego, co robię, jest na [GitHubie](https://github.com/StanczakDominik).
 
-Ostatnio opuściłem Facebooka; na ten moment, wciąż jestem na 
-[Twitterze](https://twitter.com/StanczakDominik).
+Ostatnio opuściłem Facebooka i Twittera. Polecam!

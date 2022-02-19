@@ -31,5 +31,4 @@ and stick `@gmail` onto it, and it should reach me :)
 
 I do most of my work on [GitHub](https://github.com/StanczakDominik).
 
-I've recently quit Facebook; for now, I'm still on
-[Twitter](https://twitter.com/StanczakDominik).
+I've recently quit Facebook and Twitter. Leaving both is highly recommended!

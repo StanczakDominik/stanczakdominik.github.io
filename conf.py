@@ -1206,12 +1206,12 @@ EXTRA_HEAD_DATA = r"""
 # Uncomment and modify to following lines to match your accounts.
 # Images displayed come from the `previewimage` meta tag.
 # You can specify the card type by using the `card` parameter in TWITTER_CARD.
-TWITTER_CARD = {
-    'use_twitter_cards': True,  # enable Twitter Cards
-    'card': 'summary',          # Card type, you can also use 'summary_large_image',
+# TWITTER_CARD = {
+    # 'use_twitter_cards': False,  # enable Twitter Cards
+    # 'card': 'summary',          # Card type, you can also use 'summary_large_image',
                                   # see https://dev.twitter.com/cards/types
-    'creator': '@StanczakDominik',     # Username for the content creator / author.
-}
+    # 'creator': '@StanczakDominik',     # Username for the content creator / author.
+# }
 
 # If set to True, the tags 'draft', 'mathjax' and 'private' have special
 # meaning. If set to False, these tags are handled like regular tags.
