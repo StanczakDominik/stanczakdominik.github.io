@@ -23,7 +23,6 @@ SITE_URL = "https://stanczakdominik.github.io/"
 BLOG_EMAIL = "stanczakdominik+blog@gmail.com"
 BLOG_DESCRIPTION = "Puns, plasmas, Python, PDEs and probabilities!"
 CHAT = "https://matrix.to/#/@StanczakDominik:matrix.org"
-VIMWIKI = "https://stanczakdominik.gitlab.io/vimwiki/"
 
 # Nikola is multilingual!
 #
@@ -156,7 +155,6 @@ NAVIGATION_LINKS = {
         ("/credits/", "Credits", "fa fa-child"),
         ('https://github.com/stanczakdominik', 'My Github', 'fab fa-github'),
         ("https://github.com/StanczakDominik/stanczakdominik.github.io/tree/src", 'Site repo', 'fas fa-file-code'),
-        ("https://stanczakdominik.gitlab.io/vimwiki/", 'Vimwiki', 'fas fa-chalkboard'),
     )
 }
 
@@ -641,7 +639,6 @@ ATOM_FILENAME_BASE = "feed"
 # If you don't need any of these, just set to []
 REDIRECTIONS = [
     ("chat/index.html", CHAT),
-    ("vimwiki/index.html", VIMWIKI),
 ]
 
 # Presets of commands to execute to deploy. Can be anything, for
