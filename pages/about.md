@@ -9,7 +9,7 @@
 .. type: text
 -->
 
-Hi there! My name's Dominik Stańczak and I'm currently a research software
+Hi there! My name's Dominik Stańczak-Marikin and I'm currently a research software
 engineer at the [Institute of Plasma Physics and Laser
 Microfusion](https://www.ifpilm.pl/en) in Warsaw, Poland, where I help write
 code for diagnostics of [Wendelstein 7-X, the currently (2020) largest stellarator in
@@ -27,7 +27,9 @@ On [Matrix](https://matrix.to/#/@StanczakDominik:matrix.org), I'm
 This is probably the fastest way to reach me via text chat.
 
 You can always email me; take this blog's domain name (my surname + first name)
-and stick `@gmail` onto it, and it should reach me :)
+and stick `@gmail` onto it, and it should reach me. In fact, if you've found this
+blog at all useful or enjoyable, there's no better way to express that (and make
+my day, too!) than to tell me about it!
 
 I do most of my work on [GitHub](https://github.com/StanczakDominik).
 

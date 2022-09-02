@@ -12,7 +12,7 @@ import time
 
 
 # Data about this site
-BLOG_AUTHOR = "Dominik Stańczak"  # (translatable)
+BLOG_AUTHOR = "Dominik Stańczak-Marikin"  # (translatable)
 BLOG_TITLE = "Prematurely optimizing"
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
