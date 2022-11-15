@@ -7,7 +7,6 @@
 .. link: 
 .. description: 
 .. type: text
-.. status: draft
 -->
 
 As promised, here's a post on the story of my time at [IPPLM - the Institute of Plasma Physics and Laser Microfusion](https://www.ifpilm.pl/), where I worked for the last almost-three-years. Past tense, because since September I've successfully found remote work as a Python software developer at a large pharmaceutical company. Speaking of... I don't think I can say as much as I'd hoped about the projects we're working on, but, suffice to say, I think they have some real potential for helping people with neurodegenerative diseases. So I'm still trying to tackle one of the Large Problems, just... another one, and more so from a backend/support angle.
@@ -110,7 +109,6 @@ Whatever the reason, in my little area, this has been widely seen as an utterly 
 - work in constant distraction, because there's only so much blasting Rammstein on headphones can help you block out, and I don't *think* I was being any less helpful to everyone who needed it
 - achieve less progress, so it becomes harder to motivate yourself when you're not getting the results you'd like
 - spend the 5.5 hours left in the day (assuming 8 hours work, 8 hours sleep, 2h30m commute) trying to fit meal prep, regenerating just enough to survive the next day
-- write code while wearing trousers
 
 And, as I heard, I don't know if it was just middle management playing bad cop, but this would be a permanent arrangement.
 
