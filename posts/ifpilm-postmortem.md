@@ -7,7 +7,6 @@
 .. link: 
 .. description: 
 .. type: text
-.. status: draft
 -->
 
 As promised, here's a post on the story of my time at [IPPLM - the Institute of Plasma Physics and Laser Microfusion](https://www.ifpilm.pl/), where I worked for the last almost-three-years. Past tense, because since September I've successfully found remote work as a Python software developer at a large pharmaceutical company. Speaking of... I don't think I can say as much as I'd hoped about the projects we're working on, but, suffice to say, I think they have some real potential for helping people with neurodegenerative diseases. So I'm still trying to tackle one of the Large Problems, just... another one, and more so from a backend/support angle.
@@ -130,7 +129,7 @@ And that's it for this story. COVID is now likely a permanent fixture in our liv
 
 - healthier, both mentally and physically
 - happily doing stuff like spending more time with my wonderful wow-I-still-can't-believe-she's-my wife, writing, both code and blog posts, as you can see here!
-- working efficiently, in conditions I find optimal (5 AM, trouserless? Sure!)
+- working efficiently, in conditions I find optimal (5 AM start? Sure!)
 - learning a lot about how industry does Python
 - actually managing to have a social life
 - helping nuclear fusion the way I like, writing tools that actually help a lot of people, on my own terms
