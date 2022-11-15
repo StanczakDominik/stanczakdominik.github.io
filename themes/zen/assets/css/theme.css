@@ -1041,6 +1041,8 @@ article.post-text .metadata .tags ul > li {
   margin-right: 10px;
 }
 article.post-text .entry-content {
+  line-height: 32px;
+
   margin-bottom: 36px;
 }
 article.post-text .entry-content .figure {
