@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html prefix="        og: http://ogp.me/ns# article: http://ogp.me/ns/article#     " vocab="http://ogp.me/ns" lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Puns, plasmas, Python, PDEs and probabilities!">
+<meta name="viewport" content="width=device-width">
+<title>Prematurely optimizing</title>
+<link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS (pl)" hreflang="pl" href="rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../rss.xml">
+<link rel="canonical" href="https://stanczakdominik.github.io/pl/">
+<link rel="next" href="index-3.html" type="text/html">
+<!--[if lt IE 9]><script src="../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett">
+<link rel="stylesheet" type="text/css" href="../assets/css/tipuesearch.css">
+</head>
+<body>
+    <a href="#page-content" class="sr-only sr-only-focusable">Przejdź do treści</a>
+    
+    <section class="social"><ul>
+<li><a href="../index.html" title="Home"><i class="fa fa-home"></i></a></li>
+            <li><a href="../archive.html" title="Archives"><i class="fa fa-folder-open"></i></a></li>
+            <li><a href="../categories/" title="Tags"><i class="fa fa-tags"></i></a></li>
+            <li><a href="../rss.xml" title="RSS"><i class="fa fa-rss"></i></a></li>
+            <li><a href="../about/" title="About"><i class="fa fa-user"></i></a></li>
+            <li><a href="../credits/" title="Credits"><i class="fa fa-child"></i></a></li>
+            <li><a href="https://github.com/stanczakdominik" title="My Github"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://github.com/StanczakDominik/stanczakdominik.github.io/tree/src" title="Site repo"><i class="fas fa-file-code"></i></a></li>
+    
+    
+
+        </ul></section><section class="page-content"><div class="content" rel="main">
+            
+
+    
+
+
+    
+<div class="postindex">
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/ipplm-post-mortem/" class="u-url">A pandemic story, or, what I learned working with nuclear fusion</a></h1>
+        <div class="metadata">
+            <p class="dateline"><a href="posts/ipplm-post-mortem/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2022-11-15T07:00:00+02:00" title="2022-11-15 07:00">2022-11-15 07:00</time></a></p>
+            <p class="byline author vcard"> <i class="fa fa-user"></i> <span class="byline-name fn" itemprop="author">
+                <a href="authors/dominik-stanczak-marikin/">Dominik Stańczak-Marikin</a>
+            </span></p>
+                <p class="commentline"><i class="fa fa-comment"></i> 
+    
+        <a href="posts/ipplm-post-mortem/#utterances-thread">Komentarze</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>As promised, here's a post on the story of my time at <a href="https://www.ifpilm.pl/">IPPLM - the Institute of Plasma Physics and Laser Microfusion</a>, where I worked for the last almost-three-years. Past tense, because since September I've successfully found remote work as a Python software developer at a large pharmaceutical company. Speaking of... I don't think I can say as much as I'd hoped about the projects we're working on, but, suffice to say, I think they have some real potential for helping people with neurodegenerative diseases. So I'm still trying to tackle one of the Large Problems, just... another one, and more so from a backend/support angle.</p>
+<p>While writing this, I realized that this story was also deeply intertwined with the story of the global COVID-19 pandemic, because that turned the whole situation on its head. I thought about separating the two, but decided instead to embrace it and tell it whole rather than in pieces. So, beware, this is going to get <em>long</em>. To alleviate that, I've broken it up more than usual and have placed the major takeaways in specifically formatted sections throughout.</p>
+<p>With that disclaimer in place... onto the story!</p>
+<p class="more"><a href="posts/ipplm-post-mortem/" class="btn btn-outline-secondary">Czytaj więcej…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/mid-2022-update/" class="u-url">Mid-2022 Update</a></h1>
+        <div class="metadata">
+            <p class="dateline"><a href="posts/mid-2022-update/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2022-09-02T21:09:17+02:00" title="2022-09-02 21:09">2022-09-02 21:09</time></a></p>
+            <p class="byline author vcard"> <i class="fa fa-user"></i> <span class="byline-name fn" itemprop="author">
+                <a href="authors/dominik-stanczak-marikin/">Dominik Stańczak-Marikin</a>
+            </span></p>
+                <p class="commentline"><i class="fa fa-comment"></i> 
+    
+        <a href="posts/mid-2022-update/#utterances-thread">Komentarze</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>I thought I'd give a quick update on some recent happenings.</p>
+<hr>
+<p>Firstly, and most importantly, and I'm still a little shocked that this actually happened - we got married! :)</p>
+<p><img alt="Wedding photo" src="../images/230_0224.JPG"></p>
+<p>With that, and since there's nothing more beautiful in life than symmetry, we've decided to both take a combo surname. Thus, the <a href="../about">About page</a> has had a minor text update :)</p>
+<p class="more"><a href="posts/mid-2022-update/" class="btn btn-outline-secondary">Czytaj więcej…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/slawa-ukrainie/" class="u-url">Sława Ukrainie!</a></h1>
+        <div class="metadata">
+            <p class="dateline"><a href="posts/slawa-ukrainie/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2022-03-09T19:45:51+01:00" title="2022-03-09 19:45">2022-03-09 19:45</time></a></p>
+            <p class="byline author vcard"> <i class="fa fa-user"></i> <span class="byline-name fn" itemprop="author">
+                <a href="authors/dominik-stanczak-marikin/">Dominik Stańczak-Marikin</a>
+            </span></p>
+                <p class="commentline"><i class="fa fa-comment"></i> 
+    
+        <a href="posts/slawa-ukrainie/#utterances-thread">Komentarze</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <p></p>
+<center>
+<img alt="Flag of Ukraine" src="../images/Flag_of_Ukraine.webp">
+</center>
+<p>There's very little to be said about this, but it needs to be said nonetheless.</p>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/the-importance-of-good-notation/" class="u-url">The importance of good notation</a></h1>
+        <div class="metadata">
+            <p class="dateline"><a href="posts/the-importance-of-good-notation/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2021-05-01T14:35:00+02:00" title="2021-05-01 14:35">2021-05-01 14:35</time></a></p>
+            <p class="byline author vcard"> <i class="fa fa-user"></i> <span class="byline-name fn" itemprop="author">
+                <a href="authors/dominik-stanczak-marikin/">Dominik Stańczak-Marikin</a>
+            </span></p>
+                <p class="commentline"><i class="fa fa-comment"></i> 
+    
+        <a href="posts/the-importance-of-good-notation/#utterances-thread">Komentarze</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>I've just spent the last four weeks hunting for <a href="../posts/i-atent-dead">a bug in my thesis code that
+I've mentioned last time</a>.  Since then, I've given up on
+the paper I'm reimplementing more times than I can count.  Well... Can you
+guess how that went?</p>
+<p class="more"><a href="posts/the-importance-of-good-notation/" class="btn btn-outline-secondary">Czytaj więcej…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/i-atent-dead/" class="u-url">I aten't dead</a></h1>
+        <div class="metadata">
+            <p class="dateline"><a href="posts/i-atent-dead/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2021-04-18T19:25:41+02:00" title="2021-04-18 19:25">2021-04-18 19:25</time></a></p>
+            <p class="byline author vcard"> <i class="fa fa-user"></i> <span class="byline-name fn" itemprop="author">
+                <a href="authors/dominik-stanczak-marikin/">Dominik Stańczak-Marikin</a>
+            </span></p>
+                <p class="commentline"><i class="fa fa-comment"></i> 
+    
+        <a href="posts/i-atent-dead/#utterances-thread">Komentarze</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>Here's a quick status update; I have been meaning to post these more often.</p>
+<p class="more"><a href="posts/i-atent-dead/" class="btn btn-outline-secondary">Czytaj więcej…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/plasmapy-v060-release/" class="u-url">PlasmaPy v0.6.0 release!</a></h1>
+        <div class="metadata">
+            <p class="dateline"><a href="posts/plasmapy-v060-release/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2021-03-20T12:00:00+01:00" title="2021-03-20 12:00">2021-03-20 12:00</time></a></p>
+            <p class="byline author vcard"> <i class="fa fa-user"></i> <span class="byline-name fn" itemprop="author">
+                <a href="authors/dominik-stanczak/">Dominik Stańczak</a>
+            </span></p>
+                <p class="commentline"><i class="fa fa-comment"></i> 
+    
+        <a href="posts/plasmapy-v060-release/#utterances-thread">Komentarze</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<blockquote>
+<p><em>I'll take the opportunity to cross-post this one from the PlasmaPy website; I'm pretty happy about how this went.</em></p>
+</blockquote>
+<h2>PlasmaPy 0.6.0</h2>
+<p>We're really happy to announce that we've just released <a href="https://docs.plasmapy.org/en/stable/whatsnew/0.6.0.html">PlasmaPy version
+0.6.0</a>! </p>
+<p class="more"><a href="posts/plasmapy-v060-release/" class="btn btn-outline-secondary">Czytaj więcej…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/fusion1/" class="u-url">Fusion 1/4: Nuclear power as of 2021</a></h1>
+        <div class="metadata">
+            <p class="dateline"><a href="posts/fusion1/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2021-02-13T18:00:00+02:00" title="2021-02-13 18:00">2021-02-13 18:00</time></a></p>
+            <p class="byline author vcard"> <i class="fa fa-user"></i> <span class="byline-name fn" itemprop="author">
+                <a href="authors/dominik-stanczak-marikin/">Dominik Stańczak-Marikin</a>
+            </span></p>
+                <p class="commentline"><i class="fa fa-comment"></i> 
+    
+        <a href="posts/fusion1/#utterances-thread">Komentarze</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p><em>Hi! In the new year, <a href="posts/fusion1/2021">as promised</a>, you'll see more actual science discussions on this page. I have - I think, for the first time since I started writing here - a plan for the next four posts. The first will discuss nuclear power and its place in the world. The second will tell you a little about its most interesting future alternative - fusion power. Next up, we'll discuss its history a little and where I predict it'll head in the near future; and in the fourth, I'll try to discuss a little about what we're actually doing with it in terms of research work. I can't wait to get to the fourth part, so that should be at least motivating. Let's get to it!</em></p>
+<p class="more"><a href="posts/fusion1/" class="btn btn-outline-secondary">Czytaj więcej…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/utterances/" class="u-url">Now with comments through utteranc.es!</a></h1>
+        <div class="metadata">
+            <p class="dateline"><a href="posts/utterances/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2021-02-08T19:47:16+01:00" title="2021-02-08 19:47">2021-02-08 19:47</time></a></p>
+            <p class="byline author vcard"> <i class="fa fa-user"></i> <span class="byline-name fn" itemprop="author">
+                <a href="authors/dominik-stanczak-marikin/">Dominik Stańczak-Marikin</a>
+            </span></p>
+                <p class="commentline"><i class="fa fa-comment"></i> 
+    
+        <a href="posts/utterances/#utterances-thread">Komentarze</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>As promised, I've switched the site's comment system from Disqus to
+<a href="https://utteranc.es/">utteranc.es</a>. It ended up being <a href="https://github.com/StanczakDominik/stanczakdominik.github.io/commit/858c7530d6bd83f1a193ef9225bee5776f2c591c">pretty simple to
+do in Nikola</a>. If I'm correct about how this is supposed to work, comments on the site will now appear as <a href="https://github.com/StanczakDominik/stanczakdominik.github.io/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc">issues on the site's repo</a>. Of course, I would love to test out how this works :)</p>
+<p class="more"><a href="posts/utterances/" class="btn btn-outline-secondary">Czytaj więcej…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2021/" class="u-url">The plan for 2021</a></h1>
+        <div class="metadata">
+            <p class="dateline"><a href="posts/2021/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2021-01-04T20:21:24+01:00" title="2021-01-04 20:21">2021-01-04 20:21</time></a></p>
+            <p class="byline author vcard"> <i class="fa fa-user"></i> <span class="byline-name fn" itemprop="author">
+                <a href="authors/dominik-stanczak-marikin/">Dominik Stańczak-Marikin</a>
+            </span></p>
+                <p class="commentline"><i class="fa fa-comment"></i> 
+    
+        <a href="posts/2021/#utterances-thread">Komentarze</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>And good riddance to 2020!</p>
+<p class="more"><a href="posts/2021/" class="btn btn-outline-secondary">Czytaj więcej…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/sympy-for-physics-homework-in-2020/" class="u-url">SymPy for physics homework in 2020</a></h1>
+        <div class="metadata">
+            <p class="dateline"><a href="posts/sympy-for-physics-homework-in-2020/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2020-09-29T16:46:21+02:00" title="2020-09-29 16:46">2020-09-29 16:46</time></a></p>
+            <p class="byline author vcard"> <i class="fa fa-user"></i> <span class="byline-name fn" itemprop="author">
+                <a href="authors/dominik-stanczak-marikin/">Dominik Stańczak-Marikin</a>
+            </span></p>
+                <p class="commentline"><i class="fa fa-comment"></i> 
+    
+        <a href="posts/sympy-for-physics-homework-in-2020/#utterances-thread">Komentarze</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I've been doing my university physics homework in SymPy and Jupyter for a little bit, and I thought I could share a little about the workflow I've developed for it. It might come useful for you.</p>
+<p class="more"><a href="posts/sympy-for-physics-homework-in-2020/" class="btn btn-outline-secondary">Czytaj więcej…</a></p>
+</div>
+</div>
+</div>
+    </div>
+    </article>
+</div>
+
+        <nav class="postindexpager"><ul class="pager">
+<li class="next">
+                <a href="index-3.html" rel="next">Starsze posty</a>
+            </li>
+        </ul></nav><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><footer id="footer"><p>Contents © 2022         <a rel="me" href="https://mastodon.social/@StanczakDominik">Dominik Stańczak-Marikin</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a> - 
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="../images/creativecommons.png"></a></p>
+            
+        </footer>
+</div>
+    </section><script src="../assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
+    moment.locale("pl");
+    fancydates(2, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html prefix="        og: http://ogp.me/ns# article: http://ogp.me/ns/article#     " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Particle in Cell methods | Prematurely optimizing</title>
+<link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (pl)" hreflang="pl" href="../../pl/rss.xml">
+<link rel="canonical" href="https://stanczakdominik.github.io/posts/particle-in-cell-methods/">
+<!--[if lt IE 9]><script src="../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett">
+<link rel="stylesheet" type="text/css" href="../../assets/css/tipuesearch.css">
+<meta name="author" content="Dominik Stańczak-Marikin">
+<link rel="prev" href="../first-dive-julia/" title="First dive into Julia" type="text/html">
+<link rel="next" href="../on-the-recent-on-the-boris-solver-in-particle-in-cell-simulations-paper/" title='On the recent "On the Boris solver in Particle-in-cell simulations" paper' type="text/html">
+<meta property="og:site_name" content="Prematurely optimizing">
+<meta property="og:title" content="Particle in Cell methods">
+<meta property="og:url" content="https://stanczakdominik.github.io/posts/particle-in-cell-methods/">
+<meta property="og:description" content="I think it might finally be about time to do some plasma physics
+discussion on this blog, stay true to the name and so on…
+Basically the only actual “scientific” work I have actually done with
+plasmas">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2019-03-19T10:00:00+01:00">
+<meta property="article:tag" content="particle-in-cell">
+<meta property="article:tag" content="pic">
+<meta property="article:tag" content="plasma">
+<link rel="alternate" hreflang="pl" href="../../pl/posts/particle-in-cell-methods/">
+</head>
+<body>
+    <a href="#page-content" class="sr-only sr-only-focusable">Skip to main content</a>
+    
+    <section class="social"><ul>
+<li><a href="../../index.html" title="Home"><i class="fa fa-home"></i></a></li>
+            <li><a href="../../archive.html" title="Archives"><i class="fa fa-folder-open"></i></a></li>
+            <li><a href="../../categories/" title="Tags"><i class="fa fa-tags"></i></a></li>
+            <li><a href="../../rss.xml" title="RSS"><i class="fa fa-rss"></i></a></li>
+            <li><a href="../../about/" title="About"><i class="fa fa-user"></i></a></li>
+            <li><a href="../../credits/" title="Credits"><i class="fa fa-child"></i></a></li>
+            <li><a href="https://github.com/stanczakdominik" title="My Github"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://github.com/StanczakDominik/stanczakdominik.github.io/tree/src" title="Site repo"><i class="fas fa-file-code"></i></a></li>
+    
+    
+
+        </ul></section><section class="page-content"><div class="content" rel="main">
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Particle in Cell methods</a></h1>
+
+        <div class="metadata">
+            <p class="dateline"><a href="." rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2019-03-19T10:00:00+01:00" itemprop="datePublished" title="2019-03-19 10:00">2019-03-19 10:00</time></a></p>
+            <p class="byline author vcard"> <i class="fa fa-user"></i> <span class="byline-name fn" itemprop="author">
+                    <a href="../../authors/dominik-stanczak-marikin/">Dominik Stańczak-Marikin</a>
+            </span></p>
+                <p class="commentline"><i class="far fa-comment"></i>
+    
+        <a href="#utterances-thread">Comments</a>
+
+
+            
+        </p>
+<p class="sourceline"><a href="index.rst" class="sourcelink"><i class="fa fa-file-code"></i> Source</a></p>
+
+            
+
+            
+    <div class="tags">
+<h3 class="metadata-title">
+<i class="fa fa-tags"></i> Tags:</h3>
+        <ul itemprop="keywords" class="tags-ul">
+<li><a class="tag p-category" href="../../categories/particle-in-cell/" rel="tag">particle-in-cell</a></li>
+            <li><a class="tag p-category" href="../../categories/pic/" rel="tag">pic</a></li>
+            <li><a class="tag p-category" href="../../categories/plasma/" rel="tag">plasma</a></li>
+        </ul>
+</div>
+
+        </div>
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p>I think it might finally be about time to do some plasma physics
+discussion on this blog, stay true to the name and so on…</p>
+<p>Basically the only actual “scientific” work I have actually done with
+plasmas up until now is writing a PIC simulation, PIC standing for
+Particle-in-Cell. I thought I would take this opportunity to explain in
+my own words what the concept is - I think it’s a clever one.</p>
+<!-- TEASER_END -->
+<p>There are many reasons why you might want to simulate a plasma.
+Simulations are often way cheaper than making a tokamak and causing the
+plasma to develop turbulence, or sending out a probe to watch check
+solar flares for traces of magnetic reconnection. There’s also the case
+of needing simulations to understand and explain your experimental
+results. For now, however, let’s just assume you have a burning desire
+to make a few pretty plots and animations <a class="reference external" href="https://www.youtube.com/watch?v=Gj9mwAww3TM">like
+these</a> using data that
+you don’t have simple access to via experiment.</p>
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Gj9mwAww3TM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</center>
+<section id="plasma-simulation-in-general"><h2>Plasma simulation in general</h2>
+<p>Plasmas are, in general, difficult to simulate. Many of the interesting
+processes in plasmas that you would like to simulate occur far from
+equilibrium, both spatial and thermal. For example, you’d like to
+simulate interactions between a plasma and a laser pulse (this is, in
+fact, <a class="reference external" href="https://github.com/StanczakDominik/PythonPIC">what I did for my engineering
+thesis</a>). This is a
+massively non-equilibrium process. This mostly rules out fluid
+simulations such as two-fluid and magnetohydrodynamics, which are based
+on averaging the <a class="reference external" href="https://en.wikipedia.org/wiki/Vlasov_equation">Vlasov
+equation</a> over all
+possible velocities. You could, in theory, use the Vlasov equation
+directly - but that’s a pretty darn high dimensional problem to be
+solving a PDE on (though something I most certainly want to try my hand
+at, one of these days!).</p>
+<p>Suppose you want to take another approach. Maybe you like your
+Newtonian, old fashioned dynamical particle trajectory ODEs, you’ve
+dabbled in some N-body simulations, maybe you’ve done a bit of molecular
+dynamics. You could imagine putting a bunch of charged particles into a
+simulation, calculating forces between those directly and letting them
+evolve over time.</p>
+<p>Unfortunately, there is a major flaw in that plan. You’ve got long range
+(Coulomb) <span class="math">\(r^{-2}\)</span> interactions between huge numbers of particles,
+so you cannot use the neat trick common in molecular dynamics of only
+including a few neighbor particles in your simulation. This means your
+simulation will scale as full <span class="math">\(O(N^2)\)</span> in the number of particles
+if you do that <a class="reference external" href="https://journals.aps.org/pre/abstract/10.1103/PhysRevE.98.033307">(though there have been attempts at doing that
+recently)</a>.
+I guess you could also try <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/0010465594902275">a Barnes-Hut treecode of some sort, and that
+also appears to have been
+done</a>
+- that doesn’t seem like it’s caught on, though, whatever the reason.</p>
+<p>We’ve now set the stage and can move on to the main attraction…</p>
+</section><section id="the-particle-in-cell-method"><h2>The particle in cell method</h2>
+<p>The logic for a PIC is as follows, starting from the simple molecular
+dynamics or N-body framework:</p>
+<ol class="arabic">
+<li><p>If we were to know the force on each particle for every time step, we
+could <strong>push</strong> them - update their velocities and positions as usual,
+in <span class="math">\(O(N)\)</span> steps. Each particle is assumed independent of
+others.</p></li>
+<li>
+<p>It’s hard to calculate the forces directly in <span class="math">\(O(N^2)\)</span> steps.
+On the other hand, It’s relatively easier to solve a PDE for the
+electromagnetic field given a charge and current distribution. The
+particles we’re moving are charged, so we can do the following
+translation:</p>
+<ul class="simple">
+<li><p>Particle positions <span class="math">\(\implies\)</span> charge distribution</p></li>
+<li><p>Particle positions and velocities <span class="math">\(\implies\)</span> current
+distribution</p></li>
+</ul>
+<p>This means we could <strong>deposit</strong> the particles onto a grid or mesh by
+some kind of interpolation. We can also set the grid size so that
+many particles go into a single grid cell: this implies that the
+number of grid cells is much lower than our particle count. That, in
+turn, fits our assumptions for plasmas <a class="footnote-reference brackets" href="#footnote-1" id="footnote-reference-1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>. A picture is worth a
+thousand words, so here’s a very basic example of a particle’s charge
+with a linear (triangular, and thus, centered on the middle)
+distribution being split between three cells.</p>
+<center>
+<img src="../../images/charge-deposition.svg" height="420" alt="Example of charge deposition">
+</center>
+</li>
+<li><p>Once we have the charge and current distribution on our grid, we can
+use those quantities to <strong>solve</strong> Maxwell’s equations for the
+electromagnetic field. You could, for example, use a spectral method
+or a relaxation algorithm, like conjugate gradients.</p></li>
+<li><p>Once we know the fields at the grid cell locations, we can <strong>gather</strong>
+the field from those to the particle locations. Remember step 1,
+where we wished for forces - readily available given fields - at
+particle locations? Well, here we go, wish granted!</p></li>
+<li><p><code class="docutils literal">goto 1</code></p></li>
+</ol>
+<p>And that’s it, the particle-in-cell method in a nutshell. Of course,
+logically it makes more sense to start from 2. (as you would usually
+start your simulation with a set of initial conditions for the particle
+positions, velocities and maybe external fields), but to me it’s cleaner
+narratively to think of the algorithm in this order.</p>
+<section id="the-advantages"><h3>The advantages</h3>
+<ol class="arabic simple">
+<li><p>It’s close to fundamental physics and thus understandable! You get a
+full picture of what each of the particles does, how the fields
+behave, while making very few assumptions.</p></li>
+<li><p>It’s lightning fast! The <span class="math">\(O(N^2)\)</span> force calculation is reduced
+to the complexity of your three replacement steps. While you can
+expect deposition and gathering to be roughly <span class="math">\(O(Nm)\)</span>
+(<span class="math">\(m\)</span> being the number of cells), <span class="math">\(N\)</span> is much larger than
+<span class="math">\(m\)</span>, and the field solver is going to scale independently of
+<span class="math">\(N\)</span> - so that’s still a massive gain over direct summation.</p></li>
+<li><p>It’s easy to parallelize! Each particle is essentially independent
+for the pushing step (as they only interact with each other via
+fields), so those movements are trivially parallel. Grid operations
+can also be done in parallel (though admittedly I haven’t looked into
+that much, yet - I fully intend to do so).</p></li>
+</ol>
+<p>And of course, no description of a simulation method is complete
+without…</p>
+</section><section id="the-disadvantages"><h3>The disadvantages</h3>
+<ol class="arabic simple">
+<li><p>The method is mostly explicit, so that limits your time step and grid
+size quite a lot. Otherwise, you get spurious instabilities.</p></li>
+<li><p>Statistical noise makes life a pain when you’re working on PIC
+simulations, precisely because you’re modeling your large numbers of
+real particles with fewer virtual discrete ones. The trick seems to
+be increasing the particle numbers, but <a class="reference external" href="https://en.wikipedia.org/wiki/Particle-in-cell#Technical_aspects">Wikipedia
+claims</a>
+that this source of error is more figured out for traditional grid
+methods. In a way, this also means PICs are a prime target for GPUs,
+as exhibited by
+<a class="reference external" href="https://picongpu.readthedocs.io/en/0.4.3/index.html">PIConGPU</a>.</p></li>
+</ol>
+<p>Still, PICs are used in many awesome applications, such as plasma
+turbulence research, and their parallelizability means they’re only
+going to get more important in the coming exascale computing era.</p>
+<p>I’ll be writing a few follow-up posts going over particular aspects of
+PIC codes - tricks I’ve picked up along the way, etc. Stay tuned!</p>
+<section id="references"><h4>References</h4>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=Gj9mwAww3TM">Relativistic kinetic turbulence
+video</a> by Joonas
+Nättilä, using the <a class="reference external" href="https://github.com/natj/plasmabox">plasmabox
+code</a>.</p></li>
+<li><p><a class="reference external" href="https://github.com/StanczakDominik/PythonPIC">PythonPIC</a>, my
+less-than-amazing engineering thesis code.</p></li>
+<li><p><a class="reference external" href="https://github.comnatj/plasmabox">Vlasov Equation - Wikipedia</a></p></li>
+<li><p><a class="reference external" href="https://journals.aps.org/pre/abstract/10.1103/PhysRevE.98.033307">Plasma simulation via molecular dynamics
+example</a>.</p></li>
+<li><p><a class="reference external" href="https://www.sciencedirect.com/science/article/pii/0010465594902275">Barnes-Hut plasma simulation
+example</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Particle-in-cell">Particle in Cell applications -
+Wikipedia</a></p></li>
+<li><p><a class="reference external" href="https://www.particleincell.com/2016/cuda-pic/">GPU PIC</a></p></li>
+<li><p><a class="reference external" href="https://picongpu.readthedocs.io/en/0.4.3/index.html">PIConGPU</a></p></li>
+</ul>
+<aside class="footnote-list brackets"><aside class="footnote brackets" id="footnote-1" role="note"><span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#footnote-reference-1">1</a><span class="fn-bracket">]</span></span>
+<p>If you want to learn more about those, I don’t feel like I can give
+this subject justice better than chapter 1-1 of Birdsall and
+Langdon’s seminal <em>Plasma Physics via Computer Simulation</em> text.</p>
+</aside></aside></section></section></section>
+</div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../first-dive-julia/" rel="prev" title="First dive into Julia">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../on-the-recent-on-the-boris-solver-in-particle-in-cell-simulations-paper/" rel="next" title='On the recent "On the Boris solver in Particle-in-cell simulations" paper'>Next post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+    
+        <div data-title="Particle in Cell methods" id="utterances-thread"></div>
+        <script src="https://utteranc.es/client.js" repo="StanczakDominik/stanczakdominik.github.io" issue-term="pathname" label="Comments" theme="github-light" crossorigin="anonymous"></script></section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script></article><footer id="footer"><p>Contents © 2022         <a rel="me" href="https://mastodon.social/@StanczakDominik">Dominik Stańczak-Marikin</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a> - 
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="../../images/creativecommons.png"></a></p>
+            
+        </footer>
+</div>
+    </section><script src="../../assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(2, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

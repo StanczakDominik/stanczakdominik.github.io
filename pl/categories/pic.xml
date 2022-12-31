@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Prematurely optimizing (Posty o pic)</title><link>https://stanczakdominik.github.io/</link><description></description><atom:link href="https://stanczakdominik.github.io/pl/categories/pic.xml" rel="self" type="application/rss+xml"></atom:link><language>pl</language><copyright>Contents © 2022 &lt;a href="https://matrix.to/#/@StanczakDominik:matrix.org"&gt;Dominik Stańczak-Marikin&lt;/a&gt; 
+&lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
+&lt;img alt="Creative Commons License BY-NC-SA"
+style="border-width:0; margin-bottom:12px;"
+src="/images/creativecommons.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sat, 31 Dec 2022 13:45:35 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Particle in Cell methods</title><link>https://stanczakdominik.github.io/pl/posts/particle-in-cell-methods/</link><dc:creator>Dominik Stańczak-Marikin</dc:creator><description>&lt;div&gt;&lt;p&gt;I think it might finally be about time to do some plasma physics
+discussion on this blog, stay true to the name and so on…&lt;/p&gt;
+&lt;p&gt;Basically the only actual “scientific” work I have actually done with
+plasmas up until now is writing a PIC simulation, PIC standing for
+Particle-in-Cell. I thought I would take this opportunity to explain in
+my own words what the concept is - I think it’s a clever one.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://stanczakdominik.github.io/pl/posts/particle-in-cell-methods/" class="btn btn-outline-secondary"&gt;Czytaj więcej…&lt;/a&gt; (zostało 6 minut czytania)&lt;/p&gt;&lt;/div&gt;</description><guid>https://stanczakdominik.github.io/pl/posts/particle-in-cell-methods/</guid><pubDate>Tue, 19 Mar 2019 09:00:00 GMT</pubDate></item></channel></rss>

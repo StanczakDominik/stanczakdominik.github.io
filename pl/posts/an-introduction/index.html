@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html prefix="        og: http://ogp.me/ns# article: http://ogp.me/ns/article#     " vocab="http://ogp.me/ns" lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>An introduction | Prematurely optimizing</title>
+<link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS (pl)" hreflang="pl" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../../rss.xml">
+<link rel="canonical" href="https://stanczakdominik.github.io/pl/posts/an-introduction/">
+<!--[if lt IE 9]><script src="../../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett">
+<link rel="stylesheet" type="text/css" href="../../../assets/css/tipuesearch.css">
+<meta name="author" content="Dominik Stańczak-Marikin">
+<link rel="next" href="../numpy-ish-gpu-computations-with-cupy/" title="NumPy-ish GPU computations with CuPy" type="text/html">
+<meta property="og:site_name" content="Prematurely optimizing">
+<meta property="og:title" content="An introduction">
+<meta property="og:url" content="https://stanczakdominik.github.io/pl/posts/an-introduction/">
+<meta property="og:description" content="Why start this blog?
+
+
+To share knowledge
+Knowledge does not diminish from being shared, instead it is reinforced and gains in utility.
+I gain much utility from amazing resources on the web and elsewh">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2017-06-30T09:49:08+02:00">
+<link rel="alternate" hreflang="en" href="../../../posts/an-introduction/">
+</head>
+<body>
+    <a href="#page-content" class="sr-only sr-only-focusable">Przejdź do treści</a>
+    
+    <section class="social"><ul>
+<li><a href="../../../index.html" title="Home"><i class="fa fa-home"></i></a></li>
+            <li><a href="../../../archive.html" title="Archives"><i class="fa fa-folder-open"></i></a></li>
+            <li><a href="../../../categories/" title="Tags"><i class="fa fa-tags"></i></a></li>
+            <li><a href="../../../rss.xml" title="RSS"><i class="fa fa-rss"></i></a></li>
+            <li><a href="../../../about/" title="About"><i class="fa fa-user"></i></a></li>
+            <li><a href="../../../credits/" title="Credits"><i class="fa fa-child"></i></a></li>
+            <li><a href="https://github.com/stanczakdominik" title="My Github"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://github.com/StanczakDominik/stanczakdominik.github.io/tree/src" title="Site repo"><i class="fas fa-file-code"></i></a></li>
+    
+    
+
+        </ul></section><section class="page-content"><div class="content" rel="main">
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">An introduction</a></h1>
+
+        <div class="metadata">
+            <p class="dateline"><a href="." rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2017-06-30T09:49:08+02:00" itemprop="datePublished" title="2017-06-30 09:49">2017-06-30 09:49</time></a></p>
+            <p class="byline author vcard"> <i class="fa fa-user"></i> <span class="byline-name fn" itemprop="author">
+                    <a href="../../authors/dominik-stanczak-marikin/">Dominik Stańczak-Marikin</a>
+            </span></p>
+                <p class="commentline"><i class="far fa-comment"></i>
+    
+        <a href="#utterances-thread">Komentarze</a>
+
+
+            
+        </p>
+<p class="sourceline"><a href="index.md" class="sourcelink"><i class="fa fa-file-code"></i> Źródło</a></p>
+
+            
+
+            
+
+        </div>
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p>Why start this blog?</p>
+<!-- TEASER_END -->
+
+<h2>To share knowledge</h2>
+<p>Knowledge does not diminish from being shared, instead it is reinforced and gains in utility.
+I gain much utility from amazing resources on the web and elsewhere. It is only fair that I disseminate some
+of that knowledge. I have lots of projects I start and tinker with. While I try to keep them over at GitHub,
+they might be more useful to people with actual proper documentation and descriptions.</p>
+<p>Besides, I think I can help some people with stuff like Python, numerics, nonlinear dynamics, <a href="https://stackoverflow.com/questions/11828270/how-to-exit-the-vim-editor">quitting vim</a>,
+setting up and using Linux, fluid and plasma dynamics, GPU computing, machine learning... While my perspective on these may not be helpful to all, I certainly don't expect it
+to do harm.</p>
+<h2>Because some things just make you want to tell the world all about them</h2>
+<p>There's a lot of beautiful science and physics around the world and plenty of it in simulation, which is my personal area of preference. Numerical simulation is the art and science of creating
+pretty plots that can also teach us something about the world or about the models we use to try and describe it. <sup>but most of us are probably in this for the plots</sup></p>
+<p>Look at this animation of a hydrodynamic
+(<a href="https://en.wikipedia.org/wiki/Kelvin%E2%80%93Helmholtz_instability">Kelvin-Helmholtz</a>
+or Swirly-Vortex) instability simulation I found online, thanks to <a href="http://www.kmschaal.de/">Kevin
+Schaal</a> and reposted here with permission.
+Do yourself a service and watch it in full HD.</p>
+<p></p>
+<center><iframe width="200" height="113" src="https://www.youtube.com/embed/cTRQP6DSaqA?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Kelvin-Helmholtz instability - Discontinuous Galerkin hydrodynamics"></iframe></center>
+<p>If that doesn't strike you as beautiful, you may have no emotion. Here's a few reasons why this is awesome to me:</p>
+<ul>
+<li>This kind of pattern occurs in nature. Want an example? Here's one from <a href="https://www.bibliotecapleyades.net/ciencia/ciencia_sol47.htm">Biblioteca Pleyades</a>:</li>
+</ul>
+<p></p>
+<center> <img src="../../../images/solar-kelvin-helmholtz.jpg" width="700">
+</center>
+<p>Yup. That's our very own Sun. And that's the exact same kind of pattern occurring out there.</p>
+<ul>
+<li>
+<p>It's fairly well described on relevant time and spatial scales by a mathematical model people have devised via the art of <del>pondering</del> science.</p>
+</li>
+<li>
+<p>Our computers have the ability to perform this series of computations and spit out a visualization of this kind of resolution. People have gone to the moon on less - and they didn't have all of our current
+fancy tools like high level programming languages, GPUs, autocompletion, documentation, debuggers<sup>bar the occasional moth</sup> and Stack Overflow.</p>
+</li>
+</ul>
+<p>To sum up... In our modern times, there is absolutely stopping you from sitting down at your computer right now and create good physics <sup> and pretty plots</sup> using it.</p>
+<h2>Because writing is fun</h2>
+<p>Seriously. If you haven't tried freeflow, stream of consciousness style writing, try it. It's done wonders for me as a way of structuring my thoughts and pointing out
+flaws in my logic. Besides, with the ease of setting up a blog like this one, the cost of sharing your thoughts with the world is marginal.</p>
+<h2>To make some positive impact</h2>
+<p>Somebody wise once said,</p>
+<blockquote>
+<p>What are the most pressing issues in your field, and why aren't you working on them?</p>
+</blockquote>
+<p>For the last half a century we've had a painfully underfunded technology capable of transforming energy generation
+around the globe. I am, of course, talking about <a href="https://en.wikipedia.org/wiki/Fusion_energy">nuclear fusion</a>. 
+We are currently orbiting <a href="https://en.wikipedia.org/wiki/Sun">a large reactor that's a neat proof of concept for the principle</a>,
+and we're beginning to harness that power using solar cells.</p>
+<p>It's been amazing to see the growth of that. However, given the rising temperatures of our globe caused by us as a civilization
+relentlessly pumping carbon dioxides into the atmosphere,
+<sup>this post is brought to you by two open windows and a draught between them</sup>
+it doesn't seem that's going to be enough. Not as long as our wires aren't superconducting and we can't just <a href="https://cleantechnica.com/2011/12/14/solar-energy-from-the-sahara-desert-could-power-the-world-but-will-it/">power all the globe using
+African deserts</a>,
+ and as long as our best idea for large scale energy storage is pumping water up a hill, 
+we're tied to burning hydrocarbons.</p>
+<p>Or are we?</p>
+<p>That's the view many people take when faced with the problem, if they even acknowledge man-made global warning at all.
+It's certainly the view of plenty of politicians all over the world. How do we know that's true?</p>
+<p>Now, I wish I had influence over public policy, but sadly, I don't. But what I can possibly affect, even if just a little bit,
+is public opinion. And here's hoping it propagates outwards.</p>
+<p>With this blog I am going to try to present an objective view of the state and perspectives of nuclear fusion
+as a possible safe and clean alternative to hydrocarbons. Good people have been working on that for a long time and now
+we're getting quite close - a few more steps in a long marathon - to getting that actually working.</p>
+<p>Because faced with a crisis such as climate change, we're going to need all of the tools at our disposal.</p>
+<p>Because that idea might save the world one day, and that seems like a pretty pressing issue.</p>
+<!---
+> **My client needs a strong defense, you're the solution.**
+
+> *Who's your client?*
+
+> **The future of nuclear fusion.**
+-->
+    </div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="next">
+                <a href="../numpy-ish-gpu-computations-with-cupy/" rel="next" title="NumPy-ish GPU computations with CuPy">Następny post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Komentarze</h2>
+        
+    
+        <div data-title="An introduction" id="utterances-thread"></div>
+        <script src="https://utteranc.es/client.js" repo="StanczakDominik/stanczakdominik.github.io" issue-term="pathname" label="Comments" theme="github-light" crossorigin="anonymous"></script></section></article><footer id="footer"><p>Contents © 2022         <a rel="me" href="https://mastodon.social/@StanczakDominik">Dominik Stańczak-Marikin</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a> - 
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="../../../images/creativecommons.png"></a></p>
+            
+        </footer>
+</div>
+    </section><script src="../../../assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
+    moment.locale("pl");
+    fancydates(2, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

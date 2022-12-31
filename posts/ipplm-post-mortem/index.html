@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html prefix="        og: http://ogp.me/ns# article: http://ogp.me/ns/article#     " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>A pandemic story, or, what I learned working with nuclear fusion | Prematurely optimizing</title>
+<link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (pl)" hreflang="pl" href="../../pl/rss.xml">
+<link rel="canonical" href="https://stanczakdominik.github.io/posts/ipplm-post-mortem/">
+<!--[if lt IE 9]><script src="../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett">
+<link rel="stylesheet" type="text/css" href="../../assets/css/tipuesearch.css">
+<meta name="author" content="Dominik Stańczak-Marikin">
+<link rel="prev" href="../mid-2022-update/" title="Mid-2022 Update" type="text/html">
+<meta property="og:site_name" content="Prematurely optimizing">
+<meta property="og:title" content="A pandemic story, or, what I learned working with nuclear fusion">
+<meta property="og:url" content="https://stanczakdominik.github.io/posts/ipplm-post-mortem/">
+<meta property="og:description" content="As promised, here's a post on the story of my time at IPPLM - the Institute of Plasma Physics and Laser Microfusion, where I worked for the last almost-three-years. Past tense, because since September">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2022-11-15T07:00:00+02:00">
+<link rel="alternate" hreflang="pl" href="../../pl/posts/ipplm-post-mortem/">
+</head>
+<body>
+    <a href="#page-content" class="sr-only sr-only-focusable">Skip to main content</a>
+    
+    <section class="social"><ul>
+<li><a href="../../index.html" title="Home"><i class="fa fa-home"></i></a></li>
+            <li><a href="../../archive.html" title="Archives"><i class="fa fa-folder-open"></i></a></li>
+            <li><a href="../../categories/" title="Tags"><i class="fa fa-tags"></i></a></li>
+            <li><a href="../../rss.xml" title="RSS"><i class="fa fa-rss"></i></a></li>
+            <li><a href="../../about/" title="About"><i class="fa fa-user"></i></a></li>
+            <li><a href="../../credits/" title="Credits"><i class="fa fa-child"></i></a></li>
+            <li><a href="https://github.com/stanczakdominik" title="My Github"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://github.com/StanczakDominik/stanczakdominik.github.io/tree/src" title="Site repo"><i class="fas fa-file-code"></i></a></li>
+    
+    
+
+        </ul></section><section class="page-content"><div class="content" rel="main">
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">A pandemic story, or, what I learned working with nuclear fusion</a></h1>
+
+        <div class="metadata">
+            <p class="dateline"><a href="." rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2022-11-15T07:00:00+02:00" itemprop="datePublished" title="2022-11-15 07:00">2022-11-15 07:00</time></a></p>
+            <p class="byline author vcard"> <i class="fa fa-user"></i> <span class="byline-name fn" itemprop="author">
+                    <a href="../../authors/dominik-stanczak-marikin/">Dominik Stańczak-Marikin</a>
+            </span></p>
+                <p class="commentline"><i class="far fa-comment"></i>
+    
+        <a href="#utterances-thread">Comments</a>
+
+
+            
+        </p>
+<p class="sourceline"><a href="index.md" class="sourcelink"><i class="fa fa-file-code"></i> Source</a></p>
+
+            
+
+            
+
+        </div>
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p>As promised, here's a post on the story of my time at <a href="https://www.ifpilm.pl/">IPPLM - the Institute of Plasma Physics and Laser Microfusion</a>, where I worked for the last almost-three-years. Past tense, because since September I've successfully found remote work as a Python software developer at a large pharmaceutical company. Speaking of... I don't think I can say as much as I'd hoped about the projects we're working on, but, suffice to say, I think they have some real potential for helping people with neurodegenerative diseases. So I'm still trying to tackle one of the Large Problems, just... another one, and more so from a backend/support angle.</p>
+<p>While writing this, I realized that this story was also deeply intertwined with the story of the global COVID-19 pandemic, because that turned the whole situation on its head. I thought about separating the two, but decided instead to embrace it and tell it whole rather than in pieces. So, beware, this is going to get <em>long</em>. To alleviate that, I've broken it up more than usual and have placed the major takeaways in specifically formatted sections throughout.</p>
+<p>With that disclaimer in place... onto the story!</p>
+<!-- TEASER_END -->
+
+<h2>How I got there</h2>
+<p>During my undergraduate studies, somewhere maybe during my second year, I realized that</p>
+<blockquote>
+<p>hey, nuclear fusion is this cool project, with lots of potential for humanity, that also fits most of my scientific interests (fluids, electrodynamics, computational physics), and none of my friends seem to be taking care of that. I want it to get done; I'll go do it.
+~ Dominik, 2014 or so</p>
+</blockquote>
+<p>So I went ahead and started doing it, using a three-pronged approach:</p>
+<ol>
+<li>Learn more about it.</li>
+<li>Find people I can help with it online.</li>
+<li>Find people I can help with it locally.</li>
+</ol>
+<p>I started grabbing books and courses about plasma and fusion, so that was avenue #1 covered.</p>
+<p>To deal with #2, since I was a budding dev at the time, with <a href="http://www-personal.umich.edu/~mejn/computational-physics/">basically a single computational physics book of extra-curricular experience</a> in my toolbelt (which also exposed me to the idea of open source) and a metric ton of optimism, I tried searching on GitHub for openly developed plasma physics projects.  That's how I found <a href="https://github.com/PlasmaPy/PlasmaPy">PlasmaPy</a>, and I should really write <a href="plasmapy-and-me">a post on my history with that project</a> sometime, as it's been one of the most impactful decisions of my life.</p>
+<p>I think there's a lesson to be learned here:</p>
+<blockquote>
+<p>Takeaway number one: <strong>the Internet really shortens the distance between cool projects and useful volunteers looking to make a difference while gaining experience</strong>. This is a resource you could be using today. Go ahead!</p>
+</blockquote>
+<p>Still, at the time it was a small project, a suite of generic tools, and I felt the gaping hole of my plasma physics inexperience was a hindrance. I wanted to get some hands on experience with actual nuclear fusion.</p>
+<h3>The road to IPPLM</h3>
+<p>I still had #3, though - reaching out to people locally who were already involved with fusion - and that's how I found IPPLM. I initially signed up there for an apprenticeship, which was spent mostly helping out a senior researcher with debugging and visualization for a simulation he was running for a plasma focus system. That was neat and I learned a lot during that (I also wrote some code that I still shudder to think about!), but I didn't get as much hands on experience with actual nuclear fusion, the cool machines and experiments, the twisted geometries of tokamaks and stellarators.</p>
+<p>During that time, I learned about the particle-in-cell method and figured I wanted to try doing something in that area. My supervisor put me in contact with professor Jabłoński, who's absolutely one of the literal Best People on the planet and can also play a mean acoustic guitar. He guided me through the process of writing a particle in cell code in Python. <a href="../post-mortem-for-my-engineering-thesis-code-pythonpic">I've told that story</a> before. Still... it was a little... far from actual nuclear fusion, the cool machines and experiments, etc etc, you know the drill.</p>
+<p>So in late 2019, having spent nine months with natural language translation at Samsung, having decided I'd go back to doing science because <em>natural language translation seemed to be getting the help it needed and fusion less so</em>, I went back to IPPLM and started working there, first part-time, then full time. For the first time I'd have hands on experience with nuclear fusion, etc etc!</p>
+<p>I spent maybe four months there before COVID-19 exploded in Asia and then globally.</p>
+<h2>And then it got worse, but also better</h2>
+<p>It didn't look like much initially, though I think I got initial glimpses faster than most - three of my friends at IPPLM went to Japan's LHD at the time and went on medical leave straight after coming back. I still suspect I also caught a relatively mild form from them - which could be why I managed to go through the pandemic relatively unscathed. Of course, getting vaccinated ASAP later also helped!</p>
+<p>Still, at the time, things were deteriorating pretty rapidly. Back then, nobody knew how this thing spread, how lethal it was and how you could tell you had it. There was a period where everyone was paranoid about disinfecting surfaces, such as door knobs, because we didn't know it transmitted via the respiratory system. So we got sent to remote work basically overnight, and rumors of lockdowns kept popping out.</p>
+<p>I was extremely lucky and already had an opportunity to move out with my then-fiancee-now-wife lined up, which we seized literally right before the lockdown hit. We thought, hey, whatever happens it's going to be easier to handle it together. So we grabbed the dog and ran in early April.</p>
+<p><img alt="Picture of a black Schipperke dog in front of a laptop screen, looking mildly confused" src="../../images/ifpilm-postmortem/20200508_172201.jpg"></p>
+<blockquote>
+<p>My pair programming buddy. He sometimes barks at antipatterns. Well, he also sometimes barks at patterns, or maybe it's all just the pigeons outside, but I believe he's trying to help, all the same.</p>
+</blockquote>
+<p>And the next few months, spent working remotely, I actually enjoyed quite a lot.</p>
+<h3>Working from home</h3>
+<p>Because it turns out that hey, as a massive introvert I actually do some of my best work on my own terms. Locked up tight in a tiny room with no interruptions but the work in front of me? Sign me up! Getting up before the sun and racing it to knock down one more bug before dawn? Hell yes! Writing code without trousers? Well let me tell you, I've written some of my worst code with trousers on and I do not think that a mere coincidence!<sup id="fnref:pants"><a class="footnote-ref" href="#fn:pants">1</a></sup></p>
+<p>Professionally, this was a weird time because I was assisting with <a href="https://link.springer.com/article/10.1140/epjp/s13360-021-01630-6">one computational project</a> and investigating my first master's thesis attempt. I was lucky to be able to do the thesis as part of work, but it didn't happen to pan out. The first attempt - because we basically had a massive miscommunication and didn't reach out to the folks in Germany early enough. We vastly underestimated the difficulty of developing a Bayesian model for Thomson scattering and didn't have enough experience with the subject to de-scope it into a "minimum thesis-able product".</p>
+<p>The latter was a re-implementation of an existing code and, well, let's just say it was sufficiently unexciting and un-useful that I had trouble motivating myself to finish it. I had more important stuff to do! Through that time, I also worked on parsing LHD spectroscopic data and identifying spectral lines in it; backward inference of PHA data using IPPLM's forward model for impurities; and essentially a ray-tracing parallelized algorithm for the CO-Monitor diagnostic, which I hear is coming online soon. I really enjoyed all of these.</p>
+<p>All that taught me two things:</p>
+<blockquote>
+<p>Takeaway number two: <strong>it's awesome to get results, but the total impact of the results gotten by all the people you help</strong> - even by simply writing tools - <strong>can often be far greater</strong>.<sup id="fnref:tools"><a class="footnote-ref" href="#fn:tools">2</a></sup></p>
+</blockquote>
+<p>Of course, this may be a purely personal thing - some folks just prefer writing tools! In fact, while my official job title at IPPLM was "<em>Pracownik badawczo-techniczny</em>" (<em>Technical/research worker/specialist</em>, I guess?), there's an increasingly popular term "Research Software Engineer", or RSE, that describes the sort of job I did. In fact I'll leave you with <a href="https://researchsoftware.org/">the RSE community's website</a> and jump straight to the next lesson learned:</p>
+<blockquote>
+<p>Takeaway number three: Research Software Engineers, or <strong>people straddling the boundary of science and software development, are extremely important.</strong> Scientists alone, without practical experience in software dev, have an incredibly rough road to good results in this digital age. But you can't just point software devs at a tokamak and expect to get working fusion out of it, either. If you are proficient in both areas, even enough to know who to ask in each, this may be a good path you can take.</p>
+</blockquote>
+<p>Of course I'm not saying it's impossible for "pure" scientists, physicists in my case, to get results - but the code they write is often obscure, inefficient and non-generalizable, so it takes a lot of time to rewrite it from one experiment to another. I'm not saying my code's all that much better, far from it - I'm just pointing out a problem in the system.</p>
+<p>All in all, though, the first two waves of the pandemic were actually a good period for me and my then-fiancee. Of course, we dodged a bunch of bullets - heavy infections, losses of people close to us... </p>
+<h2>And then it got better, but also worse</h2>
+<p>What got better was the pandemic. Well, relatively speaking - we had vaccines, but a lot of people <strong>were being unreasonable</strong> and refused to do their part for societal immunity. Still, by mid 2021 we "mostly" "had a handle on it", or at least that's what our government... I can't tell if they honestly thought that. I personally smelled bullshit and was validated afterwards, because, basically...</p>
+<p><img alt="Plot of new cases of COVID-19, with a through from about June to September 2021, with a red arrow pointing roughly to July 1" src="../../images/ifpilm-postmortem/Screenshot%202022-11-14%20at%2019-56-09%20Poland%20COVID%20-%20Coronavirus%20Statistics%20-%20Worldometer.png"></p>
+<blockquote>
+<p>We were here. "Coronavirus in retreat", as per Polish PM Morawiecki, July 1st. Plot as per <a href="https://www.worldometers.info/coronavirus/country/poland/#graph-deaths-daily">Worldometers.info</a>.</p>
+</blockquote>
+<p>On, if I remember correctly, July 1st, 2021, a Thursday, we all got an email from the Director from the Institute, saying that we'd be returning to stationary work... on July 2nd, a Friday.</p>
+<p><img alt='Screenshot from a Fallout game, with a pop-up message: "Everyone disliked that."' src="../../images/ifpilm-postmortem/cover6.jpg"></p>
+<blockquote>
+<p>my section of the IPPLM, July 1st (colorized)</p>
+</blockquote>
+<p>Now I'm not saying the Director was in a comfortable position here, IPPLM being a national institute at all and likely under pressure from the same dorks in government whose ineptitude got us waves #3, #4. Or maybe it's that it's hard to get remote work working for experimentalists, and while folks like me who mostly whack away at a keyboard and prep data analysis for the next W7X campaign were seeing crazy high efficiency, work on the experimental part stalled. I honestly don't know.</p>
+<p>Whatever the reason, in my little area, this has been widely seen as an utterly shit move. Due to decisions made above our heads and without giving us any say in, we were now forced to:</p>
+<ul>
+<li>risk catching COVID, which <em>of course</em> flared up again soon in full force after summer vacation ended for schoolchildren</li>
+<li>spend valuable time commuting, which in my case came to 2h30m a day, which is... draining, to say the least</li>
+<li>work less efficiently, because now you're tired from the commute and you're constantly paying</li>
+<li>work in constant distraction, because there's only so much blasting Rammstein on headphones can help you block out, and I don't <em>think</em> I was being any less helpful to everyone who needed it</li>
+<li>achieve less progress, so it becomes harder to motivate yourself when you're not getting the results you'd like</li>
+<li>spend the 5.5 hours left in the day (assuming 8 hours work, 8 hours sleep, 2h30m commute) trying to fit meal prep, regenerating just enough to survive the next day</li>
+<li>write code while wearing trousers</li>
+</ul>
+<p>And, as I heard, I don't know if it was just middle management playing bad cop, but this would be a permanent arrangement.</p>
+<p>And, well, I lasted roughly a year before slowly coming to the conclusion that the strain all this was putting on my personal life, on my mental health, on my other projects (remember PlasmaPy?)... wasn't worth it. So, since my contract was running out at the end of summer 2022, I decided, <em>welp, guess I'm not finishing this master's thesis that's not going to help anyone just so I can work in conditions I don't enjoy</em>, and didn't seek an extension.</p>
+<p>So here's my last lesson learned at IPPLM!</p>
+<blockquote>
+<p>Takeaway number four: <strong>work at home</strong>, for work that can be done remotely and for people who can successfully adapt to it <strong>is such a gamechanger that workplaces must adapt to it themselves</strong>. Workplaces that don't miss out on a whole lot of potential.</p>
+</blockquote>
+<p>I'm not saying it's an easy transition. Organizing remote work is a whole 'nother game. Still, I'm pretty sure that, despite whatever you might hear from, for example, Bezos-owned media, it's the way to go <em>for people like me</em>.</p>
+<h2>The end of this chapter, and how it's getting better again</h2>
+<p>Here's a disclaimer: I absolutely don't want to dunk on IPPLM! I It's a good place, with a lot of great people that I have a lot of respect and gratitude for, and some damn cool projects. Still, the pandemic made me realize that I personally am not a good fit for it. I wish I could have been, and with more flexibility from the management side I might have been. I would still recommend the workplace, but be realistic about how much you'd like to endure for work and try to find an environment that's a good fit for you. Sample. Try things.</p>
+<p>And that's it for this story. COVID is now likely a permanent fixture in our lives, unfortunately. But even if it were extinguished, I don't think I'm likely to come back to office work. I'm extremely happy with how things are going now, with my fully remote setup. I'm now:</p>
+<ul>
+<li>healthier, both mentally and physically</li>
+<li>happily doing stuff like spending more time with my wonderful wow-I-still-can't-believe-she's-my wife, writing, both code and blog posts, as you can see here!</li>
+<li>working efficiently, in conditions I find optimal (5 AM start? Sure!)</li>
+<li>learning a lot about how industry does Python</li>
+<li>actually managing to have a social life</li>
+<li>helping nuclear fusion the way I like, writing tools that actually help a lot of people, on my own terms</li>
+<li>actually moving my life along!</li>
+</ul>
+<p>So... yeah! If you got here, thanks for sticking through it, I hope you found it interesting and/or helpful. I certainly found writing it helpful in processing the last two crazy years. If you didn't, while I can't exactly return you the time you've spent reading, I can get you a dog photo that might be more your thing. Get in touch if you'd like to take me up on that offer :)</p>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn:pants">
+<p>I can neither confirm nor deny trousers were worn while writing this post. Honestly, it's been in draft for a while so I can't actually remember. I'd estimate like 40% trouserless, which may be why it's gotten so lengthy. <a class="footnote-backref" href="#fnref:pants" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:tools">
+<p>Disclaimer: whether the scientific research system we have now is set up to promote and reward writing tools is arguable. In fact I'll argue for an emphatic <strong>no</strong> and just point you towards <a href="https://www.arfon.org/announcing-the-journal-of-open-source-software#-the-big-problem-with-software-papers--our-current-credit-system">the announcement of JOSS</a> for more on that. <a class="footnote-backref" href="#fnref:tools" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../mid-2022-update/" rel="prev" title="Mid-2022 Update">Previous post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+    
+        <div data-title="A pandemic story, or, what I learned working with nuclear fusion" id="utterances-thread"></div>
+        <script src="https://utteranc.es/client.js" repo="StanczakDominik/stanczakdominik.github.io" issue-term="pathname" label="Comments" theme="github-light" crossorigin="anonymous"></script></section></article><footer id="footer"><p>Contents © 2022         <a rel="me" href="https://mastodon.social/@StanczakDominik">Dominik Stańczak-Marikin</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a> - 
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="../../images/creativecommons.png"></a></p>
+            
+        </footer>
+</div>
+    </section><script src="../../assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(2, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

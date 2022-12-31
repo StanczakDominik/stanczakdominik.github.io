@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html prefix="        og: http://ogp.me/ns# article: http://ogp.me/ns/article#     " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>I aten't dead | Prematurely optimizing</title>
+<link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (pl)" hreflang="pl" href="../../pl/rss.xml">
+<link rel="canonical" href="https://stanczakdominik.github.io/posts/i-atent-dead/">
+<!--[if lt IE 9]><script src="../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett">
+<link rel="stylesheet" type="text/css" href="../../assets/css/tipuesearch.css">
+<meta name="author" content="Dominik Stańczak-Marikin">
+<link rel="prev" href="../plasmapy-v060-release/" title="PlasmaPy v0.6.0 release!" type="text/html">
+<link rel="next" href="../the-importance-of-good-notation/" title="The importance of good notation" type="text/html">
+<meta property="og:site_name" content="Prematurely optimizing">
+<meta property="og:title" content="I aten't dead">
+<meta property="og:url" content="https://stanczakdominik.github.io/posts/i-atent-dead/">
+<meta property="og:description" content="Here's a quick status update; I have been meaning to post these more often.
+
+
+Thesis
+I'm tinkering away and playing bug whack-a-mole with
+PlasmaPy #1059, the pull
+request that's going to become my mas">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2021-04-18T19:25:41+02:00">
+<meta property="article:tag" content="status update">
+<link rel="alternate" hreflang="pl" href="../../pl/posts/i-atent-dead/">
+</head>
+<body>
+    <a href="#page-content" class="sr-only sr-only-focusable">Skip to main content</a>
+    
+    <section class="social"><ul>
+<li><a href="../../index.html" title="Home"><i class="fa fa-home"></i></a></li>
+            <li><a href="../../archive.html" title="Archives"><i class="fa fa-folder-open"></i></a></li>
+            <li><a href="../../categories/" title="Tags"><i class="fa fa-tags"></i></a></li>
+            <li><a href="../../rss.xml" title="RSS"><i class="fa fa-rss"></i></a></li>
+            <li><a href="../../about/" title="About"><i class="fa fa-user"></i></a></li>
+            <li><a href="../../credits/" title="Credits"><i class="fa fa-child"></i></a></li>
+            <li><a href="https://github.com/stanczakdominik" title="My Github"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://github.com/StanczakDominik/stanczakdominik.github.io/tree/src" title="Site repo"><i class="fas fa-file-code"></i></a></li>
+    
+    
+
+        </ul></section><section class="page-content"><div class="content" rel="main">
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">I aten't dead</a></h1>
+
+        <div class="metadata">
+            <p class="dateline"><a href="." rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2021-04-18T19:25:41+02:00" itemprop="datePublished" title="2021-04-18 19:25">2021-04-18 19:25</time></a></p>
+            <p class="byline author vcard"> <i class="fa fa-user"></i> <span class="byline-name fn" itemprop="author">
+                    <a href="../../authors/dominik-stanczak-marikin/">Dominik Stańczak-Marikin</a>
+            </span></p>
+                <p class="commentline"><i class="far fa-comment"></i>
+    
+        <a href="#utterances-thread">Comments</a>
+
+
+            
+        </p>
+<p class="sourceline"><a href="index.md" class="sourcelink"><i class="fa fa-file-code"></i> Source</a></p>
+
+            
+
+            
+    <div class="tags">
+<h3 class="metadata-title">
+<i class="fa fa-tags"></i> Tags:</h3>
+        <ul itemprop="keywords" class="tags-ul">
+<li><a class="tag p-category" href="../../categories/status-update/" rel="tag">status update</a></li>
+        </ul>
+</div>
+
+        </div>
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p>Here's a quick status update; I have been meaning to post these more often.</p>
+<!-- TEASER_END -->
+
+<h2>Thesis</h2>
+<p>I'm tinkering away and playing bug whack-a-mole with
+<a href="https://github.com/PlasmaPy/PlasmaPy/pull/1059">PlasmaPy #1059</a>, the pull
+request that's going to become my masters thesis. Basically, it implements
+neoclassical transport calculations - solves for particle and heat flows -
+in axisymmetric plasma configurations. It's rather basic, but it's a start.</p>
+<p><img alt="Example flux surface" src="../../images/fluxsurface.png"></p>
+<p>Here's a sample flux surface - I will soon-ish write a note that explains this concept.
+In a nutshell, though - I'm splitting the domain (a 2D slice through a tokamak)
+into these circular flux surfaces, a radial grid:</p>
+<p><img alt="Example flux surface grid" src="../../images/fluxsurfacegrid.png"></p>
+<p>And then I calculate how much flow there is between them.  I still have a good
+bunch of problems with it:</p>
+<ul>
+<li>I'm using <code>astropy.units</code>, from which I infer that my formulae have issues, as
+    each flux comes out with a different physical unit attached. And I'm still
+    not quite sure why.</li>
+<li>I still have to figure out a decently nice way to input the quantities
+    (density and temperature) that, together with the magnetic field, determine
+    this transport.</li>
+<li>I don't understand differential geometry yet, and it really would have been
+    useful here. But I'm picking it up, slowly.</li>
+</ul>
+<h2>The rest</h2>
+<p>Whoops, I'm writing this on a timer as an exercise and that one's rapidly
+running away. Okay, here goes.</p>
+<ul>
+<li>Part 2 of the <a href="../fusion1">series on fusion</a> is coming soon; I'm using
+    it as a way to cobble together a first draft of my actual thesis introduction.</li>
+<li>PlasmaPy's coming along nicely, though I'm mostly knee deep in the neoclassics
+    PR. There have been some cool new developments with documentation and
+    speeding up our formulary functions. We're also trying to figure out how
+    to host essentially a hackathon. Tips appreciated!</li>
+<li>I've been getting back into reading books, recently, and really enjoying it.
+    I'll do a write up of my current system (because <em>of course</em> I have a
+    system, for it, what did you expect?) in a few weeks.</li>
+<li>Speaking of systems, we recently sat down together with Paulina, realized our
+    way of consistently keeping the flat clean... wasn't at all consistent, and
+    figured out a system based on a python script and a shared yaml file with
+    dates of when we last did X thing (say, vacuuming) vs how often do we
+    want to do that particular X. The ratio of time since last occurrence to
+    expected period is then a metric than we can actually try to keep down. As
+    you have probably guessed by now - write up coming up! But probably not
+    soon.</li>
+</ul>
+<p>All right, that's in for this week! I will try to be back here next week with
+another status update, if I don't actually manage to get fusion2 out. Time will
+tell! In the meantime, stay safe!</p>
+    </div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../plasmapy-v060-release/" rel="prev" title="PlasmaPy v0.6.0 release!">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../the-importance-of-good-notation/" rel="next" title="The importance of good notation">Next post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+    
+        <div data-title="I aten't dead" id="utterances-thread"></div>
+        <script src="https://utteranc.es/client.js" repo="StanczakDominik/stanczakdominik.github.io" issue-term="pathname" label="Comments" theme="github-light" crossorigin="anonymous"></script></section></article><footer id="footer"><p>Contents © 2022         <a rel="me" href="https://mastodon.social/@StanczakDominik">Dominik Stańczak-Marikin</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a> - 
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="../../images/creativecommons.png"></a></p>
+            
+        </footer>
+</div>
+    </section><script src="../../assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(2, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

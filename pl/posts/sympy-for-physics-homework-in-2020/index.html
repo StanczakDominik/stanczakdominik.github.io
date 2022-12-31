@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html prefix="        og: http://ogp.me/ns# article: http://ogp.me/ns/article#     " vocab="http://ogp.me/ns" lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>SymPy for physics homework in 2020 | Prematurely optimizing</title>
+<link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS (pl)" hreflang="pl" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../../rss.xml">
+<link rel="canonical" href="https://stanczakdominik.github.io/pl/posts/sympy-for-physics-homework-in-2020/">
+<!--[if lt IE 9]><script src="../../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett">
+<link rel="stylesheet" type="text/css" href="../../../assets/css/tipuesearch.css">
+<meta name="author" content="Dominik Stańczak-Marikin">
+<link rel="prev" href="../anger-disinformation-populism-truth/" title="Anger, disinformation, populism, the sorry state of the world right now... and truth" type="text/html">
+<link rel="next" href="../2021/" title="The plan for 2021" type="text/html">
+<meta property="og:site_name" content="Prematurely optimizing">
+<meta property="og:title" content="SymPy for physics homework in 2020">
+<meta property="og:url" content="https://stanczakdominik.github.io/pl/posts/sympy-for-physics-homework-in-2020/">
+<meta property="og:description" content="I've been doing my university physics homework in SymPy and Jupyter for a little bit, and I thought I could share a little about the workflow I've developed for it. It might come useful for you.
+
+
+
+
+
+">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2020-09-29T16:46:21+02:00">
+<meta property="article:tag" content="python sympy">
+<link rel="alternate" hreflang="en" href="../../../posts/sympy-for-physics-homework-in-2020/">
+</head>
+<body>
+    <a href="#page-content" class="sr-only sr-only-focusable">Przejdź do treści</a>
+    
+    <section class="social"><ul>
+<li><a href="../../../index.html" title="Home"><i class="fa fa-home"></i></a></li>
+            <li><a href="../../../archive.html" title="Archives"><i class="fa fa-folder-open"></i></a></li>
+            <li><a href="../../../categories/" title="Tags"><i class="fa fa-tags"></i></a></li>
+            <li><a href="../../../rss.xml" title="RSS"><i class="fa fa-rss"></i></a></li>
+            <li><a href="../../../about/" title="About"><i class="fa fa-user"></i></a></li>
+            <li><a href="../../../credits/" title="Credits"><i class="fa fa-child"></i></a></li>
+            <li><a href="https://github.com/stanczakdominik" title="My Github"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://github.com/StanczakDominik/stanczakdominik.github.io/tree/src" title="Site repo"><i class="fas fa-file-code"></i></a></li>
+    
+    
+
+        </ul></section><section class="page-content"><div class="content" rel="main">
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">SymPy for physics homework in 2020</a></h1>
+
+        <div class="metadata">
+            <p class="dateline"><a href="." rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2020-09-29T16:46:21+02:00" itemprop="datePublished" title="2020-09-29 16:46">2020-09-29 16:46</time></a></p>
+            <p class="byline author vcard"> <i class="fa fa-user"></i> <span class="byline-name fn" itemprop="author">
+                    <a href="../../authors/dominik-stanczak-marikin/">Dominik Stańczak-Marikin</a>
+            </span></p>
+                <p class="commentline"><i class="far fa-comment"></i>
+    
+        <a href="#utterances-thread">Komentarze</a>
+
+
+            
+        </p>
+<p class="sourceline"><a href="index.ipynb" class="sourcelink"><i class="fa fa-file-code"></i> Źródło</a></p>
+
+            
+
+            
+    <div class="tags">
+<h3 class="metadata-title">
+<i class="fa fa-tags"></i> Tagi:</h3>
+        <ul itemprop="keywords" class="tags-ul">
+<li><a class="tag p-category" href="../../categories/python-sympy/" rel="tag">python sympy</a></li>
+        </ul>
+</div>
+
+        </div>
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I've been doing my university physics homework in SymPy and Jupyter for a little bit, and I thought I could share a little about the workflow I've developed for it. It might come useful for you.</p>
+<!--TEASER_END-->
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's go through with an abridged example of plasma physics homework with that toolset, and then go over the tricks used as they come up. I'll put text that I'd put in the homework solution in quotes.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote>
+<h3 id="For-electrostatic-electron-waves-in-unmagnetized-plasma,-calculate-the-correction-to-the-frequency-due-to-the-ion-motion.">For electrostatic electron waves in unmagnetized plasma, calculate the correction to the frequency due to the ion motion.<a class="anchor-link" href="#For-electrostatic-electron-waves-in-unmagnetized-plasma,-calculate-the-correction-to-the-frequency-due-to-the-ion-motion.">¶</a>
+</h3>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We'll set up our SymPy namespace first. We'll dump it all into the main namespace; not the best habit for libraries, but here we want to write less code, so it'll do.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">config</span> InteractiveShell.ast_node_interactivity = 'last_expr_or_assign'
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">init_printing</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I also added a little IPython magic in there. This is a little behavior I picked up from working in Julia, where <strong>the value last expression or assignment in a cell is displayed</strong>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote>
+<p>We take the linearized forms in Fourier space of the following fluid equations:</p>
+<ol>
+<li>equation of motion, for ions, with temperature</li>
+<li>equation of motion, for electrons, with temperature</li>
+<li>mass conservation for ions</li>
+<li>mass conservation for electrons</li>
+<li>Poisson's equation</li>
+</ol>
+</blockquote>
+<p>Now, let's define our variables and the set of equations we care about. Note how we'll liberally use unicode characters to shorten our code. In Jupyter, you can enter $\omega$ in code cells by simply writing the LaTeX for it and hitting TAB afterwards: <code>\omega&lt;TAB&gt;</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m_i</span><span class="p">,</span> <span class="n">m_e</span><span class="p">,</span> <span class="n">γ</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">n_0</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">ϵ</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">'m_i m_e gamma T n_0 e varepsilon_0'</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ω</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">'omega k'</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">v_i</span><span class="p">,</span> <span class="n">v_e</span><span class="p">,</span> <span class="n">n_i</span><span class="p">,</span> <span class="n">n_e</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">'v_i v_e n_i n_e'</span><span class="p">)</span>  <span class="c1"># to be understood as fourier modes</span>
+
+<span class="n">equations</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">Eq</span><span class="p">(</span><span class="o">-</span><span class="n">I</span> <span class="o">*</span> <span class="n">ω</span> <span class="o">*</span> <span class="n">m_i</span> <span class="o">*</span> <span class="n">n_0</span> <span class="o">*</span> <span class="n">v_i</span><span class="p">,</span> <span class="o">+</span><span class="n">e</span> <span class="o">*</span> <span class="n">n_0</span> <span class="o">*</span> <span class="n">E</span> <span class="o">-</span> <span class="n">I</span> <span class="o">*</span> <span class="n">k</span> <span class="o">*</span> <span class="n">γ</span> <span class="o">*</span> <span class="n">T</span> <span class="o">*</span> <span class="n">n_i</span><span class="p">),</span>
+    <span class="n">Eq</span><span class="p">(</span><span class="o">-</span><span class="n">I</span> <span class="o">*</span> <span class="n">ω</span> <span class="o">*</span> <span class="n">m_e</span> <span class="o">*</span> <span class="n">n_0</span> <span class="o">*</span> <span class="n">v_e</span><span class="p">,</span> <span class="o">-</span><span class="n">e</span> <span class="o">*</span> <span class="n">n_0</span> <span class="o">*</span> <span class="n">E</span> <span class="o">-</span> <span class="n">I</span> <span class="o">*</span> <span class="n">k</span> <span class="o">*</span> <span class="n">γ</span> <span class="o">*</span> <span class="n">T</span> <span class="o">*</span> <span class="n">n_e</span><span class="p">),</span>
+    <span class="n">Eq</span><span class="p">(</span><span class="o">-</span><span class="n">I</span> <span class="o">*</span> <span class="n">ω</span> <span class="o">*</span> <span class="n">n_i</span> <span class="o">+</span> <span class="n">I</span> <span class="o">*</span> <span class="n">k</span> <span class="o">*</span> <span class="n">n_0</span> <span class="o">*</span> <span class="n">v_i</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+    <span class="n">Eq</span><span class="p">(</span><span class="o">-</span><span class="n">I</span> <span class="o">*</span> <span class="n">ω</span> <span class="o">*</span> <span class="n">n_e</span> <span class="o">+</span> <span class="n">I</span> <span class="o">*</span> <span class="n">k</span> <span class="o">*</span> <span class="n">n_0</span> <span class="o">*</span> <span class="n">v_e</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+    <span class="n">Eq</span><span class="p">(</span><span class="n">I</span> <span class="o">*</span> <span class="n">k</span> <span class="o">*</span> <span class="n">E</span> <span class="p">,</span> <span class="n">e</span> <span class="o">*</span> <span class="p">(</span><span class="n">n_i</span> <span class="o">-</span> <span class="n">n_e</span><span class="p">)</span> <span class="o">/</span> <span class="n">ϵ</span><span class="p">)</span>
+<span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[2]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$\displaystyle \left[ - i m_{i} n_{0} \omega v_{i} = - i T \gamma k n_{i} + e e n_{0}, \  - i m_{e} n_{0} \omega v_{e} = - i T \gamma k n_{e} - e e n_{0}, \  i k n_{0} v_{i} - i n_{i} \omega = 0, \  i k n_{0} v_{e} - i n_{e} \omega = 0, \  e i k = \frac{e \left(- n_{e} + n_{i}\right)}{\varepsilon_{0}}\right]$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>See? That's output right there. Neat! Anyway,</p>
+<blockquote>
+<p>We first solve equations 3 and 4 for the velocities:</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">v_i_e_solutions</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">equations</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="n">v_i</span><span class="p">,</span> <span class="n">v_e</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[3]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$\displaystyle \left\{ v_{e} : \frac{n_{e} \omega}{k n_{0}}, \  v_{i} : \frac{n_{i} \omega}{k n_{0}}\right\}$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote>
+<p>We then insert the velocities into the equations of motion:</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">motion_equations</span> <span class="o">=</span> <span class="p">[</span><span class="n">eq</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">v_i_e_solutions</span><span class="p">)</span> <span class="k">for</span> <span class="n">eq</span> <span class="ow">in</span> <span class="n">equations</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[4]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$\displaystyle \left[ - \frac{i m_{i} n_{i} \omega^{2}}{k} = - i T \gamma k n_{i} + e e n_{0}, \  - \frac{i m_{e} n_{e} \omega^{2}}{k} = - i T \gamma k n_{e} - e e n_{0}\right]$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote>
+<p>From this, it is simple to grab the number densities:</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">n_i_e_solutions</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">motion_equations</span><span class="p">,</span> <span class="p">(</span><span class="n">n_i</span><span class="p">,</span> <span class="n">n_e</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[5]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$\displaystyle \left\{ n_{e} : \frac{e i e k n_{0}}{T \gamma k^{2} - m_{e} \omega^{2}}, \  n_{i} : - \frac{e i e k n_{0}}{T \gamma k^{2} - m_{i} \omega^{2}}\right\}$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote>
+<p>And now we can insert those back into the final, Poisson's equation:</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">poisson_eq</span> <span class="o">=</span> <span class="n">equations</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">n_i_e_solutions</span><span class="p">)</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$\displaystyle e i k = \frac{e i e^{2} k n_{0} \left(- 2 T \gamma k^{2} + m_{e} \omega^{2} + m_{i} \omega^{2}\right)}{\varepsilon_{0} \left(T \gamma k^{2} - m_{e} \omega^{2}\right) \left(T \gamma k^{2} - m_{i} \omega^{2}\right)}$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote>
+<p>This we can solve for the $\omega^2$:</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ω2_solutions</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">poisson_eq</span><span class="p">,</span> <span class="n">ω</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[7]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$\displaystyle \left[ \frac{\left(m_{e} + m_{i}\right) \left(T \gamma k^{2} \varepsilon_{0} + e^{2} n_{0}\right) - \sqrt{T^{2} \gamma^{2} k^{4} m_{e}^{2} \varepsilon_{0}^{2} - 2 T^{2} \gamma^{2} k^{4} m_{e} m_{i} \varepsilon_{0}^{2} + T^{2} \gamma^{2} k^{4} m_{i}^{2} \varepsilon_{0}^{2} + 2 T e^{2} \gamma k^{2} m_{e}^{2} n_{0} \varepsilon_{0} - 4 T e^{2} \gamma k^{2} m_{e} m_{i} n_{0} \varepsilon_{0} + 2 T e^{2} \gamma k^{2} m_{i}^{2} n_{0} \varepsilon_{0} + e^{4} m_{e}^{2} n_{0}^{2} + 2 e^{4} m_{e} m_{i} n_{0}^{2} + e^{4} m_{i}^{2} n_{0}^{2}}}{2 m_{e} m_{i} \varepsilon_{0}}, \  \frac{\left(m_{e} + m_{i}\right) \left(T \gamma k^{2} \varepsilon_{0} + e^{2} n_{0}\right) + \sqrt{T^{2} \gamma^{2} k^{4} m_{e}^{2} \varepsilon_{0}^{2} - 2 T^{2} \gamma^{2} k^{4} m_{e} m_{i} \varepsilon_{0}^{2} + T^{2} \gamma^{2} k^{4} m_{i}^{2} \varepsilon_{0}^{2} + 2 T e^{2} \gamma k^{2} m_{e}^{2} n_{0} \varepsilon_{0} - 4 T e^{2} \gamma k^{2} m_{e} m_{i} n_{0} \varepsilon_{0} + 2 T e^{2} \gamma k^{2} m_{i}^{2} n_{0} \varepsilon_{0} + e^{4} m_{e}^{2} n_{0}^{2} + 2 e^{4} m_{e} m_{i} n_{0}^{2} + e^{4} m_{i}^{2} n_{0}^{2}}}{2 m_{e} m_{i} \varepsilon_{0}}\right]$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote>
+<p>Which is the complete analytical answer. as a sanity check, we can take the limit $m_i \to \infty$. Starting with the first one:</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">limit1</span> <span class="o">=</span> <span class="n">limit</span><span class="p">(</span><span class="n">ω2_solutions</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">m_i</span><span class="p">,</span> <span class="n">oo</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[8]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$\displaystyle \frac{T \gamma k^{2} \varepsilon_{0} + e^{2} n_{0} - \sqrt{T^{2} \gamma^{2} k^{4} \varepsilon_{0}^{2} + 2 T e^{2} \gamma k^{2} n_{0} \varepsilon_{0} + e^{4} n_{0}^{2}}}{2 m_{e} \varepsilon_{0}}$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote>
+<p>Which, if we help SymPy a little (it didn't quite notice a pattern in the square root):</p>
+</blockquote>
+<p>This is, unfortunately, a problem that SymPy tends to run into - this kind of issue needs some tinkering sometimes:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">numerator</span><span class="p">,</span> <span class="n">denominator</span> <span class="o">=</span> <span class="n">limit1</span><span class="o">.</span><span class="n">as_numer_denom</span><span class="p">()</span>
+<span class="nb">sum</span><span class="p">(</span><span class="n">arg</span><span class="o">.</span><span class="n">factor</span><span class="p">()</span> <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">numerator</span><span class="o">.</span><span class="n">args</span><span class="p">)</span> <span class="o">/</span> <span class="n">denominator</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[9]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$\displaystyle 0$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote>
+<p>Which is not particularly interesting, corresponding to no oscillation at all. Applying the same procedure to the other solution:</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">limit2</span> <span class="o">=</span> <span class="n">limit</span><span class="p">(</span><span class="n">ω2_solutions</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">m_i</span><span class="p">,</span> <span class="n">oo</span><span class="p">)</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>
+<span class="n">numerator</span><span class="p">,</span> <span class="n">denominator</span> <span class="o">=</span> <span class="n">limit2</span><span class="o">.</span><span class="n">as_numer_denom</span><span class="p">()</span>
+<span class="n">limit2_corrected</span> <span class="o">=</span> <span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">arg</span><span class="o">.</span><span class="n">factor</span><span class="p">()</span> <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">numerator</span><span class="o">.</span><span class="n">args</span><span class="p">)</span> <span class="o">/</span> <span class="n">denominator</span><span class="p">)</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$\displaystyle \frac{T \gamma k^{2} \varepsilon_{0} + e^{2} n_{0}}{m_{e} \varepsilon_{0}}$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote>
+<p>Which is the existing result for the electrostatic electron oscillation for warm electrons. Good! We're sane. Now, we have an analytic expression, but if we want to grab just the first order correction, we can apply some trickery.</p>
+<p>Let's define</p>
+$$M = m_e / m_i$$<p>This is a small quantity, and we an expand our $\omega^2$ solutions in a power series in that.</p>
+<p>We'll then replace $m_i$ in the second $\omega^2$ solution using $M$:</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Mratio</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s2">"M"</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">series_expansion</span> <span class="o">=</span> <span class="p">(</span><span class="n">ω2_solutions</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">m_i</span><span class="p">,</span> <span class="n">m_e</span> <span class="o">/</span> <span class="n">Mratio</span><span class="p">)</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">Mratio</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note how I'm using <code>;</code> at the end to stop this from displaying.</p>
+<blockquote>
+<p>We once again apply some SymPy magic to make the series expansion bearable for the eyes:</p>
+</blockquote>
+<p>This took a bunch of StackOverflow searching, which, if you're on a deadline, may admittedly not be the most productive thing to do:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">simplified_series_expansion</span> <span class="o">=</span> <span class="n">collect</span><span class="p">(</span><span class="n">series_expansion</span><span class="o">.</span><span class="n">removeO</span><span class="p">(),</span> <span class="n">Mratio</span><span class="p">,</span> <span class="n">simplify</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[12]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$\displaystyle \frac{M \left(T^{3} \gamma^{3} k^{6} \varepsilon_{0}^{3} + 3 T^{2} e^{2} \gamma^{2} k^{4} n_{0} \varepsilon_{0}^{2} - T^{2} \gamma^{2} k^{4} \varepsilon_{0}^{2} \sqrt{T^{2} \gamma^{2} k^{4} \varepsilon_{0}^{2} + 2 T e^{2} \gamma k^{2} n_{0} \varepsilon_{0} + e^{4} n_{0}^{2}} + 3 T e^{4} \gamma k^{2} n_{0}^{2} \varepsilon_{0} - 2 T e^{2} \gamma k^{2} n_{0} \varepsilon_{0} \sqrt{T^{2} \gamma^{2} k^{4} \varepsilon_{0}^{2} + 2 T e^{2} \gamma k^{2} n_{0} \varepsilon_{0} + e^{4} n_{0}^{2}} + e^{6} n_{0}^{3} + e^{4} n_{0}^{2} \sqrt{T^{2} \gamma^{2} k^{4} \varepsilon_{0}^{2} + 2 T e^{2} \gamma k^{2} n_{0} \varepsilon_{0} + e^{4} n_{0}^{2}}\right)}{2 m_{e} \varepsilon_{0} \left(T^{2} \gamma^{2} k^{4} \varepsilon_{0}^{2} + 2 T e^{2} \gamma k^{2} n_{0} \varepsilon_{0} + e^{4} n_{0}^{2}\right)} + \frac{T \gamma k^{2} \varepsilon_{0} + e^{2} n_{0} + \sqrt{T^{2} \gamma^{2} k^{4} \varepsilon_{0}^{2} + 2 T e^{2} \gamma k^{2} n_{0} \varepsilon_{0} + e^{4} n_{0}^{2}}}{2 m_{e} \varepsilon_{0}}$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote>
+<p>Applying some further simplification for the square root:</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">squareroot</span> <span class="o">=</span> <span class="n">numer</span><span class="p">(</span><span class="n">simplified_series_expansion</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">very_simplified_series_expansion</span> <span class="o">=</span> <span class="n">simplified_series_expansion</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">squareroot</span><span class="p">,</span> <span class="n">squareroot</span><span class="o">.</span><span class="n">factor</span><span class="p">())</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[13]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$\displaystyle \frac{M e^{4} n_{0}^{2} + T^{2} \gamma^{2} k^{4} \varepsilon_{0}^{2} + 2 T e^{2} \gamma k^{2} n_{0} \varepsilon_{0} + e^{4} n_{0}^{2}}{m_{e} \varepsilon_{0} \left(T \gamma k^{2} \varepsilon_{0} + e^{2} n_{0}\right)}$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote>
+<p>And we arrive at the known and expected first order (in $m_e/m_i$) correction, substituting our definition of $M$ back in here:</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ion_correction</span> <span class="o">=</span> <span class="p">(</span><span class="n">very_simplified_series_expansion</span> <span class="o">-</span> <span class="n">limit2_corrected</span><span class="p">)</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">Mratio</span><span class="p">,</span> <span class="n">m_e</span> <span class="o">/</span> <span class="n">m_i</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[14]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$\displaystyle \frac{e^{4} n_{0}^{2}}{m_{i} \varepsilon_{0} \left(T \gamma k^{2} \varepsilon_{0} + e^{2} n_{0}\right)}$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>And that's that!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Results-and-thoughts">Results and thoughts<a class="anchor-link" href="#Results-and-thoughts">¶</a>
+</h2>
+<p>For some pros and cons:</p>
+<h3 id="Positives">Positives<a class="anchor-link" href="#Positives">¶</a>
+</h3>
+<ul>
+<li>You get to skip out on algebraic errors.</li>
+<li>You get beautiful LaTeX display, at no effort, for each step. This helps a ton if your handwriting is dreadful, like mine is.</li>
+<li>You can resort to first-order corrections etc if you need a check, but you actually get full analytical solutions a lot of the time.</li>
+</ul>
+<h3 id="Neutrals">Neutrals<a class="anchor-link" href="#Neutrals">¶</a>
+</h3>
+<ul>
+<li>You really need to watch your assumptions when you define your variables, as SymPy is pretty conservative with its simplifications. This is, of course, both a blessing and a curse.</li>
+<li>The learning curve is a bit steep, but you can accomplish plenty with just a little knowledge; for the rest, you can google. I've been putting off picking up its <code>physics</code> subpackage for way too long now.</li>
+</ul>
+<h3 id="Negatives">Negatives<a class="anchor-link" href="#Negatives">¶</a>
+</h3>
+<ul>
+<li>There are kinks, as you undoubtedly saw; it can be tough to tell SymPy "look at that square root! Look at it!". It'll miss some seemingly obvious stuff, and it can take a fair bit of googling to get it to work properly.</li>
+<li>Runtimes can get steep-ish; it's not really suited for live work. I'll <code>%timeit</code> the two lines that caused a little trouble here. Admittedly, symbolic math is <em>hard</em>, so I'm not too surprised. <del>Turns out I could only timeit the first line in reasonable time...</del>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> series_expansion = (ω2_solutions[1]).subs(m_i, m_e / Mratio).expand().series(Mratio, n = 2);
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>24.3 s ± 351 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Still, all in all, I think it has plenty of potential. If it's not there <em>yet</em>, it's getting there! I'm likely to keep using it and if I come up with any further handy tools, I'll get back here.</p>
+
+</div>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../anger-disinformation-populism-truth/" rel="prev" title="Anger, disinformation, populism, the sorry state of the world right now... and truth">Poprzedni post</a>
+            </li>
+            <li class="next">
+                <a href="../2021/" rel="next" title="The plan for 2021">Następny post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Komentarze</h2>
+        
+    
+        <div data-title="SymPy for physics homework in 2020" id="utterances-thread"></div>
+        <script src="https://utteranc.es/client.js" repo="StanczakDominik/stanczakdominik.github.io" issue-term="pathname" label="Comments" theme="github-light" crossorigin="anonymous"></script></section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script></article><footer id="footer"><p>Contents © 2022         <a rel="me" href="https://mastodon.social/@StanczakDominik">Dominik Stańczak-Marikin</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a> - 
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="../../../images/creativecommons.png"></a></p>
+            
+        </footer>
+</div>
+    </section><script src="../../../assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
+    moment.locale("pl");
+    fancydates(2, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

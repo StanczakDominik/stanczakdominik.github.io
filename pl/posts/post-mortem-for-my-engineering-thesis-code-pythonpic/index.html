@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html prefix="        og: http://ogp.me/ns# article: http://ogp.me/ns/article#     " vocab="http://ogp.me/ns" lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Post mortem for my engineering thesis code, PythonPIC | Prematurely optimizing</title>
+<link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS (pl)" hreflang="pl" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../../rss.xml">
+<link rel="canonical" href="https://stanczakdominik.github.io/pl/posts/post-mortem-for-my-engineering-thesis-code-pythonpic/">
+<!--[if lt IE 9]><script src="../../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett">
+<link rel="stylesheet" type="text/css" href="../../../assets/css/tipuesearch.css">
+<meta name="author" content="Dominik Stańczak-Marikin">
+<link rel="prev" href="../changing-fields/" title="Changing fields" type="text/html">
+<link rel="next" href="../simple-binder-usage-with-sphinx-gallery-through-jupytext/" title="Simple Binder usage with Sphinx-Gallery through Jupytext" type="text/html">
+<meta property="og:site_name" content="Prematurely optimizing">
+<meta property="og:title" content="Post mortem for my engineering thesis code, PythonPIC">
+<meta property="og:url" content="https://stanczakdominik.github.io/pl/posts/post-mortem-for-my-engineering-thesis-code-pythonpic/">
+<meta property="og:description" content="I'm giving a presentation on this less-than-glorious subject on Friday, so
+I figured, hey, it might be a nice time to write a summary of what that old
+repository on my GitHub page is. In a single vide">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2019-04-03T21:15:00+02:00">
+<meta property="article:tag" content="particle-in-cell">
+<meta property="article:tag" content="plasma">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="simulation">
+<link rel="alternate" hreflang="en" href="../../../posts/post-mortem-for-my-engineering-thesis-code-pythonpic/">
+</head>
+<body>
+    <a href="#page-content" class="sr-only sr-only-focusable">Przejdź do treści</a>
+    
+    <section class="social"><ul>
+<li><a href="../../../index.html" title="Home"><i class="fa fa-home"></i></a></li>
+            <li><a href="../../../archive.html" title="Archives"><i class="fa fa-folder-open"></i></a></li>
+            <li><a href="../../../categories/" title="Tags"><i class="fa fa-tags"></i></a></li>
+            <li><a href="../../../rss.xml" title="RSS"><i class="fa fa-rss"></i></a></li>
+            <li><a href="../../../about/" title="About"><i class="fa fa-user"></i></a></li>
+            <li><a href="../../../credits/" title="Credits"><i class="fa fa-child"></i></a></li>
+            <li><a href="https://github.com/stanczakdominik" title="My Github"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://github.com/StanczakDominik/stanczakdominik.github.io/tree/src" title="Site repo"><i class="fas fa-file-code"></i></a></li>
+    
+    
+
+        </ul></section><section class="page-content"><div class="content" rel="main">
+            
+<article class="post-featured h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Post mortem for my engineering thesis code, PythonPIC</a></h1>
+
+        <div class="metadata">
+            <p class="dateline"><a href="." rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2019-04-03T21:15:00+02:00" itemprop="datePublished" title="2019-04-03 21:15">2019-04-03 21:15</time></a></p>
+            <p class="byline author vcard"> <i class="fa fa-user"></i> <span class="byline-name fn" itemprop="author">
+                    <a href="../../authors/dominik-stanczak-marikin/">Dominik Stańczak-Marikin</a>
+            </span></p>
+                <p class="commentline"><i class="far fa-comment"></i>
+    
+        <a href="#utterances-thread">Komentarze</a>
+
+
+            
+        </p>
+<p class="sourceline"><a href="index.md" class="sourcelink"><i class="fa fa-file-code"></i> Źródło</a></p>
+
+            
+
+            
+    <div class="tags">
+<h3 class="metadata-title">
+<i class="fa fa-tags"></i> Tagi:</h3>
+        <ul itemprop="keywords" class="tags-ul">
+<li><a class="tag p-category" href="../../categories/particle-in-cell/" rel="tag">particle-in-cell</a></li>
+            <li><a class="tag p-category" href="../../categories/plasma/" rel="tag">plasma</a></li>
+            <li><a class="tag p-category" href="../../categories/python/" rel="tag">python</a></li>
+            <li><a class="tag p-category" href="../../categories/simulation/" rel="tag">simulation</a></li>
+        </ul>
+</div>
+
+        </div>
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p>I'm giving a presentation on this less-than-glorious subject on Friday, so
+I figured, hey, it might be a nice time to write a summary of what <a href="https://github.com/StanczakDominik/PythonPIC">that old
+repository on my GitHub page</a> is. In a single video:</p>
+<p></p>
+<center><iframe width="800" height="450" src="https://www.youtube-nocookie.com/embed/rE4-X-jNoFw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+<p>Admittedly, this post is going to be rather personal - this messy little code
+was basically my life for a few hundreds of hours.</p>
+<!-- TEASER_END -->
+
+<h3>The motivation</h3>
+<p>At the time, I was quite enamored with Python, NumPy, the ideals of <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3886731/">open
+source scientific software</a> and literate computing. I had seen
+how most scientific software seems to be written in <a href="https://en.wikipedia.org/wiki/Fortran">uglier</a>,
+<a href="https://en.wikipedia.org/wiki/C%2B%2B">less maintainable</a> languages and thoroughly disliked the notion that
+We, the Scientific Community would have to keep struggling with those, <a href="https://youtu.be/kNdp0I8AG40?t=45"><em>no no
+no</em></a>.</p>
+<p>So I figured, hey, I can probably do better. <em>I know NumPY! It's basically
+writing FORTRAN without ever touching FORTRAN!</em></p>
+<blockquote>
+<p><em>narrator voice: <strong>It isn't.</strong></em></p>
+</blockquote>
+<p>So I went to the amazing Sławomir Jabłoński of <a href="http://www.ifpilm.pl/en">IPPLM</a> (to whom,
+a shout out, for he is truly an amazing person without whom this work would
+have gone nowhere). I discussed the idea with him and he seemed to like it. He
+agreed to supervise me on this idea.</p>
+<p>What happened next?</p>
+<h3>The breakdown</h3>
+<p>Well, stuff happened, not least important of which was procrastination on
+a scale I had never performed. One of my personal flaws is a tendency to
+isolate myself and work alone on projects that are better undertaken in groups.
+I basically started writing a framework, refactoring it endlessly, delaying
+work on the critical bugs like the actual physics of my simulation, running
+test cases... What I had thought would have been simple turned out not to be.
+Don't get me wrong, I learned a metric ton of Python and numerics knowledge
+- but I wasn't getting much closer, and I wasn't reaching out for feedback that
+what I was doing was, pretty much, crap.</p>
+<p>I <em>may</em> have had a <abbr title="narrator: It wasn't.">tiny</abbr> nervous
+breakdown then. Eventually I reached out again to IPPLM and mr. Jabłoński, who
+agreed the situation is pretty bad but didn't think it worth giving up on. The
+code ended up working after many adventures:</p>
+<div class="code"><pre class="code literal-block"><span class="o">|</span>\<span class="w"></span>
+<span class="o">*</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">207371</span><span class="n">b</span><span class="w"> </span><span class="n">wat</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="o">|</span>\<span class="w">  </span>
+<span class="o">|</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">00</span><span class="n">b554c</span><span class="w"> </span><span class="n">started</span><span class="w"> </span><span class="n">writing</span><span class="w"> </span><span class="n">diagnostics</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">3942</span><span class="n">c6e</span><span class="w"> </span><span class="k">continue</span><span class="w"> </span><span class="n">writing</span><span class="w"> </span><span class="n">diagnostics</span><span class="p">,</span><span class="w"> </span><span class="n">abandoning</span><span class="w"> </span><span class="n">idea</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">multifunction</span><span class="w"> </span><span class="n">simulation</span><span class="w"> </span><span class="nb">load</span><span class="s1">'</span>
+<span class="o">|</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">e726000</span><span class="w"> </span><span class="n">revert</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">old</span><span class="w"> </span><span class="n">simulation</span><span class="w"> </span><span class="n">init</span><span class="p">,</span><span class="w"> </span><span class="n">energy</span><span class="w"> </span><span class="n">calculation</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="o">|/</span><span class="w">  </span>
+<span class="o">|</span><span class="w"> </span><span class="o">*</span><span class="w">   </span><span class="n">ca0742a</span><span class="w"> </span><span class="n">merged</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">62</span><span class="n">fe945</span><span class="w"> </span><span class="n">energy</span><span class="w"> </span><span class="n">still</span><span class="w"> </span><span class="n">blows</span><span class="w"> </span><span class="n">up</span><span class="w"></span>
+<span class="o">|/</span><span class="w">  </span>
+<span class="o">*</span><span class="w">   </span><span class="mf">6e172</span><span class="n">d6</span><span class="w"> </span><span class="n">merged</span><span class="w"></span>
+<span class="o">...</span><span class="w"></span>
+<span class="o">*</span><span class="w"> </span><span class="mi">5068</span><span class="n">dfb</span><span class="w"> </span><span class="n">langmuir</span><span class="w"> </span><span class="n">waves</span><span class="w"> </span><span class="n">kinda</span><span class="w"> </span><span class="n">sorta</span><span class="w"> </span><span class="n">running</span><span class="err">?</span><span class="w"></span>
+<span class="o">...</span><span class="w"></span>
+<span class="o">*</span><span class="w"> </span><span class="n">b9580ac</span><span class="w"> </span><span class="n">Finish</span><span class="w"> </span><span class="n">fixing</span><span class="w"> </span><span class="n">tests</span><span class="w"></span>
+<span class="o">*</span><span class="w"> </span><span class="mi">864</span><span class="n">d27a</span><span class="w"> </span><span class="n">Turn</span><span class="w"> </span><span class="n">recurrent</span><span class="w"> </span><span class="n">deposition</span><span class="w"> </span><span class="n">into</span><span class="w"> </span><span class="n">deposition</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="n">loop</span><span class="w"></span>
+<span class="o">*</span><span class="w"> </span><span class="mi">280</span><span class="n">d176</span><span class="w"> </span><span class="n">Start</span><span class="w"> </span><span class="n">fixing</span><span class="w"> </span><span class="n">Laser</span><span class="w"> </span><span class="n">simulation</span><span class="w"></span>
+<span class="o">...</span><span class="w"></span>
+<span class="o">*</span><span class="w"> </span><span class="n">a5c4623</span><span class="w"> </span><span class="n">Fix</span><span class="w"> </span><span class="n">difficult</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">find</span><span class="w"> </span><span class="n">bugs</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">longitudinal</span><span class="w"> </span><span class="n">current</span><span class="w"> </span><span class="n">deposition</span><span class="w"></span>
+<span class="o">...</span><span class="w"></span>
+<span class="o">*</span><span class="w"> </span><span class="mi">080</span><span class="n">a226</span><span class="w"> </span><span class="n">what</span><span class="w"> </span><span class="n">may</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">release</span><span class="w"></span>
+</pre></div>
+
+<p>and I was able to benchmark it nicely.</p>
+<p><img alt="Python runtimes" src="../../../images/speed_Python.svg"></p>
+<h3>The benchmarking</h3>
+<p>I then - only then, certainly a failure of foresight on my part - realized that
+I would need a comparable C/C++ code to benchmark my Python NumPy monstrosity
+against. That was not a happy thought. </p>
+<p>But there was no way the low level drudgery could be avoided, so I went ahead,
+started learning <a href="http://eigen.tuxfamily.org/index.php?title=Main_Page">the Eigen3 linear algebra library that has many similarities
+to NumPy</a> - I needed something that in principle could work
+similarly, with mostly whole array based computations. The result of that is in
+<a href="https://github.com/StanczakDominik/CPIC">this repository</a>.</p>
+<p>Admittedly, to this day I'm not even one hundred percent sure it does the same
+thing! The results seemed to be correct for the test cases I did run, but I'm
+not exactly sure I got all of the bugs. Most of the problems stem from the fact
+I used <code>numpy.bincount</code> for most of the current and charge deposition
+functionality (don't do that, by the way, as that was the least efficient part
+of the code). That functionality is lacking in Eigen (or at the very least
+I was unable to find it), so I went ahead and implemented it by hand.</p>
+<p>I then started benchmarking the two codes for identical initial conditions, and
+it turned out that - </p>
+<p><img alt="Python vs C" src="../../../images/speed_Python_C.svg"></p>
+<p>success! PythonPIC is just as fast as the compiled C version!</p>
+<p>... until you compile the C code with <code>-O</code>, the simplest optimization flag:</p>
+<p><img alt="Python vs any kind of optimized C" src="../../../images/speed_Python_C_C-O.svg"></p>
+<p>I didn't bother checking <code>-O3</code>, though a friend was happy to remind me of its
+existence. I might thus be the <abbr title="narrator: He isn't.">proud</abbr>
+author of the cleanest (well, not the least clean) and least efficient
+particle-in-cell code on the planet. Gotta start somewhere, right?</p>
+<h3>The defense</h3>
+<p>There's not much to say. I went ahead, printed out a few copies of the thesis,
+realized via review I had made mistakes in plots etc. and had to print them out
+again. I went ahead, took my final exam, didn't get grilled too hard, got
+a random exam question about - I think, as it's been a while - the Schroedinger
+equation, and poof, <a href="https://www.youtube.com/watch?v=rp8hvyjZWHs">trust me, I'm an
+engineer</a> of Applied
+Physics. I'm still not sure how that happened.</p>
+<p>I took a break from PIC codes for a while afterwards. A snippet of PythonPIC
+later went into <a href="https://github.com/PlasmaPy/PlasmaPy/pull/54">PlasmaPy's</a>
+particle stepper capabilities. I still have a thorough dislike for that code
+and think it could be optimized.</p>
+<p>All in all, I'm not sure about Python for PICs. On the one hand, they're pretty
+inevitably going to be slower than C, C++ for now. You could write the
+computationally intensive parts in Julia or something - that would probably
+work and I've been itching to try my hand at that recently - but by that logic,
+you could probably implement the whole thing in Julia anyway, because Python
+really isn't giving you anything of value there - maybe besides analysis, but
+that's done post-run anyway.</p>
+<p>But on the other hand, not all PICs are HPiCs - and if you're just studying
+plasma physics alongside, say, <a href="https://www.crcpress.com/Plasma-Physics-via-Computer-Simulation/Birdsall-Langdon/p/book/9780750310253">Birdsall and
+Langdon</a>,
+then you can probably live with having your code run a little slower than the
+sickest optimal C run time. I've been able to use my code (mostly before the
+break... remember the part where I was adding a ton of test cases?) to
+reproduce a bunch of their results and it's worked out nicely.</p>
+<p>I'd like to think PythonPIC has, thus, at least some value and use. It's probably
+not too useful for high performance and research, but you need to funnel people into those
+somehow.</p>
+<h2>The lessons learned</h2>
+<h4>Focus on the physics</h4>
+<p>No matter how beautiful and readable your code is, if it doesn't do what it's supposed to be doing, it isn't worth a dime.</p>
+<h4>Precrastinate</h4>
+<p>I've once heard a summary of estimating time for completing programming projects (unfortunately I haven't been able to find the source):</p>
+<blockquote>
+<p>for any programming problem, make an estimate, double it, then increment the time unit to the next higher one.</p>
+</blockquote>
+<p>It's worth starting your stuff early...</p>
+<h4>Plan ahead and anticipate issues</h4>
+<p>... this part tells you how early to start. Still, unexpected difficulties will
+inevitably happen - they're part of the learning process. Accept them and leave
+yourself enough time to deal with them constructively.</p>
+<h4>Reach out and talk about your problems</h4>
+<p>This goes both for scientific programming and for mental health. I would have
+truly gotten nowhere if I hadn't had help from amazing people for both of
+these.</p>
+<hr>
+<p>And... that's about it! Phew. That's a load off my chest, to be frank - the
+idea of writing this has haunted me for a while. Still, while the handling
+could have been better, <abbr title="narrator: He is.">I'm happy I wrote that little code.</abbr></p>
+    </div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../changing-fields/" rel="prev" title="Changing fields">Poprzedni post</a>
+            </li>
+            <li class="next">
+                <a href="../simple-binder-usage-with-sphinx-gallery-through-jupytext/" rel="next" title="Simple Binder usage with Sphinx-Gallery through Jupytext">Następny post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Komentarze</h2>
+        
+    
+        <div data-title="Post mortem for my engineering thesis code, PythonPIC" id="utterances-thread"></div>
+        <script src="https://utteranc.es/client.js" repo="StanczakDominik/stanczakdominik.github.io" issue-term="pathname" label="Comments" theme="github-light" crossorigin="anonymous"></script></section></article><footer id="footer"><p>Contents © 2022         <a rel="me" href="https://mastodon.social/@StanczakDominik">Dominik Stańczak-Marikin</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a> - 
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="../../../images/creativecommons.png"></a></p>
+            
+        </footer>
+</div>
+    </section><script src="../../../assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
+    moment.locale("pl");
+    fancydates(2, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

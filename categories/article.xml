@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Prematurely optimizing (Posts about article)</title><link>https://stanczakdominik.github.io/</link><description></description><atom:link href="https://stanczakdominik.github.io/categories/article.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2022 &lt;a href="https://matrix.to/#/@StanczakDominik:matrix.org"&gt;Dominik Stańczak-Marikin&lt;/a&gt; 
+&lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
+&lt;img alt="Creative Commons License BY-NC-SA"
+style="border-width:0; margin-bottom:12px;"
+src="/images/creativecommons.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sat, 31 Dec 2022 13:45:35 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>First JOSS review!</title><link>https://stanczakdominik.github.io/posts/first-joss-review/</link><dc:creator>Dominik Stańczak-Marikin</dc:creator><description>&lt;div&gt;&lt;p&gt;Several months ago, I stumbled upon &lt;a href="https://www.youtube.com/watch?v=Y4eKWN_eAxM"&gt;the journal they call
+Joss&lt;/a&gt;. Well, actually, &lt;a href="https://joss.theoj.org/"&gt;JOSS - the
+Journal of Open Source Software, "a developer friendly, open access journal for
+research software packages"&lt;/a&gt;. It's a completely free,
+open-source and open-access alternative to established,
+&lt;a href="https://www.theguardian.com/science/2017/jun/27/profitable-business-scientific-publishing-bad-for-science"&gt;for-(often-a-lot-of)-profit&lt;/a&gt;
+journals such as those by Reed-Elsevier or Springer.&lt;/p&gt;
+&lt;p&gt;And a few days ago, &lt;a href="https://github.com/openjournals/joss-reviews/issues/2133#issuecomment-618617823"&gt;I've been called into
+service&lt;/a&gt;
+to review &lt;a href="https://github.com/joglekara/VlaPy"&gt;VlaPy, "1D-1V Vlasov-Poisson(-Fokker-Planck) Plasma Physics
+Simulation Tool"&lt;/a&gt;. While I'm digging into that code, I thought I'd write something up about JOSS in general!&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://stanczakdominik.github.io/posts/first-joss-review/" class="btn btn-outline-secondary"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>article</category><category>joss</category><guid>https://stanczakdominik.github.io/posts/first-joss-review/</guid><pubDate>Sat, 02 May 2020 17:55:00 GMT</pubDate></item></channel></rss>
