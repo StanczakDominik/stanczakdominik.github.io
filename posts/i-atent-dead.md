@@ -2,8 +2,8 @@
 .. title: I aten't dead
 .. slug: i-atent-dead
 .. date: 2021-04-18 19:25:41 UTC+02:00
-.. tags: status update
-.. category: 
+.. tags: 
+.. category: status
 .. link: 
 .. description: 
 .. type: text

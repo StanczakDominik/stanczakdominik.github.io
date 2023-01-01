@@ -148,20 +148,20 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         ('/index.html', 'Home', 'fa fa-home'),
-        ('/archive.html', 'Archives', 'fa fa-folder-open'),
+        ('/posts/', 'Posts', 'fa fa-pencil'),
         ('/categories/', 'Tags', 'fa fa-tags'),
         ('/rss.xml', 'RSS', 'fa fa-rss'),
-        ("/about/", "About", "fa fa-user"),
-        ("/credits/", "Credits", "fa fa-child"),
-        ('https://github.com/stanczakdominik', 'My Github', 'fab fa-github'),
-        ("https://github.com/StanczakDominik/stanczakdominik.github.io/tree/src", 'Site repo', 'fas fa-file-code'),
+        ("/about/", "About", "fa fa-user-circle-o"),
+        # ("/credits/", "Credits", "fa fa-child"),
+        ('https://github.com/stanczakdominik', 'My Github', 'fa fa-github'),
+        ("https://github.com/StanczakDominik/stanczakdominik.github.io/tree/src", 'Site repo', 'fa fa-file-code-o'),
     )
 }
 
 DATE_FANCINESS = 2
 
 # Name of the theme to use.
-THEME = "zen"
+THEME = "zen-forkawesome"
 # Primary color of your theme. This will be used to customize your theme.
 # Must be a HEX value.
 THEME_COLOR = '#5670d4'
@@ -254,6 +254,7 @@ PAGES = (
     ("pages/*.html", "", "page.tmpl"),
     ("pages/*.ipynb", "", "page.tmpl"),
 )
+INDEX_PATH = "posts"
 
 
 # Below this point, everything is optional
@@ -1165,6 +1166,8 @@ SEARCH_FORM = """"""
 # before </head>
 # (translatable)
 EXTRA_HEAD_DATA = r"""
+<script data-goatcounter="https://stanczakdominik.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
 <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
 <link rel="stylesheet" type="text/css" href="/assets/css/tipuesearch.css">
 """

@@ -3,7 +3,7 @@
 .. slug: plasmapy-v060-release
 .. date: 2021-03-20 12:00 UTC+01:00
 .. tags: plasmapy, release
-.. category: release
+.. category: python
 .. description: Release of PlasmaPy version 0.6.0
 .. type: text
 .. link: https://www.plasmapy.org/posts/plasmapy-v060-release/

@@ -3,7 +3,7 @@
 .. slug: backlogs
 .. date: 2020-05-17 13:25:00 UTC+02:00
 .. tags: python,scripting
-.. category: 
+.. category: python
 .. link: 
 .. description: 
 .. type: text

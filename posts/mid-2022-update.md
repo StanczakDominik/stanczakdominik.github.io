@@ -3,7 +3,7 @@
 .. slug: mid-2022-update
 .. date: 2022-09-02 21:09:17 UTC+02:00
 .. tags: 
-.. category: 
+.. category: status
 .. link: 
 .. description: 
 .. type: text

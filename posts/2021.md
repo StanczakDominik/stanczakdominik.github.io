@@ -2,8 +2,8 @@
 .. title: The plan for 2021
 .. slug: 2021
 .. date: 2021-01-04 20:21:24 UTC+01:00
-.. tags: 
-.. category: 
+.. tags: personal, yearly
+.. category: status
 .. link: 
 .. description: Reflections on the ugly year 2020
 .. type: text
