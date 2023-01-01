@@ -153,7 +153,7 @@ NAVIGATION_LINKS = {
         ('/rss.xml', 'RSS', 'fa fa-rss'),
         ("/about/", "About", "fa fa-user-circle-o"),
         # ("/credits/", "Credits", "fa fa-child"),
-        ('https://github.com/stanczakdominik', 'My Github', 'fa fa-github'),
+        # ('https://github.com/stanczakdominik', 'My Github', 'fa fa-github'),
         ("https://github.com/StanczakDominik/stanczakdominik.github.io/tree/src", 'Site repo', 'fa fa-file-code-o'),
     )
 }
@@ -341,7 +341,7 @@ COMPILERS = {
 # "YAML": YAML wrapped in "---"
 # "TOML": TOML wrapped in "+++"
 # "Pelican": Native markdown metadata or reST docinfo fields. Nikola style for other formats.
-# METADATA_FORMAT = "Nikola"
+METADATA_FORMAT = "YAML"
 
 # Use date-based path when creating posts?
 # Can be enabled on a per-post basis with `nikola new_post -d`.
