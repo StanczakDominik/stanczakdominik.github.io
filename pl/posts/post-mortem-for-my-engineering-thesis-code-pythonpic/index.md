@@ -3,7 +3,7 @@
 .. slug: post-mortem-for-my-engineering-thesis-code-pythonpic
 .. date: 2019-04-03 21:15:00 UTC+02:00
 .. tags: plasma, particle-in-cell, python, simulation
-.. category: pic
+.. category: projects
 .. link: 
 .. description: 
 .. type: featured

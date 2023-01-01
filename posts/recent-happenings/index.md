@@ -3,7 +3,7 @@
 .. slug: recent-happenings
 .. date: 2020-04-22 18:08:57 UTC+02:00
 .. tags: 
-.. category: 
+.. category: status
 .. link: 
 .. description: 
 .. type: text

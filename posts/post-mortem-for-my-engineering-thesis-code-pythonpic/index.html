@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width">
 <title>Post mortem for my engineering thesis code, PythonPIC | Prematurely optimizing</title>
 <link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
@@ -14,10 +14,10 @@
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" hreflang="pl" href="../../pl/rss.xml">
 <link rel="canonical" href="https://stanczakdominik.github.io/posts/post-mortem-for-my-engineering-thesis-code-pythonpic/">
-<!--[if lt IE 9]><script src="../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett">
+<!--[if lt IE 9]><script src="../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><script data-goatcounter="https://stanczakdominik.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script><meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett">
 <link rel="stylesheet" type="text/css" href="../../assets/css/tipuesearch.css">
 <meta name="author" content="Dominik Stańczak-Marikin">
-<link rel="prev" href="../changing-fields/" title="Changing fields" type="text/html">
+<link rel="prev" href="../on-the-recent-on-the-boris-solver-in-particle-in-cell-simulations-paper/" title='On the recent "On the Boris solver in Particle-in-cell simulations" paper' type="text/html">
 <link rel="next" href="../simple-binder-usage-with-sphinx-gallery-through-jupytext/" title="Simple Binder usage with Sphinx-Gallery through Jupytext" type="text/html">
 <meta property="og:site_name" content="Prematurely optimizing">
 <meta property="og:title" content="Post mortem for my engineering thesis code, PythonPIC">
@@ -37,14 +37,12 @@ repository on my GitHub page is. In a single vide">
     <a href="#page-content" class="sr-only sr-only-focusable">Skip to main content</a>
     
     <section class="social"><ul>
-<li><a href="../../index.html" title="Home"><i class="fa fa-home"></i></a></li>
-            <li><a href="../../archive.html" title="Archives"><i class="fa fa-folder-open"></i></a></li>
-            <li><a href="../../categories/" title="Tags"><i class="fa fa-tags"></i></a></li>
-            <li><a href="../../rss.xml" title="RSS"><i class="fa fa-rss"></i></a></li>
-            <li><a href="../../about/" title="About"><i class="fa fa-user"></i></a></li>
-            <li><a href="../../credits/" title="Credits"><i class="fa fa-child"></i></a></li>
-            <li><a href="https://github.com/stanczakdominik" title="My Github"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://github.com/StanczakDominik/stanczakdominik.github.io/tree/src" title="Site repo"><i class="fas fa-file-code"></i></a></li>
+<li><a href="../../index.html" title="Home"><i class="fa fa-home"></i><br>Home</a></li>
+            <li><a href="../" title="Posts"><i class="fa fa-pencil"></i><br>Posts</a></li>
+            <li><a href="../../categories/" title="Tags"><i class="fa fa-tags"></i><br>Tags</a></li>
+            <li><a href="../../rss.xml" title="RSS"><i class="fa fa-rss"></i><br>RSS</a></li>
+            <li><a href="../../about/" title="About"><i class="fa fa-user-circle-o"></i><br>About</a></li>
+            <li><a href="https://github.com/StanczakDominik/stanczakdominik.github.io/tree/src" title="Site repo"><i class="fa fa-file-code-o"></i><br>Site repo</a></li>
     
     
 
@@ -122,27 +120,27 @@ what I was doing was, pretty much, crap.</p>
 breakdown then. Eventually I reached out again to IPPLM and mr. Jabłoński, who
 agreed the situation is pretty bad but didn't think it worth giving up on. The
 code ended up working after many adventures:</p>
-<div class="code"><pre class="code literal-block"><span class="o">|</span>\<span class="w"></span>
-<span class="o">*</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">207371</span><span class="n">b</span><span class="w"> </span><span class="n">wat</span><span class="w"></span>
+<div class="code"><pre class="code literal-block"><span class="o">|</span>\
+<span class="o">*</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">207371</span><span class="n">b</span><span class="w"> </span><span class="n">wat</span>
 <span class="o">|</span><span class="w"> </span><span class="o">|</span>\<span class="w">  </span>
-<span class="o">|</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">00</span><span class="n">b554c</span><span class="w"> </span><span class="n">started</span><span class="w"> </span><span class="n">writing</span><span class="w"> </span><span class="n">diagnostics</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">00</span><span class="n">b554c</span><span class="w"> </span><span class="n">started</span><span class="w"> </span><span class="n">writing</span><span class="w"> </span><span class="n">diagnostics</span>
 <span class="o">|</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">3942</span><span class="n">c6e</span><span class="w"> </span><span class="k">continue</span><span class="w"> </span><span class="n">writing</span><span class="w"> </span><span class="n">diagnostics</span><span class="p">,</span><span class="w"> </span><span class="n">abandoning</span><span class="w"> </span><span class="n">idea</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">multifunction</span><span class="w"> </span><span class="n">simulation</span><span class="w"> </span><span class="nb">load</span><span class="s1">'</span>
-<span class="o">|</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">e726000</span><span class="w"> </span><span class="n">revert</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">old</span><span class="w"> </span><span class="n">simulation</span><span class="w"> </span><span class="n">init</span><span class="p">,</span><span class="w"> </span><span class="n">energy</span><span class="w"> </span><span class="n">calculation</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">e726000</span><span class="w"> </span><span class="n">revert</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">old</span><span class="w"> </span><span class="n">simulation</span><span class="w"> </span><span class="n">init</span><span class="p">,</span><span class="w"> </span><span class="n">energy</span><span class="w"> </span><span class="n">calculation</span>
 <span class="o">|</span><span class="w"> </span><span class="o">|/</span><span class="w">  </span>
-<span class="o">|</span><span class="w"> </span><span class="o">*</span><span class="w">   </span><span class="n">ca0742a</span><span class="w"> </span><span class="n">merged</span><span class="w"></span>
-<span class="o">|</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">62</span><span class="n">fe945</span><span class="w"> </span><span class="n">energy</span><span class="w"> </span><span class="n">still</span><span class="w"> </span><span class="n">blows</span><span class="w"> </span><span class="n">up</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="o">*</span><span class="w">   </span><span class="n">ca0742a</span><span class="w"> </span><span class="n">merged</span>
+<span class="o">|</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">62</span><span class="n">fe945</span><span class="w"> </span><span class="n">energy</span><span class="w"> </span><span class="n">still</span><span class="w"> </span><span class="n">blows</span><span class="w"> </span><span class="n">up</span>
 <span class="o">|/</span><span class="w">  </span>
-<span class="o">*</span><span class="w">   </span><span class="mf">6e172</span><span class="n">d6</span><span class="w"> </span><span class="n">merged</span><span class="w"></span>
-<span class="o">...</span><span class="w"></span>
-<span class="o">*</span><span class="w"> </span><span class="mi">5068</span><span class="n">dfb</span><span class="w"> </span><span class="n">langmuir</span><span class="w"> </span><span class="n">waves</span><span class="w"> </span><span class="n">kinda</span><span class="w"> </span><span class="n">sorta</span><span class="w"> </span><span class="n">running</span><span class="err">?</span><span class="w"></span>
-<span class="o">...</span><span class="w"></span>
-<span class="o">*</span><span class="w"> </span><span class="n">b9580ac</span><span class="w"> </span><span class="n">Finish</span><span class="w"> </span><span class="n">fixing</span><span class="w"> </span><span class="n">tests</span><span class="w"></span>
-<span class="o">*</span><span class="w"> </span><span class="mi">864</span><span class="n">d27a</span><span class="w"> </span><span class="n">Turn</span><span class="w"> </span><span class="n">recurrent</span><span class="w"> </span><span class="n">deposition</span><span class="w"> </span><span class="n">into</span><span class="w"> </span><span class="n">deposition</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="n">loop</span><span class="w"></span>
-<span class="o">*</span><span class="w"> </span><span class="mi">280</span><span class="n">d176</span><span class="w"> </span><span class="n">Start</span><span class="w"> </span><span class="n">fixing</span><span class="w"> </span><span class="n">Laser</span><span class="w"> </span><span class="n">simulation</span><span class="w"></span>
-<span class="o">...</span><span class="w"></span>
-<span class="o">*</span><span class="w"> </span><span class="n">a5c4623</span><span class="w"> </span><span class="n">Fix</span><span class="w"> </span><span class="n">difficult</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">find</span><span class="w"> </span><span class="n">bugs</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">longitudinal</span><span class="w"> </span><span class="n">current</span><span class="w"> </span><span class="n">deposition</span><span class="w"></span>
-<span class="o">...</span><span class="w"></span>
-<span class="o">*</span><span class="w"> </span><span class="mi">080</span><span class="n">a226</span><span class="w"> </span><span class="n">what</span><span class="w"> </span><span class="n">may</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">release</span><span class="w"></span>
+<span class="o">*</span><span class="w">   </span><span class="mf">6e172</span><span class="n">d6</span><span class="w"> </span><span class="n">merged</span>
+<span class="o">...</span>
+<span class="o">*</span><span class="w"> </span><span class="mi">5068</span><span class="n">dfb</span><span class="w"> </span><span class="n">langmuir</span><span class="w"> </span><span class="n">waves</span><span class="w"> </span><span class="n">kinda</span><span class="w"> </span><span class="n">sorta</span><span class="w"> </span><span class="n">running</span><span class="err">?</span>
+<span class="o">...</span>
+<span class="o">*</span><span class="w"> </span><span class="n">b9580ac</span><span class="w"> </span><span class="n">Finish</span><span class="w"> </span><span class="n">fixing</span><span class="w"> </span><span class="n">tests</span>
+<span class="o">*</span><span class="w"> </span><span class="mi">864</span><span class="n">d27a</span><span class="w"> </span><span class="n">Turn</span><span class="w"> </span><span class="n">recurrent</span><span class="w"> </span><span class="n">deposition</span><span class="w"> </span><span class="n">into</span><span class="w"> </span><span class="n">deposition</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="n">loop</span>
+<span class="o">*</span><span class="w"> </span><span class="mi">280</span><span class="n">d176</span><span class="w"> </span><span class="n">Start</span><span class="w"> </span><span class="n">fixing</span><span class="w"> </span><span class="n">Laser</span><span class="w"> </span><span class="n">simulation</span>
+<span class="o">...</span>
+<span class="o">*</span><span class="w"> </span><span class="n">a5c4623</span><span class="w"> </span><span class="n">Fix</span><span class="w"> </span><span class="n">difficult</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">find</span><span class="w"> </span><span class="n">bugs</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">longitudinal</span><span class="w"> </span><span class="n">current</span><span class="w"> </span><span class="n">deposition</span>
+<span class="o">...</span>
+<span class="o">*</span><span class="w"> </span><span class="mi">080</span><span class="n">a226</span><span class="w"> </span><span class="n">what</span><span class="w"> </span><span class="n">may</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">release</span>
 </pre></div>
 
 <p>and I was able to benchmark it nicely.</p>
@@ -226,7 +224,7 @@ could have been better, <abbr title="narrator: He is.">I'm happy I wrote that li
     </div>
     <aside class="postpromonav"><nav><ul class="pager hidden-print">
 <li class="previous">
-                <a href="../changing-fields/" rel="prev" title="Changing fields">Previous post</a>
+                <a href="../on-the-recent-on-the-boris-solver-in-particle-in-cell-simulations-paper/" rel="prev" title='On the recent "On the Boris solver in Particle-in-cell simulations" paper'>Previous post</a>
             </li>
             <li class="next">
                 <a href="../simple-binder-usage-with-sphinx-gallery-through-jupytext/" rel="next" title="Simple Binder usage with Sphinx-Gallery through Jupytext">Next post</a>
@@ -235,13 +233,13 @@ could have been better, <abbr title="narrator: He is.">I'm happy I wrote that li
         
     
         <div data-title="Post mortem for my engineering thesis code, PythonPIC" id="utterances-thread"></div>
-        <script src="https://utteranc.es/client.js" repo="StanczakDominik/stanczakdominik.github.io" issue-term="pathname" label="Comments" theme="github-light" crossorigin="anonymous"></script></section></article><footer id="footer"><p>Contents © 2022         <a rel="me" href="https://mastodon.social/@StanczakDominik">Dominik Stańczak-Marikin</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a> - 
+        <script src="https://utteranc.es/client.js" repo="StanczakDominik/stanczakdominik.github.io" issue-term="pathname" label="Comments" theme="github-light" crossorigin="anonymous"></script></section></article><footer id="footer"><p>Contents © 2023         <a rel="me" href="https://mastodon.social/@StanczakDominik">Dominik Stańczak-Marikin</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a> - 
 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
 <img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="../../images/creativecommons.png"></a></p>
             
         </footer>
 </div>
-    </section><script src="../../assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
+    </section><script src="../../assets/js/all-nocdn.js"></script><script src="https://polyfill.io/v3/polyfill.js?features=Intl.RelativeTimeFormat.%7Elocale.en"></script><script src="../../assets/js/luxon.min.js"></script><!-- fancy dates --><script>
     moment.locale("en");
     fancydates(2, "YYYY-MM-DD HH:mm");
     </script><!-- end fancy dates --><script>

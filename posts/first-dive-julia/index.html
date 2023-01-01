@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width">
 <title>First dive into Julia | Prematurely optimizing</title>
 <link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
@@ -14,7 +14,7 @@
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" hreflang="pl" href="../../pl/rss.xml">
 <link rel="canonical" href="https://stanczakdominik.github.io/posts/first-dive-julia/">
-<!--[if lt IE 9]><script src="../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett">
+<!--[if lt IE 9]><script src="../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><script data-goatcounter="https://stanczakdominik.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script><meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett">
 <link rel="stylesheet" type="text/css" href="../../assets/css/tipuesearch.css">
 <meta name="author" content="Dominik Stańczak-Marikin">
 <link rel="prev" href="../parsing-and-plotting-latex-expressions-with-sympy/" title="Parsing and plotting LaTeX expressions with SymPy" type="text/html">
@@ -32,14 +32,12 @@
     <a href="#page-content" class="sr-only sr-only-focusable">Skip to main content</a>
     
     <section class="social"><ul>
-<li><a href="../../index.html" title="Home"><i class="fa fa-home"></i></a></li>
-            <li><a href="../../archive.html" title="Archives"><i class="fa fa-folder-open"></i></a></li>
-            <li><a href="../../categories/" title="Tags"><i class="fa fa-tags"></i></a></li>
-            <li><a href="../../rss.xml" title="RSS"><i class="fa fa-rss"></i></a></li>
-            <li><a href="../../about/" title="About"><i class="fa fa-user"></i></a></li>
-            <li><a href="../../credits/" title="Credits"><i class="fa fa-child"></i></a></li>
-            <li><a href="https://github.com/stanczakdominik" title="My Github"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://github.com/StanczakDominik/stanczakdominik.github.io/tree/src" title="Site repo"><i class="fas fa-file-code"></i></a></li>
+<li><a href="../../index.html" title="Home"><i class="fa fa-home"></i><br>Home</a></li>
+            <li><a href="../" title="Posts"><i class="fa fa-pencil"></i><br>Posts</a></li>
+            <li><a href="../../categories/" title="Tags"><i class="fa fa-tags"></i><br>Tags</a></li>
+            <li><a href="../../rss.xml" title="RSS"><i class="fa fa-rss"></i><br>RSS</a></li>
+            <li><a href="../../about/" title="About"><i class="fa fa-user-circle-o"></i><br>About</a></li>
+            <li><a href="https://github.com/StanczakDominik/stanczakdominik.github.io/tree/src" title="Site repo"><i class="fa fa-file-code-o"></i><br>Site repo</a></li>
     
     
 
@@ -91,7 +89,7 @@
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">R</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">randn</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span><span class="w"> </span><span class="mi">10000</span><span class="p">)</span><span class="w"></span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">R</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">randn</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span><span class="w"> </span><span class="mi">10000</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -160,7 +158,7 @@
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="o">?</span><span class="n">randn</span><span class="w"></span>
+<div class=" highlight hl-julia"><pre><span></span><span class="o">?</span><span class="n">randn</span>
 </pre></div>
 
     </div>
@@ -231,7 +229,7 @@ julia&gt; randn(rng, ComplexF32, (2, 3))
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="o">?</span><span class="w"></span>
+<div class=" highlight hl-julia"><pre><span></span><span class="o">?</span>
 </pre></div>
 
     </div>
@@ -283,7 +281,7 @@ julia&gt; randn(rng, ComplexF32, (2, 3))
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="p">;</span><span class="n">ls</span><span class="w"></span>
+<div class=" highlight hl-julia"><pre><span></span><span class="p">;</span><span class="n">ls</span>
 </pre></div>
 
     </div>
@@ -325,7 +323,7 @@ Tutorial1.ipynb
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="nd">@time</span><span class="w"> </span><span class="n">randn</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span><span class="w"> </span><span class="mi">10000</span><span class="p">);</span><span class="w"></span>
+<div class=" highlight hl-julia"><pre><span></span><span class="nd">@time</span><span class="w"> </span><span class="n">randn</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span><span class="w"> </span><span class="mi">10000</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -381,16 +379,16 @@ In [3]: %timeit np.random.normal(size=(10000, 10000))
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="n">upsum</span><span class="p">(</span><span class="n">M</span><span class="p">);</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">size</span><span class="p">(</span><span class="n">M</span><span class="p">)[</span><span class="mi">1</span><span class="p">];</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="w"></span>
-<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">:</span><span class="n">n</span><span class="w"></span>
-<span class="w">            </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="w"></span>
-<span class="w">        </span><span class="k">end</span><span class="w"></span>
-<span class="w">    </span><span class="k">end</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">sum</span><span class="w"></span>
-<span class="k">end</span><span class="w"></span>
+<div class=" highlight hl-julia"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="n">upsum</span><span class="p">(</span><span class="n">M</span><span class="p">);</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">size</span><span class="p">(</span><span class="n">M</span><span class="p">)[</span><span class="mi">1</span><span class="p">];</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">:</span><span class="n">n</span>
+<span class="w">            </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span>
+<span class="w">        </span><span class="k">end</span>
+<span class="w">    </span><span class="k">end</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">sum</span>
+<span class="k">end</span>
 
-<span class="n">upsum</span><span class="p">(</span><span class="n">R</span><span class="p">)</span><span class="w"></span>
+<span class="n">upsum</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -433,7 +431,7 @@ In [3]: %timeit np.random.normal(size=(10000, 10000))
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="o">%</span><span class="n">timeit</span><span class="w"> </span><span class="n">upsum</span><span class="p">(</span><span class="n">R</span><span class="p">);</span><span class="w"></span>
+<div class=" highlight hl-julia"><pre><span></span><span class="o">%</span><span class="n">timeit</span><span class="w"> </span><span class="n">upsum</span><span class="p">(</span><span class="n">R</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -484,7 +482,7 @@ end
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="nd">@time</span><span class="w"> </span><span class="n">upsum</span><span class="p">(</span><span class="n">R</span><span class="p">);</span><span class="w"></span>
+<div class=" highlight hl-julia"><pre><span></span><span class="nd">@time</span><span class="w"> </span><span class="n">upsum</span><span class="p">(</span><span class="n">R</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -530,7 +528,7 @@ In [8]: %timeit np.sum(np.tril(R))
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">sum</span><span class="w"></span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">sum</span>
 </pre></div>
 
     </div>
@@ -563,7 +561,7 @@ In [8]: %timeit np.sum(np.tril(R))
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="nd">@time</span><span class="w"> </span><span class="n">sum</span><span class="p">(</span><span class="n">R</span><span class="p">);</span><span class="w"></span>
+<div class=" highlight hl-julia"><pre><span></span><span class="nd">@time</span><span class="w"> </span><span class="n">sum</span><span class="p">(</span><span class="n">R</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -594,7 +592,7 @@ In [8]: %timeit np.sum(np.tril(R))
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="nd">@time</span><span class="w"> </span><span class="n">sum</span><span class="p">(</span><span class="n">R</span><span class="p">);</span><span class="w"></span>
+<div class=" highlight hl-julia"><pre><span></span><span class="nd">@time</span><span class="w"> </span><span class="n">sum</span><span class="p">(</span><span class="n">R</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -643,19 +641,19 @@ In [9]: %timeit np.sum(R)
 <div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="n">uppersum</span><span class="p">(</span><span class="n">M</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">size</span><span class="p">(</span><span class="n">M</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">zero</span><span class="p">(</span><span class="n">eltype</span><span class="p">(</span><span class="n">M</span><span class="p">))</span><span class="w">  </span><span class="c"># a zero hard-typed as the same type as the entry of the matrix</span><span class="w"></span>
-<span class="w">    </span><span class="c"># eltype stands for ELement TYPE - this is now fully generic</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">2</span><span class="o">:</span><span class="n">n</span><span class="w">        </span><span class="c"># Julia uses column-major storage order - faster to traverse any matrix in Julia column-wise</span><span class="w"></span>
-<span class="w">        </span><span class="nd">@simd</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w">    </span><span class="c"># if I know I'm accessing a contiguous block of memory, I can tell Julia that using @simd</span><span class="w"></span>
-<span class="w">            </span><span class="nd">@inbounds</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">M</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">]</span><span class="w">    </span><span class="c"># ignore bound checking and just access memory C-style </span><span class="w"></span>
-<span class="w">        </span><span class="k">end</span><span class="w"></span>
-<span class="w">    </span><span class="k">end</span><span class="w"></span>
-<span class="w">    </span><span class="n">s</span><span class="w"></span>
-<span class="k">end</span><span class="w"></span>
+<div class=" highlight hl-julia"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="n">uppersum</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+<span class="w">    </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">size</span><span class="p">(</span><span class="n">M</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="w">    </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">zero</span><span class="p">(</span><span class="n">eltype</span><span class="p">(</span><span class="n">M</span><span class="p">))</span><span class="w">  </span><span class="c"># a zero hard-typed as the same type as the entry of the matrix</span>
+<span class="w">    </span><span class="c"># eltype stands for ELement TYPE - this is now fully generic</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">2</span><span class="o">:</span><span class="n">n</span><span class="w">        </span><span class="c"># Julia uses column-major storage order - faster to traverse any matrix in Julia column-wise</span>
+<span class="w">        </span><span class="nd">@simd</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w">    </span><span class="c"># if I know I'm accessing a contiguous block of memory, I can tell Julia that using @simd</span>
+<span class="w">            </span><span class="nd">@inbounds</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">M</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">]</span><span class="w">    </span><span class="c"># ignore bound checking and just access memory C-style </span>
+<span class="w">        </span><span class="k">end</span>
+<span class="w">    </span><span class="k">end</span>
+<span class="w">    </span><span class="n">s</span>
+<span class="k">end</span>
 
-<span class="n">uppersum</span><span class="p">(</span><span class="n">R</span><span class="p">)</span><span class="w"></span>
+<span class="n">uppersum</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -698,7 +696,7 @@ In [9]: %timeit np.sum(R)
 <div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="o">?</span><span class="nd">@simd</span><span class="w"></span>
+<div class=" highlight hl-julia"><pre><span></span><span class="o">?</span><span class="nd">@simd</span>
 </pre></div>
 
     </div>
@@ -753,7 +751,7 @@ In [9]: %timeit np.sum(R)
 <div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="o">?</span><span class="nd">@inbounds</span><span class="w"></span>
+<div class=" highlight hl-julia"><pre><span></span><span class="o">?</span><span class="nd">@inbounds</span>
 </pre></div>
 
     </div>
@@ -776,13 +774,13 @@ In [9]: %timeit np.sum(R)
 </code></pre>
 <p>Eliminates array bounds checking within expressions.</p>
 <p>In the example below the in-range check for referencing element <code>i</code> of array <code>A</code> is skipped to improve performance.</p>
-<div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="n">sum</span><span class="p">(</span><span class="n">A</span><span class="o">::</span><span class="kt">AbstractArray</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">zero</span><span class="p">(</span><span class="n">eltype</span><span class="p">(</span><span class="n">A</span><span class="p">))</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="n">length</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="w"></span>
-<span class="w">        </span><span class="nd">@inbounds</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"></span>
-<span class="w">    </span><span class="k">end</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">r</span><span class="w"></span>
-<span class="k">end</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="n">sum</span><span class="p">(</span><span class="n">A</span><span class="o">::</span><span class="kt">AbstractArray</span><span class="p">)</span>
+<span class="w">    </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">zero</span><span class="p">(</span><span class="n">eltype</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="n">length</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="w">        </span><span class="nd">@inbounds</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="w">    </span><span class="k">end</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">r</span>
+<span class="k">end</span>
 </pre></div>
 <p>!!! warning
     Using <code>@inbounds</code> may return incorrect results/crashes/corruption for out-of-bounds indices. The user is responsible for checking it manually. Only use <code>@inbounds</code> when it is certain from the information locally available that all accesses are in bounds.</p>
@@ -810,7 +808,7 @@ In [9]: %timeit np.sum(R)
 <div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="nd">@time</span><span class="w"> </span><span class="n">uppersum</span><span class="p">(</span><span class="n">R</span><span class="p">);</span><span class="w"></span>
+<div class=" highlight hl-julia"><pre><span></span><span class="nd">@time</span><span class="w"> </span><span class="n">uppersum</span><span class="p">(</span><span class="n">R</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -841,19 +839,19 @@ In [9]: %timeit np.sum(R)
 <div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="n">uppersum_boundcheck</span><span class="p">(</span><span class="n">M</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">size</span><span class="p">(</span><span class="n">M</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">zero</span><span class="p">(</span><span class="n">eltype</span><span class="p">(</span><span class="n">M</span><span class="p">))</span><span class="w">  </span><span class="c"># a zero hard-typed as the same type as the entry of the matrix</span><span class="w"></span>
-<span class="w">    </span><span class="c"># eltype stands for ELement TYPE - this is now fully generic</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">2</span><span class="o">:</span><span class="n">n</span><span class="w">        </span><span class="c"># Julia uses column-major storage order - faster to traverse any matrix in Julia column-wise</span><span class="w"></span>
-<span class="w">        </span><span class="nd">@simd</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w">    </span><span class="c"># if I know I'm accessing a contiguous block of memory, I can tell Julia that using @simd</span><span class="w"></span>
-<span class="w">            </span><span class="n">s</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">M</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">]</span><span class="w">    </span><span class="c"># ignore bound checking and just access memory C-style </span><span class="w"></span>
-<span class="w">        </span><span class="k">end</span><span class="w"></span>
-<span class="w">    </span><span class="k">end</span><span class="w"></span>
-<span class="w">    </span><span class="n">s</span><span class="w">    </span><span class="c"># this is sufficient for a `return` statement</span><span class="w"></span>
-<span class="k">end</span><span class="w"></span>
+<div class=" highlight hl-julia"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="n">uppersum_boundcheck</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+<span class="w">    </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">size</span><span class="p">(</span><span class="n">M</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="w">    </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">zero</span><span class="p">(</span><span class="n">eltype</span><span class="p">(</span><span class="n">M</span><span class="p">))</span><span class="w">  </span><span class="c"># a zero hard-typed as the same type as the entry of the matrix</span>
+<span class="w">    </span><span class="c"># eltype stands for ELement TYPE - this is now fully generic</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">2</span><span class="o">:</span><span class="n">n</span><span class="w">        </span><span class="c"># Julia uses column-major storage order - faster to traverse any matrix in Julia column-wise</span>
+<span class="w">        </span><span class="nd">@simd</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w">    </span><span class="c"># if I know I'm accessing a contiguous block of memory, I can tell Julia that using @simd</span>
+<span class="w">            </span><span class="n">s</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">M</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">]</span><span class="w">    </span><span class="c"># ignore bound checking and just access memory C-style </span>
+<span class="w">        </span><span class="k">end</span>
+<span class="w">    </span><span class="k">end</span>
+<span class="w">    </span><span class="n">s</span><span class="w">    </span><span class="c"># this is sufficient for a `return` statement</span>
+<span class="k">end</span>
 
-<span class="n">uppersum</span><span class="p">(</span><span class="n">R</span><span class="p">)</span><span class="w"></span>
+<span class="n">uppersum</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -896,7 +894,7 @@ In [9]: %timeit np.sum(R)
 <div class="prompt input_prompt">In [17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="nd">@time</span><span class="w"> </span><span class="n">uppersum_boundcheck</span><span class="p">(</span><span class="n">R</span><span class="p">);</span><span class="w"></span>
+<div class=" highlight hl-julia"><pre><span></span><span class="nd">@time</span><span class="w"> </span><span class="n">uppersum_boundcheck</span><span class="p">(</span><span class="n">R</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -941,28 +939,28 @@ In [9]: %timeit np.sum(R)
 <div class="prompt input_prompt">In [34]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="n">Base</span><span class="o">.</span><span class="n">Threads</span><span class="w"></span>
+<div class=" highlight hl-julia"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="n">Base</span><span class="o">.</span><span class="n">Threads</span>
 
-<span class="k">function</span><span class="w"> </span><span class="n">upsum_threads</span><span class="p">(</span><span class="n">M</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">size</span><span class="p">(</span><span class="n">M</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="n">chunks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nthreads</span><span class="p">()</span><span class="w"></span>
-<span class="w">    </span><span class="n">sums</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">zeros</span><span class="p">(</span><span class="n">eltype</span><span class="p">(</span><span class="n">M</span><span class="p">),</span><span class="w"> </span><span class="n">chunks</span><span class="p">)</span><span class="w">  </span><span class="c"># separate subsum for each thread</span><span class="w"></span>
-<span class="w">    </span><span class="n">chunkend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">round</span><span class="o">.</span><span class="p">(</span><span class="kt">Int</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="o">*</span><span class="n">sqrt</span><span class="o">.</span><span class="p">((</span><span class="mi">1</span><span class="o">:</span><span class="n">chunks</span><span class="p">)</span><span class="w"> </span><span class="o">./</span><span class="w"> </span><span class="n">chunks</span><span class="p">))</span><span class="w">   </span><span class="c">#split jobs so that each thread has approx. same number of numbers to add</span><span class="w"></span>
-<span class="w">    </span><span class="nd">@assert</span><span class="w"> </span><span class="n">minimum</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">chunkend</span><span class="p">))</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="w">    </span><span class="n">chunkstart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">chunkend</span><span class="p">[</span><span class="mi">1</span><span class="o">:</span><span class="k">end</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">.+</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"></span>
-<span class="w">    </span><span class="nd">@threads</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">job</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="n">chunks</span><span class="w">     </span><span class="c"># tell Julia that this part is safe for threading</span><span class="w"></span>
-<span class="w">        </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">zero</span><span class="p">(</span><span class="n">eltype</span><span class="p">(</span><span class="n">M</span><span class="p">))</span><span class="w"></span>
-<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">chunkstart</span><span class="p">[</span><span class="n">job</span><span class="p">]</span><span class="o">:</span><span class="n">chunkend</span><span class="p">[</span><span class="n">job</span><span class="p">]</span><span class="w"></span>
-<span class="w">            </span><span class="nd">@simd</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
-<span class="w">                </span><span class="nd">@inbounds</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">M</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">]</span><span class="w"></span>
-<span class="w">            </span><span class="k">end</span><span class="w"></span>
-<span class="w">        </span><span class="k">end</span><span class="w"></span>
-<span class="w">        </span><span class="n">sums</span><span class="p">[</span><span class="n">job</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="w"></span>
-<span class="w">    </span><span class="k">end</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">sum</span><span class="p">(</span><span class="n">sums</span><span class="p">)</span><span class="w"></span>
-<span class="k">end</span><span class="w"></span>
+<span class="k">function</span><span class="w"> </span><span class="n">upsum_threads</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+<span class="w">    </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">size</span><span class="p">(</span><span class="n">M</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="w">    </span><span class="n">chunks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nthreads</span><span class="p">()</span>
+<span class="w">    </span><span class="n">sums</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">zeros</span><span class="p">(</span><span class="n">eltype</span><span class="p">(</span><span class="n">M</span><span class="p">),</span><span class="w"> </span><span class="n">chunks</span><span class="p">)</span><span class="w">  </span><span class="c"># separate subsum for each thread</span>
+<span class="w">    </span><span class="n">chunkend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">round</span><span class="o">.</span><span class="p">(</span><span class="kt">Int</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="o">*</span><span class="n">sqrt</span><span class="o">.</span><span class="p">((</span><span class="mi">1</span><span class="o">:</span><span class="n">chunks</span><span class="p">)</span><span class="w"> </span><span class="o">./</span><span class="w"> </span><span class="n">chunks</span><span class="p">))</span><span class="w">   </span><span class="c">#split jobs so that each thread has approx. same number of numbers to add</span>
+<span class="w">    </span><span class="nd">@assert</span><span class="w"> </span><span class="n">minimum</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">chunkend</span><span class="p">))</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="n">chunkstart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">chunkend</span><span class="p">[</span><span class="mi">1</span><span class="o">:</span><span class="k">end</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">.+</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span>
+<span class="w">    </span><span class="nd">@threads</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">job</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="n">chunks</span><span class="w">     </span><span class="c"># tell Julia that this part is safe for threading</span>
+<span class="w">        </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">zero</span><span class="p">(</span><span class="n">eltype</span><span class="p">(</span><span class="n">M</span><span class="p">))</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">chunkstart</span><span class="p">[</span><span class="n">job</span><span class="p">]</span><span class="o">:</span><span class="n">chunkend</span><span class="p">[</span><span class="n">job</span><span class="p">]</span>
+<span class="w">            </span><span class="nd">@simd</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">                </span><span class="nd">@inbounds</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">M</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">]</span>
+<span class="w">            </span><span class="k">end</span>
+<span class="w">        </span><span class="k">end</span>
+<span class="w">        </span><span class="n">sums</span><span class="p">[</span><span class="n">job</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span>
+<span class="w">    </span><span class="k">end</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">sum</span><span class="p">(</span><span class="n">sums</span><span class="p">)</span>
+<span class="k">end</span>
 
-<span class="n">upsum_threads</span><span class="p">(</span><span class="n">R</span><span class="p">)</span><span class="w"></span>
+<span class="n">upsum_threads</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -995,7 +993,7 @@ In [9]: %timeit np.sum(R)
 <div class="prompt input_prompt">In [36]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="nd">@time</span><span class="w"> </span><span class="n">upsum_threads</span><span class="p">(</span><span class="n">R</span><span class="p">);</span><span class="w"></span>
+<div class=" highlight hl-julia"><pre><span></span><span class="nd">@time</span><span class="w"> </span><span class="n">upsum_threads</span><span class="p">(</span><span class="n">R</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -1036,9 +1034,9 @@ In [9]: %timeit np.sum(R)
 <div class="prompt input_prompt">In [20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">chunks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"></span>
-<span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10000</span><span class="w"></span>
-<span class="n">round</span><span class="o">.</span><span class="p">(</span><span class="kt">Int</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="o">*</span><span class="n">sqrt</span><span class="o">.</span><span class="p">((</span><span class="mi">1</span><span class="o">:</span><span class="n">chunks</span><span class="p">)</span><span class="w"> </span><span class="o">./</span><span class="w"> </span><span class="n">chunks</span><span class="p">))</span><span class="w"></span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">chunks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span>
+<span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10000</span>
+<span class="n">round</span><span class="o">.</span><span class="p">(</span><span class="kt">Int</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="o">*</span><span class="n">sqrt</span><span class="o">.</span><span class="p">((</span><span class="mi">1</span><span class="o">:</span><span class="n">chunks</span><span class="p">)</span><span class="w"> </span><span class="o">./</span><span class="w"> </span><span class="n">chunks</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -1085,7 +1083,7 @@ In [9]: %timeit np.sum(R)
 <div class="prompt input_prompt">In [21]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="p">(</span><span class="mi">1</span><span class="o">:</span><span class="n">chunks</span><span class="p">)</span><span class="w"></span>
+<div class=" highlight hl-julia"><pre><span></span><span class="p">(</span><span class="mi">1</span><span class="o">:</span><span class="n">chunks</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1128,7 +1126,7 @@ In [9]: %timeit np.sum(R)
 <div class="prompt input_prompt">In [38]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="p">(</span><span class="mi">1</span><span class="o">:</span><span class="n">chunks</span><span class="p">)</span><span class="w"> </span><span class="o">./</span><span class="w"> </span><span class="n">chunks</span><span class="w"></span>
+<div class=" highlight hl-julia"><pre><span></span><span class="p">(</span><span class="mi">1</span><span class="o">:</span><span class="n">chunks</span><span class="p">)</span><span class="w"> </span><span class="o">./</span><span class="w"> </span><span class="n">chunks</span>
 </pre></div>
 
     </div>
@@ -1171,7 +1169,7 @@ In [9]: %timeit np.sum(R)
 <div class="prompt input_prompt">In [39]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">collect</span><span class="p">((</span><span class="mi">1</span><span class="o">:</span><span class="n">chunks</span><span class="p">)</span><span class="w"> </span><span class="o">./</span><span class="w"> </span><span class="n">chunks</span><span class="p">)</span><span class="w"></span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">collect</span><span class="p">((</span><span class="mi">1</span><span class="o">:</span><span class="n">chunks</span><span class="p">)</span><span class="w"> </span><span class="o">./</span><span class="w"> </span><span class="n">chunks</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1218,7 +1216,7 @@ In [9]: %timeit np.sum(R)
 <div class="prompt input_prompt">In [43]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">sqrt</span><span class="p">((</span><span class="mi">1</span><span class="o">:</span><span class="n">chunks</span><span class="p">)</span><span class="w"> </span><span class="o">./</span><span class="w"> </span><span class="n">chunks</span><span class="p">)</span><span class="w"></span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">sqrt</span><span class="p">((</span><span class="mi">1</span><span class="o">:</span><span class="n">chunks</span><span class="p">)</span><span class="w"> </span><span class="o">./</span><span class="w"> </span><span class="n">chunks</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1267,7 +1265,7 @@ Stacktrace:
 <div class="prompt input_prompt">In [44]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">sqrt</span><span class="o">.</span><span class="p">((</span><span class="mi">1</span><span class="o">:</span><span class="n">chunks</span><span class="p">)</span><span class="w"> </span><span class="o">./</span><span class="w"> </span><span class="n">chunks</span><span class="p">)</span><span class="w"></span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">sqrt</span><span class="o">.</span><span class="p">((</span><span class="mi">1</span><span class="o">:</span><span class="n">chunks</span><span class="p">)</span><span class="w"> </span><span class="o">./</span><span class="w"> </span><span class="n">chunks</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1334,13 +1332,13 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}}
     }
 });
-</script></article><footer id="footer"><p>Contents © 2022         <a rel="me" href="https://mastodon.social/@StanczakDominik">Dominik Stańczak-Marikin</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a> - 
+</script></article><footer id="footer"><p>Contents © 2023         <a rel="me" href="https://mastodon.social/@StanczakDominik">Dominik Stańczak-Marikin</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a> - 
 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
 <img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="../../images/creativecommons.png"></a></p>
             
         </footer>
 </div>
-    </section><script src="../../assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
+    </section><script src="../../assets/js/all-nocdn.js"></script><script src="https://polyfill.io/v3/polyfill.js?features=Intl.RelativeTimeFormat.%7Elocale.en"></script><script src="../../assets/js/luxon.min.js"></script><!-- fancy dates --><script>
     moment.locale("en");
     fancydates(2, "YYYY-MM-DD HH:mm");
     </script><!-- end fancy dates --><script>

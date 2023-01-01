@@ -1305,7 +1305,7 @@ a:focus {
   font-size: 26.25px;
 }
 .page-content {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "-apple-system","BlinkMacSystemFont","segoe ui",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"helvetica neue",Helvetica,sans-serif;
 }
 .page-content > .content {
   text-rendering: optimizeLegibility;
@@ -1732,5 +1732,69 @@ article.post-text .entry-content .figure .caption {
 }
 article.post-text + article.post-text {
   margin-top: 48px;
+}
+
+
+/* use Fork Awesome font family */
+
+[class^="fa-"],
+[class*=" fa-"],
+.post .meta .authordate:before,
+.post .meta .stats a:after {
+  font-family: ForkAwesome;
+}
+
+.centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.centered .about {
+    text-align: center;
+}
+
+.container {
+  margin: 1rem auto;
+  max-width: 90rem;
+  width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.avatar img {
+  width: 20rem;
+  height: auto;
+  border-radius: 50%;
+}
+
+.centered .about h2 {
+    font-size: 2.1rem;
+    line-height: 2.4rem;
+}
+
+.centered .about h3 {
+  margin-top: 1rem;
+  margin-bottom: .5rem;
+  font-size: 1.2rem;
+  line-height: 1.1rem;
+}
+
+.centered .about ul li {
+    display: inline-block;
+    position: relative;
+}
+
+.centered .about ul li a {
+    text-transform: uppercase;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-size: 1.6rem;
+}
+
+.centered .about ul {
+    list-style-image: none;
+    margin: 3rem 0 1rem;
 }
 

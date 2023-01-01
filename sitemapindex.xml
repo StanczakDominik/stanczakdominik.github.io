@@ -7,366 +7,438 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://stanczakdominik.github.io/authors/dominik-stanczak-marikin.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/authors/dominik-stanczak.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://stanczakdominik.github.io/categories/article.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/categories/bayes.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/categories/benchmark.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://stanczakdominik.github.io/categories/blogging.xml</loc>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://stanczakdominik.github.io/categories/cat_fusion.xml</loc>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/categories/cat_ising.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/categories/cat_julia.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/categories/cat_nonlinear.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://stanczakdominik.github.io/categories/cat_nontech.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://stanczakdominik.github.io/categories/cat_open-science.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/categories/cat_pic.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://stanczakdominik.github.io/categories/cat_release.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <loc>https://stanczakdominik.github.io/categories/cat_projects.xml</loc>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://stanczakdominik.github.io/categories/cat_python.xml</loc>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/categories/cat_starcraft-ii-bayesian-replay-analysis.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://stanczakdominik.github.io/categories/cat_status.xml</loc>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://stanczakdominik.github.io/categories/cat_tech.xml</loc>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://stanczakdominik.github.io/categories/cat_world.xml</loc>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/categories/cupy.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/categories/fusion.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/categories/gpu.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://stanczakdominik.github.io/categories/ipplm.xml</loc>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/categories/ising.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://stanczakdominik.github.io/categories/joss.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/categories/julia.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://stanczakdominik.github.io/categories/maintenance.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/categories/masters-thesis.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/categories/mathjax.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/categories/nbody.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/categories/nonlinear-dynamics.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/categories/numba.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/categories/numpy.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://stanczakdominik.github.io/categories/open-science.xml</loc>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/categories/paper.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/categories/particle-in-cell.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/categories/personal.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/categories/pic.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/categories/plasma.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/categories/plasmapy.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/categories/popular-science.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/categories/pymc3.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/categories/python-sympy.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/categories/python.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/categories/release.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/categories/rossler.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://stanczakdominik.github.io/categories/science.xml</loc>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/categories/scipy.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/categories/scripting.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/categories/simulation.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/categories/sphinx.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/categories/starcraft.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/categories/status-update.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://stanczakdominik.github.io/categories/status.xml</loc>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://stanczakdominik.github.io/categories/work.xml</loc>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://stanczakdominik.github.io/categories/world.xml</loc>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://stanczakdominik.github.io/categories/yearly.xml</loc>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://stanczakdominik.github.io/categories/youtube.xml</loc>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/pl/authors/dominik-stanczak-marikin.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/pl/authors/dominik-stanczak.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://stanczakdominik.github.io/pl/categories/article.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/pl/categories/bayes.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/pl/categories/benchmark.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://stanczakdominik.github.io/pl/categories/blogging.xml</loc>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://stanczakdominik.github.io/pl/categories/cat_fusion.xml</loc>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/pl/categories/cat_ising.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/pl/categories/cat_julia.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/pl/categories/cat_nonlinear.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://stanczakdominik.github.io/pl/categories/cat_nontech.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://stanczakdominik.github.io/pl/categories/cat_open-science.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/pl/categories/cat_pic.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://stanczakdominik.github.io/pl/categories/cat_release.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <loc>https://stanczakdominik.github.io/pl/categories/cat_projects.xml</loc>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://stanczakdominik.github.io/pl/categories/cat_python.xml</loc>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/pl/categories/cat_starcraft-ii-bayesian-replay-analysis.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://stanczakdominik.github.io/pl/categories/cat_status.xml</loc>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://stanczakdominik.github.io/pl/categories/cat_tech.xml</loc>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://stanczakdominik.github.io/pl/categories/cat_world.xml</loc>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/pl/categories/cupy.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/pl/categories/fusion.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/pl/categories/gpu.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://stanczakdominik.github.io/pl/categories/ipplm.xml</loc>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/pl/categories/ising.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://stanczakdominik.github.io/pl/categories/joss.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/pl/categories/julia.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://stanczakdominik.github.io/pl/categories/maintenance.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/pl/categories/masters-thesis.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/pl/categories/mathjax.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/pl/categories/nbody.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/pl/categories/nonlinear-dynamics.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/pl/categories/numba.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/pl/categories/numpy.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://stanczakdominik.github.io/pl/categories/open-science.xml</loc>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/pl/categories/paper.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/pl/categories/particle-in-cell.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/pl/categories/personal.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/pl/categories/pic.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/pl/categories/plasma.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/pl/categories/plasmapy.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/pl/categories/popular-science.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/pl/categories/pymc3.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/pl/categories/python-sympy.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/pl/categories/python.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/pl/categories/release.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/pl/categories/rossler.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://stanczakdominik.github.io/pl/categories/science.xml</loc>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/pl/categories/scipy.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/pl/categories/scripting.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/pl/categories/simulation.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/pl/categories/sphinx.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/pl/categories/starcraft.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/pl/categories/status-update.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://stanczakdominik.github.io/pl/categories/status.xml</loc>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://stanczakdominik.github.io/pl/categories/work.xml</loc>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://stanczakdominik.github.io/pl/categories/world.xml</loc>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://stanczakdominik.github.io/pl/categories/yearly.xml</loc>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://stanczakdominik.github.io/pl/categories/youtube.xml</loc>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/pl/rss.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/rss.xml</loc>
-  <lastmod>2022-12-31T13:45:00Z</lastmod>
+  <lastmod>2023-01-01T15:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://stanczakdominik.github.io/sitemap.xml</loc>
-  <lastmod>2022-12-31T13:46:00Z</lastmod>
+  <lastmod>2023-01-01T15:17:00Z</lastmod>
  </sitemap>
 </sitemapindex>

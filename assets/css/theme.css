@@ -658,7 +658,7 @@ a:focus {
   font-size: 26.25px;
 }
 .page-content {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "-apple-system","BlinkMacSystemFont","segoe ui",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"helvetica neue",Helvetica,sans-serif;
 }
 .page-content > .content {
   text-rendering: optimizeLegibility;
@@ -1086,3 +1086,4 @@ article.post-text .entry-content .figure .caption {
 article.post-text + article.post-text {
   margin-top: 48px;
 }
+

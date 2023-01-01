@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width">
 <title>Julia - the magic of composability | Prematurely optimizing</title>
 <link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
@@ -15,7 +15,7 @@
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" hreflang="pl" href="../../pl/rss.xml">
 <link rel="canonical" href="https://stanczakdominik.github.io/posts/julia-composability/">
-<!--[if lt IE 9]><script src="../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett">
+<!--[if lt IE 9]><script src="../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><script data-goatcounter="https://stanczakdominik.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script><meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett">
 <link rel="stylesheet" type="text/css" href="../../assets/css/tipuesearch.css">
 <meta name="author" content="Dominik Stańczak-Marikin">
 <link rel="prev" href="../short-updates-bayes-masters-plasmapy-protoss-julia/" title="Short updates: Bayes, Master's, PlasmaPy, Protoss, Julia" type="text/html">
@@ -33,14 +33,12 @@
     <a href="#page-content" class="sr-only sr-only-focusable">Skip to main content</a>
     
     <section class="social"><ul>
-<li><a href="../../index.html" title="Home"><i class="fa fa-home"></i></a></li>
-            <li><a href="../../archive.html" title="Archives"><i class="fa fa-folder-open"></i></a></li>
-            <li><a href="../../categories/" title="Tags"><i class="fa fa-tags"></i></a></li>
-            <li><a href="../../rss.xml" title="RSS"><i class="fa fa-rss"></i></a></li>
-            <li><a href="../../about/" title="About"><i class="fa fa-user"></i></a></li>
-            <li><a href="../../credits/" title="Credits"><i class="fa fa-child"></i></a></li>
-            <li><a href="https://github.com/stanczakdominik" title="My Github"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://github.com/StanczakDominik/stanczakdominik.github.io/tree/src" title="Site repo"><i class="fas fa-file-code"></i></a></li>
+<li><a href="../../index.html" title="Home"><i class="fa fa-home"></i><br>Home</a></li>
+            <li><a href="../" title="Posts"><i class="fa fa-pencil"></i><br>Posts</a></li>
+            <li><a href="../../categories/" title="Tags"><i class="fa fa-tags"></i><br>Tags</a></li>
+            <li><a href="../../rss.xml" title="RSS"><i class="fa fa-rss"></i><br>RSS</a></li>
+            <li><a href="../../about/" title="About"><i class="fa fa-user-circle-o"></i><br>About</a></li>
+            <li><a href="https://github.com/StanczakDominik/stanczakdominik.github.io/tree/src" title="Site repo"><i class="fa fa-file-code-o"></i><br>Site repo</a></li>
     
     
 
@@ -113,11 +111,11 @@ $$\frac{du}{dt} = \alpha u$$
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="n">DifferentialEquations</span><span class="w"></span>
+<div class=" highlight hl-julia"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="n">DifferentialEquations</span>
 
-<span class="n">α</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.01</span><span class="w"></span>
-<span class="n">u0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="w">             </span><span class="c"># initial value</span><span class="w"></span>
-<span class="n">tspan</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">)</span><span class="w">   </span><span class="c"># range of values</span><span class="w"></span>
+<span class="n">α</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.01</span>
+<span class="n">u0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="w">             </span><span class="c"># initial value</span>
+<span class="n">tspan</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">)</span><span class="w">   </span><span class="c"># range of values</span>
 </pre></div>
 
     </div>
@@ -160,7 +158,7 @@ $$\frac{du}{dt} = \alpha u$$
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">α</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">u</span><span class="w"></span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">α</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">u</span>
 </pre></div>
 
     </div>
@@ -193,7 +191,7 @@ $$\frac{du}{dt} = \alpha u$$
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">prob</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ODEProblem</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="n">u0</span><span class="p">,</span><span class="w"> </span><span class="n">tspan</span><span class="p">)</span><span class="w"></span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">prob</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ODEProblem</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="n">u0</span><span class="p">,</span><span class="w"> </span><span class="n">tspan</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -238,7 +236,7 @@ u0: 0.5</pre>
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">sol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">solve</span><span class="p">(</span><span class="n">prob</span><span class="p">,</span><span class="w"> </span><span class="n">Tsit5</span><span class="p">(),</span><span class="w"> </span><span class="n">reltol</span><span class="o">=</span><span class="mf">1e-8</span><span class="p">,</span><span class="w"> </span><span class="n">abstol</span><span class="o">=</span><span class="mf">1e-8</span><span class="p">)</span><span class="w"></span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">sol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">solve</span><span class="p">(</span><span class="n">prob</span><span class="p">,</span><span class="w"> </span><span class="n">Tsit5</span><span class="p">(),</span><span class="w"> </span><span class="n">reltol</span><span class="o">=</span><span class="mf">1e-8</span><span class="p">,</span><span class="w"> </span><span class="n">abstol</span><span class="o">=</span><span class="mf">1e-8</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -318,10 +316,10 @@ u: 17-element Array{Float64,1}:
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="n">Plots</span><span class="w"></span>
-<span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s">"Solution to the linear ODE with a thick line"</span><span class="p">,</span><span class="w"></span>
-<span class="w">     </span><span class="n">xaxis</span><span class="o">=</span><span class="s">"Time (t)"</span><span class="p">,</span><span class="n">yaxis</span><span class="o">=</span><span class="s">"u(t)"</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s">"Numerical solution"</span><span class="p">)</span><span class="w"></span>
-<span class="n">plot!</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="o">-&gt;</span><span class="mf">0.5</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="mf">1.01</span><span class="n">t</span><span class="p">),</span><span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="ss">:dash</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s">"True Solution!"</span><span class="p">)</span><span class="w"></span>
+<div class=" highlight hl-julia"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="n">Plots</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s">"Solution to the linear ODE with a thick line"</span><span class="p">,</span>
+<span class="w">     </span><span class="n">xaxis</span><span class="o">=</span><span class="s">"Time (t)"</span><span class="p">,</span><span class="n">yaxis</span><span class="o">=</span><span class="s">"u(t)"</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s">"Numerical solution"</span><span class="p">)</span>
+<span class="n">plot!</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="o">-&gt;</span><span class="mf">0.5</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="mf">1.01</span><span class="n">t</span><span class="p">),</span><span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="ss">:dash</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s">"True Solution!"</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -537,12 +535,12 @@ M1658.3 388.432 L2280.76 388.432 L2280.76 206.992 L1658.3 206.992  Z
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="n">compute</span><span class="p">(</span><span class="n">α</span><span class="p">,</span><span class="w"> </span><span class="n">u0</span><span class="p">,</span><span class="w"> </span><span class="n">tspan</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="n">f</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">α</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">u</span><span class="w"></span>
-<span class="w">    </span><span class="n">noisy_prob</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ODEProblem</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="n">u0</span><span class="p">,</span><span class="w"> </span><span class="n">tspan</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="n">noisy_sol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">solve</span><span class="p">(</span><span class="n">noisy_prob</span><span class="p">,</span><span class="w"> </span><span class="n">Tsit5</span><span class="p">(),</span><span class="w"> </span><span class="n">reltol</span><span class="o">=</span><span class="mf">1e-8</span><span class="p">,</span><span class="w"> </span><span class="n">abstol</span><span class="o">=</span><span class="mf">1e-8</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="n">noisy_sol</span><span class="w">             </span><span class="c"># Julia returns the last statement in a function</span><span class="w"></span>
-<span class="k">end</span><span class="w"></span>
+<div class=" highlight hl-julia"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="n">compute</span><span class="p">(</span><span class="n">α</span><span class="p">,</span><span class="w"> </span><span class="n">u0</span><span class="p">,</span><span class="w"> </span><span class="n">tspan</span><span class="p">)</span>
+<span class="w">    </span><span class="n">f</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">α</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">u</span>
+<span class="w">    </span><span class="n">noisy_prob</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ODEProblem</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="n">u0</span><span class="p">,</span><span class="w"> </span><span class="n">tspan</span><span class="p">)</span>
+<span class="w">    </span><span class="n">noisy_sol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">solve</span><span class="p">(</span><span class="n">noisy_prob</span><span class="p">,</span><span class="w"> </span><span class="n">Tsit5</span><span class="p">(),</span><span class="w"> </span><span class="n">reltol</span><span class="o">=</span><span class="mf">1e-8</span><span class="p">,</span><span class="w"> </span><span class="n">abstol</span><span class="o">=</span><span class="mf">1e-8</span><span class="p">)</span>
+<span class="w">    </span><span class="n">noisy_sol</span><span class="w">             </span><span class="c"># Julia returns the last statement in a function</span>
+<span class="k">end</span>
 </pre></div>
 
     </div>
@@ -585,11 +583,11 @@ M1658.3 388.432 L2280.76 388.432 L2280.76 206.992 L1658.3 206.992  Z
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="n">Measurements</span><span class="w"></span>
-<span class="n">noisy_sol</span><span class="w"> </span><span class="o">=</span><span class="n">compute</span><span class="p">(</span><span class="mf">1.01</span><span class="w"> </span><span class="o">±</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="w"> </span><span class="o">±</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">  </span><span class="c"># this had to be the same type, or we'd get an exception:</span><span class="w"></span>
-<span class="w">    </span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="p">)</span><span class="w"></span>
+<div class=" highlight hl-julia"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="n">Measurements</span>
+<span class="n">noisy_sol</span><span class="w"> </span><span class="o">=</span><span class="n">compute</span><span class="p">(</span><span class="mf">1.01</span><span class="w"> </span><span class="o">±</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span>
+<span class="w">    </span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="w"> </span><span class="o">±</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">  </span><span class="c"># this had to be the same type, or we'd get an exception:</span>
+<span class="w">    </span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">)</span>
+<span class="w">    </span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -670,10 +668,10 @@ u: 17-element Array{Measurement{Float64},1}:
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">noisy_sol</span><span class="p">,</span><span class="w"> </span><span class="n">lab</span><span class="o">=</span><span class="s">"Numerical with uncertainty"</span><span class="p">,</span><span class="w"></span>
-<span class="w">     </span><span class="n">linewidth</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">xaxis</span><span class="o">=</span><span class="s">"Time (t)"</span><span class="p">,</span><span class="n">yaxis</span><span class="o">=</span><span class="s">"u(t)"</span><span class="p">,</span><span class="w"></span>
-<span class="p">)</span><span class="w"></span>
-<span class="n">plot!</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="o">-&gt;</span><span class="mf">0.5</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="mf">1.01</span><span class="n">t</span><span class="p">),</span><span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="ss">:dash</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s">"True Solution!"</span><span class="p">)</span><span class="w"></span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">noisy_sol</span><span class="p">,</span><span class="w"> </span><span class="n">lab</span><span class="o">=</span><span class="s">"Numerical with uncertainty"</span><span class="p">,</span>
+<span class="w">     </span><span class="n">linewidth</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">xaxis</span><span class="o">=</span><span class="s">"Time (t)"</span><span class="p">,</span><span class="n">yaxis</span><span class="o">=</span><span class="s">"u(t)"</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">plot!</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="o">-&gt;</span><span class="mf">0.5</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="mf">1.01</span><span class="n">t</span><span class="p">),</span><span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="ss">:dash</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s">"True Solution!"</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -2882,10 +2880,10 @@ M1474.07 312.204 L2280.76 312.204 L2280.76 130.764 L1474.07 130.764  Z
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">noisy_sol</span><span class="w"> </span><span class="o">=</span><span class="n">compute</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span><span class="w">   </span><span class="c"># interestingly the constant can be a "precise" float</span><span class="w"></span>
-<span class="w">    </span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="w"> </span><span class="o">±</span><span class="w"> </span><span class="mf">0.3</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="p">)</span><span class="w"></span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">noisy_sol</span><span class="w"> </span><span class="o">=</span><span class="n">compute</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span><span class="w">   </span><span class="c"># interestingly the constant can be a "precise" float</span>
+<span class="w">    </span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="w"> </span><span class="o">±</span><span class="w"> </span><span class="mf">0.3</span><span class="p">,</span>
+<span class="w">    </span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">)</span>
+<span class="w">    </span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -2955,10 +2953,10 @@ u: 17-element Array{Measurement{Float64},1}:
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">noisy_sol</span><span class="p">,</span><span class="w"> </span><span class="n">lab</span><span class="o">=</span><span class="s">"Numerical with uncertainty"</span><span class="p">,</span><span class="w"></span>
-<span class="w">     </span><span class="n">linewidth</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">xaxis</span><span class="o">=</span><span class="s">"Time (t)"</span><span class="p">,</span><span class="n">yaxis</span><span class="o">=</span><span class="s">"u(t)"</span><span class="p">,</span><span class="w"></span>
-<span class="p">)</span><span class="w"></span>
-<span class="n">plot!</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="o">-&gt;</span><span class="mf">0.5</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="mf">1.01</span><span class="n">t</span><span class="p">),</span><span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="ss">:dash</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s">"True Solution!"</span><span class="p">)</span><span class="w"></span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">noisy_sol</span><span class="p">,</span><span class="w"> </span><span class="n">lab</span><span class="o">=</span><span class="s">"Numerical with uncertainty"</span><span class="p">,</span>
+<span class="w">     </span><span class="n">linewidth</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">xaxis</span><span class="o">=</span><span class="s">"Time (t)"</span><span class="p">,</span><span class="n">yaxis</span><span class="o">=</span><span class="s">"u(t)"</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">plot!</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="o">-&gt;</span><span class="mf">0.5</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="mf">1.01</span><span class="n">t</span><span class="p">),</span><span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="ss">:dash</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s">"True Solution!"</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -5162,14 +5160,14 @@ M1474.07 312.204 L2280.76 312.204 L2280.76 130.764 L1474.07 130.764  Z
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">noisy_sol</span><span class="w"> </span><span class="o">=</span><span class="n">compute</span><span class="p">(</span><span class="mf">1.01</span><span class="w"> </span><span class="o">±</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="w"> </span><span class="o">±</span><span class="w"> </span><span class="mf">0.3</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="p">)</span><span class="w"></span>
-<span class="n">plot</span><span class="p">(</span><span class="n">noisy_sol</span><span class="p">,</span><span class="w"> </span><span class="n">lab</span><span class="o">=</span><span class="s">"Numerical with uncertainty"</span><span class="p">,</span><span class="w"></span>
-<span class="w">     </span><span class="n">linewidth</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">xaxis</span><span class="o">=</span><span class="s">"Time (t)"</span><span class="p">,</span><span class="n">yaxis</span><span class="o">=</span><span class="s">"u(t)"</span><span class="p">,</span><span class="w"></span>
-<span class="p">)</span><span class="w"></span>
-<span class="n">plot!</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="o">-&gt;</span><span class="mf">0.5</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="mf">1.01</span><span class="n">t</span><span class="p">),</span><span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="ss">:dash</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s">"True Solution!"</span><span class="p">)</span><span class="w"></span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">noisy_sol</span><span class="w"> </span><span class="o">=</span><span class="n">compute</span><span class="p">(</span><span class="mf">1.01</span><span class="w"> </span><span class="o">±</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span>
+<span class="w">    </span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="w"> </span><span class="o">±</span><span class="w"> </span><span class="mf">0.3</span><span class="p">,</span>
+<span class="w">    </span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">)</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">noisy_sol</span><span class="p">,</span><span class="w"> </span><span class="n">lab</span><span class="o">=</span><span class="s">"Numerical with uncertainty"</span><span class="p">,</span>
+<span class="w">     </span><span class="n">linewidth</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">xaxis</span><span class="o">=</span><span class="s">"Time (t)"</span><span class="p">,</span><span class="n">yaxis</span><span class="o">=</span><span class="s">"u(t)"</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">plot!</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="o">-&gt;</span><span class="mf">0.5</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="mf">1.01</span><span class="n">t</span><span class="p">),</span><span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="ss">:dash</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s">"True Solution!"</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -7387,8 +7385,8 @@ M1474.07 312.204 L2280.76 312.204 L2280.76 130.764 L1474.07 130.764  Z
 <div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="n">Unitful</span><span class="w"></span>
-<span class="mi">1</span><span class="sa">u</span><span class="s">"s"</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="mi">3</span><span class="w"></span>
+<div class=" highlight hl-julia"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="n">Unitful</span>
+<span class="mi">1</span><span class="sa">u</span><span class="s">"s"</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="mi">3</span>
 </pre></div>
 
     </div>
@@ -7431,7 +7429,7 @@ M1474.07 312.204 L2280.76 312.204 L2280.76 130.764 L1474.07 130.764  Z
 <div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="mf">0.5</span><span class="sa">u</span><span class="s">"m"</span><span class="w"> </span><span class="o">±</span><span class="w"> </span><span class="mi">40</span><span class="sa">u</span><span class="s">"cm"</span><span class="w"></span>
+<div class=" highlight hl-julia"><pre><span></span><span class="mf">0.5</span><span class="sa">u</span><span class="s">"m"</span><span class="w"> </span><span class="o">±</span><span class="w"> </span><span class="mi">40</span><span class="sa">u</span><span class="s">"cm"</span>
 </pre></div>
 
     </div>
@@ -7474,7 +7472,7 @@ M1474.07 312.204 L2280.76 312.204 L2280.76 130.764 L1474.07 130.764  Z
 <div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="mf">1.01</span><span class="sa">u</span><span class="s">"1/s"</span><span class="w"> </span><span class="o">±</span><span class="w"> </span><span class="mf">0.1</span><span class="sa">u</span><span class="s">"1/s"</span><span class="w"></span>
+<div class=" highlight hl-julia"><pre><span></span><span class="mf">1.01</span><span class="sa">u</span><span class="s">"1/s"</span><span class="w"> </span><span class="o">±</span><span class="w"> </span><span class="mf">0.1</span><span class="sa">u</span><span class="s">"1/s"</span>
 </pre></div>
 
     </div>
@@ -7517,10 +7515,10 @@ M1474.07 312.204 L2280.76 312.204 L2280.76 130.764 L1474.07 130.764  Z
 <div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">noisy_sol</span><span class="w"> </span><span class="o">=</span><span class="n">compute</span><span class="p">(</span><span class="mf">1.01</span><span class="sa">u</span><span class="s">"1/s"</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="mf">0.5</span><span class="sa">u</span><span class="s">"m"</span><span class="w"> </span><span class="o">±</span><span class="w"> </span><span class="mi">40</span><span class="sa">u</span><span class="s">"cm"</span><span class="p">,</span><span class="w">  </span><span class="c"># I had to cheat a little here</span><span class="w"></span>
-<span class="w">    </span><span class="p">(</span><span class="mf">0.0</span><span class="sa">u</span><span class="s">"s"</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="sa">u</span><span class="s">"s"</span><span class="p">),</span><span class="w"></span>
-<span class="w">    </span><span class="p">)</span><span class="w"></span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">noisy_sol</span><span class="w"> </span><span class="o">=</span><span class="n">compute</span><span class="p">(</span><span class="mf">1.01</span><span class="sa">u</span><span class="s">"1/s"</span><span class="p">,</span>
+<span class="w">    </span><span class="mf">0.5</span><span class="sa">u</span><span class="s">"m"</span><span class="w"> </span><span class="o">±</span><span class="w"> </span><span class="mi">40</span><span class="sa">u</span><span class="s">"cm"</span><span class="p">,</span><span class="w">  </span><span class="c"># I had to cheat a little here</span>
+<span class="w">    </span><span class="p">(</span><span class="mf">0.0</span><span class="sa">u</span><span class="s">"s"</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="sa">u</span><span class="s">"s"</span><span class="p">),</span>
+<span class="w">    </span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -7604,13 +7602,13 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}}
     }
 });
-</script></article><footer id="footer"><p>Contents © 2022         <a rel="me" href="https://mastodon.social/@StanczakDominik">Dominik Stańczak-Marikin</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a> - 
+</script></article><footer id="footer"><p>Contents © 2023         <a rel="me" href="https://mastodon.social/@StanczakDominik">Dominik Stańczak-Marikin</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a> - 
 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
 <img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="../../images/creativecommons.png"></a></p>
             
         </footer>
 </div>
-    </section><script src="../../assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
+    </section><script src="../../assets/js/all-nocdn.js"></script><script src="https://polyfill.io/v3/polyfill.js?features=Intl.RelativeTimeFormat.%7Elocale.en"></script><script src="../../assets/js/luxon.min.js"></script><!-- fancy dates --><script>
     moment.locale("en");
     fancydates(2, "YYYY-MM-DD HH:mm");
     </script><!-- end fancy dates --><script>
