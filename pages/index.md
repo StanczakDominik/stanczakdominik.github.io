@@ -17,7 +17,7 @@
 <section class="container centered">
   <div class="about">
         <div class="avatar"><img src="https://s.gravatar.com/avatar/df94900476a6290e98a26979ce635071?s=240" alt="gravatar"></div>
-        <h1>Dominik Stańczak-Marikin</h1>
+        <h1><a href="/about/">Dominik Stańczak-Marikin</a></h1>
         <h2>Python software developer</h2>
         <h2>Plasma physicist</h2>
         <h2>Punsmith</h2>

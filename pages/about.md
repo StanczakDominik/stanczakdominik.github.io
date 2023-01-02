@@ -1,26 +1,39 @@
-<!--
-.. title: About
-.. slug: about
-.. date: 2017-06-30 11:58:23 UTC+02:00
-.. tags: 
-.. category: 
-.. link: 
-.. description: 
-.. type: text
-.. hidetitle: True
--->
+---
+category: ''
+date: 2023-01-02 15:16:22 UTC+01:00
+description: ''
+link: ''
+slug: about
+tags: ''
+title: About
+type: text
+hidetitle: true
+---
 
-Hi there! My name's Dominik Stańczak-Marikin and I'm currently a research software
-engineer at the [Institute of Plasma Physics and Laser
-Microfusion](https://www.ifpilm.pl/en) in Warsaw, Poland, where I help write
-code for diagnostics of [Wendelstein 7-X, the currently (2020) largest stellarator in
-the world](https://en.wikipedia.org/wiki/Wendelstein_7-X).
+Hi there! My name's Dominik Stańczak-Marikin and I'm currently a software
+developer working with data processing pipelines for
+neurodegenerative disease research at a large pharmaceutical company.
 
-In my spare time, among other activities, I fight procrastination, study
-the art of muffin-making, help out with open source projects such as
-[PlasmaPy](http://plasmapy.org/), read books or write short technical
-notes on interesting solutions to problems in simulations or data
-analysis.
+I previously worked at the [Institute of Plasma Physics and Laser
+Microfusion](https://www.ifpilm.pl/en) in Warsaw, Poland as a research
+software engineer, where I helped analyse data from [Wendelstein 7-X,
+the currently (2023) largest stellarator in
+the world](https://en.wikipedia.org/wiki/Wendelstein_7-X). I consider myself a recovering plasma physicist.
+
+In my spare time, among other activities, I:
+
+- help out with open source software projects such as [PlasmaPy](http://plasmapy.org/)
+- tinker, script and automate
+- read books and learn lots
+- play games - classic RTSes made me who I am now. *StarCraft II* was a huge part of my life, but nowadays I mostly play *Factorio* with my wife and *Heroes of the Storm* to fulfill my competitive needs.
+- take care of our dog <!--TODO this should be a link to gallery-->
+- write on my blog (see [<i class="fa fa-pencil"></i>Posts](/posts) on the left) to scratch the teaching itch
+
+<!-- # My tools of choice -->
+
+<!-- - Python -->
+<!-- - vim -->
+<!-- - ArchLinux, btw -->
 
 # Where to find me
 

@@ -51,3 +51,7 @@
     list-style-image: none;
     margin: 3rem 0 1rem;
 }
+
+.page-content p {
+    text-indent: 2em;
+}
