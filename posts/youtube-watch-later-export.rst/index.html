@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Export YouTube's Watch Later playlist | Prematurely optimizing</title>
+<title>Export YouTube's Watch Later playlist | Dominik's website</title>
 <link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
@@ -11,22 +11,20 @@
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (pl)" hreflang="pl" href="../../pl/rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
 <link rel="canonical" href="https://stanczakdominik.github.io/posts/youtube-watch-later-export.rst/">
 <!--[if lt IE 9]><script src="../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><script data-goatcounter="https://stanczakdominik.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script><meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett">
 <link rel="stylesheet" type="text/css" href="../../assets/css/tipuesearch.css">
 <meta name="author" content="Dominik Stańczak-Marikin">
 <link rel="prev" href="../self-organized-criticality-student-project-post-mortem/" title="Self-organized criticality - student project post-mortem" type="text/html">
 <link rel="next" href="../recent-happenings/" title="Recent happenings" type="text/html">
-<meta property="og:site_name" content="Prematurely optimizing">
+<meta property="og:site_name" content="Dominik's website">
 <meta property="og:title" content="Export YouTube's Watch Later playlist">
 <meta property="og:url" content="https://stanczakdominik.github.io/posts/youtube-watch-later-export.rst/">
 <meta property="og:description" content="YouTube is increasingly becoming a walled garden. One of the dark patterns I see in it is that the Watch Later playlist, which you may have gathered over what feels like a millenia (so many lectures, ">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2020-02-17T18:00:00+01:00">
 <meta property="article:tag" content="youtube">
-<link rel="alternate" hreflang="pl" href="../../pl/posts/youtube-watch-later-export.rst/">
 </head>
 <body>
     <a href="#page-content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -75,10 +73,10 @@
     <p>YouTube is increasingly becoming a walled garden. One of the dark patterns I see in it is that the Watch Later playlist, which you may have gathered over what feels like a millenia (so many lectures, so little time...), cannot be exported - you can only add one video at a time to another playlist. That obviously doesn't scale. Here's a quick trick to solve that!</p>
 <!-- TEASER_END -->
 <p>Take this URL:</p>
-<div class="code"><pre class="code text"><a id="rest_code_35bffadfe7dc4484acda58680213f5ae-1" name="rest_code_35bffadfe7dc4484acda58680213f5ae-1" href="#rest_code_35bffadfe7dc4484acda58680213f5ae-1"></a>https://www.youtube.com/playlist?list=WL
+<div class="code"><pre class="code text"><a id="rest_code_c5f40fc717c145e696985a38f0883fb0-1" name="rest_code_c5f40fc717c145e696985a38f0883fb0-1" href="#rest_code_c5f40fc717c145e696985a38f0883fb0-1"></a>https://www.youtube.com/playlist?list=WL
 </pre></div>
 <p>Append <cite>&amp;disable_polymer=true</cite> to it:</p>
-<div class="code"><pre class="code text"><a id="rest_code_f10d957f173c45588d9b54d55ccf2e11-1" name="rest_code_f10d957f173c45588d9b54d55ccf2e11-1" href="#rest_code_f10d957f173c45588d9b54d55ccf2e11-1"></a>https://www.youtube.com/playlist?list=WL&amp;disable_polymer=true
+<div class="code"><pre class="code text"><a id="rest_code_ce3fbb623e294886b78b43c3ce4984a7-1" name="rest_code_ce3fbb623e294886b78b43c3ce4984a7-1" href="#rest_code_ce3fbb623e294886b78b43c3ce4984a7-1"></a>https://www.youtube.com/playlist?list=WL&amp;disable_polymer=true
 </pre></div>
 <p>And this should bring you to an older version of the website, where if you click the 3-dot "More" menu, you'll find an "Add all to..." button. This allows you to export your Watch Later playlist to another playlist, without the annoying limitations. Once you're there, you can use better software (<a class="reference external" href="https://github.com/TeamNewPipe/NewPipe">NewPipe</a>, for example, or <a class="reference external" href="https://webapps.stackexchange.com/questions/27589/how-do-i-export-my-youtube-playlists">another solution from the many available</a>) to store the playlist elsewhere. I did not investigate those, as I simply wanted to mirror my Watch Later playlist in NewPipe.</p>
 <p>Sadly, the same method does not work for the Liked Videos page - which is why you should probably not trust YouTube with your data as much as you likely do now.</p>
