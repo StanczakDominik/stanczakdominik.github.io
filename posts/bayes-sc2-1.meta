@@ -1,0 +1,17 @@
+---
+category: StarCraft II Bayesian replay analysis
+description: "In this post, I'm going to use PyMC3 to analyse my 2019 StarCraft II\
+  \ ladder games. In particular, I'm going to look at the relation between MMR - MatchMaking\
+  \ Rating, a metric of ladder performance  - mine and that of my enemies - and what\
+  \ it can tell us about my win chances. "
+link: ''
+slug: bayes-sc2-part-1
+tags:
+- bayes
+- pymc3
+- starcraft
+- python
+title: Bayesian modeling of StarCraft II ladder performance
+type: text
+date: "2020-06-10 21:37:00 UTC+02:00"
+---

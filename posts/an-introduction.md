@@ -2,8 +2,8 @@
 .. title: An introduction
 .. slug: an-introduction
 .. date: 2017-06-30 09:49:08 UTC+02:00
-.. tags: blogging
-.. category: status
+.. tags: blogging, status
+.. category: 
 .. link: 
 .. description: 
 .. type: text

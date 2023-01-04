@@ -2,8 +2,8 @@
 .. title: Sława Ukrainie!
 .. slug: slawa-ukrainie
 .. date: 2022-03-09 19:45:51 UTC+01:00
-.. tags: world
-.. category: status
+.. tags: world, status
+.. category: 
 .. link: 
 .. description: 
 .. type: text

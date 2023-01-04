@@ -2,8 +2,8 @@
 .. title: Recent happenings
 .. slug: recent-happenings
 .. date: 2020-04-22 18:08:57 UTC+02:00
-.. tags: 
-.. category: status
+.. tags: status
+.. category: 
 .. link: 
 .. description: 
 .. type: text

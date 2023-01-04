@@ -2,8 +2,8 @@
 .. title: Now with comments through utteranc.es!
 .. slug: utterances
 .. date: 2021-02-08 19:47:16 UTC+01:00
-.. tags: blogging
-.. category: status
+.. tags: blogging, status
+.. category: 
 .. link: 
 .. description: 
 .. type: text

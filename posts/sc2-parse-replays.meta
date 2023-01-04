@@ -1,0 +1,13 @@
+---
+category: StarCraft II Bayesian replay analysis
+description: I've realized I owe you an explanation on how to parse your own SC2 replays
+  for the series of posts on Bayesian SC2 replay data analysis. Let's go through it!
+link: ''
+slug: sc2-parse-replays
+tags:
+- starcraft
+- python
+title: Parsing SC2 replays for later analysis
+type: text
+date: "2020-06-23 19:30:00 UTC+02:00"
+---

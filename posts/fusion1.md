@@ -3,7 +3,7 @@
 .. slug: fusion1
 .. date: 2021-02-13 18:00:00 UTC+02:00
 .. tags: fusion, popular science
-.. category: fusion
+.. category: Nuclear fusion
 .. link: 
 .. description: 
 .. type: text

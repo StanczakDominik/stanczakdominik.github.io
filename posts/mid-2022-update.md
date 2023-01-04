@@ -2,8 +2,8 @@
 .. title: Mid-2022 Update
 .. slug: mid-2022-update
 .. date: 2022-09-02 21:09:17 UTC+02:00
-.. tags: 
-.. category: status
+.. tags: status, marriage, ipplm, work
+.. category: 
 .. link: 
 .. description: 
 .. type: text

@@ -1,0 +1,14 @@
+---
+category: N-body simulation
+description: ''
+link: ''
+slug: cupy-nbody-direct-force-calculation
+tags:
+- cupy
+- nbody
+- gpu
+- python
+title: CuPy speedup of naive N-Body vectorized force calculation
+type: text
+date: "2019-03-04 18:00:00 UTC+01:00"
+---

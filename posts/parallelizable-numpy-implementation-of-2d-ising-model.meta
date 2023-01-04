@@ -1,0 +1,15 @@
+---
+category: 2D Ising model
+description: In which we implement an efficient 2D Ising model simulation in a few
+  lines of Numpy code.
+link: ''
+slug: parallelizable-numpy-implementation-of-2d-ising-model
+tags:
+- numpy
+- ising
+- simulation
+- python
+title: Parallelizable Numpy implementation of 2D Ising model
+type: text
+date: "2019-01-29 18:00:00 UTC+01:00"
+---

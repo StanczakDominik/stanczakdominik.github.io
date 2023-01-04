@@ -1,0 +1,15 @@
+---
+category: StarCraft II Bayesian replay analysis
+description: In this post, we'll redo last post's SC2 replay analysis, except we'll
+  take the three matchups available and infer separate MMR values for each of those.
+link: ''
+slug: bayes-sc2-part-2
+tags:
+- bayes
+- pymc3
+- starcraft
+- python
+title: Learning my per-matchup MMR in Starcraft II through PyMC3
+type: text
+date: "2020-06-20 16:50:00 UTC+02:00"
+---

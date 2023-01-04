@@ -2,8 +2,8 @@
 .. title: First JOSS review!
 .. slug: first-joss-review
 .. date: 2020-05-02 19:55:00 UTC+02:00
-.. tags: science,open-science
-.. category: status
+.. tags: science,open-science,status
+.. category: 
 .. link: 
 .. description: 
 .. type: text
