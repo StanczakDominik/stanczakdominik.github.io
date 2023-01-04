@@ -353,10 +353,9 @@ Tutorial1.ipynb
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>For comparison:</p>
-<pre><code>ipython
-In [3]: %timeit np.random.normal(size=(10000, 10000))             
-3.8 s ± 25.8 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
-</code></pre>
+<div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="o">%</span><span class="k">timeit</span> np.random.normal(size=(10000, 10000))             
+<span class="mf">3.8</span> <span class="n">s</span> <span class="err">±</span> <span class="mf">25.8</span> <span class="n">ms</span> <span class="n">per</span> <span class="n">loop</span> <span class="p">(</span><span class="n">mean</span> <span class="err">±</span> <span class="n">std</span><span class="o">.</span> <span class="n">dev</span><span class="o">.</span> <span class="n">of</span> <span class="mi">7</span> <span class="n">runs</span><span class="p">,</span> <span class="mi">1</span> <span class="n">loop</span> <span class="n">each</span><span class="p">)</span>
+</pre></div>
 <p>And the presenter's R attempt took 5.81 using <code>system.time</code>. Wew, this is pretty fast.</p>
 
 </div>
@@ -512,10 +511,9 @@ end
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>To compare that with Python:</p>
-<pre><code>ipython
-In [8]: %timeit np.sum(np.tril(R))                                
-245 ms ± 45.8 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
-</code></pre>
+<div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="o">%</span><span class="k">timeit</span> np.sum(np.tril(R))                                
+<span class="mi">245</span> <span class="n">ms</span> <span class="err">±</span> <span class="mf">45.8</span> <span class="n">ms</span> <span class="n">per</span> <span class="n">loop</span> <span class="p">(</span><span class="n">mean</span> <span class="err">±</span> <span class="n">std</span><span class="o">.</span> <span class="n">dev</span><span class="o">.</span> <span class="n">of</span> <span class="mi">7</span> <span class="n">runs</span><span class="p">,</span> <span class="mi">1</span> <span class="n">loop</span> <span class="n">each</span><span class="p">)</span>
+</pre></div>
 <p>Well, that was faster, but we can improve the Julia code. Let's first look at the inbuilt <code>sum</code> function:</p>
 
 </div>
@@ -624,10 +622,9 @@ In [8]: %timeit np.sum(np.tril(R))
 <p>Okay, now this is badass. Julia is <strong>dynamically compiled</strong> - it's as if Numba came out of Python and became its own language. Apparently there are ways of avoiding the first-call overhead, but this is somehow more advanced.</p>
 <p>Note that all compiled-function cache is cleared on Julia restarts!</p>
 <p>To compare with Python:</p>
-<pre><code>ipython
-In [9]: %timeit np.sum(R)                                         
-53 ms ± 3.67 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
-</code></pre>
+<div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="o">%</span><span class="k">timeit</span> np.sum(R)                                         
+<span class="mi">53</span> <span class="n">ms</span> <span class="err">±</span> <span class="mf">3.67</span> <span class="n">ms</span> <span class="n">per</span> <span class="n">loop</span> <span class="p">(</span><span class="n">mean</span> <span class="err">±</span> <span class="n">std</span><span class="o">.</span> <span class="n">dev</span><span class="o">.</span> <span class="n">of</span> <span class="mi">7</span> <span class="n">runs</span><span class="p">,</span> <span class="mi">10</span> <span class="n">loops</span> <span class="n">each</span><span class="p">)</span>
+</pre></div>
 <p>Not too shabby for the ol' snake!</p>
 <p>Let's try to improve the function, though:</p>
 

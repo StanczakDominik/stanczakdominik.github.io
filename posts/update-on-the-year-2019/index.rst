@@ -1,8 +1,8 @@
 .. title: Update on the year 2019
 .. slug: update-on-the-year-2019
 .. date: 2020-01-30 18:00:00 UTC+01:00
-.. tags: 
-.. category: status
+.. tags: status
+.. category: 
 .. link: 
 .. description: 
 .. type: text

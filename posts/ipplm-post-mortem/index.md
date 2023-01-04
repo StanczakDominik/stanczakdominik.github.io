@@ -2,8 +2,8 @@
 .. title: A pandemic story, or, what I learned working with nuclear fusion
 .. slug: ipplm-post-mortem
 .. date: 2022-11-15 07:00:00 UTC+02:00
-.. tags: fusion, ipplm, work
-.. category: status
+.. tags: fusion, ipplm, work, status
+.. category: 
 .. link: 
 .. description: 
 .. type: text

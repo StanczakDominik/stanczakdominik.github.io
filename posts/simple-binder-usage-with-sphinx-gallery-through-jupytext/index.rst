@@ -2,7 +2,7 @@
 .. slug: simple-binder-usage-with-sphinx-gallery-through-jupytext
 .. date: 2019-07-06 16:00:00 UTC+02:00
 .. tags: python, sphinx, plasmapy
-.. category: python
+.. category: 
 .. link: 
 .. description: 
 .. type: text

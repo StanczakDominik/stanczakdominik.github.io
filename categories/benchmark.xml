@@ -3,7 +3,7 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="/images/creativecommons.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Mon, 02 Jan 2023 16:56:11 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>NumPy-ish GPU computations with CuPy</title><link>https://stanczakdominik.github.io/posts/numpy-ish-gpu-computations-with-cupy/</link><dc:creator>Dominik Stańczak-Marikin</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="/images/creativecommons.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Wed, 04 Jan 2023 19:03:37 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>NumPy-ish GPU computations with CuPy</title><link>https://stanczakdominik.github.io/posts/numpy-ish-gpu-computations-with-cupy/</link><dc:creator>Dominik Stańczak-Marikin</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;I've recently come across the amazing &lt;a href="https://github.com/cupy/cupy"&gt;CuPy&lt;/a&gt; library, and given that I haven't updated this blog in a while, I figured this would be a great opportunity to showcase a few of its capabilities.&lt;/p&gt;

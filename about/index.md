@@ -20,14 +20,15 @@ software engineer, where I helped analyse data from [Wendelstein 7-X,
 the currently (2023) largest stellarator in
 the world](https://en.wikipedia.org/wiki/Wendelstein_7-X). I consider myself a recovering plasma physicist.
 
-In my spare time, among other activities, I:
+# What I do in my spare time
 
 - help out with open source software projects such as [PlasmaPy](http://plasmapy.org/)
 - tinker, script and automate
 - read books and learn lots
 - play games - classic RTSes made me who I am now. *StarCraft II* was a huge part of my life, but nowadays I mostly play *Factorio* with my wife and *Heroes of the Storm* to fulfill my competitive needs.
-- take care of our dog <!--TODO this should be a link to gallery-->
-- write on my blog (see [<i class="fa fa-pencil"></i>Posts](/posts) on the left) to scratch the teaching itch
+- take care of [our dog](/galleries/Igornacy)
+- write on my blog (see [<i class="fa fa-pencil"></i>Posts](/posts) on the left) to help people out and scratch the teaching itch
+- do some light biking and mountain hiking<!--TODO-- [mountain hiking](/galleries/góry)-->
 
 <!-- # My tools of choice -->
 

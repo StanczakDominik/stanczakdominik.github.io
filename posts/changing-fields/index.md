@@ -2,8 +2,8 @@
 .. title: Changing fields
 .. slug: changing-fields
 .. date: 2019-04-01 11:00:00 UTC+02:00
-.. tags: april-fools
-.. category: status
+.. tags: april-fools,status
+.. category: 
 .. link: 
 .. description: 
 .. type: text

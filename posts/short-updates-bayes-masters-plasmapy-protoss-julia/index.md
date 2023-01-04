@@ -2,8 +2,8 @@
 .. title: Short updates: Bayes, Master's, PlasmaPy, Protoss, Julia
 .. slug: short-updates-bayes-masters-plasmapy-protoss-julia
 .. date: 2020-07-11 20:28:28 UTC+02:00
-.. tags: plasmapy, bayes, julia, masters thesis
-.. category: status
+.. tags: plasmapy, bayes, julia, masters thesis, status
+.. category: 
 .. link: 
 .. description: 
 .. type: text

@@ -3,7 +3,7 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="/images/creativecommons.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Mon, 02 Jan 2023 16:56:11 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Learning my per-matchup MMR in Starcraft II through PyMC3</title><link>https://stanczakdominik.github.io/posts/bayes-sc2-part-2/</link><dc:creator>Dominik Stańczak-Marikin</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="/images/creativecommons.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Wed, 04 Jan 2023 19:03:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Learning my per-matchup MMR in Starcraft II through PyMC3</title><link>https://stanczakdominik.github.io/posts/bayes-sc2-part-2/</link><dc:creator>Dominik Stańczak-Marikin</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;In this post we'll continue our SC2 replay research, &lt;a href="https://stanczakdominik.github.io/posts/bayes-sc2-part-1"&gt;started last time&lt;/a&gt;. You may want to go back to that and pick up on the terminology!&lt;/p&gt;

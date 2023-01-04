@@ -24,6 +24,7 @@
 <meta property="og:description" content="YouTube is increasingly becoming a walled garden. One of the dark patterns I see in it is that the Watch Later playlist, which you may have gathered over what feels like a millenia (so many lectures, ">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2020-02-17T18:00:00+01:00">
+<meta property="article:tag" content="tech">
 <meta property="article:tag" content="youtube">
 </head>
 <body>
@@ -64,7 +65,8 @@
 <h3 class="metadata-title">
 <i class="fa fa-tags"></i> Tags:</h3>
         <ul itemprop="keywords" class="tags-ul">
-<li><a class="tag p-category" href="../../categories/youtube/" rel="tag">youtube</a></li>
+<li><a class="tag p-category" href="../../categories/tech/" rel="tag">tech</a></li>
+            <li><a class="tag p-category" href="../../categories/youtube/" rel="tag">youtube</a></li>
         </ul>
 </div>
 
@@ -73,10 +75,10 @@
     <p>YouTube is increasingly becoming a walled garden. One of the dark patterns I see in it is that the Watch Later playlist, which you may have gathered over what feels like a millenia (so many lectures, so little time...), cannot be exported - you can only add one video at a time to another playlist. That obviously doesn't scale. Here's a quick trick to solve that!</p>
 <!-- TEASER_END -->
 <p>Take this URL:</p>
-<div class="code"><pre class="code text"><a id="rest_code_c5f40fc717c145e696985a38f0883fb0-1" name="rest_code_c5f40fc717c145e696985a38f0883fb0-1" href="#rest_code_c5f40fc717c145e696985a38f0883fb0-1"></a>https://www.youtube.com/playlist?list=WL
+<div class="code"><pre class="code text"><a id="rest_code_215166de5e894b3b9bea1dcf55c47470-1" name="rest_code_215166de5e894b3b9bea1dcf55c47470-1" href="#rest_code_215166de5e894b3b9bea1dcf55c47470-1"></a>https://www.youtube.com/playlist?list=WL
 </pre></div>
 <p>Append <cite>&amp;disable_polymer=true</cite> to it:</p>
-<div class="code"><pre class="code text"><a id="rest_code_ce3fbb623e294886b78b43c3ce4984a7-1" name="rest_code_ce3fbb623e294886b78b43c3ce4984a7-1" href="#rest_code_ce3fbb623e294886b78b43c3ce4984a7-1"></a>https://www.youtube.com/playlist?list=WL&amp;disable_polymer=true
+<div class="code"><pre class="code text"><a id="rest_code_1eb0acecdb744136b759cd3863ad8196-1" name="rest_code_1eb0acecdb744136b759cd3863ad8196-1" href="#rest_code_1eb0acecdb744136b759cd3863ad8196-1"></a>https://www.youtube.com/playlist?list=WL&amp;disable_polymer=true
 </pre></div>
 <p>And this should bring you to an older version of the website, where if you click the 3-dot "More" menu, you'll find an "Add all to..." button. This allows you to export your Watch Later playlist to another playlist, without the annoying limitations. Once you're there, you can use better software (<a class="reference external" href="https://github.com/TeamNewPipe/NewPipe">NewPipe</a>, for example, or <a class="reference external" href="https://webapps.stackexchange.com/questions/27589/how-do-i-export-my-youtube-playlists">another solution from the many available</a>) to store the playlist elsewhere. I did not investigate those, as I simply wanted to mirror my Watch Later playlist in NewPipe.</p>
 <p>Sadly, the same method does not work for the Liked Videos page - which is why you should probably not trust YouTube with your data as much as you likely do now.</p>

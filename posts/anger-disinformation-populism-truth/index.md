@@ -2,8 +2,8 @@
 .. title: Anger, disinformation, populism, the sorry state of the world right now... and truth
 .. slug: anger-disinformation-populism-truth
 .. date: 2020-07-31 16:00:00 UTC+02:00
-.. tags: status
-.. category: world
+.. tags: status, world
+.. category: 
 .. link: 
 .. description: 
 .. type: text

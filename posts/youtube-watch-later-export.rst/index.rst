@@ -1,8 +1,8 @@
 .. title: Export YouTube's Watch Later playlist
 .. slug: youtube-watch-later-export.rst
 .. date: 2020-02-17 18:00:00 UTC+01:00
-.. tags: youtube
-.. category: tech
+.. tags: youtube, tech
+.. category: 
 .. link: 
 .. description: 
 .. type: text
