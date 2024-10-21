@@ -1,0 +1,32 @@
+[
+  {
+    "listing": "/index.html",
+    "items": [
+      "/posts/ifpilm-postmortem.html",
+      "/posts/the-importance-of-good-notation.html",
+      "/posts/plasmapy-v060-release.html",
+      "/posts/fusion1.html",
+      "/posts/utterances.html",
+      "/posts/sympy-for-physics-homework-in-2020.html",
+      "/posts/julia-composability.html",
+      "/posts/sc2-parse-replays.html",
+      "/posts/bayes-sc2-2.html",
+      "/posts/bayes-sc2-1.html",
+      "/posts/backlogs.html",
+      "/posts/first-joss-review.html",
+      "/posts/youtube-watch-later-export.html",
+      "/posts/distance_matrix_numba.html",
+      "/posts/simple-binder-usage-with-sphinx-gallery-through-jupytext.html",
+      "/posts/post-mortem-for-my-engineering-thesis-code-pythonpic.html",
+      "/posts/on-the-recent-on-the-boris-solver-in-particle-in-cell-simulations-paper.html",
+      "/posts/particle-in-cell-methods.html",
+      "/posts/first-dive-julia.html",
+      "/posts/parsing-and-plotting-latex-expressions-with-sympy.html",
+      "/posts/cupy_nbody_direct_force_calculation.html",
+      "/posts/scipy-ivp-makeshift-poincare-sections-of-the-rossler-attractor.html",
+      "/posts/quantitative-data-analysis-of-the-2d-ising-model.html",
+      "/posts/parallelizable-numpy-implementation-of-2d-ising-model.html",
+      "/posts/numpy-ish-gpu-computations-with-cupy.html"
+    ]
+  }
+]

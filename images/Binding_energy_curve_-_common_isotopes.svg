@@ -1,4 +1,6 @@
-<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" id="svg6897" version="1.1" viewport="0 0 1280px 840px">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" id="svg6897" height="440.65" width="670.57" version="1.1">
  <defs id="defs6899">
   <marker id="EmptyDiamondM" refY="0" refX="0" orient="auto" overflow="visible">
    <path id="path5769" d="m0-7.0711-7.0711 7.0711 7.0711 7.0711 7.071-7.0711-7.071-7.0711z" fill-rule="evenodd" transform="scale(.4)" stroke="#000" stroke-width="1pt" fill="#fff"/>
@@ -90,16 +92,16 @@
   <switch><text id="text1989-ca" transform="scale(1.001 .99895)" line-height="125%" font-size="12.013px" y="533.0567" x="370.41724" systemLanguage="ca">
    <tspan id="tspan1991-ca" style="text-anchor:middle;text-align:center" line-height="125%" font-size="16.017px" y="533.0567" x="370.41724" font-family="Arial" class="st790 st1079">Nombre de nucleons al nucli</tspan>
   </text><text id="text1989-zh" transform="scale(1.001 .99895)" line-height="125%" font-size="12.013px" y="533.0567" x="370.41724" systemLanguage="zh">
-   <tspan id="tspan1991-zh" style="text-anchor:middle;text-align:center" line-height="125%" font-size="16.017px" y="533.0567" x="370.41724" font-family="Arial" class="st790 st1079">&#21407;&#23376;&#26680;&#20013;&#30340;&#26680;&#23376;&#25976;</tspan>
+   <tspan id="tspan1991-zh" style="text-anchor:middle;text-align:center" line-height="125%" font-size="16.017px" y="533.0567" x="370.41724" font-family="Arial" class="st790 st1079">原子核中的核子數</tspan>
   </text><text id="text1989-de" transform="scale(1.001 .99895)" line-height="125%" font-size="12.013px" y="533.0567" x="370.41724" systemLanguage="de">
    <tspan id="tspan1991-de" style="text-anchor:middle;text-align:center" line-height="125%" font-size="16.017px" y="533.0567" x="370.41724" font-family="Arial" class="st790 st1079">Anzahl der Nukleonen im Kern</tspan>
   </text><text id="text1989" transform="scale(1.001 .99895)" line-height="125%" font-size="12.013px" y="533.0567" x="370.41724">
    <tspan id="tspan1991" style="text-anchor:middle;text-align:center" line-height="125%" font-size="16.017px" y="533.0567" x="370.41724" font-family="Arial" class="st790 st1079">Number of nucleons in nucleus</tspan>
   </text></switch>
   <switch><text id="text2049-ca" transform="matrix(0 -.99895 1.0011 0 0 0)" line-height="125%" font-size="11.987px" y="33.470394" x="-314.64993" systemLanguage="ca">
-   <tspan id="tspan2051-ca" style="text-anchor:middle;text-align:center" line-height="125%" font-size="15.983px" y="33.470394" x="-314.64993" font-family="Arial" class="st790 st1079">Energia d'enlla&#231; mitjana per nucle&#243; (MeV)</tspan>
+   <tspan id="tspan2051-ca" style="text-anchor:middle;text-align:center" line-height="125%" font-size="15.983px" y="33.470394" x="-314.64993" font-family="Arial" class="st790 st1079">Energia d'enllaç mitjana per nucleó (MeV)</tspan>
   </text><text id="text2049-zh" transform="matrix(0 -.99895 1.0011 0 0 0)" line-height="125%" font-size="11.987px" y="33.470394" x="-314.64993" systemLanguage="zh">
-   <tspan id="tspan2051-zh" style="text-anchor:middle;text-align:center" line-height="125%" font-size="15.983px" y="33.470394" x="-314.64993" font-family="Arial" class="st790 st1079">&#27599;&#20491;&#26680;&#23376;&#30340;&#24179;&#22343;&#32080;&#21512;&#33021; (MeV)</tspan>
+   <tspan id="tspan2051-zh" style="text-anchor:middle;text-align:center" line-height="125%" font-size="15.983px" y="33.470394" x="-314.64993" font-family="Arial" class="st790 st1079">每個核子的平均結合能 (MeV)</tspan>
   </text><text id="text2049-de" transform="matrix(0 -.99895 1.0011 0 0 0)" line-height="125%" font-size="11.987px" y="33.470394" x="-314.64993" systemLanguage="de">
    <tspan id="tspan2051-de" style="text-anchor:middle;text-align:center" line-height="125%" font-size="15.983px" y="33.470394" x="-314.64993" font-family="Arial" class="st790 st1079">Mittlere Bindungsenergie pro Nukleon / MeV</tspan>
   </text><text id="text2049" transform="matrix(0 -.99895 1.0011 0 0 0)" line-height="125%" font-size="11.987px" y="33.470394" x="-314.64993">

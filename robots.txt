@@ -1,4 +1,1 @@
-Sitemap: https://stanczakdominik.github.io/sitemapindex.xml
-
-User-Agent: *
-Host: stanczakdominik.github.io
+Sitemap: https://stanczakdominik.github.io/sitemap.xml
