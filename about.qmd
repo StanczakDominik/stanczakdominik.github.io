@@ -1,0 +1,49 @@
+---
+title: "About"
+image: profile.jpg
+about:
+  template: trestles
+  image-shape: round
+  links:
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/dominik-stanczak
+    - icon: github
+      text: Github
+      href: https://github.com/StanczakDominik
+    - icon: mastodon
+      text: Mastodon
+      href: https://mastodon.social/@StanczakDominik
+    - icon: matrix.im
+      text: Matrix
+      href: https://matrix.to/#/@StanczakDominik:matrix.org
+comments: false
+
+---
+
+Hi there! My name's Dominik Stańczak-Marikin and I'm currently a
+software developer working with data processing pipelines for
+neurodegenerative disease research at a large pharmaceutical company.
+
+I previously worked at the [Institute of Plasma Physics and Laser
+Microfusion](https://www.ifpilm.pl/en) in Warsaw, Poland as a research
+software engineer, where I helped analyse data from [Wendelstein 7-X,
+the currently (2023) largest stellarator in the
+world](https://en.wikipedia.org/wiki/Wendelstein_7-X). I consider myself
+a recovering plasma physicist.
+
+In my spare time, I usually:
+
+-   help out with open source software projects such as
+    [PlasmaPy](http://plasmapy.org/)
+-   tinker, script and automate
+-   read books and learn lots
+-   play games - classic RTSes made me who I am now. *StarCraft II* was
+    a huge part of my life, but nowadays I mostly play *Factorio* with
+    my wife and *Heroes of the Storm* to fulfill my competitive needs.
+-   take care of our doggo, Igornacy
+-   do some light biking and mountain hiking
+-   write on [this here blog](/) to help people
+    out and scratch the teaching itch. In fact, if you've found this blog at all useful or enjoyable, there's no better way to express that (and make my day, too!) than to tell me about it!
+
+

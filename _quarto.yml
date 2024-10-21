@@ -1,0 +1,25 @@
+project:
+  type: website
+
+website:
+  title: "Dominik Stańczak-Marikin's blog"
+  site-url: "https://stanczakdominik.github.io"
+  favicon: "favicon.ico"
+  description: "Puns, plasmas, Python, PDEs and probabilities"
+  navbar:
+    right:
+      - about.qmd
+      - icon: github
+        href: "https://github.com/StanczakDominik/stanczakdominik.github.io"
+      - icon: rss
+        href: index.xml
+  comments:
+    utterances:
+      repo: stanczakdominik/stanczakdominik.github.io
+format:
+  html:
+    theme: solar
+    css: styles.css
+
+
+
