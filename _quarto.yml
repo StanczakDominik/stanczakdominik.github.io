@@ -8,11 +8,14 @@ website:
   description: "Puns, plasmas, Python, PDEs and probabilities"
   navbar:
     right:
+      - bookshelf.md
       - about.qmd
       - icon: github
         href: "https://github.com/StanczakDominik/stanczakdominik.github.io"
+        text: GitHub
       - icon: rss
         href: index.xml
+        text: RSS
   comments:
     utterances:
       repo: stanczakdominik/stanczakdominik.github.io
