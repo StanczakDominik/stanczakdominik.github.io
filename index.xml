@@ -10,7 +10,319 @@
 <atom:link href="https://stanczakdominik.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description>Puns, plasmas, Python, PDEs and probabilities</description>
 <generator>quarto-1.5.57</generator>
-<lastBuildDate>Tue, 15 Nov 2022 05:00:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 01 Nov 2024 15:16:00 GMT</lastBuildDate>
+<item>
+  <title>whisper_mic, a simple Python voice dictation utility</title>
+  <link>https://stanczakdominik.github.io/posts/whisper_mic.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>I’ve been using Google’s speech-to-text input on my Android phone, to note things down on the go while walking the dog etc, and I’ve realized that I don’t actually know anything like that on Linux! While looking for tools solving that use case, I found this <a href="https://github.com/mallorbc/whisper_mic"><code>whisper_mic</code></a> little utility that you can just install with <code>pipx install whisper_mic</code>, and it works pretty nicely! I just had to tinker with with the settings a little bit. Here’s what finally worked for me:</p>
+<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">whisper_mic</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--mic_index</span> 7 <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--loop</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--dictate</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--model</span> large-v3 <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--english</span></span></code></pre></div>
+<p>The weird thing about this is that it doesn’t output the text it parses into standard output, which is how I thought it would work. Instead it emulates the keyboard using the <a href="https://github.com/moses-palmer/pynput">pynput</a> library. First it turns your speech into text, and then it turns that into keystrokes into the window you have focused with your mouse. In fact, this whole blog post was typed, (well, dictated, then edited) right into <del>abszigám</del> Obsidian. You can see the raw output at the end of the post.</p>
+<p>Did you see that Hungarian-looking word, though? It’s a trend for its fatal flaw: if you don’t specify <code>--english</code>, then it starts making mistakes on, I suspect, stuff I’m mispronouncing. Still, this is mostly usable for everyday use cases.</p>
+<p>Let me do a couple more tests, such as a few keystrokes with my mechanical keyboard, which is pretty loud:</p>
+<blockquote class="blockquote">
+<p>abcdefghijkはい</p>
+</blockquote>
+<p>Well, I certainly didn’t input any… What script is that? Is that Japanese? <a href="https://www.linguee.com/japanese-english/translation/%E3%81%AF%E3%81%84.html" title="While the most common usage of that is 'yes', in accordance with all laws of irony, another possible reading of that was 'loss'.">Wow I’ll have to identify it later.</a> For the second test, I’ll give it <a href="https://www.youtube.com/watch?v=LTye5SHVQl0">a quote from Star Trek</a>…</p>
+<blockquote class="blockquote">
+<p>Darmok at Tanagra. いelát etnáři. Tanagra. Tanagra. Ta nagra on the ocean. Darmok and Jelad at and Agra. The Beast at Tanagra? Husani, his army, when the mol When the walls fell? No, Shaka, when the world… when the walls fell with the world. Darma Kent Gelat on the ocean.</p>
+</blockquote>
+<p>So, obviously it’s struggling on the names, which is not unexpected. The second thing I would like to do is to check whether it actually understands Polish language. I think the the large models. for Whisper did promise to handle Polish, but let’s see how well it does at that. and see whether that makes a difference. I’ll use the <a href="https://www.youtube.com/watch?v=aiHW6BSm_p0" title="Jak to jest być skrybą, dobrze?">Scribe’s monologue from Asterix &amp; Obelix Mission Cleopatra</a>, a cult classic here in Poland. <em>ahem</em></p>
+<blockquote class="blockquote">
+<p>Wie pan, moim zdaniem to nie ma tak, Ze dobrze albo, Ze niedobrze. Gdybym miaL powiedzieC co ceniE w Zyciu najbardziej powiedziaLbym, Ze ludzi. по дальній війні, по мосту Удвоєнкк, де особі не… dziwiE, kiedy byLem sam i to ciekawe. To wLaSnie przypadkowe spotkania… majA na nasze Zycie. Chodzi o to, Ze kiedy wyznaleXC pewnA wartoSC nawet pozornie uniwersalne. … znajduje siE, by tak szedL, zrozumienia, ktOre pomaga siE nam rozwijaC. Ja miaLem szczEScie, poniewaZ poniewaZ siE znalazLem i dziEkujE mu, dziEkujE, Ze Zycie to jest taniec, Zycie to jest Smiech. Ze Zycie to miLoSC. Wiele ludzi pyta mnie, o to samo, ale jak se to robí? skAd czerpiesz tE radoSC, a ja odpowiadam, Ze Ze to proste. To umiLowanie Zycia. to wLaSnie ono sprawia, Ze CiS na przykLad BudujE maszynE, a jutro kto wie? Dlaczego by nie? Oddam siE… pracy spoLecznej i bEdE choCby sadziL, znaczy tak Ik ben… Normaal.</p>
+</blockquote>
+<p>Okay, it tried bravely and did its best, definitely, but not only did it mangle all the diacritics (ąęćęłńóśżź) into their basic characters’ uppercase variants, it’s also a little bit too jumpy between languages. I could tell you ahead of time that I’m only going to use English and Polish for the test here, and instead I think it did a bit of <a href="https://translate.google.com/?sl=auto&amp;tl=en&amp;text=%D0%BF%D0%BE%20%D0%B4%D0%B0%D0%BB%D1%8C%D0%BD%D1%96%D0%B9%20%D0%B2%D1%96%D0%B9%D0%BD%D1%96%2C%20%D0%BF%D0%BE%20%D0%BC%D0%BE%D1%81%D1%82%D1%83%20%D0%A3%D0%B4%D0%B2%D0%BE%D1%94%D0%BD%D0%BA%D0%BA%2C%20%D0%B4%D0%B5%20%D0%BE%D1%81%D0%BE%D0%B1%D1%96%20%D0%BD%D0%B5&amp;op=translate" title="after a distant war, along the Udvoenkk bridge, where no one is">Ukrainian</a> and at the end of the Otis quote it just went straight into Dutch! Checking the settings, there is unfortunately no option to specify prior languages like that, only to switch fully to the model trained entirely on English.</p>
+<p>What’s more, I kept trying this, and it actually started crashing on trying to input letters you can’t input using my current <code>pl_PL</code> keyboard layout:</p>
+<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1">Traceback (most recent call last):</span>
+<span id="cb2-2"> File <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"/home/dominik/.local/pipx/venvs/whisper-mic/lib/python3.12/site-packages/pynput/keyboard/_base.py"</span>, line <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">492</span>, <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">type</span></span>
+<span id="cb2-3">   <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">self</span>.release(key)</span>
+<span id="cb2-4"> File <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"/home/dominik/.local/pipx/venvs/whisper-mic/lib/python3.12/site-packages/pynput/keyboard/_base.py"</span>, line <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">427</span>, <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> release</span>
+<span id="cb2-5">   <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">self</span>._handle(resolved, <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">False</span>)</span>
+<span id="cb2-6"> File <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"/home/dominik/.local/pipx/venvs/whisper-mic/lib/python3.12/site-packages/pynput/keyboard/_xorg.py"</span>, line <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">235</span>, <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> _handle</span>
+<span id="cb2-7">   <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">raise</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">self</span>.InvalidKeyException(key)</span>
+<span id="cb2-8">pynput.keyboard._base.Controller.InvalidKeyException: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'š'</span></span></code></pre></div>
+<p>š being an oryginally Czech symbol.</p>
+<p>I also tried a few more examples with the <code>--english</code> flag:</p>
+<blockquote class="blockquote">
+<p>Obsidian Darmok. Tanagra. Then I’m looking into gelato on a 10-hour gram no scratch that Darmok and Jalad at Tenagra. Darmok and the gelat on the ocean. Chaka, when the walls fell.</p>
+</blockquote>
+<p>Well, at least it’s no longer outputting keystrokes that crash when my Polish layout fails to input them, so that’s an improvement, and I can safely recommend it with <code>--english</code>. I would not, however, use it to communicate with <del>telegrams</del> Tanagrans, they’re bound to be mighty confused about Darmok with a gelato on a 10-hour gram!</p>
+<details>
+<summary>
+Raw output plus the commands
+</summary>
+<pre><code>whisper_mic --mic_index 7 --loop --dictate</code></pre>
+<blockquote class="blockquote">
+<p>I recently started that we are using Google’s. speech to text on Um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um Android 2 To note down. F4 spectrometer intensity Course filter silence была get C C right dog etc. What the actual fuck? Okay, that’s pretty simple terrible. Let me try another model.</p>
+</blockquote>
+<pre><code>whisper_mic --mic_index 7 --loop --dictate --model large-v3</code></pre>
+<blockquote class="blockquote">
+<p>Let’s see whether this is… better perhaps. Okay, looks promising. Okay So take two. I recently started using Google’s speak to text on my Android phone. to note things down on the go. while walking the dog etc. And I’ve realized that I’ve been looking for something like that on Linux for a while actually. Um And I, while looking For tools solving that use case I found this whistle whisper_mine mic as in microphone little utility that you can just install with pipx using pipx install whisper mic And literally just kind of except I had to tinker with with the settings a little bit. Here’s what I by what worked for me. to do paste the line I use. The weird thing about this is that It doesn’t output P-strokes into like standard output which is something but I expected from this? I thought that that was how… it would work. Instead it I think it emulates the keyboard, actually how does it do that? That’s to do. And it… outputs keystroke for the text it interprets from from your speech into the window you have sort of focused with your mouse. I’m uh… Typing. Well, typing. dictating this right into abszigám for example, obsidian No, okay. It’s doing actually quite well. It’s making a few… mistakes on I suspect stuff I’m mispronouncing because again not a native speaker car Suddenly there’s a car. But still, this is actually pretty pretty decent and mostly usable. or for everyday use cases. Let me do a couple more tests. So actually… Let me do a keystroke. with my mechanical keyboard. which was pretty loud. Maybe a couple.abcdefghijkはい Well, I certainly didn’t input any. What script is that? Is that Japanese? Wow fancy I’ll have to identify it later Okay, and for the second test, I would… actually give it first. quote from Star Trek. Darmok at Tanagra. いelát etnáři. Tanagra. Tanagra. Ta nagra on the ocean. Darmok and Jelad at and Agra. The Beast at Tanagra? Husani, his army, when the mol When the walls fell? No, Shaka, when the world… when the walls fell with the world. Darma Kent Gelat on the ocean. So obviously it’s struggling. on the names Right, which is not… not unexpected. The second thing I would like to do and I’m going to do this twice. is Let’s give it a test for… actually understanding policy language. I think the the large V3 model. for whisper Um… did promise to handle Polish but let’s see How well it does at that I’m going to do Do it twice. first up I’m going to just continue speaking in this sort of session I guess and then I’m going to start another session. and see whether that makes a difference. <em>ahem</em> Wie pan, moim zdaniem to nie ma tak, Ze dobrze albo, Ze niedobrze. Gdybym miaL powiedzieC co ceniE w Zyciu najbardziej powiedziaLbym, Ze ludzi. по дальній війні, по мосту Удвоєнкк, де особі не… dziwiE, kiedy byLem sam i to ciekawe. To wLaSnie przypadkowe spotkania… majA na nasze Zycie. Chodzi o to, Ze kiedy wyznaleXC pewnA wartoSC nawet pozornie uniwersalne. … znajduje siE, by tak szedL, zrozumienia, ktOre pomaga siE nam rozwijaC. Ja miaLem szczEScie, poniewaZ poniewaZ siE znalazLem i dziEkujE mu, dziEkujE, Ze Zycie to jest taniec, Zycie to jest Smiech. Ze Zycie to miLoSC. Wiele ludzi pyta mnie, o to samo, ale jak se to robí? skAd czerpiesz tE radoSC, a ja odpowiadam, Ze Ze to proste. To umiLowanie Zycia. to wLaSnie ono sprawia, Ze CiS na przykLad BudujE maszynE, a jutro kto wie? Dlaczego by nie? Oddam siE… pracy spoLecznej i bEdE choCby sadziL, znaczy tak Ik ben… Normaal.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Ok, wiEc prObowaL bardzo dzielnie. Okay, so it tried… And uh… did its best, definitely. Uh… but it’s a little bit It’s maybe a little bit… too jumpy between lengths. languages. Like I could tell you I have of time but I’m only going to English and Polish the test here and here I think it did a bug of text in Russian or Ukrainian I see a little bit of I think I saw a little bit of Czech or Slovakian in there and at the end of the Otis quote It just went straight up Uh… Nederlandish? Let me check the settings whether there there’s an option to specify the languages I’m going to be using. No, unfortunately… There is no such option. Thank you for watching. Okay, I’m now going to repeat da poli</p>
+</blockquote>
+<div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"> Traceback (most recent call last):</span>
+<span id="cb5-2">  File <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"/home/dominik/.local/pipx/venvs/whisper-mic/lib/python3.12/site-packages/pynput/keyboard/_base.py"</span>, line <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">492</span>, <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">type</span></span>
+<span id="cb5-3">    <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">self</span>.release(key)</span>
+<span id="cb5-4">  File <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"/home/dominik/.local/pipx/venvs/whisper-mic/lib/python3.12/site-packages/pynput/keyboard/_base.py"</span>, line <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">427</span>, <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> release</span>
+<span id="cb5-5">    <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">self</span>._handle(resolved, <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">False</span>)</span>
+<span id="cb5-6">  File <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"/home/dominik/.local/pipx/venvs/whisper-mic/lib/python3.12/site-packages/pynput/keyboard/_xorg.py"</span>, line <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">235</span>, <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> _handle</span>
+<span id="cb5-7">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">raise</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">self</span>.InvalidKeyException(key)</span>
+<span id="cb5-8">pynput.keyboard._base.Controller.InvalidKeyException: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'š'</span></span>
+<span id="cb5-9"></span>
+<span id="cb5-10">During handling of the above exception, another exception occurred:</span>
+<span id="cb5-11"></span>
+<span id="cb5-12">Traceback (most recent call last):</span>
+<span id="cb5-13">  File <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"/home/dominik/.local/bin/whisper_mic"</span>, line <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8</span>, <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span>module<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span></span>
+<span id="cb5-14">    sys.exit(main())</span>
+<span id="cb5-15">             <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">^^^^^^</span></span>
+<span id="cb5-16">  File <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"/home/dominik/.local/pipx/venvs/whisper-mic/lib/python3.12/site-packages/click/core.py"</span>, line <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1157</span>, <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">__call__</span></span>
+<span id="cb5-17">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">self</span>.main(<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>args, <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">**</span>kwargs)</span>
+<span id="cb5-18">           <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">^^^^^^^^^^^^^^^^^^^^^^^^^^</span></span>
+<span id="cb5-19">  File <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"/home/dominik/.local/pipx/venvs/whisper-mic/lib/python3.12/site-packages/click/core.py"</span>, line <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1078</span>, <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> main</span>
+<span id="cb5-20">    rv <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">self</span>.invoke(ctx)</span>
+<span id="cb5-21">         <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">^^^^^^^^^^^^^^^^</span></span>
+<span id="cb5-22">  File <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"/home/dominik/.local/pipx/venvs/whisper-mic/lib/python3.12/site-packages/click/core.py"</span>, line <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1434</span>, <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> invoke</span>
+<span id="cb5-23">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> ctx.invoke(<span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">self</span>.callback, <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">**</span>ctx.params)</span>
+<span id="cb5-24">           <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span></span>
+<span id="cb5-25">  File <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"/home/dominik/.local/pipx/venvs/whisper-mic/lib/python3.12/site-packages/click/core.py"</span>, line <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">783</span>, <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> invoke</span>
+<span id="cb5-26">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> __callback(<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>args, <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">**</span>kwargs)</span>
+<span id="cb5-27">           <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">^^^^^^^^^^^^^^^^^^^^^^^^^^^</span></span>
+<span id="cb5-28">  File <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"/home/dominik/.local/pipx/venvs/whisper-mic/lib/python3.12/site-packages/whisper_mic/cli.py"</span>, line <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">42</span>, <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> main</span>
+<span id="cb5-29">    mic.listen_loop(dictate<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>dictate,phrase_time_limit<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)</span>
+<span id="cb5-30">  File <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"/home/dominik/.local/pipx/venvs/whisper-mic/lib/python3.12/site-packages/whisper_mic/whisper_mic.py"</span>, line <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">212</span>, <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> listen_loop</span>
+<span id="cb5-31">    <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">self</span>.keyboard.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">type</span>(result)</span>
+<span id="cb5-32">  File <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"/home/dominik/.local/pipx/venvs/whisper-mic/lib/python3.12/site-packages/pynput/keyboard/_base.py"</span>, line <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">495</span>, <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">type</span></span>
+<span id="cb5-33">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">raise</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">self</span>.InvalidCharacterException(i, character)</span>
+<span id="cb5-34">pynput.keyboard._base.Controller.InvalidCharacterException: (<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'š'</span>)</span></code></pre></div>
+<blockquote class="blockquote">
+<p>Okay, so this is fascinating. I was going to to check afterwards. what library at the season that it actually crashed on Trying to… I’ll have to check. what kind of character. from what script it says but it’s It’s not one… my Polish keyboard layout. can actually input. It looks like some sort of Slovakian Yes. Thing. S. the letter S. Thank you. Okay, on to the game. quote Q Wie Pan, moim zdaniem to nie ma tak, Ze dobrze, albo Ze niedobrze. Gdybym miaL powiedzieC co stanie w Zyciu najgorsze bardziej powiedziaLbym, Ze ludzi, ludzi, ktOrzy в</p>
+</blockquote>
+<pre><code>whisper_mic --mic_index 7 --loop --dictate --model large-v3 --english</code></pre>
+<blockquote class="blockquote">
+<p>Let me actually try this again now I’m going to use the English flag for the model. Obsidian Darmok. Tanagra. Then I’m looking into gelato on a 10-hour gram no scratch that Darmok and Jalad at Tenagra. Darmok and the gelat on the ocean. Chaka, when the walls fell. Well, at least it’s no longer out- putting keystrokes that help crash when my Polish layout fails. to input them, so that’s… an improvement I suppose. But I don’t think this would be a quite communicative for a telegram.</p>
+</blockquote>
+</details>
+
+
+
+ ]]></description>
+  <category>python</category>
+  <category>TIL</category>
+  <category>linux</category>
+  <guid>https://stanczakdominik.github.io/posts/whisper_mic.html</guid>
+  <pubDate>Fri, 01 Nov 2024 15:16:00 GMT</pubDate>
+</item>
 <item>
   <title>A pandemic story, or, what I learned working with nuclear fusion</title>
   <link>https://stanczakdominik.github.io/posts/ifpilm-postmortem.html</link>
@@ -21474,398 +21786,6 @@ font-style: inherit;">/</span> chunks)</span></code></pre></div>
   <category>julia</category>
   <guid>https://stanczakdominik.github.io/posts/first-dive-julia.html</guid>
   <pubDate>Thu, 14 Mar 2019 10:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Parsing and plotting LaTeX expressions with SymPy</title>
-  <link>https://stanczakdominik.github.io/posts/parsing-and-plotting-latex-expressions-with-sympy.html</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p>Today let’s look into some pretty neat SymPy functionality. I was in a fluid dynamics lecture, practicing taking notes with LaTeX on the go and stumbled upon this monstrosity:</p>
-<p><img src="https://latex.codecogs.com/png.latex?%20%5CDelta(k)%20=%20%5Cfrac%7B%5Crho_1-%5Crho_2%7D%7B%5Crho_1%20+%20%5Crho_2%7D%20gk%20+%20%5Cfrac%7B%5Cgamma%20k%5E3%7D%7B%5Crho_1%20+%20%5Crho_2%7D%20-%20%5Cfrac%7B%5Crho_1%20%5Crho_2%7D%7B(%5Crho_1%20+%20%5Crho_2)%5E2%7D%20U%5E2%20k%5E2%20"></p>
-<p>(bonus points for whoever recognizes this!)</p>
-<p>We were supposed to draw this for a few example sets of values. All right! I opened up <code>pinta</code> and scribbled a few squiggly lines with my small touchpad, following the blackboard drawings. It looked darn ugly, but that got me thinking. <em><code>SymPy</code> has parsers, right? Can’t I just parse that LaTeX equation into Python and make that plot pretty with matplotlib?</em></p>
-<p>Well, as it turns out, sure…</p>
-<div id="cell-2" class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1">the_plot.show()</span></code></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="https://stanczakdominik.github.io/posts/parsing-and-plotting-latex-expressions-with-sympy_files/figure-html/cell-2-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>But it takes some tinkering.</p>
-<!-- TEASER_END -->
-<p>All right, let the tinkering commence! Let’s get straight to the point. For this to run, you’ll <a href="https://docs.sympy.org/latest/modules/parsing.html#runtime-installation">need antlr4</a> (in current Jupyter, you can simply do <code>%conda install antlr-python-runtime</code> from within the Notebook).</p>
-<p>We’re going to simply dump the LaTeX string into <code>sympy.parsing.latex.parse_latex</code>, with the important caveat - this needs to be a <code>r"raw string"</code>. Otherwise, LaTeX is going to go wild put a carriage return into every <code>\rho</code>.</p>
-<div id="cell-4" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> sympy</span>
-<span id="cb2-2"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> sympy.parsing.latex <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> parse_latex</span>
-<span id="cb2-3">latex_string <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="vs" style="color: #20794D;
-background-color: null;
-font-style: inherit;">r"\Delta(k) = \frac{\rho_1-\rho_2}{\rho_1 + \rho_2} gk + \frac{\gamma k^3}{\rho_1 + \rho_2} - \frac{\rho_1 \rho_2}{(\rho_1 + \rho_2)^2} U^2 k^2"</span></span>
-<span id="cb2-4">equation <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> parse_latex(latex_string)</span>
-<span id="cb2-5">equation</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
-<pre><code>Eq(Delta(k), -U**2*k**2*rho_{1}*rho_{2}/(rho_{1} + rho_{2})**2 + (g*k)*((rho_{1} - rho_{2})/(rho_{1} + rho_{2})) + (gamma*k**3)/(rho_{1} + rho_{2}))</code></pre>
-</div>
-</div>
-<p>We can access the variables we’d like to substitute (as SymPy symbols) using <code>equation.free_symbols</code>:</p>
-<div id="cell-6" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1">equation.free_symbols</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
-<pre><code>{U, g, gamma, k, rho_{1}, rho_{2}}</code></pre>
-</div>
-</div>
-<p>Ideally what I’d like to do is use <code>.subs</code> on the <code>equation</code> to plug in numerical values. To achieve this, it would <em>probably</em> be easiest to turn the symbols into Python variables. However…</p>
-<div id="cell-8" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1">U, g, gamma, k, rho_1, rho_2 <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> equation.free_symbols</span>
-<span id="cb6-2">U, gamma, rho_1</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>(g, U, gamma)</code></pre>
-</div>
-</div>
-<p>… the unordered nature of Python’s <code>set</code> comes back with a vengeance! It’s <a href="https://stackoverflow.com/questions/6405512/get-a-list-from-a-set-in-python">not too trivial to get these out in the right order</a>. You could try <code>sorted</code>, but one does not simply compare <code>Symbol</code>s:</p>
-<div id="cell-10" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">sorted</span>(equation.free_symbols)</span></code></pre></div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-8-f67f3a401c32&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>sorted<span class="ansi-blue-fg">(</span>equation<span class="ansi-blue-fg">.</span>free_symbols<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">/progs/miniconda3/lib/python3.7/site-packages/sympy/core/relational.py</span> in <span class="ansi-cyan-fg">__nonzero__</span><span class="ansi-blue-fg">(self)</span>
-<span class="ansi-green-fg ansi-bold">    227</span> 
-<span class="ansi-green-fg ansi-bold">    228</span>     <span class="ansi-green-fg">def</span> __nonzero__<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 229</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">raise</span> TypeError<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">"cannot determine truth value of Relational"</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg ansi-bold">    230</span> 
-<span class="ansi-green-fg ansi-bold">    231</span>     __bool__ <span class="ansi-blue-fg">=</span> __nonzero__
-
-<span class="ansi-red-fg">TypeError</span>: cannot determine truth value of Relational</pre>
-</div>
-</div>
-</div>
-<p>What I ended up doing here is:</p>
-<div id="cell-12" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1">U, g, gamma, k, rho_1, rho_2 <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">sorted</span>(equation.free_symbols,</span>
-<span id="cb9-2">                                      key <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">lambda</span> x: <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">str</span>(x)   <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># the literal key part here - just sort them alphabetically!</span></span>
-<span id="cb9-3">                                     )</span>
-<span id="cb9-4">U, g, gamma, k, rho_1, rho_2</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
-<pre><code>(U, g, gamma, k, rho_{1}, rho_{2})</code></pre>
-</div>
-</div>
-<p>And now we can simply use <code>subs</code> with a dictionary:</p>
-<div id="cell-14" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1">equation.subs(<span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">dict</span>(rho_1<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>,</span>
-<span id="cb11-2">                   rho_2<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>,</span>
-<span id="cb11-3">                   gamma<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>,</span>
-<span id="cb11-4">                   g<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>,</span>
-<span id="cb11-5">                  )</span>
-<span id="cb11-6">             )</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
-<pre><code>Eq(Delta(k), -U**2*k**2*rho_{1}*rho_{2}/(rho_{1} + rho_{2})**2 + k**3/(rho_{1} + rho_{2}) + k*(rho_{1} - rho_{2})/(rho_{1} + rho_{2}))</code></pre>
-</div>
-</div>
-<p>… or can we? This does not work on <code>rho_{1}</code> and <code>rho_{2}</code>. Here’s why:</p>
-<div id="cell-16" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">dict</span>(rho_1<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>,</span>
-<span id="cb13-2">     rho_2<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>,</span>
-<span id="cb13-3">     gamma<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>,</span>
-<span id="cb13-4">     g<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>,</span>
-<span id="cb13-5">)</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="11">
-<pre><code>{'rho_1': 1, 'rho_2': 2, 'gamma': 1, 'g': 1}</code></pre>
-</div>
-</div>
-<p>Well duh, those are string values when input this way, and <code>"rho_1" != "rho_{1}"</code>!</p>
-<p>We could instead do the following:</p>
-<div id="cell-18" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1">better_dict <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> {rho_1: <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>,</span>
-<span id="cb15-2"> rho_2: <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>,</span>
-<span id="cb15-3"> gamma: <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>,</span>
-<span id="cb15-4"> g: <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>,</span>
-<span id="cb15-5">}</span>
-<span id="cb15-6">better_dict</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="12">
-<pre><code>{rho_{1}: 1, rho_{2}: 2, gamma: 1, g: 1}</code></pre>
-</div>
-</div>
-<p>Will that work?</p>
-<div id="cell-20" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1">equation.subs(better_dict)</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="13">
-<pre><code>Eq(Delta(k), -2*U**2*k**2/9 + k**3/3 - k/3)</code></pre>
-</div>
-</div>
-<p>Finally! However, along the way you may have noticed a simpler way to do this:</p>
-<div id="cell-22" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb19" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1">simpler_equation <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> equation.subs({</span>
-<span id="cb19-2">     <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"rho_</span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">{1}</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"</span>: <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>,</span>
-<span id="cb19-3">     <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"rho_</span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">{2}</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"</span>: <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>,</span>
-<span id="cb19-4">     <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"gamma"</span>: <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>,</span>
-<span id="cb19-5">     <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"g"</span>: <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>,</span>
-<span id="cb19-6">})</span>
-<span id="cb19-7">simpler_equation</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="14">
-<pre><code>Eq(Delta(k), -2*U**2*k**2/9 + k**3/3 - k/3)</code></pre>
-</div>
-</div>
-<p>Note how this did not need us to even touch <code>equation.free_symbols</code> or mess around with <code>sorted</code> at all! I’m leaving the exploratory part here though - it might help someone looking to access variables in a <code>parse_latex</code> expression.</p>
-<p>We may now plot it:</p>
-<div id="cell-24" class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb21" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1">DeltaK <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> simpler_equation.rhs</span>
-<span id="cb21-2">DeltaK</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="15">
-<pre><code>-2*U**2*k**2/9 + k**3/3 - k/3</code></pre>
-</div>
-</div>
-<div id="cell-25" class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb23" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> sympy.plotting</span>
-<span id="cb23-2"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> matplotlib.pyplot <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">as</span> plt</span>
-<span id="cb23-3">plt.rcParams[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'figure.figsize'</span>] <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">12</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">8</span></span>
-<span id="cb23-4">k_range <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> (k, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">300</span>)</span>
-<span id="cb23-5">colors <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"blue"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"green"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"red"</span>]</span>
-<span id="cb23-6">U_values <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> [<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">20</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">50</span>]</span>
-<span id="cb23-7">plots <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> []</span>
-<span id="cb23-8"><span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">for</span> u, color <span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">in</span> <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">zip</span>(U_values, colors):</span>
-<span id="cb23-9">    plot <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> sympy.plot(DeltaK.subs(U, u), k_range,</span>
-<span id="cb23-10">                      show<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">False</span>,</span>
-<span id="cb23-11">                     line_color<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>color,</span>
-<span id="cb23-12">                     legend<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">True</span>,</span>
-<span id="cb23-13">                     ylabel<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="vs" style="color: #20794D;
-background-color: null;
-font-style: inherit;">r"$\Delta(k)$"</span>,</span>
-<span id="cb23-14">                     ylim <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> (<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span><span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1e6</span>, <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1e6</span>),</span>
-<span id="cb23-15">                     xlim <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> (<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">300</span>),</span>
-<span id="cb23-16">                     title <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">f"$</span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">{</span>latex_string<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">}</span><span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">$"</span>,</span>
-<span id="cb23-17">                     )</span>
-<span id="cb23-18">    plots.append(plot)</span>
-<span id="cb23-19"></span>
-<span id="cb23-20">plots[<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>].extend(plots[<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>])</span>
-<span id="cb23-21">plots[<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>].extend(plots[<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>])</span>
-<span id="cb23-22">the_plot <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> plots[<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>]</span>
-<span id="cb23-23">the_plot.show()</span></code></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="https://stanczakdominik.github.io/posts/parsing-and-plotting-latex-expressions-with-sympy_files/figure-html/cell-14-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>And, while not beautiful, it’s much more pretty than what I got together with <code>pinta</code>!</p>
-
-
-
- ]]></description>
-  <category>python</category>
-  <category>sympy</category>
-  <guid>https://stanczakdominik.github.io/posts/parsing-and-plotting-latex-expressions-with-sympy.html</guid>
-  <pubDate>Tue, 12 Mar 2019 17:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>

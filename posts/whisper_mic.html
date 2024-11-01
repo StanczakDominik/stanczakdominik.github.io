@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2019-07-06">
+<meta name="dcterms.date" content="2024-11-01">
 
-<title>Simple Binder usage with Sphinx-Gallery through Jupytext – Dominik Stańczak-Marikin’s blog</title>
+<title>whisper_mic, a simple Python voice dictation utility – Dominik Stańczak-Marikin's blog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -153,12 +153,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Simple Binder usage with Sphinx-Gallery through Jupytext</h1>
+      <h1 class="title"><code>whisper_mic</code>, a simple Python voice dictation utility</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">python</div>
-                <div class="quarto-category">sphinx</div>
-                <div class="quarto-category">plasmapy</div>
-                <div class="quarto-category">jupyter</div>
+                <div class="quarto-category">TIL</div>
+                <div class="quarto-category">linux</div>
               </div>
                   </div>
   </div>
@@ -170,7 +169,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">July 6, 2019</p>
+        <p class="date">November 1, 2024</p>
       </div>
     </div>
     
@@ -189,88 +188,97 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<p>It's been a busy week for <a href="https://github.com/PlasmaPy/PlasmaPy/">PlasmaPy</a>. I recently found out about Binder support in <a href="https://sphinx-gallery.github.io/">sphinx-gallery</a>. The latter is a package that we use to turn python scripts with comments into Sphinx pages and Jupyter Notebooks. I figured adding that could be a nice fit for <a href="http://docs.plasmapy.org/en/stable/auto_examples/index.html">our existing example gallery</a> .</p>
-<p>However, I quickly realized that the system in place is a bit unwieldy. Binder takes a link to an existing GitHub repository and executes <code>.ipynb</code> notebooks located there online. However, with sphinx-gallery, we don't have those notebooks in the repository - we have <code>.py</code> files with comments. <a href="https://sphinx-gallery.github.io/configuration.html#binder-links">The currently recommended way of setting this up with sphinx-gallery</a> is keeping your built documentation in <a href="https://github.com/sphinx-gallery/sphinx-gallery.github.io">another repository</a> and hosting it via something along the lines of GitHub Pages rather than <a href="https://readthedocs.org/">ReadTheDocs</a>, which we are currently using.</p>
-<p><a href="https://github.com/sphinx-gallery/sphinx-gallery/pull/505/files">I added the results of this investigation to sphinx-gallery's docs</a>, but I didn't want to switch away from RTD, so I figured I'd go ahead and find another way. I think I've got something that works well enough now!</p>
-<p>Trigger warning: later on during this post, there may be monkeypatching of sphinx_gallery internals. Beware.</p>
-<section id="using-jupytext" class="level1">
-<h1>Using Jupytext</h1>
-<p><a href="https://github.com/mwouts/jupytext/">The Jupytext project</a> is kind of like <a href="https://github.com/jupyter/nbconvert">nbconvert</a>, but two-way. It lets you turn notebooks into scripts and vice versa. The interesting thing is that, <a href="https://jupytext.readthedocs.io/en/latest/formats.html#sphinx-gallery-scripts">as per Jupytext's documentation</a>, it is possible to let Binder's jupyter instance parse sphinx-gallery style <code>.py</code> files as jupyter notebooks. This was done in <a href="https://github.com/PlasmaPy/PlasmaPy/pull/656/files">PlasmaPy#656</a> . First, let's instruct the in-binder Jupyter instance to parse <code>.py</code> files in <code>.jupyter/jupyter_notebook_config.py</code> via blatant copy-paste:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>c.NotebookApp.contents_manager_class <span class="op">=</span> <span class="st">"jupytext.TextFileContentsManager"</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>c.ContentsManager.preferred_jupytext_formats_read <span class="op">=</span> <span class="st">"py:sphinx"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>c.ContentsManager.sphinx_convert_rst2md <span class="op">=</span> <span class="va">True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>And then let's also add a <code>binder/requirements.txt</code> file that lets Binder know what Python packages to download while building the repository's image. The version I had there was pretty shoddy, as CI/<code>setup.py</code>/packaging errors surfaced while I was tinkering with this. Long story short, something like this should do:</p>
-<pre><code>-r ../requirements/automated-documentation-tests.txt
-jupytext
-.</code></pre>
-<p>Where, in didactic order:</p>
-<ul>
-<li><code>jupytext</code> should be pretty self-explanatory,</li>
-<li><code>.</code> is the repository's package itself (here, PlasmaPy), as accessed by <code>setup.py</code></li>
-<li><code>-r ../requirements/automated-documentation-tests.txt</code> reads a pip requirements file specifying our documentation requirements. I think with a proper <code>extras_require</code> specified in <code>setup.py</code>, these two lines could be collapsed simply into <code>.[dev]</code> or some such. Note that <code>-r</code> takes a path relative to the file, thus the <code>../</code></li>
-</ul>
-<p>At this point all this really is is implementing what's mentioned in Jupytext's docs. The result is as follows:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://mybinder.org/v2/gh/PlasmaPy/PlasmaPy/master?filepath=plasmapy%2Fexamples"><img src="https://mybinder.org/badge_logo.svg" class="align-center img-fluid figure-img" alt="image"></a></p>
-<figcaption>image</figcaption>
-</figure>
-</div>
-<p>But you might notice an inconsistency in the Sphinx-rendered gallery itself: even if we were to <a href="https://sphinx-gallery.github.io/configuration.html#binder-links">configure docs to display Binder links</a> they will point to a path as imagined by the current implementation in Sphinx-Gallery, such as:</p>
-<pre><code>https://gke.mybinder.org/v2/gh/PlasmaPy/PlasmaPy/master?filepath=plasmapy/examples/auto_examples/plot_physics.ipynb</code></pre>
-<p>Note the spurious <code>auto_examples</code> directory supposedly including an <code>.ipynb</code> file. This obviously doesn't work for our use case, so we'd like to be able to change the generated links somehow...</p>
-</section>
-<section id="monkeypatching" class="level1">
-<h1>Monkeypatching</h1>
-<p>This (or rather, <a href="https://github.com/PlasmaPy/PlasmaPy/pull/658/files">PlasmaPy#658</a> ) is where it gets dirty. The solution developed in cooperation with Stuart Mumford (of SunPy fame, who contributed the idea which I implemented) is monkeypatching sphinx-gallery's link generation code. It's simple, yet effective.</p>
-<p>Let's use this config for <code>sphinx-gallery</code>:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>sphinx_gallery_conf <span class="op">=</span> {</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># path to your examples scripts</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'examples_dirs'</span>: <span class="st">'../plasmapy/examples'</span>,</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># path where to save gallery generated examples</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'backreferences_dir'</span>: <span class="st">'gen_modules/backreferences'</span>,</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'gallery_dirs'</span>: <span class="st">'auto_examples'</span>,</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'binder'</span>: {</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">'org'</span>: <span class="st">'PlasmaPy'</span>,</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">'repo'</span>: <span class="st">'PlasmaPy'</span>,</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">'branch'</span>: <span class="st">'master'</span>,</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">'binderhub_url'</span>: <span class="st">'https://mybinder.org'</span>,</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">'dependencies'</span>: [<span class="st">'../binder/requirements.txt'</span>],</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">'notebooks_dir'</span>: <span class="st">'plasmapy/examples'</span>,</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>and add this fragment of <code>sphinx_gallery.binder</code> code with a modification into Sphinx's <code>conf.py</code> file:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Patch sphinx_gallery.binder.gen_binder_rst so as to point to .py file in repository</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sphinx_gallery.binder</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> patched_gen_binder_rst(fpath, binder_conf, gallery_conf):</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Generate the RST + link for the Binder badge.</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">    ...</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    binder_conf <span class="op">=</span> sphinx_gallery.binder.check_binder_conf(binder_conf)</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    binder_url <span class="op">=</span> sphinx_gallery.binder.gen_binder_url(fpath, binder_conf, gallery_conf)</span>
+<p>I’ve been using Google’s speech-to-text input on my Android phone, to note things down on the go while walking the dog etc, and I’ve realized that I don’t actually know anything like that on Linux! While looking for tools solving that use case, I found this <a href="https://github.com/mallorbc/whisper_mic"><code>whisper_mic</code></a> little utility that you can just install with <code>pipx install whisper_mic</code>, and it works pretty nicely! I just had to tinker with with the settings a little bit. Here’s what finally worked for me:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">whisper_mic</span> <span class="at">--mic_index</span> 7 <span class="at">--loop</span> <span class="at">--dictate</span> <span class="at">--model</span> large-v3 <span class="at">--english</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The weird thing about this is that it doesn’t output the text it parses into standard output, which is how I thought it would work. Instead it emulates the keyboard using the <a href="https://github.com/moses-palmer/pynput">pynput</a> library. First it turns your speech into text, and then it turns that into keystrokes into the window you have focused with your mouse. In fact, this whole blog post was typed, (well, dictated, then edited) right into <del>abszigám</del> Obsidian. You can see the raw output at the end of the post.</p>
+<p>Did you see that Hungarian-looking word, though? It’s a trend for its fatal flaw: if you don’t specify <code>--english</code>, then it starts making mistakes on, I suspect, stuff I’m mispronouncing. Still, this is mostly usable for everyday use cases.</p>
+<p>Let me do a couple more tests, such as a few keystrokes with my mechanical keyboard, which is pretty loud:</p>
+<blockquote class="blockquote">
+<p>abcdefghijkはい</p>
+</blockquote>
+<p>Well, I certainly didn’t input any… What script is that? Is that Japanese? <a href="https://www.linguee.com/japanese-english/translation/%E3%81%AF%E3%81%84.html" title="While the most common usage of that is 'yes', in accordance with all laws of irony, another possible reading of that was 'loss'.">Wow I’ll have to identify it later.</a> For the second test, I’ll give it <a href="https://www.youtube.com/watch?v=LTye5SHVQl0">a quote from Star Trek</a>…</p>
+<blockquote class="blockquote">
+<p>Darmok at Tanagra. いelát etnáři. Tanagra. Tanagra. Ta nagra on the ocean. Darmok and Jelad at and Agra. The Beast at Tanagra? Husani, his army, when the mol When the walls fell? No, Shaka, when the world… when the walls fell with the world. Darma Kent Gelat on the ocean.</p>
+</blockquote>
+<p>So, obviously it’s struggling on the names, which is not unexpected. The second thing I would like to do is to check whether it actually understands Polish language. I think the the large models. for Whisper did promise to handle Polish, but let’s see how well it does at that. and see whether that makes a difference. I’ll use the <a href="https://www.youtube.com/watch?v=aiHW6BSm_p0" title="Jak to jest być skrybą, dobrze?">Scribe’s monologue from Asterix &amp; Obelix Mission Cleopatra</a>, a cult classic here in Poland. <em>ahem</em></p>
+<blockquote class="blockquote">
+<p>Wie pan, moim zdaniem to nie ma tak, Ze dobrze albo, Ze niedobrze. Gdybym miaL powiedzieC co ceniE w Zyciu najbardziej powiedziaLbym, Ze ludzi. по дальній війні, по мосту Удвоєнкк, де особі не… dziwiE, kiedy byLem sam i to ciekawe. To wLaSnie przypadkowe spotkania… majA na nasze Zycie. Chodzi o to, Ze kiedy wyznaleXC pewnA wartoSC nawet pozornie uniwersalne. … znajduje siE, by tak szedL, zrozumienia, ktOre pomaga siE nam rozwijaC. Ja miaLem szczEScie, poniewaZ poniewaZ siE znalazLem i dziEkujE mu, dziEkujE, Ze Zycie to jest taniec, Zycie to jest Smiech. Ze Zycie to miLoSC. Wiele ludzi pyta mnie, o to samo, ale jak se to robí? skAd czerpiesz tE radoSC, a ja odpowiadam, Ze Ze to proste. To umiLowanie Zycia. to wLaSnie ono sprawia, Ze CiS na przykLad BudujE maszynE, a jutro kto wie? Dlaczego by nie? Oddam siE… pracy spoLecznej i bEdE choCby sadziL, znaczy tak Ik ben… Normaal.</p>
+</blockquote>
+<p>Okay, it tried bravely and did its best, definitely, but not only did it mangle all the diacritics (ąęćęłńóśżź) into their basic characters’ uppercase variants, it’s also a little bit too jumpy between languages. I could tell you ahead of time that I’m only going to use English and Polish for the test here, and instead I think it did a bit of <a href="https://translate.google.com/?sl=auto&amp;tl=en&amp;text=%D0%BF%D0%BE%20%D0%B4%D0%B0%D0%BB%D1%8C%D0%BD%D1%96%D0%B9%20%D0%B2%D1%96%D0%B9%D0%BD%D1%96%2C%20%D0%BF%D0%BE%20%D0%BC%D0%BE%D1%81%D1%82%D1%83%20%D0%A3%D0%B4%D0%B2%D0%BE%D1%94%D0%BD%D0%BA%D0%BA%2C%20%D0%B4%D0%B5%20%D0%BE%D1%81%D0%BE%D0%B1%D1%96%20%D0%BD%D0%B5&amp;op=translate" title="after a distant war, along the Udvoenkk bridge, where no one is">Ukrainian</a> and at the end of the Otis quote it just went straight into Dutch! Checking the settings, there is unfortunately no option to specify prior languages like that, only to switch fully to the model trained entirely on English.</p>
+<p>What’s more, I kept trying this, and it actually started crashing on trying to input letters you can’t input using my current <code>pl_PL</code> keyboard layout:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Traceback (most recent call last):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a> File <span class="st">"/home/dominik/.local/pipx/venvs/whisper-mic/lib/python3.12/site-packages/pynput/keyboard/_base.py"</span>, line <span class="dv">492</span>, <span class="kw">in</span> <span class="bu">type</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>   <span class="va">self</span>.release(key)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a> File <span class="st">"/home/dominik/.local/pipx/venvs/whisper-mic/lib/python3.12/site-packages/pynput/keyboard/_base.py"</span>, line <span class="dv">427</span>, <span class="kw">in</span> release</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>   <span class="va">self</span>._handle(resolved, <span class="va">False</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a> File <span class="st">"/home/dominik/.local/pipx/venvs/whisper-mic/lib/python3.12/site-packages/pynput/keyboard/_xorg.py"</span>, line <span class="dv">235</span>, <span class="kw">in</span> _handle</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>   <span class="cf">raise</span> <span class="va">self</span>.InvalidKeyException(key)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>pynput.keyboard._base.Controller.InvalidKeyException: <span class="st">'š'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>š being an oryginally Czech symbol.</p>
+<p>I also tried a few more examples with the <code>--english</code> flag:</p>
+<blockquote class="blockquote">
+<p>Obsidian Darmok. Tanagra. Then I’m looking into gelato on a 10-hour gram no scratch that Darmok and Jalad at Tenagra. Darmok and the gelat on the ocean. Chaka, when the walls fell.</p>
+</blockquote>
+<p>Well, at least it’s no longer outputting keystrokes that crash when my Polish layout fails to input them, so that’s an improvement, and I can safely recommend it with <code>--english</code>. I would not, however, use it to communicate with <del>telegrams</del> Tanagrans, they’re bound to be mighty confused about Darmok with a gelato on a 10-hour gram!</p>
+<details>
+<summary>
+Raw output plus the commands
+</summary>
+<pre><code>whisper_mic --mic_index 7 --loop --dictate</code></pre>
+<blockquote class="blockquote">
+<p>I recently started that we are using Google’s. speech to text on Um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um Android 2 To note down. F4 spectrometer intensity Course filter silence была get C C right dog etc. What the actual fuck? Okay, that’s pretty simple terrible. Let me try another model.</p>
+</blockquote>
+<pre><code>whisper_mic --mic_index 7 --loop --dictate --model large-v3</code></pre>
+<blockquote class="blockquote">
+<p>Let’s see whether this is… better perhaps. Okay, looks promising. Okay So take two. I recently started using Google’s speak to text on my Android phone. to note things down on the go. while walking the dog etc. And I’ve realized that I’ve been looking for something like that on Linux for a while actually. Um And I, while looking For tools solving that use case I found this whistle whisper_mine mic as in microphone little utility that you can just install with pipx using pipx install whisper mic And literally just kind of except I had to tinker with with the settings a little bit. Here’s what I by what worked for me. to do paste the line I use. The weird thing about this is that It doesn’t output P-strokes into like standard output which is something but I expected from this? I thought that that was how… it would work. Instead it I think it emulates the keyboard, actually how does it do that? That’s to do. And it… outputs keystroke for the text it interprets from from your speech into the window you have sort of focused with your mouse. I’m uh… Typing. Well, typing. dictating this right into abszigám for example, obsidian No, okay. It’s doing actually quite well. It’s making a few… mistakes on I suspect stuff I’m mispronouncing because again not a native speaker car Suddenly there’s a car. But still, this is actually pretty pretty decent and mostly usable. or for everyday use cases. Let me do a couple more tests. So actually… Let me do a keystroke. with my mechanical keyboard. which was pretty loud. Maybe a couple.abcdefghijkはい Well, I certainly didn’t input any. What script is that? Is that Japanese? Wow fancy I’ll have to identify it later Okay, and for the second test, I would… actually give it first. quote from Star Trek. Darmok at Tanagra. いelát etnáři. Tanagra. Tanagra. Ta nagra on the ocean. Darmok and Jelad at and Agra. The Beast at Tanagra? Husani, his army, when the mol When the walls fell? No, Shaka, when the world… when the walls fell with the world. Darma Kent Gelat on the ocean. So obviously it’s struggling. on the names Right, which is not… not unexpected. The second thing I would like to do and I’m going to do this twice. is Let’s give it a test for… actually understanding policy language. I think the the large V3 model. for whisper Um… did promise to handle Polish but let’s see How well it does at that I’m going to do Do it twice. first up I’m going to just continue speaking in this sort of session I guess and then I’m going to start another session. and see whether that makes a difference. <em>ahem</em> Wie pan, moim zdaniem to nie ma tak, Ze dobrze albo, Ze niedobrze. Gdybym miaL powiedzieC co ceniE w Zyciu najbardziej powiedziaLbym, Ze ludzi. по дальній війні, по мосту Удвоєнкк, де особі не… dziwiE, kiedy byLem sam i to ciekawe. To wLaSnie przypadkowe spotkania… majA na nasze Zycie. Chodzi o to, Ze kiedy wyznaleXC pewnA wartoSC nawet pozornie uniwersalne. … znajduje siE, by tak szedL, zrozumienia, ktOre pomaga siE nam rozwijaC. Ja miaLem szczEScie, poniewaZ poniewaZ siE znalazLem i dziEkujE mu, dziEkujE, Ze Zycie to jest taniec, Zycie to jest Smiech. Ze Zycie to miLoSC. Wiele ludzi pyta mnie, o to samo, ale jak se to robí? skAd czerpiesz tE radoSC, a ja odpowiadam, Ze Ze to proste. To umiLowanie Zycia. to wLaSnie ono sprawia, Ze CiS na przykLad BudujE maszynE, a jutro kto wie? Dlaczego by nie? Oddam siE… pracy spoLecznej i bEdE choCby sadziL, znaczy tak Ik ben… Normaal.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Ok, wiEc prObowaL bardzo dzielnie. Okay, so it tried… And uh… did its best, definitely. Uh… but it’s a little bit It’s maybe a little bit… too jumpy between lengths. languages. Like I could tell you I have of time but I’m only going to English and Polish the test here and here I think it did a bug of text in Russian or Ukrainian I see a little bit of I think I saw a little bit of Czech or Slovakian in there and at the end of the Otis quote It just went straight up Uh… Nederlandish? Let me check the settings whether there there’s an option to specify the languages I’m going to be using. No, unfortunately… There is no such option. Thank you for watching. Okay, I’m now going to repeat da poli</p>
+</blockquote>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a> Traceback (most recent call last):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  File <span class="st">"/home/dominik/.local/pipx/venvs/whisper-mic/lib/python3.12/site-packages/pynput/keyboard/_base.py"</span>, line <span class="dv">492</span>, <span class="kw">in</span> <span class="bu">type</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.release(key)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  File <span class="st">"/home/dominik/.local/pipx/venvs/whisper-mic/lib/python3.12/site-packages/pynput/keyboard/_base.py"</span>, line <span class="dv">427</span>, <span class="kw">in</span> release</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>._handle(resolved, <span class="va">False</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  File <span class="st">"/home/dominik/.local/pipx/venvs/whisper-mic/lib/python3.12/site-packages/pynput/keyboard/_xorg.py"</span>, line <span class="dv">235</span>, <span class="kw">in</span> _handle</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">raise</span> <span class="va">self</span>.InvalidKeyException(key)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>pynput.keyboard._base.Controller.InvalidKeyException: <span class="st">'š'</span></span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># I added the line below:</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    binder_url <span class="op">=</span> binder_url.replace(gallery_conf[<span class="st">'gallery_dirs'</span>] <span class="op">+</span> os.path.sep, <span class="st">""</span>).replace(<span class="st">"ipynb"</span>, <span class="st">"py"</span>)</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    rst <span class="op">=</span> (</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>        <span class="st">"</span><span class="ch">\n</span><span class="st">"</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">"  .. container:: binder-badge</span><span class="ch">\n\n</span><span class="st">"</span></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">"    .. image:: https://mybinder.org/badge_logo.svg</span><span class="ch">\n</span><span class="st">"</span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">"      :target: </span><span class="sc">{}</span><span class="ch">\n</span><span class="st">"</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>        <span class="st">"      :width: 150 px</span><span class="ch">\n</span><span class="st">"</span>).<span class="bu">format</span>(binder_url)</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> rst</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="co"># And then we finish our monkeypatching misdeed by redirecting sphinx-gallery to use our function:</span></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>sphinx_gallery.binder.gen_binder_rst <span class="op">=</span> patched_gen_binder_rst</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The current gallery is located <a href="http://docs.plasmapy.org/en/latest/auto_examples/index.html">here</a>, and an example link is <a href="https://mybinder.org/v2/gh/PlasmaPy/PlasmaPy/master?filepath=plasmapy/examples/particle_stepper.py" class="uri">https://mybinder.org/v2/gh/PlasmaPy/PlasmaPy/master?filepath=plasmapy/examples/particle_stepper.py</a> - and you should instantly see it points to the right spot!</p>
-<p>Obviously, it would be better to implement such link customization in sphinx-gallery itself somehow, but it's up to their maintainers to decide whether this kind of combo usage with Jupytext is in scope for their project. For now, the monkeypatch solution works decently. I'll try to update this post if that comes about.</p>
-</section>
-<section id="update---requirements" class="level1">
-<h1>Update - requirements</h1>
-<p><a href="https://github.com/PlasmaPy/PlasmaPy/pull/689">@jdkent on GitHub</a> suggests that if the above doesn't work for you, you should make sure the Sphinx version you're using is 2 or newer.</p>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>During handling of the above exception, another exception occurred:</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>Traceback (most recent call last):</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  File <span class="st">"/home/dominik/.local/bin/whisper_mic"</span>, line <span class="dv">8</span>, <span class="kw">in</span> <span class="op">&lt;</span>module<span class="op">&gt;</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    sys.exit(main())</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>             <span class="op">^^^^^^</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  File <span class="st">"/home/dominik/.local/pipx/venvs/whisper-mic/lib/python3.12/site-packages/click/core.py"</span>, line <span class="dv">1157</span>, <span class="kw">in</span> <span class="fu">__call__</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">self</span>.main(<span class="op">*</span>args, <span class="op">**</span>kwargs)</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>           <span class="op">^^^^^^^^^^^^^^^^^^^^^^^^^^</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  File <span class="st">"/home/dominik/.local/pipx/venvs/whisper-mic/lib/python3.12/site-packages/click/core.py"</span>, line <span class="dv">1078</span>, <span class="kw">in</span> main</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    rv <span class="op">=</span> <span class="va">self</span>.invoke(ctx)</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>         <span class="op">^^^^^^^^^^^^^^^^</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>  File <span class="st">"/home/dominik/.local/pipx/venvs/whisper-mic/lib/python3.12/site-packages/click/core.py"</span>, line <span class="dv">1434</span>, <span class="kw">in</span> invoke</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> ctx.invoke(<span class="va">self</span>.callback, <span class="op">**</span>ctx.params)</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>           <span class="op">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>  File <span class="st">"/home/dominik/.local/pipx/venvs/whisper-mic/lib/python3.12/site-packages/click/core.py"</span>, line <span class="dv">783</span>, <span class="kw">in</span> invoke</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> __callback(<span class="op">*</span>args, <span class="op">**</span>kwargs)</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>           <span class="op">^^^^^^^^^^^^^^^^^^^^^^^^^^^</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>  File <span class="st">"/home/dominik/.local/pipx/venvs/whisper-mic/lib/python3.12/site-packages/whisper_mic/cli.py"</span>, line <span class="dv">42</span>, <span class="kw">in</span> main</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>    mic.listen_loop(dictate<span class="op">=</span>dictate,phrase_time_limit<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>  File <span class="st">"/home/dominik/.local/pipx/venvs/whisper-mic/lib/python3.12/site-packages/whisper_mic/whisper_mic.py"</span>, line <span class="dv">212</span>, <span class="kw">in</span> listen_loop</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.keyboard.<span class="bu">type</span>(result)</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>  File <span class="st">"/home/dominik/.local/pipx/venvs/whisper-mic/lib/python3.12/site-packages/pynput/keyboard/_base.py"</span>, line <span class="dv">495</span>, <span class="kw">in</span> <span class="bu">type</span></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>    <span class="cf">raise</span> <span class="va">self</span>.InvalidCharacterException(i, character)</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>pynput.keyboard._base.Controller.InvalidCharacterException: (<span class="dv">8</span>, <span class="st">'š'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<blockquote class="blockquote">
+<p>Okay, so this is fascinating. I was going to to check afterwards. what library at the season that it actually crashed on Trying to… I’ll have to check. what kind of character. from what script it says but it’s It’s not one… my Polish keyboard layout. can actually input. It looks like some sort of Slovakian Yes. Thing. S. the letter S. Thank you. Okay, on to the game. quote Q Wie Pan, moim zdaniem to nie ma tak, Ze dobrze, albo Ze niedobrze. Gdybym miaL powiedzieC co stanie w Zyciu najgorsze bardziej powiedziaLbym, Ze ludzi, ludzi, ktOrzy в</p>
+</blockquote>
+<pre><code>whisper_mic --mic_index 7 --loop --dictate --model large-v3 --english</code></pre>
+<blockquote class="blockquote">
+<p>Let me actually try this again now I’m going to use the English flag for the model. Obsidian Darmok. Tanagra. Then I’m looking into gelato on a 10-hour gram no scratch that Darmok and Jalad at Tenagra. Darmok and the gelat on the ocean. Chaka, when the walls fell. Well, at least it’s no longer out- putting keystrokes that help crash when my Polish layout fails. to input them, so that’s… an improvement I suppose. But I don’t think this would be a quite communicative for a telegram.</p>
+</blockquote>
+</details>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

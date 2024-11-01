@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/whisper_mic.html",
       "/posts/ifpilm-postmortem.html",
       "/posts/the-importance-of-good-notation.html",
       "/posts/plasmapy-v060-release.html",

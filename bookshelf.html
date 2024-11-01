@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2019-07-06">
+<meta name="dcterms.date" content="2024-10-23">
 
-<title>Simple Binder usage with Sphinx-Gallery through Jupytext – Dominik Stańczak-Marikin’s blog</title>
+<title>Bookshelf – Dominik Stańczak-Marikin’s blog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,60 +21,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../favicon.ico" rel="icon">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./favicon.ico" rel="icon">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -104,17 +70,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Dominik Stańczak-Marikin’s blog</span>
     </a>
   </div>
@@ -125,11 +91,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../bookshelf.html"> 
+    <a class="nav-link active" href="./bookshelf.html" aria-current="page"> 
 <span class="menu-text">Bookshelf</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../about.html"> 
+    <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
@@ -138,7 +104,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">GitHub</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../index.xml"> <i class="bi bi-rss" role="img">
+    <a class="nav-link" href="./index.xml"> <i class="bi bi-rss" role="img">
 </i> 
 <span class="menu-text">RSS</span></a>
   </li>  
@@ -150,124 +116,92 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">Simple Binder usage with Sphinx-Gallery through Jupytext</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">python</div>
-                <div class="quarto-category">sphinx</div>
-                <div class="quarto-category">plasmapy</div>
-                <div class="quarto-category">jupyter</div>
-              </div>
-                  </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">July 6, 2019</p>
-      </div>
-    </div>
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
-
-
-
-
-<p>It's been a busy week for <a href="https://github.com/PlasmaPy/PlasmaPy/">PlasmaPy</a>. I recently found out about Binder support in <a href="https://sphinx-gallery.github.io/">sphinx-gallery</a>. The latter is a package that we use to turn python scripts with comments into Sphinx pages and Jupyter Notebooks. I figured adding that could be a nice fit for <a href="http://docs.plasmapy.org/en/stable/auto_examples/index.html">our existing example gallery</a> .</p>
-<p>However, I quickly realized that the system in place is a bit unwieldy. Binder takes a link to an existing GitHub repository and executes <code>.ipynb</code> notebooks located there online. However, with sphinx-gallery, we don't have those notebooks in the repository - we have <code>.py</code> files with comments. <a href="https://sphinx-gallery.github.io/configuration.html#binder-links">The currently recommended way of setting this up with sphinx-gallery</a> is keeping your built documentation in <a href="https://github.com/sphinx-gallery/sphinx-gallery.github.io">another repository</a> and hosting it via something along the lines of GitHub Pages rather than <a href="https://readthedocs.org/">ReadTheDocs</a>, which we are currently using.</p>
-<p><a href="https://github.com/sphinx-gallery/sphinx-gallery/pull/505/files">I added the results of this investigation to sphinx-gallery's docs</a>, but I didn't want to switch away from RTD, so I figured I'd go ahead and find another way. I think I've got something that works well enough now!</p>
-<p>Trigger warning: later on during this post, there may be monkeypatching of sphinx_gallery internals. Beware.</p>
-<section id="using-jupytext" class="level1">
-<h1>Using Jupytext</h1>
-<p><a href="https://github.com/mwouts/jupytext/">The Jupytext project</a> is kind of like <a href="https://github.com/jupyter/nbconvert">nbconvert</a>, but two-way. It lets you turn notebooks into scripts and vice versa. The interesting thing is that, <a href="https://jupytext.readthedocs.io/en/latest/formats.html#sphinx-gallery-scripts">as per Jupytext's documentation</a>, it is possible to let Binder's jupyter instance parse sphinx-gallery style <code>.py</code> files as jupyter notebooks. This was done in <a href="https://github.com/PlasmaPy/PlasmaPy/pull/656/files">PlasmaPy#656</a> . First, let's instruct the in-binder Jupyter instance to parse <code>.py</code> files in <code>.jupyter/jupyter_notebook_config.py</code> via blatant copy-paste:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>c.NotebookApp.contents_manager_class <span class="op">=</span> <span class="st">"jupytext.TextFileContentsManager"</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>c.ContentsManager.preferred_jupytext_formats_read <span class="op">=</span> <span class="st">"py:sphinx"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>c.ContentsManager.sphinx_convert_rst2md <span class="op">=</span> <span class="va">True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>And then let's also add a <code>binder/requirements.txt</code> file that lets Binder know what Python packages to download while building the repository's image. The version I had there was pretty shoddy, as CI/<code>setup.py</code>/packaging errors surfaced while I was tinkering with this. Long story short, something like this should do:</p>
-<pre><code>-r ../requirements/automated-documentation-tests.txt
-jupytext
-.</code></pre>
-<p>Where, in didactic order:</p>
-<ul>
-<li><code>jupytext</code> should be pretty self-explanatory,</li>
-<li><code>.</code> is the repository's package itself (here, PlasmaPy), as accessed by <code>setup.py</code></li>
-<li><code>-r ../requirements/automated-documentation-tests.txt</code> reads a pip requirements file specifying our documentation requirements. I think with a proper <code>extras_require</code> specified in <code>setup.py</code>, these two lines could be collapsed simply into <code>.[dev]</code> or some such. Note that <code>-r</code> takes a path relative to the file, thus the <code>../</code></li>
-</ul>
-<p>At this point all this really is is implementing what's mentioned in Jupytext's docs. The result is as follows:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://mybinder.org/v2/gh/PlasmaPy/PlasmaPy/master?filepath=plasmapy%2Fexamples"><img src="https://mybinder.org/badge_logo.svg" class="align-center img-fluid figure-img" alt="image"></a></p>
-<figcaption>image</figcaption>
-</figure>
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Bookshelf</h1>
 </div>
-<p>But you might notice an inconsistency in the Sphinx-rendered gallery itself: even if we were to <a href="https://sphinx-gallery.github.io/configuration.html#binder-links">configure docs to display Binder links</a> they will point to a path as imagined by the current implementation in Sphinx-Gallery, such as:</p>
-<pre><code>https://gke.mybinder.org/v2/gh/PlasmaPy/PlasmaPy/master?filepath=plasmapy/examples/auto_examples/plot_physics.ipynb</code></pre>
-<p>Note the spurious <code>auto_examples</code> directory supposedly including an <code>.ipynb</code> file. This obviously doesn't work for our use case, so we'd like to be able to change the generated links somehow...</p>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 23, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Here’s a list of recommendations for books and other works that have had the largest impact on me and that I feel like I just cannot shut up about!</p>
+<!--TODO why each-->
+<section id="books" class="level2">
+<h2 class="anchored" data-anchor-id="books">Books</h2>
+<ul>
+<li><em>Humankind</em>, by Rutger Bregman</li>
+</ul>
+<section id="software-development" class="level3">
+<h3 class="anchored" data-anchor-id="software-development">Software development</h3>
+<ul>
+<li><em>Designing Data-Intensive Applications</em>, by Martin Kleppmann</li>
+</ul>
 </section>
-<section id="monkeypatching" class="level1">
-<h1>Monkeypatching</h1>
-<p>This (or rather, <a href="https://github.com/PlasmaPy/PlasmaPy/pull/658/files">PlasmaPy#658</a> ) is where it gets dirty. The solution developed in cooperation with Stuart Mumford (of SunPy fame, who contributed the idea which I implemented) is monkeypatching sphinx-gallery's link generation code. It's simple, yet effective.</p>
-<p>Let's use this config for <code>sphinx-gallery</code>:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>sphinx_gallery_conf <span class="op">=</span> {</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># path to your examples scripts</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'examples_dirs'</span>: <span class="st">'../plasmapy/examples'</span>,</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># path where to save gallery generated examples</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'backreferences_dir'</span>: <span class="st">'gen_modules/backreferences'</span>,</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'gallery_dirs'</span>: <span class="st">'auto_examples'</span>,</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'binder'</span>: {</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">'org'</span>: <span class="st">'PlasmaPy'</span>,</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">'repo'</span>: <span class="st">'PlasmaPy'</span>,</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">'branch'</span>: <span class="st">'master'</span>,</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">'binderhub_url'</span>: <span class="st">'https://mybinder.org'</span>,</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">'dependencies'</span>: [<span class="st">'../binder/requirements.txt'</span>],</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">'notebooks_dir'</span>: <span class="st">'plasmapy/examples'</span>,</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>and add this fragment of <code>sphinx_gallery.binder</code> code with a modification into Sphinx's <code>conf.py</code> file:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Patch sphinx_gallery.binder.gen_binder_rst so as to point to .py file in repository</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sphinx_gallery.binder</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> patched_gen_binder_rst(fpath, binder_conf, gallery_conf):</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Generate the RST + link for the Binder badge.</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">    ...</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    binder_conf <span class="op">=</span> sphinx_gallery.binder.check_binder_conf(binder_conf)</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    binder_url <span class="op">=</span> sphinx_gallery.binder.gen_binder_url(fpath, binder_conf, gallery_conf)</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># I added the line below:</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    binder_url <span class="op">=</span> binder_url.replace(gallery_conf[<span class="st">'gallery_dirs'</span>] <span class="op">+</span> os.path.sep, <span class="st">""</span>).replace(<span class="st">"ipynb"</span>, <span class="st">"py"</span>)</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    rst <span class="op">=</span> (</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>        <span class="st">"</span><span class="ch">\n</span><span class="st">"</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">"  .. container:: binder-badge</span><span class="ch">\n\n</span><span class="st">"</span></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">"    .. image:: https://mybinder.org/badge_logo.svg</span><span class="ch">\n</span><span class="st">"</span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">"      :target: </span><span class="sc">{}</span><span class="ch">\n</span><span class="st">"</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>        <span class="st">"      :width: 150 px</span><span class="ch">\n</span><span class="st">"</span>).<span class="bu">format</span>(binder_url)</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> rst</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="co"># And then we finish our monkeypatching misdeed by redirecting sphinx-gallery to use our function:</span></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>sphinx_gallery.binder.gen_binder_rst <span class="op">=</span> patched_gen_binder_rst</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The current gallery is located <a href="http://docs.plasmapy.org/en/latest/auto_examples/index.html">here</a>, and an example link is <a href="https://mybinder.org/v2/gh/PlasmaPy/PlasmaPy/master?filepath=plasmapy/examples/particle_stepper.py" class="uri">https://mybinder.org/v2/gh/PlasmaPy/PlasmaPy/master?filepath=plasmapy/examples/particle_stepper.py</a> - and you should instantly see it points to the right spot!</p>
-<p>Obviously, it would be better to implement such link customization in sphinx-gallery itself somehow, but it's up to their maintainers to decide whether this kind of combo usage with Jupytext is in scope for their project. For now, the monkeypatch solution works decently. I'll try to update this post if that comes about.</p>
+<section id="physics" class="level3">
+<h3 class="anchored" data-anchor-id="physics">Physics</h3>
+<ul>
+<li><em>Computational Physics</em>, by Mark Newman</li>
+<li>Richard Feynman’s <em>Feynman Lectures on Physics</em></li>
+<li>Steven Strogatz’s <em>Nonlinear Dynamics and Applications</em></li>
+</ul>
 </section>
-<section id="update---requirements" class="level1">
-<h1>Update - requirements</h1>
-<p><a href="https://github.com/PlasmaPy/PlasmaPy/pull/689">@jdkent on GitHub</a> suggests that if the above doesn't work for you, you should make sure the Sphinx version you're using is 2 or newer.</p>
+<section id="fiction" class="level3">
+<h3 class="anchored" data-anchor-id="fiction">Fiction</h3>
+<ul>
+<li><a href="https://www.hpmor.com"><em>Harry Potter and the Methods of Rationality</em></a></li>
+<li>Sir Terry Pratchett’s <em>Discworld</em> and other works</li>
+<li>Carl Sagan’s <em>Contact</em></li>
+<li>Scott Alexander’s <em>Unsong</em></li>
+</ul>
+</section>
+</section>
+<section id="games" class="level2">
+<h2 class="anchored" data-anchor-id="games">Games</h2>
+<ul>
+<li><em>The Outer Wilds</em> (not to be confused with <em>The Outer Worlds</em>)</li>
+<li><em>Factorio</em></li>
+<li><em>Ace Attorney</em></li>
+<li><em>Undertale</em></li>
+<li><em>Disco Elysium</em></li>
+<li><em>Planescape Torment</em></li>
+</ul>
+</section>
+<section id="movies-tv" class="level2">
+<h2 class="anchored" data-anchor-id="movies-tv">Movies &amp; TV</h2>
+<ul>
+<li><em>The Man From Earth</em></li>
+<li><em>The Good Place</em></li>
+</ul>
+</section>
+<section id="blogs" class="level1">
+<h1>Blogs</h1>
+<ul>
+<li><a href="https://jvns.ca/bookshelf/">Julia Evans’ blog, who deserves credit for this bookshelf idea</a></li>
+</ul>
 
 
 </section>

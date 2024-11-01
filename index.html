@@ -80,7 +80,8 @@ ul.task-list li input[type="checkbox"] {
 
     const options = {
       valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
+      page: 25,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
       searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
 
@@ -150,18 +151,22 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
+    <a class="nav-link" href="./bookshelf.html"> 
+<span class="menu-text">Bookshelf</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
-  <li class="nav-item compact">
+  <li class="nav-item">
     <a class="nav-link" href="https://github.com/StanczakDominik/stanczakdominik.github.io"> <i class="bi bi-github" role="img">
 </i> 
-<span class="menu-text"></span></a>
+<span class="menu-text">GitHub</span></a>
   </li>  
-  <li class="nav-item compact">
+  <li class="nav-item">
     <a class="nav-link" href="./index.xml"> <i class="bi bi-rss" role="img">
 </i> 
-<span class="menu-text"></span></a>
+<span class="menu-text">RSS</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -176,7 +181,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(25)</span></div><div class="category" data-category="2D Ising model">2D Ising model <span class="quarto-category-count">(2)</span></div><div class="category" data-category="N-body simulation">N-body simulation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="StarCraft II Bayesian replay analysis">StarCraft II Bayesian replay analysis <span class="quarto-category-count">(3)</span></div><div class="category" data-category="bayes">bayes <span class="quarto-category-count">(2)</span></div><div class="category" data-category="benchmark">benchmark <span class="quarto-category-count">(1)</span></div><div class="category" data-category="blogging">blogging <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cupy">cupy <span class="quarto-category-count">(2)</span></div><div class="category" data-category="featured">featured <span class="quarto-category-count">(3)</span></div><div class="category" data-category="fusion">fusion <span class="quarto-category-count">(2)</span></div><div class="category" data-category="gpu">gpu <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ipplm">ipplm <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ising">ising <span class="quarto-category-count">(2)</span></div><div class="category" data-category="julia">julia <span class="quarto-category-count">(2)</span></div><div class="category" data-category="jupyter">jupyter <span class="quarto-category-count">(1)</span></div><div class="category" data-category="life">life <span class="quarto-category-count">(1)</span></div><div class="category" data-category="masters thesis">masters thesis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="mathjax">mathjax <span class="quarto-category-count">(1)</span></div><div class="category" data-category="nbody">nbody <span class="quarto-category-count">(2)</span></div><div class="category" data-category="nonlinear dynamics">nonlinear dynamics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="numba">numba <span class="quarto-category-count">(1)</span></div><div class="category" data-category="numpy">numpy <span class="quarto-category-count">(3)</span></div><div class="category" data-category="open-science">open-science <span class="quarto-category-count">(1)</span></div><div class="category" data-category="paper">paper <span class="quarto-category-count">(1)</span></div><div class="category" data-category="particle-in-cell">particle-in-cell <span class="quarto-category-count">(3)</span></div><div class="category" data-category="plasma">plasma <span class="quarto-category-count">(3)</span></div><div class="category" data-category="plasmapy">plasmapy <span class="quarto-category-count">(2)</span></div><div class="category" data-category="popular science">popular science <span class="quarto-category-count">(1)</span></div><div class="category" data-category="projects">projects <span class="quarto-category-count">(2)</span></div><div class="category" data-category="pymc3">pymc3 <span class="quarto-category-count">(2)</span></div><div class="category" data-category="python">python <span class="quarto-category-count">(16)</span></div><div class="category" data-category="release">release <span class="quarto-category-count">(1)</span></div><div class="category" data-category="rossler">rossler <span class="quarto-category-count">(1)</span></div><div class="category" data-category="science">science <span class="quarto-category-count">(4)</span></div><div class="category" data-category="scipy">scipy <span class="quarto-category-count">(1)</span></div><div class="category" data-category="scripting">scripting <span class="quarto-category-count">(1)</span></div><div class="category" data-category="simulation">simulation <span class="quarto-category-count">(6)</span></div><div class="category" data-category="sphinx">sphinx <span class="quarto-category-count">(1)</span></div><div class="category" data-category="starcraft">starcraft <span class="quarto-category-count">(3)</span></div><div class="category" data-category="status">status <span class="quarto-category-count">(4)</span></div><div class="category" data-category="sympy">sympy <span class="quarto-category-count">(2)</span></div><div class="category" data-category="tech">tech <span class="quarto-category-count">(2)</span></div><div class="category" data-category="tech/N-body simulation">tech/N-body simulation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="work">work <span class="quarto-category-count">(1)</span></div><div class="category" data-category="youtube">youtube <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(26)</span></div><div class="category" data-category="2D Ising model">2D Ising model <span class="quarto-category-count">(2)</span></div><div class="category" data-category="N-body simulation">N-body simulation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="StarCraft II Bayesian replay analysis">StarCraft II Bayesian replay analysis <span class="quarto-category-count">(3)</span></div><div class="category" data-category="TIL">TIL <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bayes">bayes <span class="quarto-category-count">(2)</span></div><div class="category" data-category="benchmark">benchmark <span class="quarto-category-count">(1)</span></div><div class="category" data-category="blogging">blogging <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cupy">cupy <span class="quarto-category-count">(2)</span></div><div class="category" data-category="featured">featured <span class="quarto-category-count">(3)</span></div><div class="category" data-category="fusion">fusion <span class="quarto-category-count">(2)</span></div><div class="category" data-category="gpu">gpu <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ipplm">ipplm <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ising">ising <span class="quarto-category-count">(2)</span></div><div class="category" data-category="julia">julia <span class="quarto-category-count">(2)</span></div><div class="category" data-category="jupyter">jupyter <span class="quarto-category-count">(1)</span></div><div class="category" data-category="life">life <span class="quarto-category-count">(1)</span></div><div class="category" data-category="linux">linux <span class="quarto-category-count">(1)</span></div><div class="category" data-category="masters thesis">masters thesis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="mathjax">mathjax <span class="quarto-category-count">(1)</span></div><div class="category" data-category="nbody">nbody <span class="quarto-category-count">(2)</span></div><div class="category" data-category="nonlinear dynamics">nonlinear dynamics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="numba">numba <span class="quarto-category-count">(1)</span></div><div class="category" data-category="numpy">numpy <span class="quarto-category-count">(3)</span></div><div class="category" data-category="open-science">open-science <span class="quarto-category-count">(1)</span></div><div class="category" data-category="paper">paper <span class="quarto-category-count">(1)</span></div><div class="category" data-category="particle-in-cell">particle-in-cell <span class="quarto-category-count">(3)</span></div><div class="category" data-category="plasma">plasma <span class="quarto-category-count">(3)</span></div><div class="category" data-category="plasmapy">plasmapy <span class="quarto-category-count">(2)</span></div><div class="category" data-category="popular science">popular science <span class="quarto-category-count">(1)</span></div><div class="category" data-category="projects">projects <span class="quarto-category-count">(2)</span></div><div class="category" data-category="pymc3">pymc3 <span class="quarto-category-count">(2)</span></div><div class="category" data-category="python">python <span class="quarto-category-count">(17)</span></div><div class="category" data-category="release">release <span class="quarto-category-count">(1)</span></div><div class="category" data-category="rossler">rossler <span class="quarto-category-count">(1)</span></div><div class="category" data-category="science">science <span class="quarto-category-count">(4)</span></div><div class="category" data-category="scipy">scipy <span class="quarto-category-count">(1)</span></div><div class="category" data-category="scripting">scripting <span class="quarto-category-count">(1)</span></div><div class="category" data-category="simulation">simulation <span class="quarto-category-count">(6)</span></div><div class="category" data-category="sphinx">sphinx <span class="quarto-category-count">(1)</span></div><div class="category" data-category="starcraft">starcraft <span class="quarto-category-count">(3)</span></div><div class="category" data-category="status">status <span class="quarto-category-count">(4)</span></div><div class="category" data-category="sympy">sympy <span class="quarto-category-count">(2)</span></div><div class="category" data-category="tech">tech <span class="quarto-category-count">(2)</span></div><div class="category" data-category="tech/N-body simulation">tech/N-body simulation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="work">work <span class="quarto-category-count">(1)</span></div><div class="category" data-category="youtube">youtube <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
@@ -189,7 +194,43 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="fusion,ipplm,work,status,life,featured" data-listing-date-sort="1668488400000" data-listing-file-modified-sort="1729533844015" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-word-count-sort="2576">
+<div class="quarto-post image-right" data-index="0" data-categories="python,TIL,linux" data-listing-date-sort="1730474160000" data-listing-file-modified-sort="1730475181433" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2194">
+<div class="thumbnail">
+<p><a href="./posts/whisper_mic.html" class="no-external"></a></p><a href="./posts/whisper_mic.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/whisper_mic.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/whisper_mic.html" class="no-external"><code>whisper_mic</code>, a simple Python voice dictation utility</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/whisper_mic.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('python'); return false;">
+python
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('TIL'); return false;">
+TIL
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('linux'); return false;">
+linux
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/whisper_mic.html" class="no-external">I’ve been using Google’s speech-to-text input on my Android phone, to note things down on the go while walking the dog etc, and I’ve realized that I don’t actually know…<code></code><code></code></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/whisper_mic.html" class="no-external">
+<div class="listing-date">
+Nov 1, 2024
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="fusion,ipplm,work,status,life,featured" data-listing-date-sort="1668488400000" data-listing-file-modified-sort="1729748131182" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-word-count-sort="2576">
 <div class="thumbnail">
 <p><a href="./posts/ifpilm-postmortem.html" class="no-external"></a></p><a href="./posts/ifpilm-postmortem.html" class="no-external">
 <p><img loading="lazy" src="./images/ifpilm-postmortem/20200508_172201.jpg" class="thumbnail-image"></p>
@@ -234,7 +275,7 @@ Nov 15, 2022
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="status,masters thesis,mathjax,science" data-listing-date-sort="1619872500000" data-listing-file-modified-sort="1729533844035" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="266">
+<div class="quarto-post image-right" data-index="2" data-categories="status,masters thesis,mathjax,science" data-listing-date-sort="1619872500000" data-listing-file-modified-sort="1729533844035" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="266">
 <div class="thumbnail">
 <p><a href="./posts/the-importance-of-good-notation.html" class="no-external"></a></p><a href="./posts/the-importance-of-good-notation.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -273,7 +314,7 @@ May 1, 2021
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="plasmapy,release,python,projects" data-listing-date-sort="1616238000000" data-listing-file-modified-sort="1729533844029" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="293">
+<div class="quarto-post image-right" data-index="3" data-categories="plasmapy,release,python,projects" data-listing-date-sort="1616238000000" data-listing-file-modified-sort="1729533844029" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="293">
 <div class="thumbnail">
 <p><a href="./posts/plasmapy-v060-release.html" class="no-external"></a></p><a href="./posts/plasmapy-v060-release.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -312,7 +353,7 @@ Mar 20, 2021
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="fusion,science" data-listing-date-sort="1613232000000" data-listing-file-modified-sort="1729533844015" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1365">
+<div class="quarto-post image-right" data-index="4" data-categories="fusion,science" data-listing-date-sort="1613232000000" data-listing-file-modified-sort="1729533844015" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1365">
 <div class="thumbnail">
 <p><a href="./posts/fusion1.html" class="no-external"></a></p><a href="./posts/fusion1.html" class="no-external">
 <p class="card-img-top"><img src="images/Binding_energy_curve_-_common_isotopes.svg"  class="thumbnail-image card-img"/></p>
@@ -345,7 +386,7 @@ Feb 13, 2021
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="blogging,status" data-listing-date-sort="1612810036000" data-listing-file-modified-sort="1729533844035" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="277">
+<div class="quarto-post image-right" data-index="5" data-categories="blogging,status" data-listing-date-sort="1612810036000" data-listing-file-modified-sort="1729533844035" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="277">
 <div class="thumbnail">
 <p><a href="./posts/utterances.html" class="no-external"></a></p><a href="./posts/utterances.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -378,7 +419,7 @@ Feb 8, 2021
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="python,sympy" data-listing-date-sort="1601390781000" data-listing-file-modified-sort="1729533844035" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="787">
+<div class="quarto-post image-right" data-index="6" data-categories="python,sympy" data-listing-date-sort="1601390781000" data-listing-file-modified-sort="1729533844035" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="787">
 <div class="thumbnail">
 <p><a href="./posts/sympy-for-physics-homework-in-2020.html" class="no-external"></a></p><a href="./posts/sympy-for-physics-homework-in-2020.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -411,7 +452,7 @@ Sep 29, 2020
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-categories="julia" data-listing-date-sort="1595351220000" data-listing-file-modified-sort="1729533844019" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="446">
+<div class="quarto-post image-right" data-index="7" data-categories="julia" data-listing-date-sort="1595351220000" data-listing-file-modified-sort="1729533844019" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="446">
 <div class="thumbnail">
 <p><a href="./posts/julia-composability.html" class="no-external"></a></p><a href="./posts/julia-composability.html" class="no-external">
 <p class="card-img-top"><img src="posts/julia-composability_files/figure-html/cell-6-output-1.svg"  class="thumbnail-image card-img"/></p>
@@ -441,7 +482,7 @@ Jul 21, 2020
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="7" data-categories="starcraft,python,StarCraft II Bayesian replay analysis" data-listing-date-sort="1592933400000" data-listing-file-modified-sort="1729533844032" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="513">
+<div class="quarto-post image-right" data-index="8" data-categories="starcraft,python,StarCraft II Bayesian replay analysis" data-listing-date-sort="1592933400000" data-listing-file-modified-sort="1729533844032" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="513">
 <div class="thumbnail">
 <p><a href="./posts/sc2-parse-replays.html" class="no-external"></a></p><a href="./posts/sc2-parse-replays.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -477,7 +518,7 @@ Jun 23, 2020
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="8" data-categories="bayes,pymc3,starcraft,python,StarCraft II Bayesian replay analysis" data-listing-date-sort="1592664600000" data-listing-file-modified-sort="1729533844012" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1019">
+<div class="quarto-post image-right" data-index="9" data-categories="bayes,pymc3,starcraft,python,StarCraft II Bayesian replay analysis" data-listing-date-sort="1592664600000" data-listing-file-modified-sort="1729533844012" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1019">
 <div class="thumbnail">
 <p><a href="./posts/bayes-sc2-2.html" class="no-external"></a></p><a href="./posts/bayes-sc2-2.html" class="no-external">
 <p class="card-img-top"><img src="posts/bayes-sc2-2_files/figure-html/cell-7-output-1.svg"  class="thumbnail-image card-img"/></p>
@@ -519,7 +560,7 @@ Jun 20, 2020
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="9" data-categories="bayes,pymc3,starcraft,python,StarCraft II Bayesian replay analysis" data-listing-date-sort="1591817820000" data-listing-file-modified-sort="1729533843999" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2364">
+<div class="quarto-post image-right" data-index="10" data-categories="bayes,pymc3,starcraft,python,StarCraft II Bayesian replay analysis" data-listing-date-sort="1591817820000" data-listing-file-modified-sort="1729533843999" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2364">
 <div class="thumbnail">
 <p><a href="./posts/bayes-sc2-1.html" class="no-external"></a></p><a href="./posts/bayes-sc2-1.html" class="no-external">
 <p class="card-img-top"><img src="posts/bayes-sc2-1_files/figure-html/cell-3-output-1.png"  class="thumbnail-image card-img"/></p>
@@ -561,7 +602,7 @@ Jun 10, 2020
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="10" data-categories="python,scripting,tech" data-listing-date-sort="1589714700000" data-listing-file-modified-sort="1729533843992" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="894">
+<div class="quarto-post image-right" data-index="11" data-categories="python,scripting,tech" data-listing-date-sort="1589714700000" data-listing-file-modified-sort="1729533843992" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="894">
 <div class="thumbnail">
 <p><a href="./posts/backlogs.html" class="no-external"></a></p><a href="./posts/backlogs.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -597,7 +638,7 @@ May 17, 2020
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="11" data-categories="science,open-science,status" data-listing-date-sort="1588442100000" data-listing-file-modified-sort="1729533844015" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="335">
+<div class="quarto-post image-right" data-index="12" data-categories="science,open-science,status" data-listing-date-sort="1588442100000" data-listing-file-modified-sort="1729533844015" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="335">
 <div class="thumbnail">
 <p><a href="./posts/first-joss-review.html" class="no-external"></a></p><a href="./posts/first-joss-review.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -633,7 +674,7 @@ May 2, 2020
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="12" data-categories="youtube,tech" data-listing-date-sort="1581958800000" data-listing-file-modified-sort="1729533844035" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="219">
+<div class="quarto-post image-right" data-index="13" data-categories="youtube,tech" data-listing-date-sort="1581958800000" data-listing-file-modified-sort="1729533844035" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="219">
 <div class="thumbnail">
 <p><a href="./posts/youtube-watch-later-export.html" class="no-external"></a></p><a href="./posts/youtube-watch-later-export.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -666,7 +707,7 @@ Feb 17, 2020
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="13" data-categories="numba,simulation,nbody,python,tech/N-body simulation" data-listing-date-sort="1564034400000" data-listing-file-modified-sort="1729533844015" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="301">
+<div class="quarto-post image-right" data-index="14" data-categories="numba,simulation,nbody,python,tech/N-body simulation" data-listing-date-sort="1564034400000" data-listing-file-modified-sort="1729533844015" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="301">
 <div class="thumbnail">
 <p><a href="./posts/distance_matrix_numba.html" class="no-external"></a></p><a href="./posts/distance_matrix_numba.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -708,7 +749,7 @@ Jul 25, 2019
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="14" data-categories="python,sphinx,plasmapy,jupyter" data-listing-date-sort="1562421600000" data-listing-file-modified-sort="1729533844035" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="842">
+<div class="quarto-post image-right" data-index="15" data-categories="python,sphinx,plasmapy,jupyter" data-listing-date-sort="1562421600000" data-listing-file-modified-sort="1729533844035" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="842">
 <div class="thumbnail">
 <p><a href="./posts/simple-binder-usage-with-sphinx-gallery-through-jupytext.html" class="no-external"></a></p><a href="./posts/simple-binder-usage-with-sphinx-gallery-through-jupytext.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -747,7 +788,7 @@ Jul 6, 2019
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="15" data-categories="plasma,particle-in-cell,python,simulation,projects" data-listing-date-sort="1554318900000" data-listing-file-modified-sort="1729533844029" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1179">
+<div class="quarto-post image-right" data-index="16" data-categories="plasma,particle-in-cell,python,simulation,projects" data-listing-date-sort="1554318900000" data-listing-file-modified-sort="1729533844029" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1179">
 <div class="thumbnail">
 <p><a href="./posts/post-mortem-for-my-engineering-thesis-code-pythonpic.html" class="no-external"></a></p><a href="./posts/post-mortem-for-my-engineering-thesis-code-pythonpic.html" class="no-external">
 <p class="card-img-top"><img src="images/speed_Python.svg"  class="thumbnail-image card-img"/></p>
@@ -789,7 +830,7 @@ Apr 3, 2019
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="16" data-categories="plasma,paper,simulation,particle-in-cell,python,featured" data-listing-date-sort="1553673600000" data-listing-file-modified-sort="1729533844025" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="876">
+<div class="quarto-post image-right" data-index="17" data-categories="plasma,paper,simulation,particle-in-cell,python,featured" data-listing-date-sort="1553673600000" data-listing-file-modified-sort="1729533844025" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="876">
 <div class="thumbnail">
 <p><a href="./posts/on-the-recent-on-the-boris-solver-in-particle-in-cell-simulations-paper.html" class="no-external"></a></p><a href="./posts/on-the-recent-on-the-boris-solver-in-particle-in-cell-simulations-paper.html" class="no-external">
 <p class="card-img-top"><img src="posts/on-the-recent-on-the-boris-solver-in-particle-in-cell-simulations-paper_files/figure-html/cell-8-output-1.png"  class="thumbnail-image card-img"/></p>
@@ -834,7 +875,7 @@ Mar 27, 2019
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="17" data-categories="plasma,particle-in-cell,popular science,science,featured" data-listing-date-sort="1552986000000" data-listing-file-modified-sort="1729533844029" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1338">
+<div class="quarto-post image-right" data-index="18" data-categories="plasma,particle-in-cell,popular science,science,featured" data-listing-date-sort="1552986000000" data-listing-file-modified-sort="1729533844029" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1338">
 <div class="thumbnail">
 <p><a href="./posts/particle-in-cell-methods.html" class="no-external"></a></p><a href="./posts/particle-in-cell-methods.html" class="no-external">
 <p class="card-img-top"><img src="images/charge-deposition.svg" alt="Example of charge deposition"  class="thumbnail-image card-img"/></p>
@@ -876,7 +917,7 @@ Mar 19, 2019
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="18" data-categories="julia" data-listing-date-sort="1552557600000" data-listing-file-modified-sort="1729533844015" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="544">
+<div class="quarto-post image-right" data-index="19" data-categories="julia" data-listing-date-sort="1552557600000" data-listing-file-modified-sort="1729533844015" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="544">
 <div class="thumbnail">
 <p><a href="./posts/first-dive-julia.html" class="no-external"></a></p><a href="./posts/first-dive-julia.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -906,7 +947,7 @@ Mar 14, 2019
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="19" data-categories="python,sympy" data-listing-date-sort="1552410000000" data-listing-file-modified-sort="1729533844029" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="388">
+<div class="quarto-post image-right" data-index="20" data-categories="python,sympy" data-listing-date-sort="1552410000000" data-listing-file-modified-sort="1729533844029" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="388">
 <div class="thumbnail">
 <p><a href="./posts/parsing-and-plotting-latex-expressions-with-sympy.html" class="no-external"></a></p><a href="./posts/parsing-and-plotting-latex-expressions-with-sympy.html" class="no-external">
 <p class="card-img-top"><img src="posts/parsing-and-plotting-latex-expressions-with-sympy_files/figure-html/cell-2-output-1.png"  class="thumbnail-image card-img"/></p>
@@ -939,7 +980,7 @@ Mar 12, 2019
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="20" data-categories="cupy,nbody,gpu,python,N-body simulation" data-listing-date-sort="1551718800000" data-listing-file-modified-sort="1729533844015" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="859">
+<div class="quarto-post image-right" data-index="21" data-categories="cupy,nbody,gpu,python,N-body simulation" data-listing-date-sort="1551718800000" data-listing-file-modified-sort="1729533844015" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="859">
 <div class="thumbnail">
 <p><a href="./posts/cupy_nbody_direct_force_calculation.html" class="no-external"></a></p><a href="./posts/cupy_nbody_direct_force_calculation.html" class="no-external">
 <p class="card-img-top"><img src="posts/cupy_nbody_direct_force_calculation_files/figure-html/cell-18-output-1.png"  class="thumbnail-image card-img"/></p>
@@ -981,7 +1022,7 @@ Mar 4, 2019
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="21" data-categories="scipy,nonlinear dynamics,simulation,python,rossler" data-listing-date-sort="1551032450000" data-listing-file-modified-sort="1729533844035" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="977">
+<div class="quarto-post image-right" data-index="22" data-categories="scipy,nonlinear dynamics,simulation,python,rossler" data-listing-date-sort="1551032450000" data-listing-file-modified-sort="1729533844035" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="977">
 <div class="thumbnail">
 <p><a href="./posts/scipy-ivp-makeshift-poincare-sections-of-the-rossler-attractor.html" class="no-external"></a></p><a href="./posts/scipy-ivp-makeshift-poincare-sections-of-the-rossler-attractor.html" class="no-external">
 <p class="card-img-top"><img src="posts/scipy-ivp-makeshift-poincare-sections-of-the-rossler-attractor_files/figure-html/cell-2-output-1.png"  class="thumbnail-image card-img"/></p>
@@ -1023,7 +1064,7 @@ Feb 24, 2019
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="22" data-categories="ising,numpy,python,simulation,2D Ising model" data-listing-date-sort="1549386000000" data-listing-file-modified-sort="1729533844029" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="733">
+<div class="quarto-post image-right" data-index="23" data-categories="ising,numpy,python,simulation,2D Ising model" data-listing-date-sort="1549386000000" data-listing-file-modified-sort="1729533844029" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="733">
 <div class="thumbnail">
 <p><a href="./posts/quantitative-data-analysis-of-the-2d-ising-model.html" class="no-external"></a></p><a href="./posts/quantitative-data-analysis-of-the-2d-ising-model.html" class="no-external">
 <p class="card-img-top"><img src="posts/quantitative-data-analysis-of-the-2d-ising-model_files/figure-html/cell-3-output-1.png"  class="thumbnail-image card-img"/></p>
@@ -1065,7 +1106,7 @@ Feb 5, 2019
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="23" data-categories="numpy,ising,simulation,python,2D Ising model" data-listing-date-sort="1548781200000" data-listing-file-modified-sort="1729533844029" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="908">
+<div class="quarto-post image-right" data-index="24" data-categories="numpy,ising,simulation,python,2D Ising model" data-listing-date-sort="1548781200000" data-listing-file-modified-sort="1729533844029" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="908">
 <div class="thumbnail">
 <p><a href="./posts/parallelizable-numpy-implementation-of-2d-ising-model.html" class="no-external"></a></p><a href="./posts/parallelizable-numpy-implementation-of-2d-ising-model.html" class="no-external">
 <p class="card-img-top"><img src="posts/parallelizable-numpy-implementation-of-2d-ising-model_files/figure-html/cell-3-output-1.png"  class="thumbnail-image card-img"/></p>
@@ -1107,7 +1148,7 @@ Jan 29, 2019
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="24" data-categories="cupy,numpy,python,benchmark" data-listing-date-sort="1548141928000" data-listing-file-modified-sort="1729533844019" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="930">
+<div class="quarto-post image-right" data-index="25" data-categories="cupy,numpy,python,benchmark" data-listing-date-sort="1548141928000" data-listing-file-modified-sort="1729533844019" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="930">
 <div class="thumbnail">
 <p><a href="./posts/numpy-ish-gpu-computations-with-cupy.html" class="no-external"></a></p><a href="./posts/numpy-ish-gpu-computations-with-cupy.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -1150,6 +1191,9 @@ Jan 22, 2019
 <div class="listing-no-matching d-none">
 No matching items
 </div>
+<nav id="listing-pagination" class="listing-pagination" aria-label="Page Navigation">
+  <ul class="pagination"></ul>
+</nav>
 </div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
